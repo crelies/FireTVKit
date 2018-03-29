@@ -1,0 +1,38 @@
+{
+  "name": "AmazonFlingSDK",
+  "version": "0.1.0",
+  "summary": "A short description of AmazonFlingSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Chris Eli/AmazonFlingSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Christian Elies": "chris.elies13@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Chris Eli/AmazonFlingSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "ios": {
+    "frameworks": [
+      "CFNetwork",
+      "Security",
+      "SystemConfiguration"
+    ],
+    "vendored_frameworks": "Frameworks/AmazonFling.framework"
+  },
+  "dependencies": {
+    "Bolts": [
+      "1.5.1"
+    ]
+  },
+  "static_framework": true,
+  "user_target_xcconfig": {
+    "OTHER_LDFLAGS": "-lc++"
+  }
+}

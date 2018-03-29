@@ -1,0 +1,41 @@
+{
+  "name": "FireTVKit",
+  "version": "0.1.0",
+  "summary": "Discovering and controlling your FireTV is now easy.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/crelies/FireTVKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Christian Elies": "chris.elies13@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/crelies/FireTVKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "FireTVKit/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "AmazonFling": [
+      "1.3.1"
+    ],
+    "ReachabilitySwift": [
+      "4.1.0"
+    ],
+    "RxSwift": [
+      "4.0.0"
+    ],
+    "RxCocoa": [
+      "4.0.0"
+    ]
+  },
+  "pod_target_xcconfig": {
+    "FRAMEWORK_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/AmazonFling",
+    "OTHER_LDFLAGS": "$(inherited) -undefined dynamic_lookup"
+  }
+}

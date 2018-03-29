@@ -9,34 +9,31 @@
 Pod::Spec.new do |s|
   s.name             = 'FireTVKit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of FireTVKit.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Discovering and controlling your FireTV is now easy.'
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Chris Eli/FireTVKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/crelies/FireTVKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Chris Eli' => 'chris.elies13@gmail.com' }
-  s.source           = { :git => 'https://github.com/Chris Eli/FireTVKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Christian Elies' => 'chris.elies13@gmail.com' }
+  s.source           = { :git => 'https://github.com/crelies/FireTVKit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'FireTVKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'FireTVKit' => ['FireTVKit/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  
+  s.dependency 'AmazonFling', '1.3.1'
+  s.dependency 'ReachabilitySwift', '4.1.0'
+  s.dependency 'RxSwift', '4.0.0'
+  s.dependency 'RxCocoa', '4.0.0'
+  
+  # https://github.com/CocoaPods/CocoaPods/issues/2926#issuecomment-136766631
+  s.pod_target_xcconfig = {
+      'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/AmazonFling',
+      'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+  }
 end

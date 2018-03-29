@@ -1,0 +1,43 @@
+PODS:
+  - AmazonFling (1.3.1):
+    - Bolts (= 1.5.1)
+  - Bolts (1.5.1):
+    - Bolts/AppLinks (= 1.5.1)
+    - Bolts/Tasks (= 1.5.1)
+  - Bolts/AppLinks (1.5.1):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.5.1)
+  - FireTVKit (0.1.0):
+    - AmazonFling (= 1.3.1)
+    - ReachabilitySwift (= 4.1.0)
+    - RxCocoa (= 4.0.0)
+    - RxSwift (= 4.0.0)
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
+  - ReachabilitySwift (4.1.0)
+  - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.0.0)
+
+DEPENDENCIES:
+  - FireTVKit (from `../`)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+
+EXTERNAL SOURCES:
+  FireTVKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AmazonFling: 9ffc738f15a6dd53672eb66019d9bb1791578020
+  Bolts: a12663244b1d3351c738882e71902fc74db54f64
+  FireTVKit: f50f6fdca2d8111e8cc6911aa736402e08fe8d56
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+
+PODFILE CHECKSUM: 539461853d90c4fdb4eb4c0543cfeba86bfac156
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,6 @@
+framework module AmazonFling {
+  umbrella header "AmazonFling.h"
+
+  export *
+  module * { export * }
+}
