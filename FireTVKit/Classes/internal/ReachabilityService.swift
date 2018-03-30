@@ -14,16 +14,6 @@ internal protocol HasReachabilityService {
     var reachabilityService: ReachabilityServiceProtocol { get set }
 }
 
-internal protocol ReachabilityServiceProtocol {
-	var reachability: Reachability { get }
-	var reachabilityInfo: Variable<Reachability?> { get }
-	var listeningReachability: Bool { get }
-	
-	func startListening() throws
-	func checkListening() -> Reachability?
-	func stopListening()
-}
-
 internal final class ReachabilityService: ReachabilityServiceProtocol {
     private(set) var reachability: Reachability
 	private(set) var reachabilityInfo: Variable<Reachability?>
@@ -33,6 +23,7 @@ internal final class ReachabilityService: ReachabilityServiceProtocol {
         guard let reachability = Reachability() else {
             return nil
         }
+        
         self.reachability = reachability
 		reachabilityInfo = Variable<Reachability?>(nil)
         listeningReachability = false

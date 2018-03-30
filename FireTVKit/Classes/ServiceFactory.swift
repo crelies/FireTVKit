@@ -6,33 +6,19 @@
 //  Copyright © 2018 Christian Elies. All rights reserved.
 //
 
+import AmazonFling
 import Foundation
 
-internal protocol ServiceFactoryProtocol {
-    static func makePlayerDiscoveryService() -> PlayerDiscoveryServiceProtocol
-    static func makeReachabilityService() -> ReachabilityServiceProtocol
-}
-
-internal final class ServiceFactory: ServiceFactoryProtocol {
-    private static var reachabilityService: ReachabilityServiceProtocol!
-    private static var playerDiscoveryService: PlayerDiscoveryServiceProtocol!
-    
-    static func makeReachabilityService() -> ReachabilityServiceProtocol {
-        if let reachabilityService = reachabilityService {
-            return reachabilityService
-        }
-        
-        reachabilityService = ReachabilityService()
-        return reachabilityService
+public final class ServiceFactory: ServiceFactoryProtocol {
+    static func makePlayerDiscoveryService() -> PlayerDiscoveryServiceProtocol {
+        return PlayerDiscoveryService()
     }
     
-    static func makePlayerDiscoveryService() -> PlayerDiscoveryServiceProtocol {
-        if let playerDiscoveryService = playerDiscoveryService {
-            return playerDiscoveryService
-        }
-        
-        let dependencies = PlayerDiscoveryServiceDependencies()
-        playerDiscoveryService = PlayerDiscoveryService(dependencies: dependencies)
-        return playerDiscoveryService
+    public static func makePlayerService(withPlayer player: RemoteMediaPlayer) -> PlayerServiceProtocol {
+        return PlayerService(player: player)
+    }
+    
+    public static func makeReachabilityService() -> ReachabilityServiceProtocol? {
+        return ReachabilityService()
     }
 }

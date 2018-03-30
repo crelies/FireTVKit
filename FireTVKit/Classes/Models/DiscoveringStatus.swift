@@ -9,6 +9,7 @@
 import Foundation
 
 internal enum DiscoveringStatus {
+    case ready
     case started
     case stopped
 }

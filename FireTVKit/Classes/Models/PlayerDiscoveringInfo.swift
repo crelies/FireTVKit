@@ -10,15 +10,8 @@ import Foundation
 
 internal struct PlayerDiscoveringInfo {
     let status: PlayerDiscoveringInfoStatus
-    let resetPlayer: Bool
     
     init(status: PlayerDiscoveringInfoStatus) {
         self.status = status
-        resetPlayer = false
-    }
-    
-    init(status: PlayerDiscoveringInfoStatus, resetPlayer: Bool) {
-        self.status = status
-        self.resetPlayer = resetPlayer
     }
 }

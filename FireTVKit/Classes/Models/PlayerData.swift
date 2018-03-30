@@ -1,5 +1,5 @@
 //
-//  CurrentPlayerData.swift
+//  PlayerData.swift
 //  FireTVKit
 //
 //  Created by crelies on 28.11.2017.
@@ -9,12 +9,12 @@
 import AmazonFling
 import Foundation
 
-internal struct CurrentPlayerData {
+public struct PlayerData {
 	var duration: Int?
 	var position: Int64?
 	let status: MediaPlayerStatus
 	
-	init(status: MediaPlayerStatus) {
+	public init(status: MediaPlayerStatus) {
 		self.status = status
 	}
 }

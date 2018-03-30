@@ -12,6 +12,93 @@ Discovering and controlling your FireTV is now easy
 
 Coming soon ...
 
+```swift
+import AmazonFling
+import FireTVKit
+import RxSwift
+import UIKit
+
+final class ViewController: UIViewController {
+    @IBOutlet private weak var foundDevicesLabel: UILabel!
+
+    private let disposeBag: DisposeBag = DisposeBag()
+    private var fireTVManager: FireTVManager?
+    private var devices: [RemoteMediaPlayer] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        fireTVManager = FireTVManager()
+
+        fireTVManager?.devices
+        .subscribe(onNext: { devices in
+            DispatchQueue.main.async {
+                if let devices = devices {
+                    self.foundDevicesLabel.text = devices.flatMap { $0.name() }.joined(separator: "\n")
+
+                    self.devices = devices
+                } else {
+                    self.foundDevicesLabel.text = "No devices found"
+                }
+            }
+        }).disposed(by: disposeBag)
+
+        if let reachabilityService = ServiceFactory.makeReachabilityService() {
+            do {
+                reachabilityService.reachabilityInfo.asObservable()
+                .subscribe(onNext: { reachability in
+                    if let reachability = reachability {
+                        if reachability.connection == .wifi {
+                            self.fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
+                        } else {
+                            self.fireTVManager?.stopDiscovery()
+                        }
+                    }
+                }).disposed(by: disposeBag)
+
+                try reachabilityService.startListening()
+            } catch {
+
+            }
+        }
+    }
+
+    @IBAction func didPressStartDiscoveryButton(_ sender: UIButton) {
+        fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
+    }
+
+    @IBAction func didPressStopDiscoveryButton(_ sender: UIButton) {
+        fireTVManager?.stopDiscovery()
+    }
+
+    @IBAction func didPressPlayTestVideoButton(_ sender: UIButton) {
+        if let firstDevice = devices.first {
+            let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
+            
+            _ = playerService.play(withMetadata: "Barcelona", url: "https://...")
+            .subscribe(onCompleted: {
+                print("success")
+            }, onError: { error in
+                print(error)
+            })
+        }
+    }
+
+    @IBAction func didPressStopPlaybackButton(_ sender: UIButton) {
+        if let firstDevice = devices.first {
+            let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
+            
+            _ = playerService.stop()
+            .subscribe(onCompleted: {
+                print("success")
+            }, onError: { error in
+                print(error)
+            })
+        }
+    }
+}
+```
+
 ## Example
 
 Coming soon ...

@@ -15,39 +15,33 @@ internal protocol HasPlayerDiscoveryService {
 }
 
 internal protocol PlayerDiscoveryServiceProtocol {
+    var devicesVariable: Variable<[RemoteMediaPlayer]?> { get }
 	var devices: [RemoteMediaPlayer] { get }
 	var deviceInfo: Variable<DeviceInfo?> { get }
 	var discovering: Bool { get }
 	var discoveringInfo: Variable<PlayerDiscoveringInfo?> { get }
+    var playerServiceID: String? { get set }
 	
 	func startDiscovering()
 	func stopDiscovering()
-	func stopDiscovering(resetPlayer: Bool)
-}
-
-extension PlayerDiscoveryServiceProtocol {
-	func stopDiscovering() {
-		stopDiscovering(resetPlayer: false)
-	}
 }
 
 internal final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
+    private(set) var devicesVariable: Variable<[RemoteMediaPlayer]?>
     private(set) var devices: [RemoteMediaPlayer]
 	private(set) var deviceInfo: Variable<DeviceInfo?>
     private(set) var discovering: Bool
 	private(set) var discoveringInfo: Variable<PlayerDiscoveringInfo?>
     
-    fileprivate var discoveryController: DiscoveryController
+    private var discoveryController: DiscoveryController
 	
-	private let dependencies: PlayerDiscoveryServiceDependenciesProtocol
 	private let disposeBag: DisposeBag
-	private let playerServiceID: String
-	private var discoveringStatus: DiscoveringStatus?
+	private var discoveringStatus: DiscoveringStatus
     
-	init(dependencies: PlayerDiscoveryServiceDependenciesProtocol, with playerServiceID: String = "amzn.thin.pl") {
-		self.dependencies = dependencies
-		self.playerServiceID = playerServiceID
-		
+    var playerServiceID: String?
+    
+	init() {
+        devicesVariable = Variable<[RemoteMediaPlayer]?>(nil)
 		devices = []
 		deviceInfo = Variable<DeviceInfo?>(nil)
         discovering = false
@@ -57,40 +51,35 @@ internal final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 		
 		disposeBag = DisposeBag()
 		
-		#if FIRETV
-			discoveryController.searchPlayer(withId: playerServiceID, andListener: self)
-			discoveringStatus = .started
-		#endif
-		
-		dependencies.reachabilityService.reachabilityInfo.asObservable()
-			.subscribe(onNext: { reachability in
-				if let reachability = reachability {
-					if reachability.connection == .wifi {
-						self.startDiscovering()
-					} else {
-						self.stopDiscovering(resetPlayer: true)
-					}
-				}
-			}).disposed(by: disposeBag)
+		discoveringStatus = .ready
     }
 	
 	func startDiscovering() {
-		if discoveringStatus == .stopped {
-			discoveringStatus = .started
-			discoveryController.resume()
-			
-			let info = PlayerDiscoveringInfo(status: .started)
-			discoveringInfo.value = info
-		}
+        guard let playerServiceID = playerServiceID else {
+            return
+        }
+        
+        switch discoveringStatus {
+            case .ready:
+                discoveryController.searchPlayer(withId: playerServiceID, andListener: self)
+                discoveringStatus = .started
+            case .stopped:
+                discoveringStatus = .started
+                discoveryController.resume()
+                
+                let info = PlayerDiscoveringInfo(status: .started)
+                discoveringInfo.value = info
+            default: ()
+        }
 	}
 	
-	func stopDiscovering(resetPlayer: Bool = false) {
+	func stopDiscovering() {
 		if discoveringStatus == .started {
 			discoveringStatus = .stopped
 			discoveryController.close()
 			devices.removeAll()
 			
-			let info = PlayerDiscoveringInfo(status: .stopped, resetPlayer: resetPlayer)
+			let info = PlayerDiscoveringInfo(status: .stopped)
 			discoveringInfo.value = info
 		}
 	}
@@ -104,12 +93,16 @@ extension PlayerDiscoveryService: DiscoveryListener {
         DispatchQueue.global().asyncAfter(deadline: deadline) {
 			let deviceInfo = DeviceInfo(device: device)
 			self.deviceInfo.value = deviceInfo
+            
+            self.devicesVariable.value = self.devices
         }
     }
     
     func deviceLost(_ device: RemoteMediaPlayer!) {
 		if let index = devices.index (where: { $0.name() == device.name() }) {
 			devices.remove(at: index)
+            
+            self.devicesVariable.value = self.devices
 		}
 		
 		let deviceInfo = DeviceInfo(status: .deviceLost, device: device)

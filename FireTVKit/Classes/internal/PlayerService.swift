@@ -10,75 +10,30 @@ import AmazonFling
 import RxSwift
 import UIKit
 
-internal protocol HasPlayerService {
-    var playerService: PlayerServiceProtocol { get }
-}
-
-internal protocol PlayerServiceProtocol {
-	var currentPlayer: RemoteMediaPlayer? { get }
-	
-	func playCurrentPlayer() -> Completable
-	func playCurrentPlayer(with metadata: String, and url: String) -> Completable
-	func pauseCurrentPlayer() -> Completable
-	func setCurrentPlayer(Position position: Int64) -> Completable
-	func stopCurrentPlayer() -> Completable
-	func updateCurrentPlayerData(with status: MediaPlayerStatus, and position: Int64) -> Single<CurrentPlayerData?>
-	func connect(to player: RemoteMediaPlayer) -> Single<CurrentPlayerData?>
-	func disconnect(from player: RemoteMediaPlayer?) -> Completable
-	func disconnectFromCurrentPlayer() -> Completable
-}
-
 internal final class PlayerService: NSObject, PlayerServiceProtocol {
-    private(set) var currentPlayer: RemoteMediaPlayer?
-    fileprivate var currentPlayerStatus: MediaPlayerStatus?
-	private var disposeBag: DisposeBag
+    private var player: RemoteMediaPlayer?
+    private var playerData: PlayerData?
+	private let disposeBag: DisposeBag
 	
-	private let dependencies: PlayerServiceDependenciesProtocol
-	
-	init(dependencies: PlayerServiceDependenciesProtocol) {
-		self.dependencies = dependencies
-		disposeBag = DisposeBag()
-		
+    init(player: RemoteMediaPlayer) {
+        disposeBag = DisposeBag()
 		super.init()
-		
-		dependencies.playerDiscoveryService.deviceInfo.asObservable()
-			.subscribe(onNext: { deviceInfo in
-				if let deviceInfo = deviceInfo {
-					switch deviceInfo.status {
-						case .deviceDiscovered:
-							if let device = deviceInfo.device {
-								let _ = self.connect(to: device)
-							}
-						default: ()
-					}
-				}
-			}, onError: { _ in
-				
-			}, onCompleted: {
-				
-			}).disposed(by: disposeBag)
-		
-		dependencies.playerDiscoveryService.discoveringInfo.asObservable()
-			.subscribe(onNext: { playerDiscoveringInfo in
-				if let playerDiscoveringInfo = playerDiscoveringInfo {
-					switch playerDiscoveringInfo.status {
-						case .stopped:
-							self.currentPlayer = nil
-							self.currentPlayerStatus = nil
-						default: ()
-					}
-				}
-			}, onError: { _ in
-				
-			}, onCompleted: {
-				
-			}).disposed(by: disposeBag)
+        
+        connect(toPlayer: player).subscribe(onSuccess: { playerData in
+            
+        }, onError: { error in
+            
+        }).disposed(by: disposeBag)
 	}
     
+    deinit {
+        _ = disconnect(fromPlayer: player).subscribe(onCompleted: { }) { _ in }
+    }
+    
     // MARK: - player control
-    func playCurrentPlayer() -> Completable {
+    func play() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-			if let currentPlayer = self.currentPlayer {
+			if let currentPlayer = self.player {
 				let _ = currentPlayer.play().continue({ task -> Any? in
 					DispatchQueue.main.async {
 						if let error = task.error {
@@ -98,10 +53,10 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 		})
     }
     
-    func playCurrentPlayer(with metadata: String, and url: String) -> Completable {
+    func play(withMetadata metadata: String, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-			if let currentPlayer = self.currentPlayer {
-				let _ = currentPlayer.setMediaSourceToURL(url, metaData: metadata, autoPlay: true, andPlayInBackground: false).continue({ task -> Any? in
+			if let currentPlayer = self.player {
+				let _ = currentPlayer.setMediaSourceToURL(url, metaData: metadata, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue({ task -> Any? in
 					DispatchQueue.main.async {
 						if let error = task.error {
 							completable(.error(error))
@@ -120,9 +75,9 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 		})
     }
     
-    func pauseCurrentPlayer() -> Completable {
+    func pause() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-			if let currentPlayer = self.currentPlayer {
+			if let currentPlayer = self.player {
 				let _ = currentPlayer.pause().continue({ task -> Any? in
 					DispatchQueue.main.async {
 						if let error = task.error {
@@ -142,9 +97,9 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 		})
     }
     
-    func setCurrentPlayer(Position position: Int64) -> Completable {
+    func setPosition(position: Int64) -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-			if let currentPlayer = self.currentPlayer {
+			if let currentPlayer = self.player {
 				let _ = currentPlayer.seek(toPosition: position, andMode: ABSOLUTE).continue({ task -> Any? in
 					DispatchQueue.main.async {
 						if let error = task.error {
@@ -164,9 +119,9 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 		})
     }
     
-    func stopCurrentPlayer() -> Completable {
+    func stop() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-			if let currentPlayer = self.currentPlayer {
+			if let currentPlayer = self.player {
 				let _ = currentPlayer.stop().continue({ task -> Any? in
 					DispatchQueue.main.async {
 						if let error = task.error {
@@ -187,25 +142,25 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
     }
     
     // MARK: - player data
-    func updateCurrentPlayerData(with status: MediaPlayerStatus, and position: Int64) -> Single<CurrentPlayerData?> {
+    func update(withStatus status: MediaPlayerStatus, position: Int64) -> Single<PlayerData?> {
 		return Single.create(subscribe: { single -> Disposable in
-			if let _ = self.currentPlayer {
-				var currentPlayerData = CurrentPlayerData(status: status)
+			if let _ = self.player {
+				var playerData = PlayerData(status: status)
 				
 				let state = status.state()
 				switch state.rawValue {
 					case 2: // ReadyToPlay
-						self.getDurationOfCurrentPlayer()
+						self.getDuration()
 							.subscribe(onSuccess: { duration in
-								currentPlayerData.duration = duration
+								playerData.duration = duration
 								// TODO: is this necessary anymore?
-								single(.success(currentPlayerData))
+								single(.success(playerData))
 							}, onError: { error in
 								single(.error(error))
 							}).disposed(by: self.disposeBag)
 					case 3, 4, 5: // Playing, Paused, Seeking
-						currentPlayerData.position = position
-						single(.success(currentPlayerData))
+						playerData.position = position
+						single(.success(playerData))
 					default:
 						single(.success(nil))
 				}
@@ -218,113 +173,115 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
     }
     
     // MARK: - player connection
-    func connect(to player: RemoteMediaPlayer) -> Single<CurrentPlayerData?> {
-		return Single.create(subscribe: { single -> Disposable in
-			if self.currentPlayer == nil {
-				self.currentPlayer = player
-				
-				let _ = player.add(self).continue({ task -> Any? in
-					DispatchQueue.main.async {
-						if let error = task.error {
-							single(.error(error))
-						} else {
-							self.getCurrentPlayerData()
-								.subscribe(onSuccess: { currentPlayerData in
-									single(.success(currentPlayerData))
-								}, onError: { error in
-									single(.error(error))
-								}).disposed(by: self.disposeBag)
-						}
-					}
-
-					return nil
-				})
-			} else {
-				if let currentPlayer = self.currentPlayer,
-					currentPlayer !== player {
-					currentPlayer.remove(self).continue({ task -> Any? in
-						DispatchQueue.main.async {
-							if let error = task.error {
-								single(.error(error))
-							} else {
-								self.currentPlayer = player
-								
-								let _ = player.add(self).continue({ task -> Any? in
-									DispatchQueue.main.async {
-										if let error = task.error {
-											single(.error(error))
-										} else {
-											self.getCurrentPlayerData()
-												.subscribe(onSuccess: { currentPlayerData in
-													single(.success(currentPlayerData))
-												}, onError: { error in
-													single(.error(error))
-												}).disposed(by: self.disposeBag)
-										}
-									}
-									
-									return nil
-								})
-							}
-						}
-						
-						return nil
-					})
-				} else {
-					single(.success(nil))
-				}
-			}
-			
-			return Disposables.create()
-		})
-    }
-    
-    func disconnect(from player: RemoteMediaPlayer?) -> Completable {
-		return Completable.create(subscribe: { completable -> Disposable in
-			if let player = player {
-				let _ = player.remove(self).continue({ task -> Any? in
-					DispatchQueue.main.async {
-						if let error = task.error {
-							completable(.error(error))
-						} else {
-							if let currentPlayer = self.currentPlayer, currentPlayer === player {
-								self.currentPlayer = nil
-							}
-							
-							completable(.completed)
-						}
-					}
-					
-					return nil
-				})
-			} else {
-				completable(.completed)
-			}
-			
-			return Disposables.create()
-		})
-    }
-    
-    func disconnectFromCurrentPlayer() -> Completable {
-        return disconnect(from: currentPlayer)
+    func disconnect() -> Completable {
+        return disconnect(fromPlayer: player)
     }
 }
 
 extension PlayerService: MediaPlayerStatusListener {
     func onStatusChange(_ status: MediaPlayerStatus!, positionChangedTo position: Int64) {
-        currentPlayerStatus = status
-        
-        updateCurrentPlayerData(with: status, and: position)
-			.subscribe(onSuccess: { _ in
-			}) { _ in
-			}.disposed(by: disposeBag)
+        update(withStatus: status, position: position)
+            .subscribe(onSuccess: { playerData in
+                self.playerData = playerData
+            }) { _ in
+                // TODO:
+            }.disposed(by: disposeBag)
     }
 }
 
 extension PlayerService {
-    private func getDurationOfCurrentPlayer() -> Single<Int?> {
+    // MARK: - player connection
+    private func connect(toPlayer player: RemoteMediaPlayer) -> Single<PlayerData?> {
         return Single.create(subscribe: { single -> Disposable in
-            if let currentPlayer = self.currentPlayer {
+            if self.player == nil {
+                self.player = player
+                
+                let _ = player.add(self).continue({ task -> Any? in
+                    DispatchQueue.main.async {
+                        if let error = task.error {
+                            single(.error(error))
+                        } else {
+                            self.getPlayerData()
+                                .subscribe(onSuccess: { currentPlayerData in
+                                    single(.success(currentPlayerData))
+                                }, onError: { error in
+                                    single(.error(error))
+                                }).disposed(by: self.disposeBag)
+                        }
+                    }
+                    
+                    return nil
+                })
+            } else {
+                if let currentPlayer = self.player,
+                    currentPlayer !== player {
+                    currentPlayer.remove(self).continue({ task -> Any? in
+                        DispatchQueue.main.async {
+                            if let error = task.error {
+                                single(.error(error))
+                            } else {
+                                self.player = player
+                                
+                                let _ = player.add(self).continue({ task -> Any? in
+                                    DispatchQueue.main.async {
+                                        if let error = task.error {
+                                            single(.error(error))
+                                        } else {
+                                            self.getPlayerData()
+                                                .subscribe(onSuccess: { currentPlayerData in
+                                                    single(.success(currentPlayerData))
+                                                }, onError: { error in
+                                                    single(.error(error))
+                                                }).disposed(by: self.disposeBag)
+                                        }
+                                    }
+                                    
+                                    return nil
+                                })
+                            }
+                        }
+                        
+                        return nil
+                    })
+                } else {
+                    single(.success(nil))
+                }
+            }
+            
+            return Disposables.create()
+        })
+    }
+    
+    private func disconnect(fromPlayer player: RemoteMediaPlayer?) -> Completable {
+        return Completable.create(subscribe: { completable -> Disposable in
+            if let player = player {
+                let _ = player.remove(self).continue({ task -> Any? in
+                    DispatchQueue.main.async {
+                        if let error = task.error {
+                            completable(.error(error))
+                        } else {
+                            if let currentPlayer = self.player, currentPlayer === player {
+                                self.player = nil
+                            }
+                            
+                            completable(.completed)
+                        }
+                    }
+                    
+                    return nil
+                })
+            } else {
+                completable(.completed)
+            }
+            
+            return Disposables.create()
+        })
+    }
+    
+    // MARK: - player data
+    private func getDuration() -> Single<Int?> {
+        return Single.create(subscribe: { single -> Disposable in
+            if let currentPlayer = self.player {
                 let _ = currentPlayer.getDuration().continue({ task -> Any? in
                     DispatchQueue.main.async {
                         if let error = task.error {
@@ -348,9 +305,9 @@ extension PlayerService {
         })
     }
     
-    private func getPositionOfCurrentPlayer() -> Single<Int64?> {
+    private func getPosition() -> Single<Int64?> {
         return Single.create(subscribe: { single -> Disposable in
-            if let currentPlayer = self.currentPlayer {
+            if let currentPlayer = self.player {
                 let _ = currentPlayer.getPosition().continue({ task -> Any? in
                     DispatchQueue.main.async {
                         if let error = task.error {
@@ -374,9 +331,9 @@ extension PlayerService {
         })
     }
     
-    private func getCurrentPlayerData() -> Single<CurrentPlayerData?> {
+    private func getPlayerData() -> Single<PlayerData?> {
         return Single.create(subscribe: { single -> Disposable in
-            if let currentPlayer = self.currentPlayer {
+            if let currentPlayer = self.player {
                 let _ = currentPlayer.getStatus().continue({ task -> Any? in
                     DispatchQueue.main.async {
                         if let error = task.error {
@@ -385,12 +342,12 @@ extension PlayerService {
                             if let status = task.result as? MediaPlayerStatus {
                                 let statusRawValue = status.state().rawValue
                                 
-                                var currentPlayerData = CurrentPlayerData(status: status)
+                                var currentPlayerData = PlayerData(status: status)
                                 
                                 if statusRawValue != 7 && statusRawValue != 0 && statusRawValue != 6 {
-                                    self.getDurationOfCurrentPlayer()
+                                    self.getDuration()
                                         .subscribe(onSuccess: { duration in
-                                            self.getPositionOfCurrentPlayer()
+                                            self.getPosition()
                                                 .subscribe(onSuccess: { position in
                                                     currentPlayerData.duration = duration
                                                     currentPlayerData.position = position
