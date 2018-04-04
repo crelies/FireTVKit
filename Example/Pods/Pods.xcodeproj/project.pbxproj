@@ -354,6 +354,7 @@
 		B8AD5ED061EF7C218AA3D327659B0E2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1374EB47807E8EB4E1C54A3B04F46A2 /* SystemConfiguration.framework */; };
 		B8FD74DD6623BE10F69C8949C5C06EA1 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828F93DF804815052DEF41EFA58B0CD /* DelegateProxyType.swift */; };
 		B9182D0C20751DE3009CC39E /* PlayerServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9182D0B20751DE3009CC39E /* PlayerServiceError.swift */; };
+		B9182D0E20753EE7009CC39E /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9182D0D20753EE7009CC39E /* PlayerStatus.swift */; };
 		BA1BD464A99544E6211B7836E4A7D56B /* PlayerDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339438C76AFAA836D644C50B34250F8B /* PlayerDiscoveryService.swift */; };
 		BAA0F503415DFD0B69808E4362D5F0C2 /* NotificationCenter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBC86BF2B905314EB7960CDE26301A /* NotificationCenter+Rx.swift */; };
 		BAD9ED6A837BF0CDDF8724EB56751CA8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38641741C62FA2C64811DFACFAE419D6 /* Reachability.swift */; };
@@ -920,6 +921,7 @@
 		B87A16A8FA141D56F52075F1599FDCCE /* BoltsVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BoltsVersion.h; path = Bolts/Common/BoltsVersion.h; sourceTree = "<group>"; };
 		B8A61D431997220B3899182DB78173EC /* SwitchIfEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchIfEmpty.swift; path = RxSwift/Observables/SwitchIfEmpty.swift; sourceTree = "<group>"; };
 		B9182D0B20751DE3009CC39E /* PlayerServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerServiceError.swift; path = FireTVKit/Classes/PlayerServiceError.swift; sourceTree = "<group>"; };
+		B9182D0D20753EE7009CC39E /* PlayerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerStatus.swift; path = ../internal/PlayerStatus.swift; sourceTree = "<group>"; };
 		B95288FFE7090462E7DDB3DC9609F2C4 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		B99C61284F5565A4550EDD59776A5B29 /* UIControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Rx.swift"; path = "RxCocoa/iOS/UIControl+Rx.swift"; sourceTree = "<group>"; };
 		B9D719A029E7135D91920FB51CB5379C /* FireTVKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FireTVKit-dummy.m"; sourceTree = "<group>"; };
@@ -1738,6 +1740,7 @@
 				BA21D4F273E99DE7A0A1D659ECB3B046 /* PlayerDiscoveringInfo.swift */,
 				45A262AE1688FDCCE23A346834BF2E4D /* PlayerDiscoveringInfoStatus.swift */,
 				CE37D1122074B558008B87CC /* Subtitle.swift */,
+				B9182D0D20753EE7009CC39E /* PlayerStatus.swift */,
 			);
 			name = Models;
 			path = FireTVKit/Classes/Models;
@@ -2242,6 +2245,7 @@
 				573450541B92F982E8C51544900DA3D9 /* ReachabilityServiceProtocol.swift in Sources */,
 				3ACE9E5726B3D9CF60F6F96C12BA96C6 /* ServiceFactory.swift in Sources */,
 				D32F4FEA3011AB570C83CAB49DA362DD /* ServiceFactoryProtocol.swift in Sources */,
+				B9182D0E20753EE7009CC39E /* PlayerStatus.swift in Sources */,
 				B9182D0C20751DE3009CC39E /* PlayerServiceError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

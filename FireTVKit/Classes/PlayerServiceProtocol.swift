@@ -20,7 +20,6 @@ public protocol PlayerServiceProtocol {
     func pause() -> Completable
     func setPosition(position: Int64) -> Completable
     func stop() -> Completable
-    func update(withStatus status: MediaPlayerStatus, position: Int64) -> Single<PlayerData?>
 }
 
 extension PlayerServiceProtocol {

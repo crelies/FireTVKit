@@ -147,40 +147,11 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 			return Disposables.create()
 		})
     }
-    
-    // MARK: - player data
-    func update(withStatus status: MediaPlayerStatus, position: Int64) -> Single<PlayerData?> {
-		return Single.create(subscribe: { single -> Disposable in
-            var playerData = PlayerData(status: status)
-            
-            var disposable = Disposables.create()
-            
-            let state = status.state()
-            switch state.rawValue {
-                case 2: // ReadyToPlay
-                    disposable = self.getDuration()
-                        .subscribe(onSuccess: { duration in
-                            playerData.duration = duration
-                            // TODO: is this necessary anymore?
-                            single(.success(playerData))
-                        }, onError: { error in
-                            single(.error(error))
-                        })
-                case 3, 4, 5: // Playing, Paused, Seeking
-                    playerData.position = position
-                    single(.success(playerData))
-                default:
-                    single(.success(nil))
-            }
-			
-			return disposable
-		})
-    }
 }
 
 extension PlayerService: MediaPlayerStatusListener {
     func onStatusChange(_ status: MediaPlayerStatus!, positionChangedTo position: Int64) {
-        update(withStatus: status, position: position)
+        createPlayerData(withStatus: status, position: position)
             .subscribe(onSuccess: { playerData in
                 self.playerDataVariable.value = playerData
             }).disposed(by: disposeBag)
@@ -269,6 +240,38 @@ extension PlayerService {
         })
     }
     
+    private func createPlayerData(withStatus status: MediaPlayerStatus, position: Int64) -> Single<PlayerData?> {
+        return Single.create(subscribe: { single -> Disposable in
+            var disposable = Disposables.create()
+            
+            var playerData = PlayerData(status: status)
+            
+            if let playerStatus = PlayerStatus(rawValue: status.state().rawValue) {
+                switch playerStatus {
+                    case .readyToPlay:
+                        disposable = self.getDuration()
+                            .subscribe(onSuccess: { duration in
+                                playerData.duration = duration
+                                single(.success(playerData))
+                            }, onError: { error in
+                                single(.error(error))
+                            })
+                    
+                    case .playing, .paused, .seeking:
+                        playerData.position = position
+                        single(.success(playerData))
+
+                    default:
+                        single(.success(playerData))
+                }
+            } else {
+                single(.success(playerData))
+            }
+            
+            return disposable
+        })
+    }
+    
     private func getPlayerData() -> Single<PlayerData?> {
         return Single.create(subscribe: { single -> Disposable in
             
@@ -282,25 +285,28 @@ extension PlayerService {
                     if let status = task.result as? MediaPlayerStatus {
                         var currentPlayerData = PlayerData(status: status)
                         
-                        let statusRawValue = status.state().rawValue
-                        switch statusRawValue {
-                            case 1, 2, 3, 4, 5:
-                                disposable = self.getDuration()
-                                    .subscribe(onSuccess: { duration in
-                                        self.getPosition()
-                                            .subscribe(onSuccess: { position in
-                                                currentPlayerData.duration = duration
-                                                currentPlayerData.position = position
-                                                single(.success(currentPlayerData))
-                                            }, onError: { error in
-                                                single(.error(error))
-                                            }).disposed(by: self.disposeBag)
-                                    }, onError: { error in
-                                        single(.error(error))
-                                    })
-                            
-                            default:
-                                single(.success(currentPlayerData))
+                        if let playerStatus = PlayerStatus(rawValue: status.state().rawValue) {
+                            switch playerStatus {
+                                case .readyToPlay, .playing, .paused, .seeking:
+                                    disposable = self.getDuration()
+                                        .subscribe(onSuccess: { duration in
+                                            self.getPosition()
+                                                .subscribe(onSuccess: { position in
+                                                    currentPlayerData.duration = duration
+                                                    currentPlayerData.position = position
+                                                    single(.success(currentPlayerData))
+                                                }, onError: { error in
+                                                    single(.error(error))
+                                                }).disposed(by: self.disposeBag)
+                                        }, onError: { error in
+                                            single(.error(error))
+                                        })
+                                
+                                default:
+                                    single(.success(currentPlayerData))
+                            }
+                        } else {
+                            single(.success(currentPlayerData))
                         }
                     } else {
                         single(.error(PlayerServiceError.couldNotCastTaskResultToMediaPlayerStatus))
