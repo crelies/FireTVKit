@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal enum PlayerStatus: UInt32 {
+public enum PlayerStatus: UInt32 {
     case noMedia = 0
     case preparingMedia
     case readyToPlay

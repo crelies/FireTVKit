@@ -22,10 +22,10 @@ extension Int64 {
 public struct PlayerData {
 	var duration: Int?
 	var position: Int64?
-	let status: MediaPlayerStatus
+	var status: PlayerStatus?
 	
 	public init(status: MediaPlayerStatus) {
-		self.status = status
+        self.status = PlayerStatus(rawValue: status.state().rawValue)
 	}
 }
 
@@ -41,6 +41,6 @@ extension PlayerData: CustomStringConvertible {
             positionString = position.position
         }
         
-        return "Status: [\(status.state())], Duration: [\(durationString)], Position: [\(positionString)]"
+        return "Status: [\(status)], Duration: [\(durationString)], Position: [\(positionString)]"
     }
 }
