@@ -15,8 +15,8 @@ public protocol PlayerServiceProtocol {
     var playerData: Observable<PlayerData?> { get }
     init(withPlayer player: RemoteMediaPlayer)
     func play() -> Completable
-    func play(withMetadata metadata: String, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable
-    func play(withMetadata metadata: String, url: String) -> Completable
+    func play(withMetadata metadata: Metadata, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable
+    func play(withMetadata metadata: Metadata, url: String) -> Completable
     func pause() -> Completable
     func setPosition(position: Int64) -> Completable
     func stop() -> Completable
@@ -24,7 +24,7 @@ public protocol PlayerServiceProtocol {
 }
 
 extension PlayerServiceProtocol {
-    public func play(withMetadata metadata: String, url: String) -> Completable {
+    public func play(withMetadata metadata: Metadata, url: String) -> Completable {
         return play(withMetadata: metadata, url: url, autoPlay: true, playInBackground: false)
     }
 }

@@ -74,8 +74,12 @@ final class ViewController: UIViewController {
                     print(playerData)
                 }
             })
-            
-            _ = playerService.play(withMetadata: "Barcelona", url: URL).subscribe(onCompleted: {
+			
+			var metadata = Metadata(type: "video")
+			metadata.title = "Testvideo"
+			metadata.description = "A video for test purposes"
+			metadata.noreplay = true
+            _ = playerService.play(withMetadata: metadata, url: URL).subscribe(onCompleted: {
                 print("success")
             }, onError: { error in
                 print(error)

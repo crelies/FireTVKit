@@ -13,21 +13,23 @@ import UIKit
 internal final class PlayerService: NSObject, PlayerServiceProtocol {
     var player: RemoteMediaPlayer {
         willSet {
-            // disconnect current player
-            disconnect(fromPlayer: player)
-                .subscribe(onCompleted: {
-                    // connect to new player
-                    self.connect(toPlayer: newValue)
-                        .subscribe(onSuccess: { playerData in
-                            self.playerDataVariable.value = playerData
-                        }).disposed(by: self.disposeBag)
-                }) { _ in
-                    // connect to new player
-                    self.connect(toPlayer: newValue)
-                        .subscribe(onSuccess: { playerData in
-                            self.playerDataVariable.value = playerData
-                        }).disposed(by: self.disposeBag)
-                }.disposed(by: disposeBag)
+			if player.uniqueIdentifier() != newValue.uniqueIdentifier() {
+				// disconnect current player
+				disconnect(fromPlayer: player)
+					.subscribe(onCompleted: {
+						// connect to new player
+						self.connect(toPlayer: newValue)
+							.subscribe(onSuccess: { playerData in
+								self.playerDataVariable.value = playerData
+							}).disposed(by: self.disposeBag)
+					}) { _ in
+						// connect to new player
+						self.connect(toPlayer: newValue)
+							.subscribe(onSuccess: { playerData in
+								self.playerDataVariable.value = playerData
+							}).disposed(by: self.disposeBag)
+					}.disposed(by: disposeBag)
+			}
         }
     }
     
@@ -76,23 +78,30 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 			return Disposables.create()
 		})
     }
-    
-    // TODO: metadata encodable
-    func play(withMetadata metadata: String, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable {
+	
+    func play(withMetadata metadata: Metadata, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player.setMediaSourceToURL(url, metaData: metadata, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue({ task -> Any? in
-                if let error = task.error {
-                    DispatchQueue.main.async {
-                        completable(.error(error))
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        completable(.completed)
-                    }
-                }
-                
-                return nil
-            })
+			
+			do {
+				let metadataData = try JSONEncoder().encode(metadata)
+				let metadataString = String(data: metadataData, encoding: .utf8)
+				
+				let _ = self.player.setMediaSourceToURL(url, metaData: metadataString, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue({ task -> Any? in
+					if let error = task.error {
+						DispatchQueue.main.async {
+							completable(.error(error))
+						}
+					} else {
+						DispatchQueue.main.async {
+							completable(.completed)
+						}
+					}
+					
+					return nil
+				})
+			} catch {
+				completable(.error(error))
+			}
 			
 			return Disposables.create()
 		})
