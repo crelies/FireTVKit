@@ -18,6 +18,8 @@ final class ViewController: UIViewController {
     private var fireTVManager: FireTVManager?
     private var devices: [RemoteMediaPlayer] = []
     
+    private let URL = "https://r1---sn-4g5e6nl6.googlevideo.com/videoplayback?sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&source=youtube&mn=sn-4g5e6nl6,sn-4g5edne6&signature=522E2E7F17A3CC8ED7A5E4FDBD2D186F3454A858.8F7DA07947842E7F0D5338CAD1C3885A51C9F0CD&id=o-AEjMvYuBMyBV81eG8kj3LCfKWBIu_tEPhTjStuOc3Xyb&mime=video/mp4&fvip=1&c=WEB&ip=31.17.237.178&requiressl=yes&ratebypass=yes&mm=31,29&expire=1522800986&ipbits=0&initcwndbps=1243750&dur=178.584&lmt=1512104683161670&key=yt6&ei=-sTDWqmAJoGOgQfC-a3AAw&ms=au,rdu&mt=1522779288&itag=22&mv=m&pl=17"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,7 +68,14 @@ final class ViewController: UIViewController {
     @IBAction func didPressPlayTestVideoButton(_ sender: UIButton) {
         if let firstDevice = devices.first {
             let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
-            _ = playerService.play(withMetadata: "Barcelona", url: "https://r3---sn-xjpm-i5he.googlevideo.com/videoplayback?dur=166.556&id=o-AAAdnzEOS3RLurJGTwwgY_WsugGS-qbI3OzLztF4ByFD&pl=17&mime=video/mp4&ms=au,rdu&fvip=2&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&source=youtube&initcwndbps=785000&mv=m&mm=31,29&ip=31.17.237.178&mn=sn-xjpm-i5he,sn-4g5ednsd&expire=1522460888&ipbits=0&mt=1522439193&ratebypass=yes&itag=22&signature=BFDB93C1F01D6B11F9A2682C6637359EEB2E774A.AD850720E6A3BEB675A9524E92F318F50F8B52D6&lmt=1522278256189666&requiressl=yes&ei=eJS-WsiQGIXUgQfghoLADg&key=yt6&c=WEB").subscribe(onCompleted: {
+            
+            _ = playerService.playerData.subscribe(onNext: { playerData in
+                if let playerData = playerData {
+                    print(playerData)
+                }
+            })
+            
+            _ = playerService.play(withMetadata: "Barcelona", url: URL).subscribe(onCompleted: {
                 print("success")
             }, onError: { error in
                 print(error)
@@ -77,6 +86,7 @@ final class ViewController: UIViewController {
     @IBAction func didPressStopPlaybackButton(_ sender: UIButton) {
         if let firstDevice = devices.first {
             let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
+            
             _ = playerService.stop().subscribe(onCompleted: {
                 print("success")
             }, onError: { error in
