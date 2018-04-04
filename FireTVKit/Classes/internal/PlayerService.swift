@@ -61,15 +61,11 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
     // MARK: - player control
     func play() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player.play().continue({ task -> Any? in
+            let _ = self.player.play().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        completable(.error(error))
-                    }
+                    completable(.error(error))
                 } else {
-                    DispatchQueue.main.async {
-                        completable(.completed)
-                    }
+                    completable(.completed)
                 }
                 
                 return nil
@@ -86,15 +82,11 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 				let metadataData = try JSONEncoder().encode(metadata)
 				let metadataString = String(data: metadataData, encoding: .utf8)
 				
-				let _ = self.player.setMediaSourceToURL(url, metaData: metadataString, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue({ task -> Any? in
+                let _ = self.player.setMediaSourceToURL(url, metaData: metadataString, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
 					if let error = task.error {
-						DispatchQueue.main.async {
-							completable(.error(error))
-						}
+                        completable(.error(error))
 					} else {
-						DispatchQueue.main.async {
-							completable(.completed)
-						}
+                        completable(.completed)
 					}
 					
 					return nil
@@ -109,15 +101,11 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
     
     func pause() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player.pause().continue({ task -> Any? in
+            let _ = self.player.pause().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        completable(.error(error))
-                    }
+                    completable(.error(error))
                 } else {
-                    DispatchQueue.main.async {
-                        completable(.completed)
-                    }
+                    completable(.completed)
                 }
                 
                 return nil
@@ -127,17 +115,14 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 		})
     }
     
+    // TODO: mode
     func setPosition(position: Int64) -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player.seek(toPosition: position, andMode: ABSOLUTE).continue({ task -> Any? in
+            let _ = self.player.seek(toPosition: position, andMode: ABSOLUTE).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        completable(.error(error))
-                    }
+                    completable(.error(error))
                 } else {
-                    DispatchQueue.main.async {
-                        completable(.completed)
-                    }
+                    completable(.completed)
                 }
                 
                 return nil
@@ -149,15 +134,11 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
     
     func stop() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player.stop().continue({ task -> Any? in
+            let _ = self.player.stop().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        completable(.error(error))
-                    }
+                    completable(.error(error))
                 } else {
-                    DispatchQueue.main.async {
-                        completable(.completed)
-                    }
+                    completable(.completed)
                 }
                 
                 return nil
@@ -172,29 +153,27 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 		return Single.create(subscribe: { single -> Disposable in
             var playerData = PlayerData(status: status)
             
+            var disposable = Disposables.create()
+            
             let state = status.state()
             switch state.rawValue {
                 case 2: // ReadyToPlay
-                    self.getDuration()
+                    disposable = self.getDuration()
                         .subscribe(onSuccess: { duration in
                             playerData.duration = duration
                             // TODO: is this necessary anymore?
                             single(.success(playerData))
                         }, onError: { error in
                             single(.error(error))
-                        }).disposed(by: self.disposeBag)
+                        })
                 case 3, 4, 5: // Playing, Paused, Seeking
                     playerData.position = position
-                    DispatchQueue.main.async {
-                        single(.success(playerData))
-                    }
+                    single(.success(playerData))
                 default:
-                    DispatchQueue.main.async {
-                        single(.success(nil))
-                    }
+                    single(.success(nil))
             }
 			
-			return Disposables.create()
+			return disposable
 		})
     }
 }
@@ -212,38 +191,34 @@ extension PlayerService {
     // MARK: - player connection
     private func connect(toPlayer player: RemoteMediaPlayer) -> Single<PlayerData?> {
         return Single.create(subscribe: { single -> Disposable in
-            _ = player.add(self).continue({ task -> Any? in
+            var disposable = Disposables.create()
+            
+            _ = player.add(self).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        single(.error(error))
-                    }
+                    single(.error(error))
                 } else {
-                    self.getPlayerData()
+                    disposable = self.getPlayerData()
                         .subscribe(onSuccess: { currentPlayerData in
                             single(.success(currentPlayerData))
                         }, onError: { error in
                             single(.error(error))
-                        }).disposed(by: self.disposeBag)
+                        })
                 }
                 
                 return nil
             })
             
-            return Disposables.create()
+            return disposable
         })
     }
     
     private func disconnect(fromPlayer player: RemoteMediaPlayer) -> Completable {
         return Completable.create(subscribe: { completable -> Disposable in
-            _ = player.remove(self).continue({ task -> Any? in
+            _ = player.remove(self).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        completable(.error(error))
-                    }
+                    completable(.error(error))
                 } else {
-                    DispatchQueue.main.async {
-                        completable(.completed)
-                    }
+                    completable(.completed)
                 }
                 
                 return nil
@@ -256,20 +231,14 @@ extension PlayerService {
     // MARK: - player data
     private func getDuration() -> Single<Int?> {
         return Single.create(subscribe: { single -> Disposable in
-            let _ = self.player.getDuration().continue({ task -> Any? in
+            let _ = self.player.getDuration().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        single(.error(error))
-                    }
+                    single(.error(error))
                 } else {
                     if let duration = task.result as? Int {
-                        DispatchQueue.main.async {
-                            single(.success(duration))
-                        }
+                        single(.success(duration))
                     } else {
-                        DispatchQueue.main.async {
-                            single(.success(nil))
-                        }
+                        single(.error(PlayerServiceError.couldNotCastDurationToInt))
                     }
                 }
                 
@@ -282,20 +251,14 @@ extension PlayerService {
     
     private func getPosition() -> Single<Int64?> {
         return Single.create(subscribe: { single -> Disposable in
-            let _ = self.player.getPosition().continue({ task -> Any? in
+            let _ = self.player.getPosition().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        single(.error(error))
-                    }
+                    single(.error(error))
                 } else {
                     if let position = task.result as? Int64 {
-                        DispatchQueue.main.async {
-                            single(.success(position))
-                        }
+                        single(.success(position))
                     } else {
-                        DispatchQueue.main.async {
-                            single(.success(nil))
-                        }
+                        single(.error(PlayerServiceError.couldNotCastPositionToInt64))
                     }
                 }
                 
@@ -308,48 +271,46 @@ extension PlayerService {
     
     private func getPlayerData() -> Single<PlayerData?> {
         return Single.create(subscribe: { single -> Disposable in
-            let _ = self.player.getStatus().continue({ task -> Any? in
+            
+            var disposable = Disposables.create()
+            
+            let _ = self.player.getStatus().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 
                 if let error = task.error {
-                    DispatchQueue.main.async {
-                        single(.error(error))
-                    }
+                    single(.error(error))
                 } else {
                     if let status = task.result as? MediaPlayerStatus {
-                        let statusRawValue = status.state().rawValue
-                        
                         var currentPlayerData = PlayerData(status: status)
                         
-                        if statusRawValue != 7 && statusRawValue != 0 && statusRawValue != 6 {
-                            self.getDuration()
-                                .subscribe(onSuccess: { duration in
-                                    self.getPosition()
-                                        .subscribe(onSuccess: { position in
-                                            currentPlayerData.duration = duration
-                                            currentPlayerData.position = position
-                                            single(.success(currentPlayerData))
-                                        }, onError: { error in
-                                            single(.error(error))
-                                        }).disposed(by: self.disposeBag)
-                                }, onError: { error in
-                                    single(.error(error))
-                                }).disposed(by: self.disposeBag)
-                        } else {
-                            DispatchQueue.main.async {
+                        let statusRawValue = status.state().rawValue
+                        switch statusRawValue {
+                            case 1, 2, 3, 4, 5:
+                                disposable = self.getDuration()
+                                    .subscribe(onSuccess: { duration in
+                                        self.getPosition()
+                                            .subscribe(onSuccess: { position in
+                                                currentPlayerData.duration = duration
+                                                currentPlayerData.position = position
+                                                single(.success(currentPlayerData))
+                                            }, onError: { error in
+                                                single(.error(error))
+                                            }).disposed(by: self.disposeBag)
+                                    }, onError: { error in
+                                        single(.error(error))
+                                    })
+                            
+                            default:
                                 single(.success(currentPlayerData))
-                            }
                         }
                     } else {
-                        DispatchQueue.main.async {
-                            single(.success(nil))
-                        }
+                        single(.error(PlayerServiceError.couldNotCastTaskResultToMediaPlayerStatus))
                     }
                 }
                 
                 return nil
             })
             
-            return Disposables.create()
+            return disposable
         })
     }
 }
