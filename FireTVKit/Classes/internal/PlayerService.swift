@@ -115,10 +115,9 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 		})
     }
     
-    // TODO: mode
-    func setPosition(position: Int64) -> Completable {
+    func setPosition(position: Int64, type: SeekType) -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player.seek(toPosition: position, andMode: ABSOLUTE).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+            let _ = self.player.seek(toPosition: position, andMode: type).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
                     completable(.error(error))
                 } else {

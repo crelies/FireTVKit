@@ -18,7 +18,7 @@ public protocol PlayerServiceProtocol {
     func play(withMetadata metadata: Metadata, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable
     func play(withMetadata metadata: Metadata, url: String) -> Completable
     func pause() -> Completable
-    func setPosition(position: Int64) -> Completable
+    func setPosition(position: Int64, type: SeekType) -> Completable
     func stop() -> Completable
 }
 
