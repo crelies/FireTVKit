@@ -16,18 +16,22 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 			if player.uniqueIdentifier() != newValue.uniqueIdentifier() {
 				// disconnect current player
 				disconnect(fromPlayer: player)
-					.subscribe(onCompleted: {
+					.subscribe(onCompleted: { [weak self] in
 						// connect to new player
-						self.connect(toPlayer: newValue)
+						self?.connect(toPlayer: newValue)
 							.subscribe(onSuccess: { playerData in
-								self.playerDataVariable.value = playerData
-							}).disposed(by: self.disposeBag)
-					}) { _ in
+                                if let playerData = playerData {
+                                    self?.playerDataVariable.value = playerData
+                                }
+							}).disposed(by: self!.disposeBag)
+					}) { [weak self] _ in
 						// connect to new player
-						self.connect(toPlayer: newValue)
+						self?.connect(toPlayer: newValue)
 							.subscribe(onSuccess: { playerData in
-								self.playerDataVariable.value = playerData
-							}).disposed(by: self.disposeBag)
+                                if let playerData = playerData {
+                                   self?.playerDataVariable.value = playerData
+                                }
+							}).disposed(by: self!.disposeBag)
 					}.disposed(by: disposeBag)
 			}
         }
@@ -47,15 +51,17 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
         super.init()
         
         connect(toPlayer: player)
-            .subscribe(onSuccess: { playerData in
-                self.playerDataVariable.value = playerData
+            .subscribe(onSuccess: { [weak self] playerData in
+                if let playerData = playerData {
+                    self?.playerDataVariable.value = playerData
+                }
             }).disposed(by: disposeBag)
+        
+        print("PlayerService initialized")
     }
     
     deinit {
-        _ = disconnect(fromPlayer: player).subscribe(onCompleted: {
-            // TODO:
-        })
+        print("PlayerService deinitialized")
     }
     
     // MARK: - player control
@@ -146,13 +152,21 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 			return Disposables.create()
 		})
     }
+    
+    func disconnect() {
+        disconnect(fromPlayer: player)
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
 }
 
 extension PlayerService: MediaPlayerStatusListener {
     func onStatusChange(_ status: MediaPlayerStatus!, positionChangedTo position: Int64) {
         createPlayerData(withStatus: status, position: position)
             .subscribe(onSuccess: { playerData in
-                self.playerDataVariable.value = playerData
+                if let playerData = playerData {
+                    self.playerDataVariable.value = playerData
+                }
             }).disposed(by: disposeBag)
     }
 }
@@ -161,18 +175,20 @@ extension PlayerService {
     // MARK: - player connection
     private func connect(toPlayer player: RemoteMediaPlayer) -> Single<PlayerData?> {
         return Single.create(subscribe: { single -> Disposable in
-            var disposable = Disposables.create()
+            let disposable = Disposables.create()
             
             _ = player.add(self).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
                     single(.error(error))
                 } else {
-                    disposable = self.getPlayerData()
-                        .subscribe(onSuccess: { currentPlayerData in
-                            single(.success(currentPlayerData))
-                        }, onError: { error in
-                            single(.error(error))
-                        })
+                    // TODO: this should be not necessary because of the status updates
+//                    disposable = self.getPlayerData()
+//                        .subscribe(onSuccess: { currentPlayerData in
+//                            single(.success(currentPlayerData))
+//                        }, onError: { error in
+//                            single(.error(error))
+//                        })
+                    single(.success(nil))
                 }
                 
                 return nil

@@ -20,6 +20,7 @@ public protocol PlayerServiceProtocol {
     func pause() -> Completable
     func setPosition(position: Int64, type: SeekType) -> Completable
     func stop() -> Completable
+    func disconnect()
 }
 
 extension PlayerServiceProtocol {

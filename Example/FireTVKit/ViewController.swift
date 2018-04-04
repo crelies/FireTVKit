@@ -18,7 +18,7 @@ final class ViewController: UIViewController {
     private var fireTVManager: FireTVManager?
     private var devices: [RemoteMediaPlayer] = []
     
-    private let URL = "https://r1---sn-4g5e6nl6.googlevideo.com/videoplayback?sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&source=youtube&mn=sn-4g5e6nl6,sn-4g5edne6&signature=522E2E7F17A3CC8ED7A5E4FDBD2D186F3454A858.8F7DA07947842E7F0D5338CAD1C3885A51C9F0CD&id=o-AEjMvYuBMyBV81eG8kj3LCfKWBIu_tEPhTjStuOc3Xyb&mime=video/mp4&fvip=1&c=WEB&ip=31.17.237.178&requiressl=yes&ratebypass=yes&mm=31,29&expire=1522800986&ipbits=0&initcwndbps=1243750&dur=178.584&lmt=1512104683161670&key=yt6&ei=-sTDWqmAJoGOgQfC-a3AAw&ms=au,rdu&mt=1522779288&itag=22&mv=m&pl=17"
+    private let URL = "https://r1---sn-4g5edne6.googlevideo.com/videoplayback?ratebypass=yes&pl=17&mime=video/mp4&ipbits=0&ei=aQ3FWvehIcysgQeA-K2gDA&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&c=WEB&expire=1522885065&requiressl=yes&id=o-AOk9a4tp4uz4F4fmBjYwdVJ047eVyUH4iGpv-0VrQ1Vq&dur=178.584&signature=A02CCE9AAB334830D6B1165A3AEA9A602506E4B2.E01E85A3615BEE41FBD8EB3F1071627BD172D917&mm=31,29&mn=sn-4g5edne6,sn-4g5e6nl6&mt=1522863387&itag=22&initcwndbps=1170000&ip=31.17.237.178&key=yt6&lmt=1512104683161670&fvip=1&ms=au,rdu&source=youtube&mv=m"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +84,8 @@ final class ViewController: UIViewController {
             }, onError: { error in
                 print(error)
             })
+            
+            playerService.disconnect()
         }
     }
     
@@ -91,11 +93,19 @@ final class ViewController: UIViewController {
         if let firstDevice = devices.first {
             let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
             
+            _ = playerService.playerData.subscribe(onNext: { playerData in
+                if let playerData = playerData {
+                    print(playerData)
+                }
+            })
+
             _ = playerService.stop().subscribe(onCompleted: {
                 print("success")
             }, onError: { error in
                 print(error)
             })
+            
+            playerService.disconnect()
         }
     }
 }
