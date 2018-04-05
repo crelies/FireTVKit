@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FireTV Selection View Controller-->
+        <scene sceneID="gr1-1F-waK">
+            <objects>
+                <viewController id="mYu-q3-N7i" customClass="FireTVSelectionViewController" customModule="FireTVKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qsw-cV-GiV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n7T-1i-4sv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n7T-1i-4sv" firstAttribute="top" secondItem="NCG-ax-oPO" secondAttribute="top" id="7Ms-zX-PM1"/>
+                            <constraint firstItem="NCG-ax-oPO" firstAttribute="trailing" secondItem="n7T-1i-4sv" secondAttribute="trailing" id="JBf-gp-UTG"/>
+                            <constraint firstItem="n7T-1i-4sv" firstAttribute="leading" secondItem="NCG-ax-oPO" secondAttribute="leading" id="Lir-Pr-2Lh"/>
+                            <constraint firstItem="NCG-ax-oPO" firstAttribute="bottom" secondItem="n7T-1i-4sv" secondAttribute="bottom" id="WKF-az-fr7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NCG-ax-oPO"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="n7T-1i-4sv" id="xab-bG-N7z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plq-0f-vb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1073" y="255"/>
+        </scene>
+    </scenes>
+</document>
