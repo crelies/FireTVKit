@@ -8,6 +8,10 @@ Discovering and controlling your FireTV is now easy
 [![Carthage](https://img.shields.io/badge/carthage-compatible-green.svg?longCache=true&style=flat-square)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
 
+## Features ##
+
+Coming soon ...
+
 ## How to use
 
 Coming soon ...
