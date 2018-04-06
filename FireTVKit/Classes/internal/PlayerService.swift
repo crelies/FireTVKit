@@ -36,11 +36,12 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 			}
         }
     }
+	
+	var playerData: Observable<PlayerData?> {
+		return playerDataVariable.asObservable()
+	}
     
     private var playerDataVariable: Variable<PlayerData?>
-    var playerData: Observable<PlayerData?> {
-        return playerDataVariable.asObservable()
-    }
 	private let disposeBag: DisposeBag
 	
     init(withPlayer player: RemoteMediaPlayer) {
@@ -92,7 +93,7 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 					if let error = task.error {
                         completable(.error(error))
 					} else {
-                        completable(.completed)
+						completable(.completed)
 					}
 					
 					return nil
@@ -152,6 +153,69 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 			return Disposables.create()
 		})
     }
+	
+	// MARK: - player data
+	func getPlayerData() -> Single<PlayerData> {
+		return Single.create(subscribe: { single -> Disposable in
+			
+			let statusTask: BFTask<AnyObject> = self.player.getStatus()
+			let positionTask: BFTask<AnyObject> = self.player.getPosition()
+			let tasks = [statusTask, positionTask]
+			
+			BFTask<AnyObject>(forCompletionOfAllTasksWithResults: tasks).continue(with: BFExecutor.mainThread(), with: { taskResults -> Any? in
+				if let results = taskResults.result as? [AnyObject], results.count > 1, let status = results[0] as? MediaPlayerStatus, let position = results[1] as? Int64 {
+					let playerData = PlayerData(status: status, position: position)
+					single(.success(playerData))
+				} else {
+					single(.error(PlayerServiceError.invalidTaskResult))
+				}
+				
+				return nil
+			})
+			
+			return Disposables.create()
+		})
+	}
+	
+	func getDuration() -> Single<Int> {
+		return Single.create(subscribe: { single -> Disposable in
+			let _ = self.player.getDuration().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+				if let error = task.error {
+					single(.error(error))
+				} else {
+					if let duration = task.result as? Int {
+						single(.success(duration))
+					} else {
+						single(.error(PlayerServiceError.couldNotCastDurationToInt))
+					}
+				}
+				
+				return nil
+			})
+			
+			return Disposables.create()
+		})
+	}
+	
+	func getPosition() -> Single<Int64> {
+		return Single.create(subscribe: { single -> Disposable in
+			let _ = self.player.getPosition().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+				if let error = task.error {
+					single(.error(error))
+				} else {
+					if let position = task.result as? Int64 {
+						single(.success(position))
+					} else {
+						single(.error(PlayerServiceError.couldNotCastPositionToInt64))
+					}
+				}
+				
+				return nil
+			})
+			
+			return Disposables.create()
+		})
+	}
     
     func disconnect() {
         disconnect(fromPlayer: player)
@@ -162,12 +226,16 @@ internal final class PlayerService: NSObject, PlayerServiceProtocol {
 
 extension PlayerService: MediaPlayerStatusListener {
     func onStatusChange(_ status: MediaPlayerStatus!, positionChangedTo position: Int64) {
-        createPlayerData(withStatus: status, position: position)
-            .subscribe(onSuccess: { playerData in
-                if let playerData = playerData {
-                    self.playerDataVariable.value = playerData
-                }
-            }).disposed(by: disposeBag)
+		let playerData = PlayerData(status: status, position: position)
+		self.playerDataVariable.value = playerData
+		
+		if playerData.status == .readyToPlay {
+			self.getDuration()
+				.subscribe(onSuccess: { duration in
+					let playerData = PlayerData(duration: duration)
+					self.playerDataVariable.value = playerData
+				}).disposed(by: disposeBag)
+		}
     }
 }
 
@@ -211,127 +279,6 @@ extension PlayerService {
             })
             
             return Disposables.create()
-        })
-    }
-    
-    // MARK: - player data
-    private func getDuration() -> Single<Int?> {
-        return Single.create(subscribe: { single -> Disposable in
-            let _ = self.player.getDuration().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
-                if let error = task.error {
-                    single(.error(error))
-                } else {
-                    if let duration = task.result as? Int {
-                        single(.success(duration))
-                    } else {
-                        single(.error(PlayerServiceError.couldNotCastDurationToInt))
-                    }
-                }
-                
-                return nil
-            })
-            
-            return Disposables.create()
-        })
-    }
-    
-    private func getPosition() -> Single<Int64?> {
-        return Single.create(subscribe: { single -> Disposable in
-            let _ = self.player.getPosition().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
-                if let error = task.error {
-                    single(.error(error))
-                } else {
-                    if let position = task.result as? Int64 {
-                        single(.success(position))
-                    } else {
-                        single(.error(PlayerServiceError.couldNotCastPositionToInt64))
-                    }
-                }
-                
-                return nil
-            })
-            
-            return Disposables.create()
-        })
-    }
-    
-    private func createPlayerData(withStatus status: MediaPlayerStatus, position: Int64) -> Single<PlayerData?> {
-        return Single.create(subscribe: { single -> Disposable in
-            var disposable = Disposables.create()
-            
-            var playerData = PlayerData(status: status)
-            
-            if let playerStatus = PlayerStatus(rawValue: status.state().rawValue) {
-                switch playerStatus {
-                    case .readyToPlay:
-                        disposable = self.getDuration()
-                            .subscribe(onSuccess: { duration in
-                                playerData.duration = duration
-                                single(.success(playerData))
-                            }, onError: { error in
-                                single(.error(error))
-                            })
-                    
-                    case .playing, .paused, .seeking:
-                        playerData.position = position
-                        single(.success(playerData))
-
-                    default:
-                        single(.success(playerData))
-                }
-            } else {
-                single(.success(playerData))
-            }
-            
-            return disposable
-        })
-    }
-    
-    private func getPlayerData() -> Single<PlayerData?> {
-        return Single.create(subscribe: { single -> Disposable in
-            
-            var disposable = Disposables.create()
-            
-            let _ = self.player.getStatus().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
-                
-                if let error = task.error {
-                    single(.error(error))
-                } else {
-                    if let status = task.result as? MediaPlayerStatus {
-                        var currentPlayerData = PlayerData(status: status)
-                        
-                        if let playerStatus = PlayerStatus(rawValue: status.state().rawValue) {
-                            switch playerStatus {
-                                case .readyToPlay, .playing, .paused, .seeking:
-                                    disposable = self.getDuration()
-                                        .subscribe(onSuccess: { duration in
-                                            self.getPosition()
-                                                .subscribe(onSuccess: { position in
-                                                    currentPlayerData.duration = duration
-                                                    currentPlayerData.position = position
-                                                    single(.success(currentPlayerData))
-                                                }, onError: { error in
-                                                    single(.error(error))
-                                                }).disposed(by: self.disposeBag)
-                                        }, onError: { error in
-                                            single(.error(error))
-                                        })
-                                
-                                default:
-                                    single(.success(currentPlayerData))
-                            }
-                        } else {
-                            single(.success(currentPlayerData))
-                        }
-                    } else {
-                        single(.error(PlayerServiceError.couldNotCastTaskResultToMediaPlayerStatus))
-                    }
-                }
-                
-                return nil
-            })
-            
-            return disposable
         })
     }
 }

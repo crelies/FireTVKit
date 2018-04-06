@@ -24,13 +24,24 @@ public struct PlayerData {
 	var position: Int64?
 	var status: PlayerStatus?
 	
-	public init(status: MediaPlayerStatus) {
+	init() {}
+	
+	init(status: MediaPlayerStatus) {
         self.status = PlayerStatus(rawValue: status.state().rawValue)
+	}
+	
+	init(status: MediaPlayerStatus, position: Int64) {
+		self.status = PlayerStatus(rawValue: status.state().rawValue)
+		self.position = position
+	}
+	
+	init(duration: Int) {
+		self.duration = duration
 	}
 }
 
 extension PlayerData: CustomStringConvertible {
-    public var description: String {
+	public var description: String {
         var durationString = "-"
         if let duration = duration {
             durationString = "\(duration)"
