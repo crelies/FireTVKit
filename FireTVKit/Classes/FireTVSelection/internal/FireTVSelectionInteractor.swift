@@ -16,26 +16,33 @@ protocol FireTVSelectionInteractorOutputProtocol {
 
 protocol FireTVSelectionInteractorInputProtocol {
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol)
-	func startFireTVDiscovery()
+	func startFireTVDiscovery() throws
 	func getFireTVs() -> Observable<[RemoteMediaPlayer]?>
 	func stopFireTVDiscovery()
 }
 
-class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
+final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     private weak var presenter: FireTVSelectionPresenterProtocol?
     private var dependencies: FireTVSelectionInteractorDependenciesProtocol
     
     init(dependencies: FireTVSelectionInteractorDependenciesProtocol) {
         self.dependencies = dependencies
-		self.dependencies.playerDiscoveryService.playerServiceID = "amzn.thin.pl"
+		
+		var playerDiscoveryService = self.dependencies.playerDiscoveryService
+		playerDiscoveryService.playerServiceID = "amzn.thin.pl"
     }
+	
+	// TODO: remove me
+	deinit {
+		print("FireTVSelectionInteractor deinit")
+	}
     
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol) {
         self.presenter = presenter
     }
 	
-	func startFireTVDiscovery() {
-		dependencies.playerDiscoveryService.startDiscovering()
+	func startFireTVDiscovery() throws {
+		try dependencies.playerDiscoveryService.startDiscovering()
 	}
 	
 	func getFireTVs() -> Observable<[RemoteMediaPlayer]?> {

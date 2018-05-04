@@ -21,11 +21,11 @@ public final class FireTVManager: FireTVManagerProtocol {
         dependencies = FireTVManagerDependencies()
     }
     
-    public func startDiscovery(forPlayerID playerID: String) { // "amzn.thin.pl"
-        var playerDiscoveryService = dependencies.playerDiscoveryService
+    public func startDiscovery(forPlayerID playerID: String) throws { // "amzn.thin.pl"
+		var playerDiscoveryService = dependencies.playerDiscoveryService
         playerDiscoveryService.playerServiceID = playerID
-        
-        dependencies.playerDiscoveryService.startDiscovering()
+		
+        try dependencies.playerDiscoveryService.startDiscovering()
     }
     
     public func stopDiscovery() {

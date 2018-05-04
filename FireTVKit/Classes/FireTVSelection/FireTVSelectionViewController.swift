@@ -2,7 +2,7 @@
 //  FireTVSelectionViewController.swift
 //  FireTVKit
 //
-//  Created by crelies on 02.05.2018.
+//  Created by crelies on 05.04.2018.
 //  Copyright © 2018 Christian Elies. All rights reserved.
 //
 
@@ -13,6 +13,7 @@ public final class FireTVSelectionViewController: UIViewController {
     
     @IBOutlet private(set) weak var tableView: UITableView!
     
+    // TODO: remove me
     deinit {
         print("FireTVSelectionViewController deinit")
     }

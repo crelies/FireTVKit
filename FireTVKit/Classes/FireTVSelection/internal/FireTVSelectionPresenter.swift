@@ -34,10 +34,6 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         playerViewModels = []
     }
     
-    deinit {
-        print("FireTVSelectionPresenter deinit")
-    }
-    
     func viewDidLoad() {
         view?.setTableViewDataSource(dataSource: self)
         view?.setTableViewDelegate(delegate: self)
@@ -46,18 +42,27 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
             print("onNext player")
             DispatchQueue.main.async {
                 if let player = player {
-                    let playerViewModels = player.map { PlayerViewModel(name: $0.name) }
+                    let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
                     self?.playerViewModels = playerViewModels
                     self?.view?.reloadData()
                 }
             }
-		}, onError: { error in
-			// TODO:
-		}).disposed(by: disposeBag)
+        }, onError: { error in
+            // TODO:
+        }).disposed(by: disposeBag)
     }
+	
+	// TODO: remove me
+	deinit {
+		print("FireTVSelectionPresenter deinit")
+	}
     
     func viewWillAppear(_ animated: Bool) {
-        interactor.startFireTVDiscovery()
+        do {
+            try interactor.startFireTVDiscovery()
+        } catch {
+            // TODO:
+        }
     }
     
     func viewDidAppear() {

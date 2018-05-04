@@ -23,13 +23,16 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'FireTVKit/Classes/**/*'
+  s.resource_bundle = {
+	  'FireTVKit' => 'FireTVKit/Classes/**/*.storyboard'
+  }
 
   s.frameworks = 'UIKit'
   
-  s.dependency 'AmazonFling', '1.3.1'
-  s.dependency 'ReachabilitySwift', '4.1.0'
-  s.dependency 'RxSwift', '4.0.0'
-  s.dependency 'RxCocoa', '4.0.0'
+  s.dependency 'AmazonFling', '~> 1.3.1'
+  s.dependency 'ReachabilitySwift', '~> 4.1.0'
+  s.dependency 'RxSwift', '~> 4.0.0'
+  s.dependency 'RxCocoa', '~> 4.0.0'
   
   # https://github.com/CocoaPods/CocoaPods/issues/2926#issuecomment-136766631
   s.pod_target_xcconfig = {

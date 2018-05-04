@@ -13,6 +13,6 @@ import RxSwift
 internal protocol FireTVManagerProtocol {
     var devices: Observable<[RemoteMediaPlayer]?> { get }
     
-    func startDiscovery(forPlayerID playerID: String)
+    func startDiscovery(forPlayerID playerID: String) throws
     func stopDiscovery()
 }
