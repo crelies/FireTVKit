@@ -57,15 +57,19 @@ final class ViewController: UIViewController {
         }
     }
     
-    @IBAction func didPressStartDiscoveryButton(_ sender: UIButton) {
-        fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
+    @IBAction private func didPressStartDiscoveryButton(_ sender: UIButton) {
+        do {
+            try fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
+        } catch {
+            // TODO:
+        }
     }
     
-    @IBAction func didPressStopDiscoveryButton(_ sender: UIButton) {
+    @IBAction private func didPressStopDiscoveryButton(_ sender: UIButton) {
         fireTVManager?.stopDiscovery()
     }
     
-    @IBAction func didPressPlayTestVideoButton(_ sender: UIButton) {
+    @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
         if let firstDevice = devices.first {
             let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
             
@@ -89,7 +93,7 @@ final class ViewController: UIViewController {
         }
     }
     
-    @IBAction func didPressStopPlaybackButton(_ sender: UIButton) {
+    @IBAction private func didPressStopPlaybackButton(_ sender: UIButton) {
         if let firstDevice = devices.first {
             let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
             
@@ -106,6 +110,15 @@ final class ViewController: UIViewController {
             })
             
             playerService.disconnect()
+        }
+    }
+    
+    @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
+        do {
+            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController()
+            present(fireTVSelectionVC, animated: true)
+        } catch {
+            print(error)
         }
     }
 }
