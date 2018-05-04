@@ -11,9 +11,9 @@ import Foundation
 import RxSwift
 
 public final class FireTVManager: FireTVManagerProtocol {
-    private var dependencies: FireTVManagerDependenciesProtocol
+    private let dependencies: FireTVManagerDependenciesProtocol
     
-    public var devices: Observable<[RemoteMediaPlayer]?> {
+    public var devices: Observable<[MyPlayer]?> {
         return dependencies.playerDiscoveryService.devicesVariable.asObservable()
     }
     
@@ -22,7 +22,9 @@ public final class FireTVManager: FireTVManagerProtocol {
     }
     
     public func startDiscovery(forPlayerID playerID: String) { // "amzn.thin.pl"
-        dependencies.playerDiscoveryService.playerServiceID = playerID
+        var playerDiscoveryService = dependencies.playerDiscoveryService
+        playerDiscoveryService.playerServiceID = playerID
+        
         dependencies.playerDiscoveryService.startDiscovering()
     }
     
