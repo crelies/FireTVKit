@@ -18,7 +18,7 @@ protocol FireTVSelectionPresenterProtocol: class, FireTVSelectionInteractorOutpu
 }
 
 // TODO: presenter should be table view delegate
-class FireTVSelectionPresenter: FireTVSelectionPresenterProtocol {
+final class FireTVSelectionPresenter: FireTVSelectionPresenterProtocol {
     private weak var view: FireTVSelectionViewProtocol?
     private let interactor: FireTVSelectionInteractorInputProtocol
     private let router: FireTVSelectionRouterProtocol
@@ -32,6 +32,11 @@ class FireTVSelectionPresenter: FireTVSelectionPresenterProtocol {
         self.dependencies = dependencies
 		disposeBag = DisposeBag()
     }
+	
+	// TODO: remove me
+	deinit {
+		print("FireTVSelectionPresenter deinit")
+	}
     
     func viewDidLoad() {
 		interactor.getFireTVs().subscribe(onNext: { player in
@@ -54,7 +59,11 @@ class FireTVSelectionPresenter: FireTVSelectionPresenterProtocol {
     }
     
     func viewWillAppear(_ animated: Bool) {
-        interactor.startFireTVDiscovery()
+		do {
+			try interactor.startFireTVDiscovery()
+		} catch {
+			// TODO:
+		}
     }
     
     func viewWillDisappear(_ animated: Bool) {

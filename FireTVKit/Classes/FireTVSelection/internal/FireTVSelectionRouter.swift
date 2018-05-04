@@ -12,6 +12,6 @@ protocol FireTVSelectionRouterProtocol {
     
 }
 
-class FireTVSelectionRouter: FireTVSelectionRouterProtocol {
+final class FireTVSelectionRouter: FireTVSelectionRouterProtocol {
     
 }
