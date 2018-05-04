@@ -22,7 +22,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'FireTVKit/Classes/**/*'
+  s.source_files = 'FireTVKit/Classes/**/*.swift'
   s.resource_bundle = {
 	  'FireTVKit' => 'FireTVKit/Classes/**/*.storyboard'
   }
@@ -37,6 +37,7 @@ TODO: Add long description of the pod here.
   # https://github.com/CocoaPods/CocoaPods/issues/2926#issuecomment-136766631
   s.pod_target_xcconfig = {
       'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/AmazonFling',
-      'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+      'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup',
+      'ENABLE_BITCODE'         => 'NO'
   }
 end

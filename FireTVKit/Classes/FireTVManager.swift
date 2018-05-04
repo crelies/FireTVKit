@@ -13,7 +13,7 @@ import RxSwift
 public final class FireTVManager: FireTVManagerProtocol {
     private let dependencies: FireTVManagerDependenciesProtocol
     
-    public var devices: Observable<[MyPlayer]?> {
+    public var devices: Observable<[RemoteMediaPlayer]?> {
         return dependencies.playerDiscoveryService.devicesVariable.asObservable()
     }
     

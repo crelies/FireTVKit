@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol FireTVSelectionWireframeProtocol {
-    static func makeViewController() throws -> UINavigationController
-}
-
 public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
 	// TODO: pass stream url
     public static func makeViewController() throws -> UINavigationController {
