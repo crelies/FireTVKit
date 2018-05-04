@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="JnA-qX-4Kw">
                         <barButtonItem key="rightBarButtonItem" title="Close" id="DSc-r8-SIt">
                             <connections>
-                                <action selector="didPressCloseBarButtonItemWithSender:" destination="mYu-q3-N7i" id="QGl-uF-6HR"/>
+                                <action selector="didPressCloseBarButtonItem:" destination="mYu-q3-N7i" id="xiu-dS-WIW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
