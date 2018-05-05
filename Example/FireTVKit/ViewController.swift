@@ -115,8 +115,19 @@ final class ViewController: UIViewController {
     
     @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
         do {
-            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController()
+            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(delegate: self)
             present(fireTVSelectionVC, animated: true)
+        } catch {
+            print(error)
+        }
+    }
+}
+
+extension ViewController: FireTVSelectionDelegateProtocol {
+    func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
+        do {
+            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player)
+            present(fireTVPlayerVC, animated: true)
         } catch {
             print(error)
         }
