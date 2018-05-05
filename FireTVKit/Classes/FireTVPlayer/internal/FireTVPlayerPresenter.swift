@@ -23,6 +23,11 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     private let router: FireTVPlayerRouterProtocol
     private let dependencies: FireTVPlayerPresenterDependenciesProtocol
     private let disposeBag: DisposeBag
+    private var state: FireTVPlayerPresenterState {
+        didSet {
+            updateUI(forState: state)
+        }
+    }
     
     init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol) {
         self.dependencies = dependencies
@@ -30,6 +35,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         self.interactor = interactor
         self.router = router
         self.disposeBag = DisposeBag()
+        self.state = .disconnected
     }
     
     // TODO: remove me
@@ -41,9 +47,11 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         view?.setPlayerName(interactor.getPlayerName())
         view?.setPositionText("00:00:00")
         view?.setDurationText("00:00:00")
+        state = .disconnected
         
         interactor.connect()
             .subscribe(onCompleted: { [weak self] in
+                self?.state = .connected
                 self?.getDuration()
                 self?.observePlayerData()
             }) { error in
@@ -60,6 +68,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         if let disconnect = interactor.disconnect() {
             disconnect
                 .subscribe(onCompleted: {
+                    self.state = .disconnected
                     self.router.dismiss(viewController: viewController)
                 }, onError: { error in
                     // TODO:
@@ -131,5 +140,17 @@ extension FireTVPlayerPresenter {
                 // TODO:
                 print("interactor.getPlayerData(): \(error.localizedDescription)")
             }).disposed(by: disposeBag)
+    }
+    
+    private func updateUI(forState state: FireTVPlayerPresenterState) {
+        switch state {
+            case .connected:
+                let viewModel = FireTVPlayerViewControllerViewModel(isPlayerControlEnabled: true)
+                view?.updateUI(withViewModel: viewModel)
+            
+            case .disconnected:
+                let viewModel = FireTVPlayerViewControllerViewModel(isPlayerControlEnabled: false)
+                view?.updateUI(withViewModel: viewModel)
+        }
     }
 }
