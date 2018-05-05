@@ -16,12 +16,14 @@ protocol FireTVPlayerInteractorOutputProtocol {
 
 protocol FireTVPlayerInteractorInputProtocol {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)
+    func connect() -> Completable
     func getPlayerName() -> String
     func getPlayerData() -> Observable<PlayerData?>
     func getDuration() -> Single<Int>
     func play() -> Completable
     func pause() -> Completable
     func stop() -> Completable
+    func disconnect() -> Completable?
 }
 
 final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
@@ -32,13 +34,14 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     init(dependencies: FireTVPlayerInteractorDependenciesProtocol, player: RemoteMediaPlayer) {
         self.dependencies = dependencies
         self.player = player
-        
-        var playerService = self.dependencies.playerService
-        playerService.player = self.player
     }
     
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol) {
         self.presenter = presenter
+    }
+    
+    func connect() -> Completable {
+        return dependencies.playerService.connectToPlayer(player)
     }
     
     func getPlayerName() -> String {
@@ -63,5 +66,9 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     
     func stop() -> Completable {
         return dependencies.playerService.stop()
+    }
+    
+    func disconnect() -> Completable? {
+        return dependencies.playerService.disconnect()
     }
 }

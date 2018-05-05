@@ -42,29 +42,14 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         view?.setPositionText("00:00:00")
         view?.setDurationText("00:00:00")
         
-        interactor.getDuration().subscribe(onSuccess: { [weak self] duration in
-            if let durationText = self?.createDurationText(fromDuration: duration) {
-                self?.view?.setDurationText(durationText)
-            }
-        }) { error in
-            // TODO:
-            print(error.localizedDescription)
-        }.disposed(by: disposeBag)
-        
-        interactor.getPlayerData().subscribe(onNext: { [weak self] playerData in
-            if let playerData = playerData {
-                if let durationString = playerData.durationString {
-                    self?.view?.setDurationText(durationString)
-                }
-                
-                if let positionString = playerData.positionString {
-                    self?.view?.setPositionText(positionString)
-                }
-            }
-        }, onError: { error in
-            // TODO:
-            print(error.localizedDescription)
-        }).disposed(by: disposeBag)
+        interactor.connect()
+            .subscribe(onCompleted: { [weak self] in
+                self?.getDuration()
+                self?.observePlayerData()
+            }) { error in
+                // TODO:
+                print(error.localizedDescription)
+            }.disposed(by: disposeBag)
     }
     
     func didPressCloseButton() {
@@ -72,7 +57,17 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             return
         }
         
-        router.dismiss(viewController: viewController)
+        if let disconnect = interactor.disconnect() {
+            disconnect
+                .subscribe(onCompleted: {
+                    self.router.dismiss(viewController: viewController)
+                }, onError: { error in
+                    // TODO:
+                    print(error.localizedDescription)
+                }).disposed(by: disposeBag)
+        } else {
+            router.dismiss(viewController: viewController)
+        }
     }
     
     func didPressPlayButton() {
@@ -110,5 +105,35 @@ extension FireTVPlayerPresenter {
         let seconds = Int(duration % 60)
         
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    private func getDuration() {
+        interactor.getDuration()
+            .subscribe(onSuccess: { [weak self] duration in
+                if let durationText = self?.createDurationText(fromDuration: duration) {
+                    self?.view?.setDurationText(durationText)
+                }
+            }) { error in
+                // TODO:
+                print(error.localizedDescription)
+            }.disposed(by: disposeBag)
+    }
+    
+    private func observePlayerData() {
+        interactor.getPlayerData()
+            .subscribe(onNext: { [weak self] playerData in
+                if let playerData = playerData {
+                    if let durationString = playerData.durationString {
+                        self?.view?.setDurationText(durationString)
+                    }
+                    
+                    if let positionString = playerData.positionString {
+                        self?.view?.setPositionText(positionString)
+                    }
+                }
+            }, onError: { error in
+                // TODO:
+                print(error.localizedDescription)
+            }).disposed(by: disposeBag)
     }
 }

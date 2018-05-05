@@ -9,6 +9,7 @@
 import Foundation
 
 public enum PlayerServiceError: Error {
+    case noPlayer
     case couldNotCastDurationToInt
     case couldNotCastPositionToInt64
     case couldNotCastTaskResultToMediaPlayerStatus

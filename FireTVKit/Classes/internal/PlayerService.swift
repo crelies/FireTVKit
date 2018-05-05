@@ -15,35 +15,7 @@ protocol PlayerServiceProvider {
 }
 
 final class PlayerService: NSObject, PlayerServiceProtocol {
-    var player: RemoteMediaPlayer? {
-        willSet {
-            guard let player = player, let newPlayer = newValue else {
-                return
-            }
-            
-            if player.uniqueIdentifier() != newPlayer.uniqueIdentifier() {
-				// disconnect current player
-				disconnect(fromPlayer: player)
-					.subscribe(onCompleted: { [weak self] in
-						// connect to new player
-						self?.connect(toPlayer: newPlayer)
-							.subscribe(onSuccess: { playerData in
-                                if let playerData = playerData {
-                                    self?.playerDataVariable.value = playerData
-                                }
-							}).disposed(by: self!.disposeBag)
-					}) { [weak self] _ in
-						// connect to new player
-						self?.connect(toPlayer: newPlayer)
-							.subscribe(onSuccess: { playerData in
-                                if let playerData = playerData {
-                                   self?.playerDataVariable.value = playerData
-                                }
-							}).disposed(by: self!.disposeBag)
-					}.disposed(by: disposeBag)
-			}
-        }
-    }
+    var player: RemoteMediaPlayer?
 	
 	var playerData: Observable<PlayerData?> {
 		return playerDataVariable.asObservable()
@@ -59,15 +31,6 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
         
         super.init()
         
-        if let player = self.player {
-            connect(toPlayer: player)
-                .subscribe(onSuccess: { [weak self] playerData in
-                    if let playerData = playerData {
-                        self?.playerDataVariable.value = playerData
-                    }
-                }).disposed(by: disposeBag)
-        }
-        
         // TODO: remove me
         print("PlayerService initialized")
     }
@@ -77,10 +40,49 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
         print("PlayerService deinitialized")
     }
     
+    func connectToPlayer(_ newPlayer: RemoteMediaPlayer) -> Completable {
+        return Completable.create { completable -> Disposable in
+            var disposable = Disposables.create()
+            
+            if let player = self.player {
+                if player.uniqueIdentifier() != newPlayer.uniqueIdentifier() {
+                    // disconnect from current player
+                    let disconnectFromCurrentPlayer = self.disconnect(fromPlayer: player)
+                    let connectToNewPlayer = self.connect(toPlayer: newPlayer)
+                    
+                    disposable = Completable.merge([disconnectFromCurrentPlayer, connectToNewPlayer])
+                        .subscribe(onCompleted: {
+                            
+                        }, onError: { error in
+                            // TODO:
+                            print(error)
+                        })
+                }
+            } else {
+                disposable = self.connect(toPlayer: newPlayer)
+                    .subscribe(onCompleted: {
+                    
+                    }, onError: { error in
+                        // TODO:
+                        print(error)
+                    })
+            }
+            
+            return disposable
+        }
+    }
+    
     // MARK: - player control
     func play() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player?.play().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                completable(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
+            let _ = player.play().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
                     completable(.error(error))
                 } else {
@@ -90,18 +92,24 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                 return nil
             })
 			
-			return Disposables.create()
+			return disposable
 		})
     }
 	
     func play(withMetadata metadata: Metadata, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-			
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                completable(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
 			do {
 				let metadataData = try JSONEncoder().encode(metadata)
 				let metadataString = String(data: metadataData, encoding: .utf8)
 				
-                let _ = self.player?.setMediaSourceToURL(url, metaData: metadataString, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+                let _ = player.setMediaSourceToURL(url, metaData: metadataString, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
 					if let error = task.error {
                         completable(.error(error))
 					} else {
@@ -114,13 +122,20 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 				completable(.error(error))
 			}
 			
-			return Disposables.create()
+			return disposable
 		})
     }
     
     func pause() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player?.pause().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                completable(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
+            let _ = player.pause().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
                     completable(.error(error))
                 } else {
@@ -130,13 +145,20 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                 return nil
             })
 			
-			return Disposables.create()
+			return disposable
 		})
     }
     
     func setPosition(position: Int64, type: SeekType) -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player?.seek(toPosition: position, andMode: type).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                completable(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
+            let _ = player.seek(toPosition: position, andMode: type).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
                     completable(.error(error))
                 } else {
@@ -146,13 +168,20 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                 return nil
             })
 			
-			return Disposables.create()
+			return disposable
 		})
     }
     
     func stop() -> Completable {
 		return Completable.create(subscribe: { completable -> Disposable in
-            let _ = self.player?.stop().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                completable(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
+            let _ = player.stop().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
                     completable(.error(error))
                 } else {
@@ -162,16 +191,22 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                 return nil
             })
 			
-			return Disposables.create()
+			return disposable
 		})
     }
 	
 	// MARK: - player data
 	func getPlayerData() -> Single<PlayerData> {
 		return Single.create(subscribe: { single -> Disposable in
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                single(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
 			
-            let statusTask: BFTask<AnyObject> = self.player!.getStatus()
-            let positionTask: BFTask<AnyObject> = self.player!.getPosition()
+            let statusTask: BFTask<AnyObject> = player.getStatus()
+            let positionTask: BFTask<AnyObject> = player.getPosition()
 			let tasks = [statusTask, positionTask]
 			
 			BFTask<AnyObject>(forCompletionOfAllTasksWithResults: tasks).continue(with: BFExecutor.mainThread(), with: { taskResults -> Any? in
@@ -185,13 +220,20 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 				return nil
 			})
 			
-			return Disposables.create()
+			return disposable
 		})
 	}
 	
 	func getDuration() -> Single<Int> {
 		return Single.create(subscribe: { single -> Disposable in
-            let _ = self.player?.getDuration().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                single(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
+            let _ = player.getDuration().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
 				if let error = task.error {
 					single(.error(error))
 				} else {
@@ -205,13 +247,20 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 				return nil
 			})
 			
-			return Disposables.create()
+			return disposable
 		})
 	}
 	
 	func getPosition() -> Single<Int64> {
 		return Single.create(subscribe: { single -> Disposable in
-            let _ = self.player?.getPosition().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+            let disposable = Disposables.create()
+            
+            guard let player = self.player else {
+                single(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
+            let _ = player.getPosition().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
 				if let error = task.error {
 					single(.error(error))
 				} else {
@@ -225,45 +274,43 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 				return nil
 			})
 			
-			return Disposables.create()
+			return disposable
 		})
 	}
     
-    func disconnect() {
+    func disconnect() -> Completable? {
         guard let player = player else {
-            return
+            return nil
         }
         
-        disconnect(fromPlayer: player)
-            .subscribe()
-            .disposed(by: disposeBag)
+        return disconnect(fromPlayer: player)
     }
 }
 
 extension PlayerService: MediaPlayerStatusListener {
     func onStatusChange(_ status: MediaPlayerStatus!, positionChangedTo position: Int64) {
 		let playerData = PlayerData(status: status, position: position)
-		self.playerDataVariable.value = playerData
+		playerDataVariable.value = playerData
 		
-		if playerData.status == .readyToPlay {
-			self.getDuration()
-				.subscribe(onSuccess: { duration in
-					let playerData = PlayerData(duration: duration)
-					self.playerDataVariable.value = playerData
-				}).disposed(by: disposeBag)
-		}
+//        if playerData.status == .readyToPlay {
+//            getDuration()
+//                .subscribe(onSuccess: { [weak self] duration in
+//                    let playerData = PlayerData(duration: duration)
+//                    self?.playerDataVariable.value = playerData
+//                }).disposed(by: disposeBag)
+//        }
     }
 }
 
 extension PlayerService {
     // MARK: - player connection
-    private func connect(toPlayer player: RemoteMediaPlayer) -> Single<PlayerData?> {
-        return Single.create(subscribe: { single -> Disposable in
+    private func connect(toPlayer player: RemoteMediaPlayer) -> Completable {
+        return Completable.create { completable -> Disposable in
             let disposable = Disposables.create()
             
             _ = player.add(self).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {
-                    single(.error(error))
+                    completable(.error(error))
                 } else {
                     // TODO: this should be not necessary because of the status updates
 //                    disposable = self.getPlayerData()
@@ -272,14 +319,14 @@ extension PlayerService {
 //                        }, onError: { error in
 //                            single(.error(error))
 //                        })
-                    single(.success(nil))
+                    completable(.completed)
                 }
                 
                 return nil
             })
             
             return disposable
-        })
+        }
     }
     
     private func disconnect(fromPlayer player: RemoteMediaPlayer) -> Completable {

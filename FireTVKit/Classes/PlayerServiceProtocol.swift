@@ -11,9 +11,10 @@ import Foundation
 import RxSwift
 
 public protocol PlayerServiceProtocol {
-    var player: RemoteMediaPlayer? { get set }
+    var player: RemoteMediaPlayer? { get }
     var playerData: Observable<PlayerData?> { get }
     init(withPlayer player: RemoteMediaPlayer?)
+    func connectToPlayer(_ newPlayer: RemoteMediaPlayer) -> Completable
     func play() -> Completable
     func play(withMetadata metadata: Metadata, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable
     func play(withMetadata metadata: Metadata, url: String) -> Completable
@@ -23,7 +24,7 @@ public protocol PlayerServiceProtocol {
 	func getPlayerData() -> Single<PlayerData>
 	func getDuration() -> Single<Int>
 	func getPosition() -> Single<Int64>
-    func disconnect()
+    func disconnect() -> Completable?
 }
 
 extension PlayerServiceProtocol {
