@@ -8,6 +8,6 @@
 
 import Foundation
 
-internal protocol HasPlayerService {
+protocol HasPlayerService {
     var playerService: PlayerServiceProtocol { get }
 }

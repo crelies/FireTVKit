@@ -10,7 +10,7 @@ import AmazonFling
 import Foundation
 import RxSwift
 
-internal protocol FireTVManagerProtocol {
+protocol FireTVManagerProtocol {
     var devices: Observable<[RemoteMediaPlayer]?> { get }
     
     func startDiscovery(forPlayerID playerID: String) throws

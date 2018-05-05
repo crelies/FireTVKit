@@ -8,11 +8,11 @@
 
 import Foundation
 
-internal protocol FireTVManagerDependenciesProtocol: HasPlayerDiscoveryService {
+protocol FireTVManagerDependenciesProtocol: HasPlayerDiscoveryService {
     
 }
 
-internal struct FireTVManagerDependencies: FireTVManagerDependenciesProtocol {
+struct FireTVManagerDependencies: FireTVManagerDependenciesProtocol {
     var playerDiscoveryService: PlayerDiscoveryServiceProtocol
     
     init() {

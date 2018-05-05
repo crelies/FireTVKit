@@ -9,16 +9,6 @@
 import AmazonFling
 import Foundation
 
-extension Int64 {
-    var position: String {
-        let hours = Int(self / (60 * 60))
-        let minutes = Int((self / 60) % 60)
-        let seconds = Int(self % 60)
-        
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-    }
-}
-
 public struct PlayerData {
 	var duration: Int?
 	var position: Int64?
@@ -48,10 +38,36 @@ extension PlayerData: CustomStringConvertible {
         }
         
         var positionString = "-"
-        if let position = position {
-            positionString = position.position
+        if let position = self.positionString {
+            positionString = position
         }
         
         return "Status: [\(status)], Duration: [\(durationString)], Position: [\(positionString)]"
+    }
+}
+
+extension PlayerData {
+    var positionString: String? {
+        guard let position = position else {
+            return nil
+        }
+        
+        let hours = Int(position / (60 * 60))
+        let minutes = Int((position / 60) % 60)
+        let seconds = Int(position % 60)
+        
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    var durationString: String? {
+        guard let duration = duration else {
+            return nil
+        }
+        
+        let hours = Int(duration / (60 * 60))
+        let minutes = Int((duration / 60) % 60)
+        let seconds = Int(duration % 60)
+        
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 }

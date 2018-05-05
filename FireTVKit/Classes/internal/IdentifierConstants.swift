@@ -17,5 +17,6 @@ struct IdentifierConstants {
     
     struct Storyboard {
         static let fireTVSelection = "FireTVSelection"
+        static let fireTVPlayer = "FireTVPlayer"
     }
 }

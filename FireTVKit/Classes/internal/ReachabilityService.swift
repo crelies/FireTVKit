@@ -10,11 +10,11 @@ import Reachability
 import RxSwift
 import UIKit
 
-internal protocol HasReachabilityService {
+protocol HasReachabilityService {
     var reachabilityService: ReachabilityServiceProtocol { get set }
 }
 
-internal final class ReachabilityService: ReachabilityServiceProtocol {
+final class ReachabilityService: ReachabilityServiceProtocol {
     private(set) var reachability: Reachability
 	private(set) var reachabilityInfo: Variable<Reachability?>
 	private(set) var listeningReachability: Bool

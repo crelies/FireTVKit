@@ -6,6 +6,7 @@
 //  Copyright © 2018 Christian Elies. All rights reserved.
 //
 
+import AmazonFling
 import RxSwift
 import UIKit
 
@@ -18,20 +19,29 @@ protocol FireTVSelectionPresenterProtocol: class, FireTVSelectionInteractorOutpu
 }
 
 final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol {
+    private let dependencies: FireTVSelectionPresenterDependenciesProtocol
     private weak var view: FireTVSelectionViewProtocol?
     private let interactor: FireTVSelectionInteractorInputProtocol
     private let router: FireTVSelectionRouterProtocol
-    private let dependencies: FireTVSelectionPresenterDependenciesProtocol
+    private weak var delegate: FireTVSelectionDelegateProtocol?
 	private let disposeBag: DisposeBag
+    private var player: [RemoteMediaPlayer]
     private var playerViewModels: [PlayerViewModel]
     
-    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol) {
+    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, delegate: FireTVSelectionDelegateProtocol) {
+        self.dependencies = dependencies
         self.view = view
         self.interactor = interactor
         self.router = router
-        self.dependencies = dependencies
+        self.delegate = delegate
 		disposeBag = DisposeBag()
+        player = []
         playerViewModels = []
+    }
+    
+    // TODO: remove me
+    deinit {
+        print("FireTVSelectionPresenter deinit")
     }
     
     func viewDidLoad() {
@@ -42,6 +52,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
             print("onNext player")
             DispatchQueue.main.async {
                 if let player = player {
+                    self?.player = player
                     let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
                     self?.playerViewModels = playerViewModels
                     self?.view?.reloadData()
@@ -52,11 +63,6 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         }).disposed(by: disposeBag)
     }
 	
-	// TODO: remove me
-	deinit {
-		print("FireTVSelectionPresenter deinit")
-	}
-    
     func viewWillAppear(_ animated: Bool) {
         do {
             try interactor.startFireTVDiscovery()
@@ -103,6 +109,17 @@ extension FireTVSelectionPresenter: UITableViewDataSource {
 
 extension FireTVSelectionPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO:
+        guard let viewController = view as? FireTVSelectionViewController else {
+            return
+        }
+        
+        router.dismiss(viewController: viewController)
+        
+        guard indexPath.row >= 0, indexPath.row < self.player.count else {
+            return
+        }
+        
+        let player = self.player[indexPath.row]
+        delegate?.didSelectPlayer(viewController, player: player)
     }
 }
