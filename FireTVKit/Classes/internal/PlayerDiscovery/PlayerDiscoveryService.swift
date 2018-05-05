@@ -78,5 +78,6 @@ extension PlayerDiscoveryService: PlayerDiscoveryControllerDelegateProtocol {
     
 	func discoveryFailure(_ discoveryController: PlayerDiscoveryController) {
 		// TODO: what to do?
+        print("discovery failure")
     }
 }

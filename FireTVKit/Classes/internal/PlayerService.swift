@@ -52,19 +52,19 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                     
                     disposable = Completable.merge([disconnectFromCurrentPlayer, connectToNewPlayer])
                         .subscribe(onCompleted: {
-                            
+                            self.player = newPlayer
                         }, onError: { error in
                             // TODO:
-                            print(error)
+                            print("connectToPlayer: \(error)")
                         })
                 }
             } else {
                 disposable = self.connect(toPlayer: newPlayer)
                     .subscribe(onCompleted: {
-                    
+                        self.player = newPlayer
                     }, onError: { error in
                         // TODO:
-                        print(error)
+                        print("connectToPlayer: \(error)")
                     })
             }
             

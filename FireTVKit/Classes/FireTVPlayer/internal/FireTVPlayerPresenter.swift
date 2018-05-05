@@ -48,7 +48,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 self?.observePlayerData()
             }) { error in
                 // TODO:
-                print(error.localizedDescription)
+                print("interactor.connect(): \(error.localizedDescription)")
             }.disposed(by: disposeBag)
     }
     
@@ -63,7 +63,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                     self.router.dismiss(viewController: viewController)
                 }, onError: { error in
                     // TODO:
-                    print(error.localizedDescription)
+                    print("interactor.disconnect(): \(error.localizedDescription)")
                 }).disposed(by: disposeBag)
         } else {
             router.dismiss(viewController: viewController)
@@ -75,7 +75,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             print("player played")
         }) { error in
             // TODO:
-            print(error.localizedDescription)
+            print("interactor.play(): \(error.localizedDescription)")
         }.disposed(by: disposeBag)
     }
     
@@ -84,7 +84,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             print("player paused")
         }) { error in
             // TODO:
-            print(error.localizedDescription)
+            print("interactor.pause(): \(error.localizedDescription)")
         }.disposed(by: disposeBag)
     }
     
@@ -93,7 +93,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             print("player stopped")
         }) { error in
             // TODO:
-            print(error.localizedDescription)
+            print("interactor.stop(): \(error.localizedDescription)")
         }.disposed(by: disposeBag)
     }
 }
@@ -115,7 +115,7 @@ extension FireTVPlayerPresenter {
                 }
             }) { error in
                 // TODO:
-                print(error.localizedDescription)
+                print("interactor.getDuration(): \(error.localizedDescription)")
             }.disposed(by: disposeBag)
     }
     
@@ -129,7 +129,7 @@ extension FireTVPlayerPresenter {
                 }
             }, onError: { error in
                 // TODO:
-                print(error.localizedDescription)
+                print("interactor.getPlayerData(): \(error.localizedDescription)")
             }).disposed(by: disposeBag)
     }
 }
