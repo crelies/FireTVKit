@@ -123,10 +123,6 @@ extension FireTVPlayerPresenter {
         interactor.getPlayerData()
             .subscribe(onNext: { [weak self] playerData in
                 if let playerData = playerData {
-                    if let durationString = playerData.durationString {
-                        self?.view?.setDurationText(durationString)
-                    }
-                    
                     if let positionString = playerData.positionString {
                         self?.view?.setPositionText(positionString)
                     }
