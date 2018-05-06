@@ -16,26 +16,14 @@ final class ViewController: UIViewController {
     
     private let disposeBag: DisposeBag = DisposeBag()
     private var fireTVManager: FireTVManager?
-    private var devices: [RemoteMediaPlayer] = []
+    private var selectedDevice: RemoteMediaPlayer?
     
-    private let URL = "https://r1---sn-4g5edne6.googlevideo.com/videoplayback?ratebypass=yes&pl=17&mime=video/mp4&ipbits=0&ei=aQ3FWvehIcysgQeA-K2gDA&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&c=WEB&expire=1522885065&requiressl=yes&id=o-AOk9a4tp4uz4F4fmBjYwdVJ047eVyUH4iGpv-0VrQ1Vq&dur=178.584&signature=A02CCE9AAB334830D6B1165A3AEA9A602506E4B2.E01E85A3615BEE41FBD8EB3F1071627BD172D917&mm=31,29&mn=sn-4g5edne6,sn-4g5e6nl6&mt=1522863387&itag=22&initcwndbps=1170000&ip=31.17.237.178&key=yt6&lmt=1512104683161670&fvip=1&ms=au,rdu&source=youtube&mv=m"
+    private let URL = "https://r1---sn-4g5e6nl6.googlevideo.com/videoplayback?dur=178.584&itag=22&pl=17&ei=M0XvWoegKMmegAfztJG4AQ&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&mime=video/mp4&key=yt6&fexp=23724337&ipbits=0&expire=1525651859&lmt=1512104683161670&id=o-ABzE9LemUdCOTAYBY9A-HhWwb8xSc0bIMxVxeqny7I44&requiressl=yes&mm=31,29&mn=sn-4g5e6nl6,sn-4g5edne6&initcwndbps=1163750&c=WEB&source=youtube&fvip=1&signature=0957CD6DE338C77BD7014DA43BA874657AABDE86.CAB7B1805F116B3C0909F54A1DF7CD220CB7A1A1&ip=31.17.237.178&ms=au,rdu&mt=1525630133&ratebypass=yes&mv=m"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fireTVManager = FireTVManager()
-        
-        fireTVManager?.devices.subscribe(onNext: { devices in
-            DispatchQueue.main.async {
-                if let devices = devices {
-                    self.foundDevicesLabel.text = devices.flatMap { $0.name() }.joined(separator: "\n")
-                    
-                    self.devices = devices
-                } else {
-                    self.foundDevicesLabel.text = "No devices found"
-                }
-            }
-        }).disposed(by: disposeBag)
         
         if let reachabilityService = ServiceFactory.makeReachabilityService() {
             do {
@@ -70,52 +58,51 @@ final class ViewController: UIViewController {
     }
     
     @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
-        if let firstDevice = devices.first {
-            let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
-            
-            _ = playerService.playerData.subscribe(onNext: { playerData in
-                if let playerData = playerData {
-                    print(playerData)
-                }
-            })
-			
-			var metadata = Metadata(type: "video")
-			metadata.title = "Testvideo"
-			metadata.description = "A video for test purposes"
-			metadata.noreplay = true
-            _ = playerService.play(withMetadata: metadata, url: URL).subscribe(onCompleted: {
-                print("success")
-            }, onError: { error in
-                print(error)
-            })
-            
-            playerService.disconnect()
+        if let selectedDevice = selectedDevice {
+            let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
+
+            _ = playerService.playerData
+                .subscribe(onNext: { playerData in
+                    if let playerData = playerData {
+                        print(playerData)
+                    }
+                })
+
+            var metadata = Metadata(type: "video")
+            metadata.title = "Testvideo"
+            metadata.description = "A video for test purposes"
+            metadata.noreplay = true
+            _ = playerService.play(withMetadata: metadata, url: URL)
+                .subscribe(onCompleted: {
+                    print("success")
+                }, onError: { error in
+                    print(error)
+                })
         }
     }
     
     @IBAction private func didPressStopPlaybackButton(_ sender: UIButton) {
-        if let firstDevice = devices.first {
-            let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
-            
+        if let selectedDevice = selectedDevice {
+            let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
+
             _ = playerService.playerData.subscribe(onNext: { playerData in
                 if let playerData = playerData {
                     print(playerData)
                 }
             })
 
-            _ = playerService.stop().subscribe(onCompleted: {
-                print("success")
-            }, onError: { error in
-                print(error)
-            })
-            
-            playerService.disconnect()
+            _ = playerService.stop()
+                .subscribe(onCompleted: {
+                    print("success")
+                }, onError: { error in
+                    print(error)
+                })
         }
     }
     
     @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
         do {
-            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(delegate: self)
+            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(playerId: "amzn.thin.pl", delegate: self)
             present(fireTVSelectionVC, animated: true)
         } catch {
             print(error)
@@ -126,6 +113,7 @@ final class ViewController: UIViewController {
 extension ViewController: FireTVSelectionDelegateProtocol {
     func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
         do {
+            selectedDevice = player
             let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player)
             present(fireTVPlayerVC, animated: true)
         } catch {
