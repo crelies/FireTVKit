@@ -46,7 +46,6 @@ final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 	
 	func startDiscovering() throws {
         devicesVariable.value = devices
-		try PlayerDiscoveryController.shared.startSearch(forPlayerId: playerServiceID)
 	}
 	
 	func stopDiscovering() {

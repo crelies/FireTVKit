@@ -28,67 +28,67 @@
                                     <action selector="didPressStartDiscoveryButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gJY-JG-Ohx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-eR-Dlc">
-                                <rect key="frame" x="0.0" y="78" width="320" height="30"/>
-                                <state key="normal" title="Stop Discovery"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iM-gN-cyE">
+                                <rect key="frame" x="84" y="269" width="152" height="30"/>
+                                <state key="normal" title="Enter Discovery World"/>
                                 <connections>
-                                    <action selector="didPressStopDiscoveryButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GsT-Zv-IOE"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No devices found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4A-gj-mfy">
-                                <rect key="frame" x="0.0" y="140" width="320" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Toc-4L-QeH">
-                                <rect key="frame" x="0.0" y="224.5" width="320" height="30"/>
-                                <state key="normal" title="Play Test Video"/>
-                                <connections>
-                                    <action selector="didPressPlayTestVideoButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ECJ-Ne-nSf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="480-2k-CQc">
-                                <rect key="frame" x="0.0" y="270.5" width="320" height="30"/>
-                                <state key="normal" title="Stop Playback"/>
-                                <connections>
-                                    <action selector="didPressStopPlaybackButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wFi-sP-mte"/>
+                                    <segue destination="FUW-Tw-0Gq" kind="show" id="Oai-5J-maR"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="480-2k-CQc" firstAttribute="leading" secondItem="Toc-4L-QeH" secondAttribute="leading" id="1IE-hB-Tav"/>
-                            <constraint firstItem="480-2k-CQc" firstAttribute="top" secondItem="Toc-4L-QeH" secondAttribute="bottom" constant="16" id="2Qp-Ps-E9M"/>
                             <constraint firstItem="rMw-Xa-J8a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="3HQ-8p-8jD"/>
-                            <constraint firstItem="Toc-4L-QeH" firstAttribute="top" secondItem="q4A-gj-mfy" secondAttribute="bottom" constant="64" id="4eo-MZ-KZU"/>
-                            <constraint firstItem="480-2k-CQc" firstAttribute="trailing" secondItem="Toc-4L-QeH" secondAttribute="trailing" id="DJ2-Xy-PNE"/>
-                            <constraint firstItem="q4A-gj-mfy" firstAttribute="leading" secondItem="Xs9-eR-Dlc" secondAttribute="leading" id="Dvu-aM-Nwm"/>
-                            <constraint firstItem="Toc-4L-QeH" firstAttribute="leading" secondItem="q4A-gj-mfy" secondAttribute="leading" id="MKY-If-UKp"/>
-                            <constraint firstItem="Toc-4L-QeH" firstAttribute="trailing" secondItem="q4A-gj-mfy" secondAttribute="trailing" id="N9o-MS-8Em"/>
-                            <constraint firstItem="Xs9-eR-Dlc" firstAttribute="leading" secondItem="rMw-Xa-J8a" secondAttribute="leading" id="NfN-Mi-o8W"/>
-                            <constraint firstItem="q4A-gj-mfy" firstAttribute="trailing" secondItem="Xs9-eR-Dlc" secondAttribute="trailing" id="ZPQ-0b-xfT"/>
+                            <constraint firstItem="3iM-gN-cyE" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Kdn-GB-YLB"/>
                             <constraint firstAttribute="trailing" secondItem="rMw-Xa-J8a" secondAttribute="trailing" id="ZR2-FP-cDA"/>
-                            <constraint firstItem="Xs9-eR-Dlc" firstAttribute="top" secondItem="rMw-Xa-J8a" secondAttribute="bottom" constant="16" id="cS1-27-mKQ"/>
-                            <constraint firstItem="q4A-gj-mfy" firstAttribute="top" secondItem="Xs9-eR-Dlc" secondAttribute="bottom" constant="32" id="cvr-Ql-JT1"/>
-                            <constraint firstItem="Xs9-eR-Dlc" firstAttribute="trailing" secondItem="rMw-Xa-J8a" secondAttribute="trailing" id="dbF-My-X7r"/>
                             <constraint firstItem="rMw-Xa-J8a" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="32" id="eB0-Fh-JPQ"/>
+                            <constraint firstItem="3iM-gN-cyE" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="soT-Kv-cbA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cKP-gH-3sG">
-                        <barButtonItem key="rightBarButtonItem" title="Player" id="TKr-PR-G0C">
-                            <connections>
-                                <action selector="didPressPlayerBarButtonItem:" destination="vXZ-lx-hvc" id="VNu-KZ-keW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="foundDevicesLabel" destination="q4A-gj-mfy" id="bRH-qM-eVC"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="cKP-gH-3sG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="800"/>
+            <point key="canvasLocation" x="1007" y="800"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="WFR-ua-jIq">
+            <objects>
+                <viewController id="FUW-Tw-0Gq" customClass="DiscoveryWorldViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fmj-mf-Edj"/>
+                        <viewControllerLayoutGuide type="bottom" id="N7G-pu-ai0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tqZ-wf-8Yq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-WO-LrX">
+                                <rect key="frame" x="107" y="80" width="105" height="30"/>
+                                <state key="normal" title="Play Test Video"/>
+                                <connections>
+                                    <action selector="didPressPlayTestVideoButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="l2Y-zb-FAw"/>
+                                    <action selector="didPressPlayTestVideoButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rzE-J0-trj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KO7-WO-LrX" firstAttribute="top" secondItem="fmj-mf-Edj" secondAttribute="bottom" constant="16" id="79T-ms-Xld"/>
+                            <constraint firstItem="KO7-WO-LrX" firstAttribute="centerX" secondItem="tqZ-wf-8Yq" secondAttribute="centerX" id="TM6-9d-mJL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="n8c-QM-95T">
+                        <barButtonItem key="rightBarButtonItem" title="Player" id="SDt-BX-WOp">
+                            <connections>
+                                <action selector="didPressPlayerBarButtonItem:" destination="FUW-Tw-0Gq" id="fWG-SU-QeN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKw-GK-tdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="800"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I3K-Uj-Ijg">

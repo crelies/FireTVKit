@@ -24,9 +24,11 @@ protocol FireTVSelectionInteractorInputProtocol {
 final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     private weak var presenter: FireTVSelectionPresenterProtocol?
     private var dependencies: FireTVSelectionInteractorDependenciesProtocol
+    private let playerId: String
     
     init(dependencies: FireTVSelectionInteractorDependenciesProtocol, playerId: String) {
         self.dependencies = dependencies
+        self.playerId = playerId
 		
 		var playerDiscoveryService = self.dependencies.playerDiscoveryService
         playerDiscoveryService.playerServiceID = playerId
@@ -43,6 +45,7 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
 	
 	func startFireTVDiscovery() throws {
 		try dependencies.playerDiscoveryService.startDiscovering()
+        try PlayerDiscoveryController.shared.startSearch(forPlayerId: playerId)
 	}
 	
 	func getFireTVs() -> Observable<[RemoteMediaPlayer]?> {
