@@ -10,7 +10,7 @@ import UIKit
 
 public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
 	// TODO: pass stream url
-    public static func makeViewController(delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
+    public static func makeViewController(playerId: String, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         
         guard let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else {
@@ -28,7 +28,7 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         let router = FireTVSelectionRouter()
 		
 		let interactorDependencies = FireTVSelectionInteractorDependencies()
-        let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies)
+        let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId)
 		
 		let presenterDependencies = FireTVSelectionPresenterDependencies()
         let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, delegate: delegate)

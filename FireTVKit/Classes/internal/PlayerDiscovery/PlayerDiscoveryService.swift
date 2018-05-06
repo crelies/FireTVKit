@@ -26,13 +26,14 @@ protocol PlayerDiscoveryServiceProtocol {
 
 final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
     private(set) var devicesVariable: Variable<[RemoteMediaPlayer]?>
-    private(set) var devices: [RemoteMediaPlayer]
+    var devices: [RemoteMediaPlayer] {
+        return PlayerDiscoveryController.shared.devices
+    }
 	private(set) var deviceInfo: Variable<DeviceInfo?>
     var playerServiceID: String?
     
 	init() {
         devicesVariable = Variable<[RemoteMediaPlayer]?>(nil)
-		devices = []
 		deviceInfo = Variable<DeviceInfo?>(nil)
 		
 		PlayerDiscoveryController.shared.delegate = self
@@ -44,33 +45,25 @@ final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 	}
 	
 	func startDiscovering() throws {
+        devicesVariable.value = devices
 		try PlayerDiscoveryController.shared.startSearch(forPlayerId: playerServiceID)
 	}
 	
 	func stopDiscovering() {
-		devices.removeAll()
-		devicesVariable.value = devices
-		
-		PlayerDiscoveryController.shared.stopSearch()
+		devicesVariable.value = []
 	}
 }
 
 extension PlayerDiscoveryService: PlayerDiscoveryControllerDelegateProtocol {
 	func deviceDiscovered(_ discoveryController: PlayerDiscoveryController, device: RemoteMediaPlayer) {
-        devices.append(device)
-		
 		let deviceInfo = DeviceInfo(device: device)
 		self.deviceInfo.value = deviceInfo
 		
-		self.devicesVariable.value = self.devices
+		self.devicesVariable.value = devices
     }
     
 	func deviceLost(_ discoveryController: PlayerDiscoveryController, device: RemoteMediaPlayer) {
-		if let index = devices.index (where: { $0.name() == device.name() }) {
-			devices.remove(at: index)
-            
-            self.devicesVariable.value = self.devices
-		}
+        self.devicesVariable.value = devices
 		
 		let deviceInfo = DeviceInfo(status: .deviceLost, device: device)
 		self.deviceInfo.value = deviceInfo

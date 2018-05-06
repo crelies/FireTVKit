@@ -65,18 +65,19 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             return
         }
         
-        if let disconnect = interactor.disconnect() {
-            disconnect
-                .subscribe(onCompleted: {
+        interactor.disconnect()
+            .subscribe(onCompleted: {
+                self.state = .disconnected
+                self.router.dismiss(viewController: viewController)
+            }, onError: { error in
+                // TODO:
+                print("interactor.disconnect(): \(error.localizedDescription)")
+                
+                if let playerServiceError = error as? PlayerServiceError, playerServiceError == PlayerServiceError.currentPlayerComparisonFailed {
                     self.state = .disconnected
                     self.router.dismiss(viewController: viewController)
-                }, onError: { error in
-                    // TODO:
-                    print("interactor.disconnect(): \(error.localizedDescription)")
-                }).disposed(by: disposeBag)
-        } else {
-            router.dismiss(viewController: viewController)
-        }
+                }
+            }).disposed(by: disposeBag)
     }
     
     func didPressPlayButton() {
@@ -131,6 +132,7 @@ extension FireTVPlayerPresenter {
     private func observePlayerData() {
         interactor.getPlayerData()
             .subscribe(onNext: { [weak self] playerData in
+                print("onNext getPlayerData()")
                 if let playerData = playerData {
                     if let positionString = playerData.positionString {
                         self?.view?.setPositionText(positionString)

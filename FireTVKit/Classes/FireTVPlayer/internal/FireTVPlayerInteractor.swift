@@ -23,7 +23,7 @@ protocol FireTVPlayerInteractorInputProtocol {
     func play() -> Completable
     func pause() -> Completable
     func stop() -> Completable
-    func disconnect() -> Completable?
+    func disconnect() -> Completable
 }
 
 final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
@@ -68,7 +68,7 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
         return dependencies.playerService.stop()
     }
     
-    func disconnect() -> Completable? {
-        return dependencies.playerService.disconnect()
+    func disconnect() -> Completable {
+        return dependencies.playerService.disconnect(fromPlayer: player)
     }
 }

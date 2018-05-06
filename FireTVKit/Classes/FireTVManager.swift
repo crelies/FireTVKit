@@ -30,5 +30,6 @@ public final class FireTVManager: FireTVManagerProtocol {
     
     public func stopDiscovery() {
         dependencies.playerDiscoveryService.stopDiscovering()
+        PlayerDiscoveryController.shared.stopSearch()
     }
 }

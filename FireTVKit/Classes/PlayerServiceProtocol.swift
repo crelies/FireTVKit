@@ -24,7 +24,7 @@ public protocol PlayerServiceProtocol {
 	func getPlayerData() -> Single<PlayerData>
 	func getDuration() -> Single<Int>
 	func getPosition() -> Single<Int64>
-    func disconnect() -> Completable?
+    func disconnect(fromPlayer player: RemoteMediaPlayer) -> Completable
 }
 
 extension PlayerServiceProtocol {

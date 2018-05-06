@@ -25,11 +25,11 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     private weak var presenter: FireTVSelectionPresenterProtocol?
     private var dependencies: FireTVSelectionInteractorDependenciesProtocol
     
-    init(dependencies: FireTVSelectionInteractorDependenciesProtocol) {
+    init(dependencies: FireTVSelectionInteractorDependenciesProtocol, playerId: String) {
         self.dependencies = dependencies
 		
 		var playerDiscoveryService = self.dependencies.playerDiscoveryService
-		playerDiscoveryService.playerServiceID = "amzn.thin.pl"
+        playerDiscoveryService.playerServiceID = playerId
     }
 	
 	// TODO: remove me
@@ -50,6 +50,6 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
 	}
 	
 	func stopFireTVDiscovery() {
-		dependencies.playerDiscoveryService.stopDiscovering()
+        dependencies.playerDiscoveryService.stopDiscovering()
 	}
 }
