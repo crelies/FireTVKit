@@ -15,11 +15,7 @@ final class DiscoveryWorldViewController: UIViewController {
     private let disposeBag: DisposeBag = DisposeBag()
     private var selectedDevice: RemoteMediaPlayer?
     
-    private let URL = "https://r1---sn-4g5e6nl6.googlevideo.com/videoplayback?dur=178.584&itag=22&pl=17&ei=M0XvWoegKMmegAfztJG4AQ&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&mime=video/mp4&key=yt6&fexp=23724337&ipbits=0&expire=1525651859&lmt=1512104683161670&id=o-ABzE9LemUdCOTAYBY9A-HhWwb8xSc0bIMxVxeqny7I44&requiressl=yes&mm=31,29&mn=sn-4g5e6nl6,sn-4g5edne6&initcwndbps=1163750&c=WEB&source=youtube&fvip=1&signature=0957CD6DE338C77BD7014DA43BA874657AABDE86.CAB7B1805F116B3C0909F54A1DF7CD220CB7A1A1&ip=31.17.237.178&ms=au,rdu&mt=1525630133&ratebypass=yes&mv=m"
-    
-    deinit {
-        PlayerDiscoveryController.shared.stopSearch()
-    }
+    private let URL = "https://r6---sn-xjpm-i5he.googlevideo.com/videoplayback?ms=au,rdu&mv=m&pl=17&mt=1525723524&requiressl=yes&mime=video/mp4&lmt=1512104683161670&signature=C3EDD0750E8A8B32ECBD4796B7D4B0071F4754E8.88E7DD5C0975E1A70CC44208B06118A2A6264408&ratebypass=yes&c=WEB&initcwndbps=856250&dur=178.584&mn=sn-xjpm-i5he,sn-4g5edne6&mm=31,29&id=o-AIjG-tEnnbSpZ_4n4BDjTsUpWheVhI8_cZ85crUh6I8w&ei=_LHwWtXUGs3rgAfg2Y_gDw&fexp=23724337&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&expire=1525745244&itag=22&fvip=1&ipbits=0&ip=31.17.237.178&key=yt6&source=youtube"
     
     @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
         do {
@@ -32,6 +28,12 @@ final class DiscoveryWorldViewController: UIViewController {
     
     @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
         if let selectedDevice = selectedDevice {
+            do {
+                try PlayerDiscoveryController.shared.startSearch(forPlayerId: nil)
+            } catch {
+                // TODO:
+            }
+            
             let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
             
             _ = playerService.playerData
@@ -48,8 +50,10 @@ final class DiscoveryWorldViewController: UIViewController {
             _ = playerService.play(withMetadata: metadata, url: URL)
                 .subscribe(onCompleted: {
                     print("success")
+                    PlayerDiscoveryController.shared.stopSearch()
                 }, onError: { error in
                     print(error)
+                    PlayerDiscoveryController.shared.stopSearch()
                 })
         }
     }

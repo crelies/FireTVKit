@@ -12,9 +12,6 @@ import UIKit
 
 protocol FireTVSelectionPresenterProtocol: class, FireTVSelectionInteractorOutputProtocol {
     func viewDidLoad()
-    func viewWillAppear(_ animated: Bool)
-    func viewDidAppear()
-    func viewWillDisappear(_ animated: Bool)
     func didPressCloseBarButtonItem()
 }
 
@@ -45,6 +42,12 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     }
     
     func viewDidLoad() {
+        do {
+            try interactor.startFireTVDiscovery()
+        } catch {
+            // TODO:
+        }
+        
         view?.setTableViewDataSource(dataSource: self)
         view?.setTableViewDelegate(delegate: self)
         
@@ -62,27 +65,13 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
             // TODO:
         }).disposed(by: disposeBag)
     }
-	
-    func viewWillAppear(_ animated: Bool) {
-        do {
-            try interactor.startFireTVDiscovery()
-        } catch {
-            // TODO:
-        }
-    }
-    
-    func viewDidAppear() {
-//        interactor.startFireTVDiscovery()
-    }
-    
-    func viewWillDisappear(_ animated: Bool) {
-        interactor.stopFireTVDiscovery()
-    }
     
     func didPressCloseBarButtonItem() {
         guard let viewController = view as? UIViewController else {
             return
         }
+        
+        interactor.stopFireTVDiscovery()
         
         router.dismiss(viewController: viewController)
     }

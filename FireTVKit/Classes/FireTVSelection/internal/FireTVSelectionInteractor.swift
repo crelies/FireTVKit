@@ -54,5 +54,6 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
 	
 	func stopFireTVDiscovery() {
         dependencies.playerDiscoveryService.stopDiscovering()
+        PlayerDiscoveryController.shared.stopSearch()
 	}
 }
