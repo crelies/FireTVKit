@@ -118,6 +118,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
 
 extension FireTVPlayerPresenter {
     private func createDurationText(fromDuration duration: Int) -> String {
+		// TODO: the calculation is invalid
         let hours = Int(duration / (60 * 60))
         let minutes = Int((duration / 60) % 60)
         let seconds = Int(duration % 60)

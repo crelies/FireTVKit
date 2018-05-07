@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: add position slider
 public final class FireTVPlayerViewController: UIViewController {
     private var presenter: FireTVPlayerPresenterProtocol?
     
