@@ -41,7 +41,8 @@ extension PlayerData {
         guard let position = position else {
             return nil
         }
-        
+		
+		// TODO: the calculation is invalid
         let hours = Int(position / (60 * 60))
         let minutes = Int((position / 60) % 60)
         let seconds = Int(position % 60)
