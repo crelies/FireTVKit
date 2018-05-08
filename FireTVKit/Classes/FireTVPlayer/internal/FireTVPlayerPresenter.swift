@@ -28,12 +28,15 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             updateUI(forState: state)
         }
     }
+    private weak var delegate: FireTVPlayerPresenterDelegateProtocol?
     
-    init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol) {
+    init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol, delegate: FireTVPlayerPresenterDelegateProtocol?) {
         self.dependencies = dependencies
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.delegate = delegate
+        
         self.disposeBag = DisposeBag()
         self.state = .disconnected
     }
@@ -75,7 +78,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             .subscribe(onCompleted: {
                 self.state = .disconnected
                 PlayerDiscoveryController.shared.stopSearch()
-                self.router.dismiss(viewController: viewController)
+                self.delegate?.didPressCloseButton(viewController: viewController)
             }, onError: { error in
                 // TODO:
                 print("interactor.disconnect(): \(error.localizedDescription)")
@@ -83,7 +86,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 if let playerServiceError = error as? PlayerServiceError, playerServiceError == PlayerServiceError.currentPlayerComparisonFailed {
                     self.state = .disconnected
                     PlayerDiscoveryController.shared.stopSearch()
-                    self.router.dismiss(viewController: viewController)
+                    self.delegate?.didPressCloseButton(viewController: viewController)
                 }
             }).disposed(by: disposeBag)
     }

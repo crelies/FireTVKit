@@ -9,52 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMw-Xa-J8a">
-                                <rect key="frame" x="0.0" y="32" width="320" height="30"/>
-                                <state key="normal" title="Start Discovery"/>
-                                <connections>
-                                    <action selector="didPressStartDiscoveryButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gJY-JG-Ohx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iM-gN-cyE">
-                                <rect key="frame" x="84" y="269" width="152" height="30"/>
-                                <state key="normal" title="Enter Discovery World"/>
-                                <connections>
-                                    <segue destination="FUW-Tw-0Gq" kind="show" id="Oai-5J-maR"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="rMw-Xa-J8a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="3HQ-8p-8jD"/>
-                            <constraint firstItem="3iM-gN-cyE" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Kdn-GB-YLB"/>
-                            <constraint firstAttribute="trailing" secondItem="rMw-Xa-J8a" secondAttribute="trailing" id="ZR2-FP-cDA"/>
-                            <constraint firstItem="rMw-Xa-J8a" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="32" id="eB0-Fh-JPQ"/>
-                            <constraint firstItem="3iM-gN-cyE" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="soT-Kv-cbA"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="cKP-gH-3sG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1007" y="800"/>
-        </scene>
         <!--Title-->
         <scene sceneID="WFR-ua-jIq">
             <objects>
-                <viewController id="FUW-Tw-0Gq" customClass="DiscoveryWorldViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FUW-Tw-0Gq" customClass="ViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fmj-mf-Edj"/>
                         <viewControllerLayoutGuide type="bottom" id="N7G-pu-ai0"/>
@@ -68,7 +26,6 @@
                                 <state key="normal" title="Play Test Video"/>
                                 <connections>
                                     <action selector="didPressPlayTestVideoButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="l2Y-zb-FAw"/>
-                                    <action selector="didPressPlayTestVideoButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rzE-J0-trj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,12 +58,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="4wh-Tz-0sX"/>
+                        <segue destination="FUW-Tw-0Gq" kind="relationship" relationship="rootViewController" id="lUr-Yk-Rj3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1D-aX-zX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213.75" y="799.64788732394368"/>
+            <point key="canvasLocation" x="986" y="800"/>
         </scene>
     </scenes>
 </document>

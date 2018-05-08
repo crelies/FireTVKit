@@ -9,11 +9,9 @@
 import Foundation
 
 protocol FireTVPlayerRouterProtocol {
-    func dismiss(viewController: UIViewController)
+    
 }
 
 final class FireTVPlayerRouter: FireTVPlayerRouterProtocol {
-    func dismiss(viewController: UIViewController) {
-        viewController.dismiss(animated: true, completion: nil)
-    }
+    
 }

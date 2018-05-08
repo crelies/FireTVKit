@@ -11,7 +11,7 @@ import UIKit
 
 public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
 	// TODO: add theme, start and stop search discovery controller
-    public static func makeViewController(forPlayer player: RemoteMediaPlayer) throws -> FireTVPlayerViewController {
+    public static func makeViewController(forPlayer player: RemoteMediaPlayer, delegate: FireTVPlayerPresenterDelegateProtocol?) throws -> FireTVPlayerViewController {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
         
         guard let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else {
@@ -28,7 +28,7 @@ public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
         let presenterDependencies = FireTVPlayerPresenterDependencies()
 
         let interactor = FireTVPlayerInteractor(dependencies: interactorDependencies, player: player)
-        let presenter = FireTVPlayerPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router)
+        let presenter = FireTVPlayerPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, delegate: delegate)
         interactor.setPresenter(presenter)
         view.setPresenter(presenter)
         
