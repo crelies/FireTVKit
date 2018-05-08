@@ -32,7 +32,7 @@ extension PlayerData: CustomStringConvertible {
             positionString = position
         }
         
-        return "Status: [\(status)], Position: [\(positionString)]"
+        return "Status: [\(String(describing: status))], Position: [\(positionString)]"
     }
 }
 
