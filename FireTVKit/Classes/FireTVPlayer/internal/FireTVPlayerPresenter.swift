@@ -89,8 +89,9 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressPlayButton() {
-        interactor.play().subscribe(onCompleted: {
+        interactor.play().subscribe(onCompleted: { [weak self] in
             print("player played")
+            self?.getDuration()
         }) { error in
             // TODO:
             print("interactor.play(): \(error.localizedDescription)")
@@ -118,10 +119,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
 
 extension FireTVPlayerPresenter {
     private func createDurationText(fromDuration duration: Int) -> String {
-		// TODO: the calculation is invalid
-        let hours = Int(duration / (60 * 60))
-        let minutes = Int((duration / 60) % 60)
-        let seconds = Int(duration % 60)
+        let durationInSeconds = Int(duration / 1000)
+        let hours = Int(durationInSeconds / 60 / 60)
+        let minutes = Int(durationInSeconds / 60) - (hours * 60)
+        let seconds = Int(durationInSeconds) - (minutes * 60)
         
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
@@ -144,7 +145,9 @@ extension FireTVPlayerPresenter {
                 print("onNext getPlayerData()")
                 if let playerData = playerData {
                     if let positionString = playerData.positionString {
-                        self?.view?.setPositionText(positionString)
+                        DispatchQueue.main.async { [weak self] in
+                            self?.view?.setPositionText(positionString)
+                        }
                     }
                 }
             }, onError: { error in

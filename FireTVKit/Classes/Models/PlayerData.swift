@@ -42,10 +42,10 @@ extension PlayerData {
             return nil
         }
 		
-		// TODO: the calculation is invalid
-        let hours = Int(position / (60 * 60))
-        let minutes = Int((position / 60) % 60)
-        let seconds = Int(position % 60)
+        let positionInSeconds = Int(position / 1000)
+        let hours = Int(positionInSeconds / 60 / 60)
+        let minutes = Int(positionInSeconds / 60) - (hours * 60)
+        let seconds = Int(positionInSeconds) - (minutes * 60)
         
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }

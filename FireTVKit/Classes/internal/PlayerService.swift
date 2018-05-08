@@ -309,8 +309,8 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 extension PlayerService: MediaPlayerStatusListener {
     func onStatusChange(_ status: MediaPlayerStatus!, positionChangedTo position: Int64) {
         print("onStatusChange")
-		let playerData = PlayerData(status: status, position: position)
-		playerDataVariable.value = playerData
+        let playerData = PlayerData(status: status, position: position)
+        playerDataVariable.value = playerData
     }
 }
 
