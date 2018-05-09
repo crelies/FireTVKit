@@ -12,6 +12,7 @@ protocol FireTVPlayerViewProtocol: class {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)
     func setPlayerName(_ playerName: String)
     func setPositionText(_ positionText: String)
+	func setPosition(_ position: Double)
     func setDurationText(_ durationText: String)
     func updateUI(withViewModel viewModel: FireTVPlayerViewControllerViewModel)
 }

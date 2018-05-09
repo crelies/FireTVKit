@@ -8,7 +8,6 @@
 
 import UIKit
 
-// TODO: add position slider
 public final class FireTVPlayerViewController: UIViewController {
     private var presenter: FireTVPlayerPresenterProtocol?
     
@@ -17,8 +16,10 @@ public final class FireTVPlayerViewController: UIViewController {
     @IBOutlet private weak var playButton: UIButton!
     @IBOutlet private weak var pauseButton: UIButton!
     @IBOutlet private weak var stopButton: UIButton!
-    @IBOutlet private weak var positionLabel: UILabel!
-    @IBOutlet private weak var durationLabel: UILabel!
+	
+	@IBOutlet private weak var positionSlider: UISlider!
+	@IBOutlet private weak var positionLabel: UILabel!
+	@IBOutlet private weak var durationLabel: UILabel!
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,14 @@ public final class FireTVPlayerViewController: UIViewController {
     @IBAction private func didPressStopButton(_ sender: UIButton) {
         presenter?.didPressStopButton()
     }
+	
+	@IBAction private func didChangePositionValue(_ sender: UISlider) {
+		// TODO:
+	}
+	
+	@IBAction private func didChangePosition(_ sender: UISlider) {
+		// TODO:
+	}
 }
 
 extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
@@ -55,6 +64,10 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
     func setPositionText(_ positionText: String) {
         positionLabel.text = positionText
     }
+	
+	func setPosition(_ position: Double) {
+		// TODO:
+	}
     
     func setDurationText(_ durationText: String) {
         durationLabel.text = durationText
