@@ -111,8 +111,12 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressStopButton() {
-        interactor.stop().subscribe(onCompleted: {
+        interactor.stop().subscribe(onCompleted: { [weak self] in
             print("player stopped")
+            self?.view?.setPosition(0)
+            self?.view?.setPositionText("00:00:00")
+            self?.view?.setMaximumPosition(0)
+            self?.view?.setDurationText("00:00:00")
         }) { error in
             // TODO:
             print("interactor.stop(): \(error.localizedDescription)")
