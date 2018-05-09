@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal struct PlayerDiscoveringInfo {
+struct PlayerDiscoveringInfo {
     let status: PlayerDiscoveringInfoStatus
     
     init(status: PlayerDiscoveringInfoStatus) {

@@ -29,9 +29,6 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     init(dependencies: FireTVSelectionInteractorDependenciesProtocol, playerId: String) {
         self.dependencies = dependencies
         self.playerId = playerId
-		
-		var playerDiscoveryService = self.dependencies.playerDiscoveryService
-        playerDiscoveryService.playerServiceID = playerId
     }
 	
 	// TODO: remove me
@@ -45,7 +42,7 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
 	
 	func startFireTVDiscovery() throws {
 		try dependencies.playerDiscoveryService.startDiscovering()
-        try PlayerDiscoveryController.shared.startSearch(forPlayerId: playerId)
+        PlayerDiscoveryController.shared.startSearch(forPlayerId: playerId)
 	}
 	
 	func getFireTVs() -> Observable<[RemoteMediaPlayer]?> {

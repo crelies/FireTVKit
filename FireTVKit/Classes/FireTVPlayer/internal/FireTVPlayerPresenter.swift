@@ -48,7 +48,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     
     func viewDidLoad() {
         do {
-            try PlayerDiscoveryController.shared.startSearch(forPlayerId: nil)
+            try interactor.startFireTVDiscovery()
         } catch {
             // TODO:
         }
@@ -77,7 +77,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         interactor.disconnect()
             .subscribe(onCompleted: {
                 self.state = .disconnected
-                PlayerDiscoveryController.shared.stopSearch()
+                self.interactor.stopFireTVDiscovery()
                 self.delegate?.didPressCloseButton(viewController: viewController)
             }, onError: { error in
                 // TODO:
@@ -85,7 +85,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 
                 if let playerServiceError = error as? PlayerServiceError, playerServiceError == PlayerServiceError.currentPlayerComparisonFailed {
                     self.state = .disconnected
-                    PlayerDiscoveryController.shared.stopSearch()
+                    self.interactor.stopFireTVDiscovery()
                     self.delegate?.didPressCloseButton(viewController: viewController)
                 }
             }).disposed(by: disposeBag)

@@ -9,10 +9,10 @@
 import AmazonFling
 import Foundation
 
-public final class PlayerDiscoveryController {
-	public static let shared = PlayerDiscoveryController()
+final class PlayerDiscoveryController {
+	static let shared = PlayerDiscoveryController()
 	
-    var devices: [RemoteMediaPlayer]
+    private(set) var devices: [RemoteMediaPlayer]
 	weak var delegate: PlayerDiscoveryControllerDelegateProtocol?
 
 	private let discoveryController: DiscoveryController
@@ -26,7 +26,7 @@ public final class PlayerDiscoveryController {
 }
 
 extension PlayerDiscoveryController: PlayerDiscoveryControllerProtocol {
-	public func startSearch(forPlayerId playerId: String?) throws {
+	func startSearch(forPlayerId playerId: String?) {
 		switch discoveringStatus {
 			case .ready:
 				if let searchPlayerId = playerId {
@@ -44,14 +44,14 @@ extension PlayerDiscoveryController: PlayerDiscoveryControllerProtocol {
 		}
 	}
 	
-	public func stopSearch() {
+	func stopSearch() {
 		discoveryController.close()
 		discoveringStatus = .stopped
 	}
 }
 
 extension PlayerDiscoveryController: DiscoveryListener {
-    public func deviceDiscovered(_ device: RemoteMediaPlayer!) {
+    func deviceDiscovered(_ device: RemoteMediaPlayer!) {
         print("deviceDiscovered: \(device.name())")
 		DispatchQueue.main.async { [weak self] in
 			guard let weakSelf = self else {
@@ -64,7 +64,7 @@ extension PlayerDiscoveryController: DiscoveryListener {
 		}
 	}
 	
-    public func deviceLost(_ device: RemoteMediaPlayer!) {
+    func deviceLost(_ device: RemoteMediaPlayer!) {
         print("deviceLost: \(device.name())")
 		DispatchQueue.main.async { [weak self] in
 			guard let weakSelf = self else {
@@ -79,7 +79,7 @@ extension PlayerDiscoveryController: DiscoveryListener {
 		}
 	}
 	
-    public func discoveryFailure() {
+    func discoveryFailure() {
 		DispatchQueue.main.async { [weak self] in
 			guard let weakSelf = self else {
 				return

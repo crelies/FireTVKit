@@ -10,7 +10,7 @@ import AmazonFling
 import UIKit
 
 public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
-	// TODO: add theme, start and stop search discovery controller
+	// TODO: add theme
     public static func makeViewController(forPlayer player: RemoteMediaPlayer, delegate: FireTVPlayerPresenterDelegateProtocol?) throws -> FireTVPlayerViewController {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
         

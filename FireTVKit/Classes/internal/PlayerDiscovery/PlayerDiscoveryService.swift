@@ -18,7 +18,6 @@ protocol PlayerDiscoveryServiceProtocol {
     var devicesVariable: Variable<[RemoteMediaPlayer]?> { get }
 	var devices: [RemoteMediaPlayer] { get }
 	var deviceInfo: Variable<DeviceInfo?> { get }
-    var playerServiceID: String? { get set }
 	
 	func startDiscovering() throws
 	func stopDiscovering()
@@ -30,7 +29,6 @@ final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
         return PlayerDiscoveryController.shared.devices
     }
 	private(set) var deviceInfo: Variable<DeviceInfo?>
-    var playerServiceID: String?
     
 	init() {
         devicesVariable = Variable<[RemoteMediaPlayer]?>(nil)

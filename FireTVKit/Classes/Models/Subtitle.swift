@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO: Outsource
 enum SubtitleKind: String {
 	case subtitles
 }

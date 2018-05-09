@@ -1264,13 +1264,8 @@
 		1E52D91F9CED0077E0972B8BB4AC5A2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5B8DB25759227F0E71107B43FB158C62 /* DeviceInfo.swift */,
-				C1FB9CB02E2D16D5C65DBDB172281F1B /* DeviceInfoStatus.swift */,
-				AE27C9E788360CFED5B95CF22E8D2110 /* DiscoveringStatus.swift */,
 				DD5502F2A6E1C041A205F1A46E09B60C /* Metadata.swift */,
 				C3D4214446CEC0580B26866CE8E74EBB /* PlayerData.swift */,
-				E22A407D1697F600674B78B68BF89457 /* PlayerDiscoveringInfo.swift */,
-				01B118E840FD92678B0D1FE6FB2D9E06 /* PlayerDiscoveringInfoStatus.swift */,
 				13DA907D8E90322509C77CE9D225010A /* PlayerStatus.swift */,
 				9C9A86EAEDCF67592B3CB1286C07CE59 /* Subtitle.swift */,
 			);
@@ -1281,6 +1276,7 @@
 		2199DE31345403F9CF13262F73FC0B8C /* internal */ = {
 			isa = PBXGroup;
 			children = (
+				CE15F66220A31C4A006F3F28 /* Models */,
 				84517F8C50B3327B7BC9C94426F301C1 /* FireTVManagerDependencies.swift */,
 				FCFD31D1CE55CFE89DED321173B6F25E /* FireTVManagerProtocol.swift */,
 				B12C29701A8F5DC5FCC05572ECBD9347 /* HasPlayerService.swift */,
@@ -1403,6 +1399,7 @@
 				728F6B6682841745516D114430F8AAD5 /* PlayerServiceError.swift */,
 				5C929472E3C47F0569209FF05412FBB4 /* PlayerServiceProtocol.swift */,
 				25C67FF12A1EA4F3AF6A4ACACB8DB53C /* ReachabilityServiceProtocol.swift */,
+				B90CF81820A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift */,
 				528F09B2C7EAA88E27E7802171606D53 /* ServiceFactory.swift */,
 				89627A1C318721EAA78B7F73E997B8D5 /* FireTVPlayer */,
 				B917946C0E835F784D00CE10D9924BD0 /* FireTVSelection */,
@@ -1411,7 +1408,6 @@
 				83749B7B80FC7418FE6CDC1C12D859F0 /* Pod */,
 				0FCEB2B33F721E53F9B6188D1B92E709 /* Resources */,
 				55CCD052532C2D348A25AD438D9FED26 /* Support Files */,
-				B90CF81820A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift */,
 			);
 			name = FireTVKit;
 			path = ../..;
@@ -2029,6 +2025,18 @@
 				7B15D4488D5520755B9C049053FD120F /* Support Files */,
 			);
 			path = ReachabilitySwift;
+			sourceTree = "<group>";
+		};
+		CE15F66220A31C4A006F3F28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B8DB25759227F0E71107B43FB158C62 /* DeviceInfo.swift */,
+				E22A407D1697F600674B78B68BF89457 /* PlayerDiscoveringInfo.swift */,
+				01B118E840FD92678B0D1FE6FB2D9E06 /* PlayerDiscoveringInfoStatus.swift */,
+				C1FB9CB02E2D16D5C65DBDB172281F1B /* DeviceInfoStatus.swift */,
+				AE27C9E788360CFED5B95CF22E8D2110 /* DiscoveringStatus.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D28759E08ABD2BF19B5C637B18E1680E /* FireTVSelection */ = {

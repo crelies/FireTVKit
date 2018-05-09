@@ -16,6 +16,8 @@ protocol FireTVPlayerInteractorOutputProtocol {
 
 protocol FireTVPlayerInteractorInputProtocol {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)
+	func startFireTVDiscovery()
+	func stopFireTVDiscovery()
     func connect() -> Completable
     func getPlayerName() -> String
     func getPlayerData() -> Observable<PlayerData?>
@@ -39,6 +41,14 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol) {
         self.presenter = presenter
     }
+	
+	func startFireTVDiscovery() {
+		PlayerDiscoveryController.shared.startSearch(forPlayerId: nil)
+	}
+	
+	func stopFireTVDiscovery() {
+		PlayerDiscoveryController.shared.stopSearch()
+	}
     
     func connect() -> Completable {
         return dependencies.playerService.connectToPlayer(player)

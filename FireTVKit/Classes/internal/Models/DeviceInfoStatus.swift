@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal enum DeviceInfoStatus {
+enum DeviceInfoStatus {
     case deviceDiscovered
     case deviceLost
 }

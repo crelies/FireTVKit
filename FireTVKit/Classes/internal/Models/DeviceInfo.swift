@@ -9,7 +9,7 @@
 import AmazonFling
 import Foundation
 
-internal struct DeviceInfo {
+struct DeviceInfo {
     let status: DeviceInfoStatus
     var device: RemoteMediaPlayer?
     

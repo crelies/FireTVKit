@@ -1,5 +1,5 @@
 //
-//  DiscoveringStatus.swift
+//  PlayerDiscoveringInfoStatus.swift
 //  FireTVKit
 //
 //  Created by crelies on 28.03.2018.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-internal enum DiscoveringStatus {
-    case ready
+enum PlayerDiscoveringInfoStatus {
     case started
     case stopped
+    case failed
 }

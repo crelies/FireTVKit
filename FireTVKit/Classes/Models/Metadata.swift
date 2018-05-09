@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO: Outsource
 enum MetadataType: String {
 	case video
 }
