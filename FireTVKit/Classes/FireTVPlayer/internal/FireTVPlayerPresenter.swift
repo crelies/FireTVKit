@@ -15,6 +15,8 @@ protocol FireTVPlayerPresenterProtocol: class, FireTVPlayerInteractorOutputProto
     func didPressPlayButton()
     func didPressPauseButton()
     func didPressStopButton()
+    func didChangePositionValue(_ position: Float)
+    func didChangePosition(_ position: Float)
 }
 
 final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
@@ -47,14 +49,12 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func viewDidLoad() {
-        do {
-            try interactor.startFireTVDiscovery()
-        } catch {
-            // TODO:
-        }
+        interactor.startFireTVDiscovery()
         
         view?.setPlayerName(interactor.getPlayerName())
+        view?.setPosition(0)
         view?.setPositionText("00:00:00")
+        view?.setMaximumPosition(0)
         view?.setDurationText("00:00:00")
         state = .disconnected
         
@@ -118,22 +118,29 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             print("interactor.stop(): \(error.localizedDescription)")
         }.disposed(by: disposeBag)
     }
+    
+    func didChangePositionValue(_ position: Float) {
+        let positionString = dependencies.timeStringFactory.makeTimeString(fromPositionValue: position)
+        view?.setPositionText(positionString)
+    }
+    
+    func didChangePosition(_ position: Float) {
+        interactor.setPlayerPosition(position)
+            .subscribe(onCompleted: {
+                print("player position changed")
+            }) { error in
+                // TODO:
+                print("interactor.setPlayerPosition(): \(error.localizedDescription)")
+            }.disposed(by: disposeBag)
+    }
 }
 
 extension FireTVPlayerPresenter {
-    private func createDurationText(fromDuration duration: Int) -> String {
-        let durationInSeconds = Int(duration / 1000)
-        let hours = Int(durationInSeconds / 60 / 60)
-        let minutes = Int(durationInSeconds / 60) - (hours * 60)
-        let seconds = Int(durationInSeconds) - (minutes * 60)
-        
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-    }
-    
     private func getDuration() {
         interactor.getDuration()
             .subscribe(onSuccess: { [weak self] duration in
-                if let durationText = self?.createDurationText(fromDuration: duration) {
+                if let durationText = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: duration) {
+                    self?.view?.setMaximumPosition(Float(duration))
                     self?.view?.setDurationText(durationText)
                 }
             }) { error in
@@ -147,8 +154,9 @@ extension FireTVPlayerPresenter {
             .subscribe(onNext: { [weak self] playerData in
                 print("onNext getPlayerData()")
                 if let playerData = playerData {
-                    if let positionString = playerData.positionString {
+                    if let position = playerData.position, let positionString = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: position) {
                         DispatchQueue.main.async { [weak self] in
+                            self?.view?.setPosition(Float(position))
                             self?.view?.setPositionText(positionString)
                         }
                     }

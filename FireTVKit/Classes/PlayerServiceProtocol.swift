@@ -22,7 +22,7 @@ public protocol PlayerServiceProtocol {
     func setPosition(position: Int64, type: SeekType) -> Completable
     func stop() -> Completable
 	func getPlayerData() -> Single<PlayerData>
-	func getDuration() -> Single<Int>
+	func getDuration() -> Single<Int64>
 	func getPosition() -> Single<Int64>
     func disconnect(fromPlayer player: RemoteMediaPlayer) -> Completable
 }

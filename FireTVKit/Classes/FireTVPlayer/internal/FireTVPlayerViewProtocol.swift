@@ -12,7 +12,8 @@ protocol FireTVPlayerViewProtocol: class {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)
     func setPlayerName(_ playerName: String)
     func setPositionText(_ positionText: String)
-	func setPosition(_ position: Double)
+	func setPosition(_ position: Float)
+    func setMaximumPosition(_ maximumPosition: Float)
     func setDurationText(_ durationText: String)
     func updateUI(withViewModel viewModel: FireTVPlayerViewControllerViewModel)
 }

@@ -25,4 +25,8 @@ public final class ServiceFactory: ServiceFactoryProtocol {
 	static func makeReachabilityService() -> ReachabilityServiceProtocol? {
         return ReachabilityService()
     }
+    
+    static func makeTimeStringFactory() -> TimeStringFactoryProtocol {
+        return TimeStringFactory()
+    }
 }

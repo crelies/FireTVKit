@@ -228,7 +228,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 		}
 	}
 	
-	func getDuration() -> Single<Int> {
+	func getDuration() -> Single<Int64> {
 		return Single.create { single -> Disposable in
             let disposable = Disposables.create()
             
@@ -241,7 +241,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 				if let error = task.error {
 					single(.error(error))
 				} else {
-					if let duration = task.result as? Int {
+					if let duration = task.result as? Int64 {
 						single(.success(duration))
 					} else {
 						single(.error(PlayerServiceError.couldNotCastDurationToInt))

@@ -44,11 +44,11 @@ public final class FireTVPlayerViewController: UIViewController {
     }
 	
 	@IBAction private func didChangePositionValue(_ sender: UISlider) {
-		// TODO:
+		presenter?.didChangePositionValue(sender.value)
 	}
 	
 	@IBAction private func didChangePosition(_ sender: UISlider) {
-		// TODO:
+		presenter?.didChangePosition(sender.value)
 	}
 }
 
@@ -65,9 +65,13 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         positionLabel.text = positionText
     }
 	
-	func setPosition(_ position: Double) {
-		// TODO:
+	func setPosition(_ position: Float) {
+		positionSlider.value = position
 	}
+    
+    func setMaximumPosition(_ maximumPosition: Float) {
+        positionSlider.maximumValue = maximumPosition
+    }
     
     func setDurationText(_ durationText: String) {
         durationLabel.text = durationText
@@ -77,6 +81,7 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         playButton.isEnabled = viewModel.isPlayerControlEnabled
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
         stopButton.isEnabled = viewModel.isPlayerControlEnabled
+        positionSlider.isEnabled = viewModel.isPlayerControlEnabled
     }
 }
 

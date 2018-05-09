@@ -21,10 +21,11 @@ protocol FireTVPlayerInteractorInputProtocol {
     func connect() -> Completable
     func getPlayerName() -> String
     func getPlayerData() -> Observable<PlayerData?>
-    func getDuration() -> Single<Int>
+    func getDuration() -> Single<Int64>
     func play() -> Completable
     func pause() -> Completable
     func stop() -> Completable
+    func setPlayerPosition(_ playerPosition: Float) -> Completable
     func disconnect() -> Completable
 }
 
@@ -62,7 +63,7 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
         return dependencies.playerService.playerData
     }
     
-    func getDuration() -> Single<Int> {
+    func getDuration() -> Single<Int64> {
         return dependencies.playerService.getDuration()
     }
     
@@ -76,6 +77,10 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     
     func stop() -> Completable {
         return dependencies.playerService.stop()
+    }
+    
+    func setPlayerPosition(_ playerPosition: Float) -> Completable {
+        return dependencies.playerService.setPosition(position: Int64(playerPosition), type: ABSOLUTE)
     }
     
     func disconnect() -> Completable {
