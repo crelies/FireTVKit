@@ -12,14 +12,21 @@ public final class FireTVPlayerViewController: UIViewController {
     private var presenter: FireTVPlayerPresenterProtocol?
     
     @IBOutlet private weak var closeButton: UIButton!
+    
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    
     @IBOutlet private weak var nameLabel: UILabel!
+	
+    @IBOutlet private weak var positionStackView: UIStackView!
+    @IBOutlet private weak var positionSlider: UISlider!
+	@IBOutlet private weak var durationLabel: UILabel!
+    
+    @IBOutlet private weak var positionLabel: UILabel!
+    
+    @IBOutlet private weak var controlStackView: UIStackView!
     @IBOutlet private weak var playButton: UIButton!
     @IBOutlet private weak var pauseButton: UIButton!
     @IBOutlet private weak var stopButton: UIButton!
-	
-	@IBOutlet private weak var positionSlider: UISlider!
-	@IBOutlet private weak var positionLabel: UILabel!
-	@IBOutlet private weak var durationLabel: UILabel!
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +89,11 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
         stopButton.isEnabled = viewModel.isPlayerControlEnabled
         positionSlider.isEnabled = viewModel.isPlayerControlEnabled
+        
+        activityIndicatorView.isHidden = viewModel.isActivityIndicatorViewHidden
+        positionStackView.isHidden = viewModel.isPositionStackViewHidden
+        positionLabel.isHidden = viewModel.isPositionLabelHidden
+        controlStackView.isHidden = viewModel.isControlStackViewHidden
     }
 }
 

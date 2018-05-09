@@ -18,20 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jEb-Ol-GBk">
+                                <rect key="frame" x="177" y="90" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yec-i0-6Wh">
-                                <rect key="frame" x="39.5" y="46" width="296" height="132"/>
+                                <rect key="frame" x="33.5" y="46" width="308" height="132"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9C-dw-97h">
-                                        <rect key="frame" x="125.5" y="0.0" width="45" height="30"/>
+                                        <rect key="frame" x="131.5" y="0.0" width="45" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="s1D-oi-6eu">
-                                        <rect key="frame" x="0.0" y="34" width="296" height="30"/>
+                                        <rect key="frame" x="0.0" y="34" width="308" height="30"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7Wk-mk-QZ5">
-                                                <rect key="frame" x="-2" y="0.0" width="242" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="254" height="31"/>
                                                 <connections>
                                                     <action selector="didChangePosition:" destination="iIG-Rk-DhD" eventType="touchUpOutside" id="Ojv-eV-kT2"/>
                                                     <action selector="didChangePosition:" destination="iIG-Rk-DhD" eventType="touchUpInside" id="knX-7Q-YKt"/>
@@ -39,7 +42,7 @@
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoG-NE-jgf">
-                                                <rect key="frame" x="254" y="5" width="42" height="20.5"/>
+                                                <rect key="frame" x="266" y="5" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -47,13 +50,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-uq-tPH">
-                                        <rect key="frame" x="127" y="68" width="42" height="30"/>
+                                        <rect key="frame" x="133" y="68" width="42" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="MTC-p6-GT5">
-                                        <rect key="frame" x="63" y="102" width="170" height="30"/>
+                                        <rect key="frame" x="69" y="102" width="170" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoR-9u-6BD">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
@@ -91,7 +94,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yec-i0-6Wh" firstAttribute="top" secondItem="RET-fs-SuC" secondAttribute="bottom" constant="8" id="3t0-zl-eoh"/>
+                            <constraint firstItem="jEb-Ol-GBk" firstAttribute="centerY" secondItem="N7N-xn-Wp5" secondAttribute="centerY" id="9RD-g6-jiA"/>
                             <constraint firstItem="Ord-RF-Sy8" firstAttribute="trailing" secondItem="RET-fs-SuC" secondAttribute="trailing" constant="8" id="DlO-Ic-UjC"/>
+                            <constraint firstItem="jEb-Ol-GBk" firstAttribute="centerX" secondItem="N7N-xn-Wp5" secondAttribute="centerX" id="TZh-zI-8In"/>
                             <constraint firstItem="yec-i0-6Wh" firstAttribute="centerX" secondItem="N7N-xn-Wp5" secondAttribute="centerX" id="W7G-Nl-daP"/>
                             <constraint firstItem="RET-fs-SuC" firstAttribute="top" secondItem="Ord-RF-Sy8" secondAttribute="top" constant="8" id="rsi-OY-imk"/>
                         </constraints>
@@ -99,13 +104,16 @@
                     </view>
                     <size key="freeformSize" width="375" height="200"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="jEb-Ol-GBk" id="fNH-aU-0i3"/>
                         <outlet property="closeButton" destination="RET-fs-SuC" id="YEb-f4-caw"/>
+                        <outlet property="controlStackView" destination="MTC-p6-GT5" id="bcW-uO-F7U"/>
                         <outlet property="durationLabel" destination="CoG-NE-jgf" id="97A-4L-kgw"/>
                         <outlet property="nameLabel" destination="J9C-dw-97h" id="vcM-P1-uYz"/>
                         <outlet property="pauseButton" destination="WA6-SR-hI9" id="gOO-38-tNu"/>
                         <outlet property="playButton" destination="aoR-9u-6BD" id="cQC-z8-NOG"/>
                         <outlet property="positionLabel" destination="mzB-uq-tPH" id="4uc-YX-q3H"/>
                         <outlet property="positionSlider" destination="7Wk-mk-QZ5" id="EC8-YI-G4v"/>
+                        <outlet property="positionStackView" destination="s1D-oi-6eu" id="ukh-Cy-r7r"/>
                         <outlet property="stopButton" destination="14a-QZ-GvJ" id="JnV-c6-FZu"/>
                     </connections>
                 </viewController>

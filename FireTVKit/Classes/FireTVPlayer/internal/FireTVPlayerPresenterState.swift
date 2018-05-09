@@ -11,4 +11,6 @@ import Foundation
 enum FireTVPlayerPresenterState {
     case connected
     case disconnected
+    case loading
+    case error(Error)
 }

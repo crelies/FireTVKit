@@ -66,6 +66,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         }).disposed(by: disposeBag)
     }
     
+    // TODO: delegation
     func didPressCloseBarButtonItem() {
         guard let viewController = view as? UIViewController else {
             return

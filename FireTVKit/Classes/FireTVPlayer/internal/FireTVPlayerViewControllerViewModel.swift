@@ -10,4 +10,8 @@ import Foundation
 
 struct FireTVPlayerViewControllerViewModel {
     let isPlayerControlEnabled: Bool
+    let isActivityIndicatorViewHidden: Bool
+    let isPositionStackViewHidden: Bool
+    let isPositionLabelHidden: Bool
+    let isControlStackViewHidden: Bool
 }
