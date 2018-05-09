@@ -13,7 +13,7 @@ protocol FireTVManagerDependenciesProtocol: HasPlayerDiscoveryService {
 }
 
 struct FireTVManagerDependencies: FireTVManagerDependenciesProtocol {
-    var playerDiscoveryService: PlayerDiscoveryServiceProtocol
+    let playerDiscoveryService: PlayerDiscoveryServiceProtocol
     
     init() {
         playerDiscoveryService = ServiceFactory.makePlayerDiscoveryService()

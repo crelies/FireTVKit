@@ -22,7 +22,7 @@ public final class ServiceFactory: ServiceFactoryProtocol {
         return PlayerService(withPlayer: player)
     }
     
-    public static func makeReachabilityService() -> ReachabilityServiceProtocol? {
+	static func makeReachabilityService() -> ReachabilityServiceProtocol? {
         return ReachabilityService()
     }
 }

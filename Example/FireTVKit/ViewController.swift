@@ -29,11 +29,12 @@ final class ViewController: UIViewController {
     
     @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
         if let selectedDevice = selectedDevice {
-            do {
-                try PlayerDiscoveryController.shared.startSearch(forPlayerId: nil)
-            } catch {
-                // TODO:
-            }
+			let fireTVManager = FireTVManager()
+			do {
+				try fireTVManager.startDiscovery(forPlayerID: "amzn.thin.pl")
+			} catch {
+				// TODO:
+			}
             
             let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
             
@@ -51,10 +52,10 @@ final class ViewController: UIViewController {
             _ = playerService.play(withMetadata: metadata, url: URL)
                 .subscribe(onCompleted: {
                     print("success")
-                    PlayerDiscoveryController.shared.stopSearch()
+                    fireTVManager.stopDiscovery()
                 }, onError: { error in
                     print(error)
-                    PlayerDiscoveryController.shared.stopSearch()
+                    fireTVManager.stopDiscovery()
                 })
         }
     }
