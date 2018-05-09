@@ -92,7 +92,6 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         
         activityIndicatorView.isHidden = viewModel.isActivityIndicatorViewHidden
         positionStackView.isHidden = viewModel.isPositionStackViewHidden
-        positionLabel.isHidden = viewModel.isPositionLabelHidden
         controlStackView.isHidden = viewModel.isControlStackViewHidden
     }
 }
