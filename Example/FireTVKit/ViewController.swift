@@ -15,8 +15,8 @@ final class ViewController: UIViewController {
     private let disposeBag: DisposeBag = DisposeBag()
     private var selectedDevice: RemoteMediaPlayer?
     
-    // https://www.youtube.com/watch?v=f9psILoYmCc
-    private let URL = "https://r1---sn-4g5edne6.googlevideo.com/videoplayback?requiressl=yes&ratebypass=yes&fexp=23724337&fvip=1&ipbits=0&mime=video/mp4&c=WEB&nh=,IgpwZjAxLmFtczE1Kg03NC4xMjUuNTIuMTY1&initcwndbps=1037500&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,nh,pl,ratebypass,requiressl,source,expire&source=youtube&pl=17&ei=R-HxWsz0BN3m1gLS7oDQAQ&lmt=1512104683161670&ip=31.17.237.178&expire=1525822887&id=o-AMC0-xbztYAK7BNDM4W1WW-cZNE7-UYneQ5KnwHpUq7y&mn=sn-4g5edne6,sn-5hne6nse&mm=31,26&signature=B413EC6C5286D2ACAD49712215398D0374A1DB9C.E0CA2325FA509264E32BF1BF676F35DD31E7C534&itag=22&mv=m&mt=1525801213&ms=au,onr&key=yt6&dur=178.584"
+    // sample video
+    private let SAMPLE_VIDEO_URL = "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4"
     
     @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
         do {
@@ -49,7 +49,7 @@ final class ViewController: UIViewController {
             metadata.title = "Testvideo"
             metadata.description = "A video for test purposes"
             metadata.noreplay = true
-            _ = playerService.play(withMetadata: metadata, url: URL)
+            _ = playerService.play(withMetadata: metadata, url: SAMPLE_VIDEO_URL)
                 .subscribe(onCompleted: {
                     print("success")
                     fireTVManager.stopDiscovery()
@@ -64,6 +64,8 @@ final class ViewController: UIViewController {
 extension ViewController: FireTVSelectionDelegateProtocol {
     func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
         do {
+            fireTVSelectionViewController.dismiss(animated: true, completion: nil)
+            
             selectedDevice = player
             let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, delegate: self)
             present(fireTVPlayerVC, animated: true)
@@ -71,10 +73,14 @@ extension ViewController: FireTVSelectionDelegateProtocol {
             print(error)
         }
     }
+    
+    func didPressCloseButton(_ fireTVSelectionViewController: FireTVSelectionViewController) {
+        fireTVSelectionViewController.dismiss(animated: true, completion: nil)
+    }
 }
 
-extension ViewController: FireTVPlayerPresenterDelegateProtocol {
-    func didPressCloseButton(viewController: UIViewController) {
-        viewController.dismiss(animated: true, completion: nil)
+extension ViewController: FireTVPlayerDelegateProtocol {
+    func didPressCloseButton(_ fireTVPlayerViewController: FireTVPlayerViewController) {
+        fireTVPlayerViewController.dismiss(animated: true, completion: nil)
     }
 }
