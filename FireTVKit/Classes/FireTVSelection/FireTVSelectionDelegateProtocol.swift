@@ -11,4 +11,5 @@ import Foundation
 
 public protocol FireTVSelectionDelegateProtocol: class {
     func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer)
+    func didPressCloseButton(_ fireTVSelectionViewController: FireTVSelectionViewController)
 }

@@ -70,7 +70,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressCloseButton() {
-        guard let viewController = view as? UIViewController else {
+        guard let viewController = view as? FireTVPlayerViewController else {
             return
         }
         
@@ -78,7 +78,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             .subscribe(onCompleted: {
                 self.state = .disconnected
                 self.interactor.stopFireTVDiscovery()
-                self.delegate?.didPressCloseButton(viewController: viewController)
+                self.delegate?.didPressCloseButton(viewController)
             }, onError: { error in
                 // TODO:
                 print("interactor.disconnect(): \(error.localizedDescription)")
@@ -86,7 +86,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 if let playerServiceError = error as? PlayerServiceError, playerServiceError == PlayerServiceError.currentPlayerComparisonFailed {
                     self.state = .disconnected
                     self.interactor.stopFireTVDiscovery()
-                    self.delegate?.didPressCloseButton(viewController: viewController)
+                    self.delegate?.didPressCloseButton(viewController)
                 }
             }).disposed(by: disposeBag)
     }

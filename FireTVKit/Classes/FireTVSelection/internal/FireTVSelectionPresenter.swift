@@ -66,15 +66,14 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         }).disposed(by: disposeBag)
     }
     
-    // TODO: delegation
     func didPressCloseBarButtonItem() {
-        guard let viewController = view as? UIViewController else {
+        guard let viewController = view as? FireTVSelectionViewController else {
             return
         }
         
         interactor.stopFireTVDiscovery()
         
-        router.dismiss(viewController: viewController)
+        delegate?.didPressCloseButton(viewController)
     }
 }
 
@@ -102,9 +101,7 @@ extension FireTVSelectionPresenter: UITableViewDelegate {
         guard let viewController = view as? FireTVSelectionViewController else {
             return
         }
-        
-        router.dismiss(viewController: viewController)
-        
+                
         guard indexPath.row >= 0, indexPath.row < self.player.count else {
             return
         }

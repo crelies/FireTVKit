@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol FireTVPlayerDelegateProtocol: class {
-    func didPressCloseButton(viewController: UIViewController)
+    func didPressCloseButton(_ fireTVPlayerViewController: FireTVPlayerViewController)
 }
