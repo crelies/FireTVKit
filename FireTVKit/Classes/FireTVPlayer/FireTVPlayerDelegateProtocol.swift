@@ -1,5 +1,5 @@
 //
-//  FireTVPlayerPresenterDelegateProtocol.swift
+//  FireTVPlayerDelegateProtocol.swift
 //  FireTVKit
 //
 //  Created by crelies on 08.05.2018.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol FireTVPlayerPresenterDelegateProtocol: class {
+public protocol FireTVPlayerDelegateProtocol: class {
     func didPressCloseButton(viewController: UIViewController)
 }

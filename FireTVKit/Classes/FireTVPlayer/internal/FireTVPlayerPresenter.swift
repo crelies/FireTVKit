@@ -30,9 +30,9 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             updateUI(forState: state)
         }
     }
-    private weak var delegate: FireTVPlayerPresenterDelegateProtocol?
+    private weak var delegate: FireTVPlayerDelegateProtocol?
     
-    init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol, delegate: FireTVPlayerPresenterDelegateProtocol?) {
+    init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol, delegate: FireTVPlayerDelegateProtocol?) {
         self.dependencies = dependencies
         self.view = view
         self.interactor = interactor

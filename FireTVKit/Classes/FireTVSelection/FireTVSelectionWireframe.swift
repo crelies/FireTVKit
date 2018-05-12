@@ -9,7 +9,7 @@
 import UIKit
 
 public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
-	// TODO: pass stream url
+	// TODO: pass stream url (optional media containing stream url and metadata), delegate, theme
     public static func makeViewController(playerId: String, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         

@@ -359,7 +359,7 @@
 		B59B299FC6131A0F742E207D71A09023 /* BFAppLinkResolving.h in Headers */ = {isa = PBXBuildFile; fileRef = DF31E0AD4C2570E18C076B2509C7FAE0 /* BFAppLinkResolving.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7957E3D2362CD98459D90DC686D55EB /* SubscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7777C449573F1BF505606140C40112 /* SubscribeOn.swift */; };
 		B841486294FD6A6E9AE201BFC87F9D1B /* ObservableType+PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321C7C10EFEB969FA65F1F901EDBB04 /* ObservableType+PrimitiveSequence.swift */; };
-		B90CF81720A23A4900DF42D4 /* FireTVPlayerPresenterDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90CF81620A23A4900DF42D4 /* FireTVPlayerPresenterDelegateProtocol.swift */; };
+		B90CF81720A23A4900DF42D4 /* FireTVPlayerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90CF81620A23A4900DF42D4 /* FireTVPlayerDelegateProtocol.swift */; };
 		B90CF81920A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90CF81820A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift */; };
 		B9779109F628E2D53EA42CBD9AE3D4AB /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557A23AFFF80EB696BD8DD95376647E2 /* Signal.swift */; };
 		B991B23420A3738B00C08EEB /* TimeStringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23320A3738B00C08EEB /* TimeStringFactory.swift */; };
@@ -987,7 +987,7 @@
 		B8642A378B4F2A3D73A3C2B05EB843D7 /* UICollectionView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Rx.swift"; path = "RxCocoa/iOS/UICollectionView+Rx.swift"; sourceTree = "<group>"; };
 		B87A16A8FA141D56F52075F1599FDCCE /* BoltsVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BoltsVersion.h; path = Bolts/Common/BoltsVersion.h; sourceTree = "<group>"; };
 		B8A61D431997220B3899182DB78173EC /* SwitchIfEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchIfEmpty.swift; path = RxSwift/Observables/SwitchIfEmpty.swift; sourceTree = "<group>"; };
-		B90CF81620A23A4900DF42D4 /* FireTVPlayerPresenterDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVPlayerPresenterDelegateProtocol.swift; sourceTree = "<group>"; };
+		B90CF81620A23A4900DF42D4 /* FireTVPlayerDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVPlayerDelegateProtocol.swift; sourceTree = "<group>"; };
 		B90CF81820A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoteMediaPlayerProtocol.swift; path = FireTVKit/Classes/RemoteMediaPlayerProtocol.swift; sourceTree = "<group>"; };
 		B95288FFE7090462E7DDB3DC9609F2C4 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		B991B23320A3738B00C08EEB /* TimeStringFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStringFactory.swift; sourceTree = "<group>"; };
@@ -1509,7 +1509,7 @@
 				C258147534AE001AC61091F519558BE2 /* FireTVPlayerViewController.swift */,
 				71145E209707C5963EFBA699047ED8EA /* FireTVPlayerWireframe.swift */,
 				F5D1EED253398C993499F783BD57F184 /* FireTVPlayerWireframeError.swift */,
-				B90CF81620A23A4900DF42D4 /* FireTVPlayerPresenterDelegateProtocol.swift */,
+				B90CF81620A23A4900DF42D4 /* FireTVPlayerDelegateProtocol.swift */,
 				C2D8EE5DB21DFDACFF179C602BB504B8 /* internal */,
 			);
 			name = FireTVPlayer;
@@ -2716,7 +2716,7 @@
 				0BFED3F60116544FDC539EFA5DF7CEA9 /* PlayerDiscoveryService.swift in Sources */,
 				CD77EF5C92CD2D42B2DA14F86E14B13B /* PlayerService.swift in Sources */,
 				881ABCB4ACCAC0A0CF5C91E05FF61694 /* PlayerServiceError.swift in Sources */,
-				B90CF81720A23A4900DF42D4 /* FireTVPlayerPresenterDelegateProtocol.swift in Sources */,
+				B90CF81720A23A4900DF42D4 /* FireTVPlayerDelegateProtocol.swift in Sources */,
 				B18710835F49305572EFE37ED9320DBE /* PlayerServiceProtocol.swift in Sources */,
 				9AC898C1031DB1C5CBE3C73B7651FE33 /* PlayerStatus.swift in Sources */,
 				B90CF81920A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift in Sources */,

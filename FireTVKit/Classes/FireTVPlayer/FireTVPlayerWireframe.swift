@@ -10,8 +10,8 @@ import AmazonFling
 import UIKit
 
 public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
-	// TODO: add theme
-    public static func makeViewController(forPlayer player: RemoteMediaPlayer, delegate: FireTVPlayerPresenterDelegateProtocol?) throws -> FireTVPlayerViewController {
+	// TODO: add theme, dummy player, sample video
+    public static func makeViewController(forPlayer player: RemoteMediaPlayer, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
         
         guard let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else {
