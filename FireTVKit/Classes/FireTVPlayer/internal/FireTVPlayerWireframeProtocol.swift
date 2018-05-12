@@ -10,5 +10,5 @@ import AmazonFling
 import Foundation
 
 protocol FireTVPlayerWireframeProtocol {
-    static func makeViewController(forPlayer player: RemoteMediaPlayer, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController
+    static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController
 }

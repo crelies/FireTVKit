@@ -363,6 +363,9 @@
 		B90CF81920A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90CF81820A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift */; };
 		B9779109F628E2D53EA42CBD9AE3D4AB /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557A23AFFF80EB696BD8DD95376647E2 /* Signal.swift */; };
 		B991B23420A3738B00C08EEB /* TimeStringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23320A3738B00C08EEB /* TimeStringFactory.swift */; };
+		B991B23620A77AEC00C08EEB /* FireTVMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23520A77AEC00C08EEB /* FireTVMedia.swift */; };
+		B991B23820A77BA700C08EEB /* FireTVSelectionThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23720A77BA700C08EEB /* FireTVSelectionThemeProtocol.swift */; };
+		B991B23A20A77BE600C08EEB /* FireTVPlayerThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23920A77BE600C08EEB /* FireTVPlayerThemeProtocol.swift */; };
 		BA9C3D736BD11D6176325A6A629E939E /* UIRefreshControl+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC99D891F43EC5BC6A5E41CDD09D2 /* UIRefreshControl+Rx.swift */; };
 		BBEF6D6A30E1B2C77596CC2F869BD48D /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED16D4430E519D68E8CB98B1BB43C3 /* ExampleHooks.swift */; };
 		BC7B9761322C74FA27969BD55833BA47 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FC57E4354E17CB7310D5BA945B68F /* Errors.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -991,6 +994,9 @@
 		B90CF81820A2441900DF42D4 /* RemoteMediaPlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoteMediaPlayerProtocol.swift; path = FireTVKit/Classes/RemoteMediaPlayerProtocol.swift; sourceTree = "<group>"; };
 		B95288FFE7090462E7DDB3DC9609F2C4 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		B991B23320A3738B00C08EEB /* TimeStringFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStringFactory.swift; sourceTree = "<group>"; };
+		B991B23520A77AEC00C08EEB /* FireTVMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVMedia.swift; sourceTree = "<group>"; };
+		B991B23720A77BA700C08EEB /* FireTVSelectionThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVSelectionThemeProtocol.swift; sourceTree = "<group>"; };
+		B991B23920A77BE600C08EEB /* FireTVPlayerThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVPlayerThemeProtocol.swift; sourceTree = "<group>"; };
 		B99C61284F5565A4550EDD59776A5B29 /* UIControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Rx.swift"; path = "RxCocoa/iOS/UIControl+Rx.swift"; sourceTree = "<group>"; };
 		BA5047EF34A4A809E05E82D5569E5C67 /* RxTableViewReactiveArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewReactiveArrayDataSource.swift; path = RxCocoa/iOS/DataSources/RxTableViewReactiveArrayDataSource.swift; sourceTree = "<group>"; };
 		BB6B7FAF8DEA78CD297AFEA86D23E768 /* PlayerDiscoveryController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryController.swift; sourceTree = "<group>"; };
@@ -1511,6 +1517,7 @@
 				F5D1EED253398C993499F783BD57F184 /* FireTVPlayerWireframeError.swift */,
 				B90CF81620A23A4900DF42D4 /* FireTVPlayerDelegateProtocol.swift */,
 				C2D8EE5DB21DFDACFF179C602BB504B8 /* internal */,
+				B991B23920A77BE600C08EEB /* FireTVPlayerThemeProtocol.swift */,
 			);
 			name = FireTVPlayer;
 			path = FireTVKit/Classes/FireTVPlayer;
@@ -1932,6 +1939,8 @@
 				6F6865E8B81DD8946B33C18FE7F8F992 /* FireTVSelectionWireframe.swift */,
 				C75AA9B998C90F3BBE543FA5A70FEA56 /* FireTVSelectionWireframeError.swift */,
 				7A83E993B67B411246D67043BBA126AC /* internal */,
+				B991B23520A77AEC00C08EEB /* FireTVMedia.swift */,
+				B991B23720A77BA700C08EEB /* FireTVSelectionThemeProtocol.swift */,
 			);
 			name = FireTVSelection;
 			path = FireTVKit/Classes/FireTVSelection;
@@ -2689,6 +2698,7 @@
 				50FC6757265FA146714B885BFEE47326 /* FireTVPlayerViewController.swift in Sources */,
 				EBC9ADA2805EEC783C5607E202E85ACC /* FireTVPlayerViewControllerViewModel.swift in Sources */,
 				B991B23420A3738B00C08EEB /* TimeStringFactory.swift in Sources */,
+				B991B23820A77BA700C08EEB /* FireTVSelectionThemeProtocol.swift in Sources */,
 				663384471198D79FECE7FE90C4242518 /* FireTVPlayerViewProtocol.swift in Sources */,
 				C8AEEA1C06EFF075F0B87F1576D538C2 /* FireTVPlayerWireframe.swift in Sources */,
 				B2D8B74EBF666DEEFC555BA708EC35FB /* FireTVPlayerWireframeError.swift in Sources */,
@@ -2715,6 +2725,7 @@
 				08CD077A82335894A6385450B036317A /* PlayerDiscoveryControllerProtocol.swift in Sources */,
 				0BFED3F60116544FDC539EFA5DF7CEA9 /* PlayerDiscoveryService.swift in Sources */,
 				CD77EF5C92CD2D42B2DA14F86E14B13B /* PlayerService.swift in Sources */,
+				B991B23620A77AEC00C08EEB /* FireTVMedia.swift in Sources */,
 				881ABCB4ACCAC0A0CF5C91E05FF61694 /* PlayerServiceError.swift in Sources */,
 				B90CF81720A23A4900DF42D4 /* FireTVPlayerDelegateProtocol.swift in Sources */,
 				B18710835F49305572EFE37ED9320DBE /* PlayerServiceProtocol.swift in Sources */,
@@ -2723,6 +2734,7 @@
 				13ABDE0A7EE64D808CA7961705CC0FC5 /* PlayerViewModel.swift in Sources */,
 				37FBF5A264927924DF1E7B0CA1FDF2E4 /* ReachabilityService.swift in Sources */,
 				DC119AAFEC9C997871B5D8E0944A5A7A /* ReachabilityServiceProtocol.swift in Sources */,
+				B991B23A20A77BE600C08EEB /* FireTVPlayerThemeProtocol.swift in Sources */,
 				3195D82FF772E61A48DCCCDB2905F350 /* ServiceFactory.swift in Sources */,
 				033C26C0AF0B854103E73A88644986FF /* ServiceFactoryProtocol.swift in Sources */,
 				D67672045388766C7DD0FE10C09D80A3 /* Subtitle.swift in Sources */,

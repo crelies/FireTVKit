@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FireTVSelectionWireframeProtocol {
-    static func makeViewController(playerId: String, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController
+    static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController
 }
