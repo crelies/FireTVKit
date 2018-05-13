@@ -6,14 +6,13 @@
 //  Copyright © 2018 Christian Elies. All rights reserved.
 //
 
-import AmazonFling
 import Foundation
 import RxSwift
 
 public final class FireTVManager: FireTVManagerProtocol {
     private let dependencies: FireTVManagerDependenciesProtocol
     
-    public var devices: Observable<[RemoteMediaPlayer]?> {
+    public var devices: Observable<[RemoteMediaPlayerProtocol]?> {
         return dependencies.playerDiscoveryService.devicesVariable.asObservable()
     }
     

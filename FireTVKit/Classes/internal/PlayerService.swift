@@ -15,7 +15,7 @@ protocol PlayerServiceProvider {
 }
 
 final class PlayerService: NSObject, PlayerServiceProtocol {
-    var player: RemoteMediaPlayer?
+    var player: RemoteMediaPlayerProtocol?
 	
 	var playerData: Observable<PlayerData?> {
 		return playerDataVariable.asObservable()
@@ -24,7 +24,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
     private var playerDataVariable: Variable<PlayerData?>
 	private let disposeBag: DisposeBag
 	
-    init(withPlayer player: RemoteMediaPlayer?) {
+    init(withPlayer player: RemoteMediaPlayerProtocol?) {
         self.player = player
         playerDataVariable = Variable<PlayerData?>(nil)
         disposeBag = DisposeBag()
@@ -40,7 +40,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
         print("PlayerService deinitialized")
     }
     
-    func connectToPlayer(_ newPlayer: RemoteMediaPlayer) -> Completable {
+    func connectToPlayer(_ newPlayer: RemoteMediaPlayerProtocol) -> Completable {
         return Completable.create { completable -> Disposable in
             var disposable = Disposables.create()
             
@@ -100,7 +100,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 		}
     }
 	
-    func play(withMetadata metadata: Metadata, url: String, autoPlay: Bool, playInBackground: Bool) -> Completable {
+    func play(withMetadata metadata: Metadata, url: String) -> Completable {
 		return Completable.create { completable -> Disposable in
             let disposable = Disposables.create()
             
@@ -113,7 +113,8 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 				let metadataData = try JSONEncoder().encode(metadata)
 				let metadataString = String(data: metadataData, encoding: .utf8)
 				
-                let _ = currentPlayer.setMediaSourceToURL(url, metaData: metadataString, autoPlay: autoPlay, andPlayInBackground: playInBackground).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+                // The built-in media player receiver does not support autoplay and playInBg at this time. A custom media player is required to use these options.
+                let _ = currentPlayer.setMediaSourceToURL(url, metaData: metadataString, autoPlay: true, andPlayInBackground: false).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
 					if let error = task.error {
                         completable(.error(error))
 					} else {
@@ -282,7 +283,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 		}
 	}
     
-    func disconnect(fromPlayer oldPlayer: RemoteMediaPlayer) -> Completable {
+    func disconnect(fromPlayer oldPlayer: RemoteMediaPlayerProtocol) -> Completable {
         return Completable.create { completable -> Disposable in
             let disposable = Disposables.create()
             
@@ -316,7 +317,7 @@ extension PlayerService: MediaPlayerStatusListener {
 
 extension PlayerService {
     // MARK: - player connection
-    private func connect(toPlayer newPlayer: RemoteMediaPlayer) -> Completable {
+    private func connect(toPlayer newPlayer: RemoteMediaPlayerProtocol) -> Completable {
         return Completable.create { completable -> Disposable in
             let disposable = Disposables.create()
             

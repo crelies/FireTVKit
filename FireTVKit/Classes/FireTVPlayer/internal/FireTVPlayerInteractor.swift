@@ -32,9 +32,9 @@ protocol FireTVPlayerInteractorInputProtocol {
 final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     private weak var presenter: FireTVPlayerPresenterProtocol?
     private let dependencies: FireTVPlayerInteractorDependenciesProtocol
-    private let player: RemoteMediaPlayer
+    private let player: RemoteMediaPlayerProtocol
     
-    init(dependencies: FireTVPlayerInteractorDependenciesProtocol, player: RemoteMediaPlayer) {
+    init(dependencies: FireTVPlayerInteractorDependenciesProtocol, player: RemoteMediaPlayerProtocol) {
         self.dependencies = dependencies
         self.player = player
     }

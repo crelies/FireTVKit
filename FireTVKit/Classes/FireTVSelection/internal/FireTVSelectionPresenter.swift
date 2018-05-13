@@ -22,7 +22,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     private let router: FireTVSelectionRouterProtocol
     private weak var delegate: FireTVSelectionDelegateProtocol?
 	private let disposeBag: DisposeBag
-    private var player: [RemoteMediaPlayer]
+    private var player: [RemoteMediaPlayerProtocol]
     private var playerViewModels: [PlayerViewModel]
     
     init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, delegate: FireTVSelectionDelegateProtocol) {

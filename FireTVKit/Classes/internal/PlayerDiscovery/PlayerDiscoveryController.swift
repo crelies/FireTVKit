@@ -12,7 +12,7 @@ import Foundation
 final class PlayerDiscoveryController {
 	static let shared = PlayerDiscoveryController()
 	
-    private(set) var devices: [RemoteMediaPlayer]
+    private(set) var devices: [RemoteMediaPlayerProtocol]
 	weak var delegate: PlayerDiscoveryControllerDelegateProtocol?
 
 	private let discoveryController: DiscoveryController
@@ -58,9 +58,13 @@ extension PlayerDiscoveryController: DiscoveryListener {
 				return
 			}
             
-            weakSelf.devices.append(device)
+            guard let player = device as? RemoteMediaPlayerProtocol else {
+                return
+            }
+            
+            weakSelf.devices.append(player)
 			
-			weakSelf.delegate?.deviceDiscovered(weakSelf, device: device)
+			weakSelf.delegate?.deviceDiscovered(weakSelf, device: player)
 		}
 	}
 	
@@ -71,11 +75,15 @@ extension PlayerDiscoveryController: DiscoveryListener {
 				return
 			}
             
-            if let index = weakSelf.devices.index (where: { $0.uniqueIdentifier() == device.uniqueIdentifier() }) {
+            guard let player = device as? RemoteMediaPlayerProtocol else {
+                return
+            }
+            
+            if let index = weakSelf.devices.index (where: { $0.uniqueIdentifier() == player.uniqueIdentifier() }) {
                 weakSelf.devices.remove(at: index)
             }
 			
-			weakSelf.delegate?.deviceLost(weakSelf, device: device)
+			weakSelf.delegate?.deviceLost(weakSelf, device: player)
 		}
 	}
 	
