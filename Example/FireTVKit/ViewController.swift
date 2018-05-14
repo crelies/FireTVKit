@@ -11,6 +11,10 @@ import FireTVKit
 import RxSwift
 import UIKit
 
+struct ExampleSelectionTheme: FireTVSelectionThemeProtocol {
+    
+}
+
 final class ViewController: UIViewController {
     private let disposeBag: DisposeBag = DisposeBag()
     private var selectedDevice: RemoteMediaPlayer?
@@ -20,7 +24,7 @@ final class ViewController: UIViewController {
     
     @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
         do {
-            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(playerId: "amzn.thin.pl", delegate: self)
+            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(theme: ExampleSelectionTheme(), playerId: "amzn.thin.pl", media: nil, delegate: self)
             present(fireTVSelectionVC, animated: true)
         } catch {
             print(error)
@@ -61,13 +65,17 @@ final class ViewController: UIViewController {
     }
 }
 
+struct ExamplePlayerTheme: FireTVPlayerThemeProtocol {
+    
+}
+
 extension ViewController: FireTVSelectionDelegateProtocol {
     func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
         do {
             fireTVSelectionViewController.dismiss(animated: true, completion: nil)
             
             selectedDevice = player
-            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, delegate: self)
+            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: ExamplePlayerTheme(), delegate: self)
             present(fireTVPlayerVC, animated: true)
         } catch {
             print(error)

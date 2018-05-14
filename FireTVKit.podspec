@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'FireTVKit/Classes/**/*.swift'
   s.resource_bundle = {
-	  'FireTVKit' => 'FireTVKit/Classes/**/*.storyboard'
+      'FireTVKit' => 'FireTVKit/**/*{.storyboard,.xcassets}'
   }
 
   s.frameworks = 'UIKit'

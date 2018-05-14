@@ -20,7 +20,7 @@
   },
   "source_files": "FireTVKit/Classes/**/*.swift",
   "resource_bundles": {
-    "FireTVKit": "FireTVKit/Classes/**/*.storyboard"
+    "FireTVKit": "FireTVKit/**/*{.storyboard,.xcassets}"
   },
   "frameworks": "UIKit",
   "dependencies": {

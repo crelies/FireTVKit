@@ -31,6 +31,7 @@ public final class FireTVPlayerViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         setLocalizedTexts()
+        setButtonImages()
         presenter?.viewDidLoad()
     }
     
@@ -100,8 +101,21 @@ extension FireTVPlayerViewController {
     func setLocalizedTexts() {
         // TODO: move to string constants and localizables
         closeButton.setTitle("Close", for: .normal)
-        playButton.setTitle("Play", for: .normal)
-        pauseButton.setTitle("Pause", for: .normal)
-        stopButton.setTitle("Stop", for: .normal)
+        
+        playButton.setTitle("", for: .normal)
+        pauseButton.setTitle("", for: .normal)
+        stopButton.setTitle("", for: .normal)
+    }
+    
+    private func setButtonImages() {
+        let podBundle = Bundle(for: FireTVPlayerViewController.self)
+        if let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
+            playButton.setImage(UIImage(named: "ic_play_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
+            playButton.setImage(UIImage(named: "ic_play_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
+            pauseButton.setImage(UIImage(named: "ic_pause_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
+            pauseButton.setImage(UIImage(named: "ic_pause_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
+            stopButton.setImage(UIImage(named: "ic_stop_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
+            stopButton.setImage(UIImage(named: "ic_stop_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
+        }
     }
 }
