@@ -11,9 +11,9 @@ import Foundation
 
 struct DeviceInfo {
     let status: DeviceInfoStatus
-    var device: RemoteMediaPlayerProtocol?
+    var device: RemoteMediaPlayer?
     
-    init(device: RemoteMediaPlayerProtocol) {
+    init(device: RemoteMediaPlayer) {
         status = .deviceDiscovered
         self.device = device
     }
@@ -22,7 +22,7 @@ struct DeviceInfo {
         self.status = status
     }
     
-    init(status: DeviceInfoStatus, device: RemoteMediaPlayerProtocol) {
+    init(status: DeviceInfoStatus, device: RemoteMediaPlayer) {
         self.status = status
         self.device = device
     }

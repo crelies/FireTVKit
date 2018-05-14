@@ -9,9 +9,9 @@
 import AmazonFling
 import Foundation
 
-public protocol RemoteMediaPlayerProtocol: RemoteMediaPlayer {
-    var name: String { get }
-    var uniqueIdentifier: String { get }
+public protocol RemoteMediaPlayerProtocol {
+    func name() -> String
+    func uniqueIdentifier() -> String
     
 //    The built-in media player receiver does not support the mute and volume API calls at this time.
 //    func getVolume() -> BFTask<AnyObject>
@@ -21,7 +21,7 @@ public protocol RemoteMediaPlayerProtocol: RemoteMediaPlayer {
     
     func getPosition() -> BFTask<AnyObject>
     func getDuration() -> BFTask<AnyObject>
-    func getStatus() -> BFTask<MediaPlayerStatus>
+    func getStatus() -> BFTask<AnyObject>
     func isMimeTypeSupported(mimeType: String) -> BFTask<AnyObject>
     func play() -> BFTask<AnyObject>
     func pause() -> BFTask<AnyObject>
@@ -29,10 +29,10 @@ public protocol RemoteMediaPlayerProtocol: RemoteMediaPlayer {
     func seek(toPosition position: Int64, andMode mode: SeekType) -> BFTask<AnyObject>
     
     // The built-in media player receiver does not support autoplay and playInBg at this time. A custom media player is required to use these options.
-    func setMediaSourceToURL(mediaLoc: String, metaData: String, autoPlay: Bool, andPlayInBackground playInBackground: Bool) -> BFTask<AnyObject>
+    func setMediaSourceToURL(_ mediaLoc: String, metaData: String, autoPlay: Bool, andPlayInBackground playInBackground: Bool) -> BFTask<AnyObject>
     
-    func add(listener: MediaPlayerStatusListener) -> BFTask<AnyObject>
-    func remove(listener: MediaPlayerStatusListener) -> BFTask<AnyObject>
+    func add(_ listener: MediaPlayerStatusListener) -> BFTask<AnyObject>
+    func remove(_ listener: MediaPlayerStatusListener) -> BFTask<AnyObject>
     func setPositionUpdateInterval(intervalMs: Int64) -> BFTask<AnyObject>
     
     // The built-in media player receiver does not support the sendCommand API call. The intention of this API call is to allow custom receivers to receive information that can not be included in other API calls.  A custom media player is required to use this API.

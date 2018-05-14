@@ -15,7 +15,7 @@ protocol PlayerServiceProvider {
 }
 
 final class PlayerService: NSObject, PlayerServiceProtocol {
-    var player: RemoteMediaPlayerProtocol?
+    var player: RemoteMediaPlayer?
 	
 	var playerData: Observable<PlayerData?> {
 		return playerDataVariable.asObservable()
@@ -24,7 +24,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
     private var playerDataVariable: Variable<PlayerData?>
 	private let disposeBag: DisposeBag
 	
-    init(withPlayer player: RemoteMediaPlayerProtocol?) {
+    init(withPlayer player: RemoteMediaPlayer?) {
         self.player = player
         playerDataVariable = Variable<PlayerData?>(nil)
         disposeBag = DisposeBag()
@@ -40,7 +40,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
         print("PlayerService deinitialized")
     }
     
-    func connectToPlayer(_ newPlayer: RemoteMediaPlayerProtocol) -> Completable {
+    func connectToPlayer(_ newPlayer: RemoteMediaPlayer) -> Completable {
         return Completable.create { completable -> Disposable in
             var disposable = Disposables.create()
             
@@ -111,18 +111,22 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
             
 			do {
 				let metadataData = try JSONEncoder().encode(metadata)
-				let metadataString = String(data: metadataData, encoding: .utf8)
 				
-                // The built-in media player receiver does not support autoplay and playInBg at this time. A custom media player is required to use these options.
-                let _ = currentPlayer.setMediaSourceToURL(url, metaData: metadataString, autoPlay: true, andPlayInBackground: false).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
-					if let error = task.error {
-                        completable(.error(error))
-					} else {
-						completable(.completed)
-					}
-					
-					return nil
-				})
+                if let metadataString = String(data: metadataData, encoding: .utf8) {
+                    // The built-in media player receiver does not support autoplay and playInBg at this time. A custom media player is required to use these options.
+                    let _ = currentPlayer.setMediaSourceToURL(url, metaData: metadataString, autoPlay: true, andPlayInBackground: false).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+                        if let error = task.error {
+                            completable(.error(error))
+                        } else {
+                            completable(.completed)
+                        }
+                        
+                        return nil
+                    })
+                } else {
+                    completable(.error(PlayerServiceError.couldNotCreateStringFromMetadata))
+                    return disposable
+                }
 			} catch {
 				completable(.error(error))
 			}
@@ -283,7 +287,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 		}
 	}
     
-    func disconnect(fromPlayer oldPlayer: RemoteMediaPlayerProtocol) -> Completable {
+    func disconnect(fromPlayer oldPlayer: RemoteMediaPlayer) -> Completable {
         return Completable.create { completable -> Disposable in
             let disposable = Disposables.create()
             
@@ -317,7 +321,7 @@ extension PlayerService: MediaPlayerStatusListener {
 
 extension PlayerService {
     // MARK: - player connection
-    private func connect(toPlayer newPlayer: RemoteMediaPlayerProtocol) -> Completable {
+    private func connect(toPlayer newPlayer: RemoteMediaPlayer) -> Completable {
         return Completable.create { completable -> Disposable in
             let disposable = Disposables.create()
             

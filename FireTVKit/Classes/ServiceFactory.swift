@@ -18,7 +18,7 @@ public final class ServiceFactory: ServiceFactoryProtocol {
         return PlayerService(withPlayer: nil)
     }
     
-    public static func makePlayerService(withPlayer player: RemoteMediaPlayerProtocol) -> PlayerServiceProtocol {
+    public static func makePlayerService(withPlayer player: RemoteMediaPlayer) -> PlayerServiceProtocol {
         return PlayerService(withPlayer: player)
     }
     

@@ -17,7 +17,7 @@ protocol FireTVSelectionInteractorOutputProtocol {
 protocol FireTVSelectionInteractorInputProtocol {
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol)
 	func startFireTVDiscovery() throws
-	func getFireTVs() -> Observable<[RemoteMediaPlayerProtocol]?>
+	func getFireTVs() -> Observable<[RemoteMediaPlayer]?>
 	func stopFireTVDiscovery()
 }
 
@@ -45,7 +45,7 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
         PlayerDiscoveryController.shared.startSearch(forPlayerId: playerId)
 	}
 	
-	func getFireTVs() -> Observable<[RemoteMediaPlayerProtocol]?> {
+	func getFireTVs() -> Observable<[RemoteMediaPlayer]?> {
 		return dependencies.playerDiscoveryService.devicesVariable.asObservable()
 	}
 	

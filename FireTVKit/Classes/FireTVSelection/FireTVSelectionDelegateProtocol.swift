@@ -10,6 +10,6 @@ import AmazonFling
 import Foundation
 
 public protocol FireTVSelectionDelegateProtocol: class {
-    func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayerProtocol)
+    func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer)
     func didPressCloseButton(_ fireTVSelectionViewController: FireTVSelectionViewController)
 }

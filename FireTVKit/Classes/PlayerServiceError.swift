@@ -15,4 +15,5 @@ public enum PlayerServiceError: Error {
     case couldNotCastTaskResultToMediaPlayerStatus
 	case invalidTaskResult
     case currentPlayerComparisonFailed
+    case couldNotCreateStringFromMetadata
 }
