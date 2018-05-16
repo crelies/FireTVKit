@@ -38,7 +38,7 @@ final class ViewController: UIViewController {
 				return
 			}
 			let media = FireTVMedia(metadata: SAMPLE_VIDEO_METADATA, url: url)
-            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(theme: ExampleSelectionTheme(), playerId: "amzn.thin.pl", media: nil, delegate: self)
+            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(theme: ExampleSelectionTheme(), playerId: "amzn.thin.pl", media: media, delegate: self)
             present(fireTVSelectionVC, animated: true)
         } catch {
             print(error)
@@ -74,7 +74,7 @@ final class ViewController: UIViewController {
         }
     }
 	
-	@IBAction private func didPressSamplePlayerButton(_ sender: UIButton) {
+	@IBAction private func didPressDummyPlayerButtonDarkTheme(_ sender: UIButton) {
 		do {
 			let dummyPlayer: DummyPlayer = DummyPlayer()
 			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: FireTVPlayerDarkTheme(), delegate: self)
@@ -83,6 +83,16 @@ final class ViewController: UIViewController {
 			print(error)
 		}
 	}
+    
+    @IBAction private func didPressDummyPlayerButtonLightTheme(_ sender: UIButton) {
+        do {
+            let dummyPlayer: DummyPlayer = DummyPlayer()
+            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: FireTVPlayerLightTheme(), delegate: self)
+            present(fireTVPlayerVC, animated: true)
+        } catch {
+            print(error)
+        }
+    }
 }
 
 extension ViewController: FireTVSelectionDelegateProtocol {

@@ -167,6 +167,11 @@ extension FireTVPlayerPresenter {
                             self?.view?.setPositionText(positionString)
                         }
                     }
+                    if let status = playerData.status {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.view?.setStatus(status.stringValue)
+                        }
+                    }
                 }
             }, onError: { error in
                 // TODO:

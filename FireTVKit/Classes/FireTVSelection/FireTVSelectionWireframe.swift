@@ -13,6 +13,7 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         
+        // TODO: move to constants
         guard let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else {
             throw FireTVSelectionWireframeError.couldNotFindResourceBundle
         }

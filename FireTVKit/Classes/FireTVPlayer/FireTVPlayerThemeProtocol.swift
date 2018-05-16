@@ -13,4 +13,5 @@ public protocol FireTVPlayerThemeProtocol {
 	var closeButtonTextColor: UIColor { get }
 	var labelColor: UIColor { get }
 	var positionSliderTintColor: UIColor { get }
+    var controlButtonTintColor: UIColor { get }
 }

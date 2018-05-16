@@ -22,20 +22,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m8i-B4-I3T">
-                                <rect key="frame" x="90" y="80" width="140" height="68"/>
+                                <rect key="frame" x="67.5" y="80" width="185" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-WO-LrX">
-                                        <rect key="frame" x="17.5" y="0.0" width="105" height="30"/>
+                                        <rect key="frame" x="40" y="0.0" width="105" height="30"/>
                                         <state key="normal" title="Play Test Video"/>
                                         <connections>
                                             <action selector="didPressPlayTestVideoButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="l2Y-zb-FAw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xur-lf-b4X">
-                                        <rect key="frame" x="0.0" y="38" width="140" height="30"/>
-                                        <state key="normal" title="Open Dummy Player"/>
+                                        <rect key="frame" x="0.0" y="38" width="185" height="30"/>
+                                        <state key="normal" title="Open Dummy Player (dark)"/>
                                         <connections>
-                                            <action selector="didPressSamplePlayerButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="U2D-fo-Xzt"/>
+                                            <action selector="didPressDummyPlayerButtonDarkTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="U2D-fo-Xzt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX4-yC-XFv">
+                                        <rect key="frame" x="0.0" y="76" width="185" height="30"/>
+                                        <state key="normal" title="Open Dummy Player (light)"/>
+                                        <connections>
+                                            <action selector="didPressDummyPlayerButtonLightTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="IPd-E9-l2k"/>
                                         </connections>
                                     </button>
                                 </subviews>

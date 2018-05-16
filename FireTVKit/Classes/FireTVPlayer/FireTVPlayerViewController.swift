@@ -15,7 +15,10 @@ public final class FireTVPlayerViewController: UIViewController {
     
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
+    @IBOutlet private weak var mainStackView: UIStackView!
+    
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var statusLabel: UILabel!
 	
     @IBOutlet private weak var positionStackView: UIStackView!
     @IBOutlet private weak var positionSlider: UISlider!
@@ -30,6 +33,7 @@ public final class FireTVPlayerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        setConstraints()
         setLocalizedTexts()
         setButtonImages()
         presenter?.viewDidLoad()
@@ -69,13 +73,21 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 		view.backgroundColor = theme.backgroundColor
 		closeButton.setTitleColor(theme.closeButtonTextColor, for: .normal)
 		nameLabel.textColor = theme.labelColor
+        statusLabel.textColor = theme.labelColor
 		positionLabel.textColor = theme.labelColor
 		durationLabel.textColor = theme.labelColor
 		positionSlider.tintColor = theme.positionSliderTintColor
+        playButton.tintColor = theme.controlButtonTintColor
+        pauseButton.tintColor = theme.controlButtonTintColor
+        stopButton.tintColor = theme.controlButtonTintColor
 	}
     
     func setPlayerName(_ playerName: String) {
         nameLabel.text = playerName
+    }
+    
+    func setStatus(_ status: String) {
+        statusLabel.text = status
     }
     
     func setPositionText(_ positionText: String) {
@@ -107,6 +119,15 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 }
 
 extension FireTVPlayerViewController {
+    func setConstraints() {
+        if #available(iOS 11.0, *) {
+            mainStackView.setCustomSpacing(16.0, after: statusLabel)
+            mainStackView.setCustomSpacing(16.0, after: positionStackView)
+        } else {
+            // TODO: fallback on earlier versions
+        }
+    }
+    
     func setLocalizedTexts() {
         // TODO: move to string constants and localizables
         closeButton.setTitle("Close", for: .normal)
@@ -118,6 +139,7 @@ extension FireTVPlayerViewController {
     
     private func setButtonImages() {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
+        // TODO: move to constants
         if let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
             playButton.setImage(UIImage(named: "ic_play_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
             playButton.setImage(UIImage(named: "ic_play_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)

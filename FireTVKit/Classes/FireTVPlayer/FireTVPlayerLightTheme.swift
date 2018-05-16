@@ -13,11 +13,13 @@ public struct FireTVPlayerLightTheme: FireTVPlayerThemeProtocol {
 	public let closeButtonTextColor: UIColor
 	public let labelColor: UIColor
 	public let positionSliderTintColor: UIColor
+    public let controlButtonTintColor: UIColor
 	
 	public init() {
-		backgroundColor = .init(red: 196/255.0, green: 223/255.0, blue: 230/255.0, alpha: 1)
-		closeButtonTextColor = .init(red: 0/255.0, green: 59/255.0, blue: 70/255.0, alpha: 1)
-		labelColor = .init(red: 0/255.0, green: 59/255.0, blue: 70/255.0, alpha: 1)
-		positionSliderTintColor = .init(red: 0/255.0, green: 59/255.0, blue: 70/255.0, alpha: 1)
+		backgroundColor = .seafoam
+		closeButtonTextColor = .ocean
+		labelColor = .ocean
+		positionSliderTintColor = .ocean
+        controlButtonTintColor = .ocean
 	}
 }
