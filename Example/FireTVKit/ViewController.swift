@@ -77,8 +77,7 @@ final class ViewController: UIViewController {
 	@IBAction private func didPressSamplePlayerButton(_ sender: UIButton) {
 		do {
 			let dummyPlayer: DummyPlayer = DummyPlayer()
-			let examplePlayerTheme: ExamplePlayerTheme = ExamplePlayerTheme()
-			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: examplePlayerTheme, delegate: self)
+			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: FireTVPlayerDarkTheme(), delegate: self)
 			present(fireTVPlayerVC, animated: true)
 		} catch {
 			print(error)
@@ -92,7 +91,7 @@ extension ViewController: FireTVSelectionDelegateProtocol {
             fireTVSelectionViewController.dismiss(animated: true, completion: nil)
             
             selectedDevice = player
-            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: ExamplePlayerTheme(), delegate: self)
+            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: FireTVPlayerDarkTheme(), delegate: self)
             present(fireTVPlayerVC, animated: true)
         } catch {
             print(error)

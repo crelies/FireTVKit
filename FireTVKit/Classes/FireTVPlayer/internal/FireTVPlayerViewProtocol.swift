@@ -10,7 +10,8 @@ import Foundation
 
 protocol FireTVPlayerViewProtocol: class {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)
-    func setPlayerName(_ playerName: String)
+	func setTheme(_ theme: FireTVPlayerThemeProtocol)
+	func setPlayerName(_ playerName: String)
     func setPositionText(_ positionText: String)
 	func setPosition(_ position: Float)
     func setMaximumPosition(_ maximumPosition: Float)

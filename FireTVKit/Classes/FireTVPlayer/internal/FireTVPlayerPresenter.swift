@@ -30,13 +30,15 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             updateUI(forState: state)
         }
     }
+	private let theme: FireTVPlayerThemeProtocol
     private weak var delegate: FireTVPlayerDelegateProtocol?
     
-    init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol, delegate: FireTVPlayerDelegateProtocol?) {
+	init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) {
         self.dependencies = dependencies
         self.view = view
         self.interactor = interactor
         self.router = router
+		self.theme = theme
         self.delegate = delegate
         
         self.disposeBag = DisposeBag()
@@ -50,7 +52,8 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     
     func viewDidLoad() {
         interactor.startFireTVDiscovery()
-        
+		
+		view?.setTheme(theme)
         view?.setPlayerName(interactor.getPlayerName())
         view?.setPosition(0)
         view?.setPositionText("00:00:00")

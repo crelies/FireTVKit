@@ -16,7 +16,6 @@
 		AF199E9F8C725696FC0B3EEB /* Pods_FireTVKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5C4479EFCE1E95A0FEBE0 /* Pods_FireTVKit_Tests.framework */; };
 		B9299AF8209F883E002A2EEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9299AF7209F883E002A2EEE /* ViewController.swift */; };
 		CE65E1EE20ABFEB100A7489E /* ExampleSelectionTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65E1ED20ABFEB100A7489E /* ExampleSelectionTheme.swift */; };
-		CE65E1F020ABFF0300A7489E /* ExamplePlayerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65E1EF20ABFF0300A7489E /* ExamplePlayerTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		B9299AF7209F883E002A2EEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C9855DED2D19AE0ED77302AC /* Pods-FireTVKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTVKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireTVKit_Tests/Pods-FireTVKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CE65E1ED20ABFEB100A7489E /* ExampleSelectionTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSelectionTheme.swift; sourceTree = "<group>"; };
-		CE65E1EF20ABFF0300A7489E /* ExamplePlayerTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePlayerTheme.swift; sourceTree = "<group>"; };
 		DB5DECB0144A58ABAC7A97CF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EB81ECCEA1F547B2ADCE63E6 /* Pods-FireTVKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTVKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireTVKit_Tests/Pods-FireTVKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FFDDDE8159F66E7E0567C355 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				B9299AF7209F883E002A2EEE /* ViewController.swift */,
 				CE65E1ED20ABFEB100A7489E /* ExampleSelectionTheme.swift */,
-				CE65E1EF20ABFF0300A7489E /* ExamplePlayerTheme.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -362,7 +359,6 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				B9299AF8209F883E002A2EEE /* ViewController.swift in Sources */,
 				CE65E1EE20ABFEB100A7489E /* ExampleSelectionTheme.swift in Sources */,
-				CE65E1F020ABFF0300A7489E /* ExamplePlayerTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

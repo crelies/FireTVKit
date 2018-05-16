@@ -10,7 +10,7 @@ import AmazonFling
 import UIKit
 
 public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
-	// TODO: use theme, dummy player and sample video in example project
+	// TODO: sample video in example project
     public static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
         
@@ -28,7 +28,7 @@ public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
         let presenterDependencies = FireTVPlayerPresenterDependencies()
 
         let interactor = FireTVPlayerInteractor(dependencies: interactorDependencies, player: player)
-        let presenter = FireTVPlayerPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, delegate: delegate)
+		let presenter = FireTVPlayerPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate)
         interactor.setPresenter(presenter)
         view.setPresenter(presenter)
         

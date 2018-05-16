@@ -64,6 +64,15 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol) {
         self.presenter = presenter
     }
+	
+	func setTheme(_ theme: FireTVPlayerThemeProtocol) {
+		view.backgroundColor = theme.backgroundColor
+		closeButton.setTitleColor(theme.closeButtonTextColor, for: .normal)
+		nameLabel.textColor = theme.labelColor
+		positionLabel.textColor = theme.labelColor
+		durationLabel.textColor = theme.labelColor
+		positionSlider.tintColor = theme.positionSliderTintColor
+	}
     
     func setPlayerName(_ playerName: String) {
         nameLabel.text = playerName
