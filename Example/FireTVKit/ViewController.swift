@@ -11,19 +11,33 @@ import FireTVKit
 import RxSwift
 import UIKit
 
-struct ExampleSelectionTheme: FireTVSelectionThemeProtocol {
-    
-}
-
 final class ViewController: UIViewController {
     private let disposeBag: DisposeBag = DisposeBag()
     private var selectedDevice: RemoteMediaPlayer?
     
     // sample video
+	private lazy var SAMPLE_VIDEO_METADATA: Metadata = {
+		var metadata = Metadata(type: "video")
+		metadata.title = "Testvideo"
+		metadata.description = "A video for test purposes"
+		metadata.noreplay = true
+		return metadata
+	}()
     private let SAMPLE_VIDEO_URL = "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4"
+	private lazy var SAMPLE_VIDEO: URL? = {
+		guard let url = URL(string: SAMPLE_VIDEO_URL) else {
+			return nil
+		}
+		
+		return url
+	}()
     
     @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
         do {
+			guard let url = SAMPLE_VIDEO else {
+				return
+			}
+			let media = FireTVMedia(metadata: SAMPLE_VIDEO_METADATA, url: url)
             let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(theme: ExampleSelectionTheme(), playerId: "amzn.thin.pl", media: nil, delegate: self)
             present(fireTVSelectionVC, animated: true)
         } catch {
@@ -48,12 +62,8 @@ final class ViewController: UIViewController {
                         print(playerData)
                     }
                 })
-            
-            var metadata = Metadata(type: "video")
-            metadata.title = "Testvideo"
-            metadata.description = "A video for test purposes"
-            metadata.noreplay = true
-            _ = playerService.play(withMetadata: metadata, url: SAMPLE_VIDEO_URL)
+			
+            _ = playerService.play(withMetadata: SAMPLE_VIDEO_METADATA, url: SAMPLE_VIDEO_URL)
                 .subscribe(onCompleted: {
                     print("success")
                     fireTVManager.stopDiscovery()
@@ -63,10 +73,17 @@ final class ViewController: UIViewController {
                 })
         }
     }
-}
-
-struct ExamplePlayerTheme: FireTVPlayerThemeProtocol {
-    
+	
+	@IBAction private func didPressSamplePlayerButton(_ sender: UIButton) {
+		do {
+			let dummyPlayer: DummyPlayer = DummyPlayer()
+			let examplePlayerTheme: ExamplePlayerTheme = ExamplePlayerTheme()
+			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: examplePlayerTheme, delegate: self)
+			present(fireTVPlayerVC, animated: true)
+		} catch {
+			print(error)
+		}
+	}
 }
 
 extension ViewController: FireTVSelectionDelegateProtocol {

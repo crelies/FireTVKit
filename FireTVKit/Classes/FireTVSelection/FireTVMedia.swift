@@ -11,4 +11,9 @@ import Foundation
 public struct FireTVMedia {
     let metadata: Metadata
     let url: URL
+	
+	public init(metadata: Metadata, url: URL) {
+		self.metadata = metadata
+		self.url = url
+	}
 }

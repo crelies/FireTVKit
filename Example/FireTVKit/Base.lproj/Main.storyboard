@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Example-->
         <scene sceneID="WFR-ua-jIq">
             <objects>
                 <viewController id="FUW-Tw-0Gq" customClass="ViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,21 +21,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-WO-LrX">
-                                <rect key="frame" x="107" y="80" width="105" height="30"/>
-                                <state key="normal" title="Play Test Video"/>
-                                <connections>
-                                    <action selector="didPressPlayTestVideoButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="l2Y-zb-FAw"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m8i-B4-I3T">
+                                <rect key="frame" x="90" y="80" width="140" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-WO-LrX">
+                                        <rect key="frame" x="17.5" y="0.0" width="105" height="30"/>
+                                        <state key="normal" title="Play Test Video"/>
+                                        <connections>
+                                            <action selector="didPressPlayTestVideoButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="l2Y-zb-FAw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xur-lf-b4X">
+                                        <rect key="frame" x="0.0" y="38" width="140" height="30"/>
+                                        <state key="normal" title="Open Dummy Player"/>
+                                        <connections>
+                                            <action selector="didPressSamplePlayerButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="U2D-fo-Xzt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KO7-WO-LrX" firstAttribute="top" secondItem="fmj-mf-Edj" secondAttribute="bottom" constant="16" id="79T-ms-Xld"/>
-                            <constraint firstItem="KO7-WO-LrX" firstAttribute="centerX" secondItem="tqZ-wf-8Yq" secondAttribute="centerX" id="TM6-9d-mJL"/>
+                            <constraint firstItem="m8i-B4-I3T" firstAttribute="top" secondItem="fmj-mf-Edj" secondAttribute="bottom" constant="16" id="Voj-Dv-cor"/>
+                            <constraint firstItem="m8i-B4-I3T" firstAttribute="centerX" secondItem="tqZ-wf-8Yq" secondAttribute="centerX" id="uXV-FX-lV0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="n8c-QM-95T">
+                    <navigationItem key="navigationItem" title="Example" id="n8c-QM-95T">
                         <barButtonItem key="rightBarButtonItem" title="Player" id="SDt-BX-WOp">
                             <connections>
                                 <action selector="didPressPlayerBarButtonItem:" destination="FUW-Tw-0Gq" id="fWG-SU-QeN"/>
