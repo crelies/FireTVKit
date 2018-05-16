@@ -24,9 +24,19 @@ DEPENDENCIES:
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AmazonFling
+    - Bolts
+    - Nimble
+    - Quick
+    - ReachabilitySwift
+    - RxCocoa
+    - RxSwift
+
 EXTERNAL SOURCES:
   FireTVKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   AmazonFling: 9ffc738f15a6dd53672eb66019d9bb1791578020
@@ -40,4 +50,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 539461853d90c4fdb4eb4c0543cfeba86bfac156
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
