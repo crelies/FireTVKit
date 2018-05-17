@@ -9,7 +9,7 @@
 import UIKit
 
 public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
-	// TODO: use media and theme
+	// TODO: use media
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         
@@ -32,7 +32,7 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId)
 		
 		let presenterDependencies = FireTVSelectionPresenterDependencies()
-        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, delegate: delegate)
+        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate)
 		
 		interactor.setPresenter(presenter)
         view.setPresenter(presenter)

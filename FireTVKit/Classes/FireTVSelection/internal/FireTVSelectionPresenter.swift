@@ -20,16 +20,18 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     private weak var view: FireTVSelectionViewProtocol?
     private let interactor: FireTVSelectionInteractorInputProtocol
     private let router: FireTVSelectionRouterProtocol
+    private let theme: FireTVSelectionThemeProtocol
     private weak var delegate: FireTVSelectionDelegateProtocol?
 	private let disposeBag: DisposeBag
     private var player: [RemoteMediaPlayer]
     private var playerViewModels: [PlayerViewModel]
     
-    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, delegate: FireTVSelectionDelegateProtocol) {
+    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, theme: FireTVSelectionThemeProtocol, delegate: FireTVSelectionDelegateProtocol) {
         self.dependencies = dependencies
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.theme = theme
         self.delegate = delegate
 		disposeBag = DisposeBag()
         player = []
@@ -42,6 +44,8 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     }
     
     func viewDidLoad() {
+        view?.setTheme(theme)
+        
         do {
             try interactor.startFireTVDiscovery()
         } catch {
@@ -91,6 +95,10 @@ extension FireTVSelectionPresenter: UITableViewDataSource {
         
         let playerViewModel = playerViewModels[indexPath.row]
         cell.textLabel?.text = playerViewModel.name
+        
+        if let fireTVSelectionTableViewCell = cell as? FireTVSelectionTableViewCell {
+            fireTVSelectionTableViewCell.updateUI(withTheme: theme)
+        }
         
         return cell
     }

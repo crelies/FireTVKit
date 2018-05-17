@@ -361,6 +361,9 @@
 		B991B23C20ACC04500C08EEB /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23B20ACC04500C08EEB /* UIColor+Colors.swift */; };
 		B991B23E20AE045700C08EEB /* MockFireTVSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23D20AE045700C08EEB /* MockFireTVSelectionWireframe.swift */; };
 		B991B24020AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23F20AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift */; };
+		B991B24220AE086900C08EEB /* FireTVSelectionDarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B24120AE086900C08EEB /* FireTVSelectionDarkTheme.swift */; };
+		B991B24420AE089100C08EEB /* FireTVSelectionLightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B24320AE089100C08EEB /* FireTVSelectionLightTheme.swift */; };
+		B991B24620AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B24520AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift */; };
 		BA04EB6158337B2AB6687461450732E0 /* FireTVPlayerPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF357834BF5E497FD3ADF219F003AB4 /* FireTVPlayerPresenterState.swift */; };
 		BA261F3EE4311A40ACA78EEDF7D7EECC /* Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A20535BDC02E94818553BD52832C8 /* Reduce.swift */; };
 		BBA901D50768DBF3868AD5C472B35A1B /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E50A78B956C5A05EC157B79B5B3FD /* Timeout.swift */; };
@@ -1013,6 +1016,9 @@
 		B991B23B20ACC04500C08EEB /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		B991B23D20AE045700C08EEB /* MockFireTVSelectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFireTVSelectionWireframe.swift; sourceTree = "<group>"; };
 		B991B23F20AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFireTVSelectionInteractorDependencies.swift; sourceTree = "<group>"; };
+		B991B24120AE086900C08EEB /* FireTVSelectionDarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVSelectionDarkTheme.swift; sourceTree = "<group>"; };
+		B991B24320AE089100C08EEB /* FireTVSelectionLightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVSelectionLightTheme.swift; sourceTree = "<group>"; };
+		B991B24520AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		B99C61284F5565A4550EDD59776A5B29 /* UIControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Rx.swift"; path = "RxCocoa/iOS/UIControl+Rx.swift"; sourceTree = "<group>"; };
 		BA5047EF34A4A809E05E82D5569E5C67 /* RxTableViewReactiveArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewReactiveArrayDataSource.swift; path = RxCocoa/iOS/DataSources/RxTableViewReactiveArrayDataSource.swift; sourceTree = "<group>"; };
 		BA78A2956278C87630DD94A51131EB96 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1391,6 +1397,8 @@
 				1C3FD001F9E9AD76B607356D4781AA85 /* FireTVSelectionWireframeError.swift */,
 				B1413E7DAB6381FEB4A0B12E76B1ED61 /* internal */,
 				B991B23D20AE045700C08EEB /* MockFireTVSelectionWireframe.swift */,
+				B991B24120AE086900C08EEB /* FireTVSelectionDarkTheme.swift */,
+				B991B24320AE089100C08EEB /* FireTVSelectionLightTheme.swift */,
 			);
 			name = FireTVSelection;
 			path = FireTVKit/Classes/FireTVSelection;
@@ -1968,6 +1976,7 @@
 				A2E6949F835AE4E34F51EA71BF402D18 /* FireTVSelectionWireframeProtocol.swift */,
 				328571885E715A69463387356DDD9A0A /* PlayerViewModel.swift */,
 				B991B23F20AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift */,
+				B991B24520AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift */,
 			);
 			path = internal;
 			sourceTree = "<group>";
@@ -2582,6 +2591,7 @@
 				CEA4EE05610829256397610A00BDED03 /* FireTVManagerProtocol.swift in Sources */,
 				611F5E7165333513546B50DCD198D1A4 /* FireTVMedia.swift in Sources */,
 				CE5D7F1C20AC55A4001A50B9 /* FireTVPlayerDarkTheme.swift in Sources */,
+				B991B24420AE089100C08EEB /* FireTVSelectionLightTheme.swift in Sources */,
 				B991B23C20ACC04500C08EEB /* UIColor+Colors.swift in Sources */,
 				645C6DAF7B7256C73F42DCBAA0084071 /* FireTVPlayerDelegateProtocol.swift in Sources */,
 				5D51B1658C9C69785F5BE51DED79CE07 /* FireTVPlayerInteractor.swift in Sources */,
@@ -2626,11 +2636,13 @@
 				B0B11A4F0024BFED29900B8AE5DFE441 /* PlayerServiceError.swift in Sources */,
 				BD398DEE9E1592C0EBCE45E656AC55AF /* PlayerServiceProtocol.swift in Sources */,
 				AF1641FFE06B3192D4616578009EDB19 /* PlayerStatus.swift in Sources */,
+				B991B24620AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift in Sources */,
 				CE5D7F1E20AC57CF001A50B9 /* FireTVPlayerLightTheme.swift in Sources */,
 				CE5D7F2F20AD5D7F001A50B9 /* MockPlayerDiscoveryService.swift in Sources */,
 				78C1329CCB0BAE9261BAA9B6C6596285 /* PlayerViewModel.swift in Sources */,
 				FFEEE02045E1F7E4C8A503EC7A713C35 /* ReachabilityService.swift in Sources */,
 				87C61C5382B96E26CE505C105BCDF4B5 /* ReachabilityServiceProtocol.swift in Sources */,
+				B991B24220AE086900C08EEB /* FireTVSelectionDarkTheme.swift in Sources */,
 				47F1F405077D59E96DF9477E6070AD1F /* RemoteMediaPlayerProtocol.swift in Sources */,
 				C0EBEA5F1B8EA349C810ADDDB7A88DB7 /* ServiceFactory.swift in Sources */,
 				CE5D7F2020AD4D7F001A50B9 /* PlayerDiscoveryServiceDependencies.swift in Sources */,

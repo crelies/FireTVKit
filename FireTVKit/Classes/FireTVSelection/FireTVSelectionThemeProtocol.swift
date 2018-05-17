@@ -9,5 +9,10 @@
 import Foundation
 
 public protocol FireTVSelectionThemeProtocol {
-    
+    var navigationBarBarTintColor: UIColor { get }
+    var backgroundColor: UIColor { get }
+    var closeBarButtonItemTintColor: UIColor { get }
+    var cellBackgroundColor: UIColor { get }
+    var cellLabelColor: UIColor { get }
+    var cellSeparatorColor: UIColor { get }
 }

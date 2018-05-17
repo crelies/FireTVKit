@@ -11,6 +11,7 @@ import Foundation
 public final class FireTVSelectionViewController: UIViewController {
     private var presenter: FireTVSelectionPresenterProtocol?
     
+    @IBOutlet private weak var closeBarButtonItem: UIBarButtonItem!
     @IBOutlet private(set) weak var tableView: UITableView!
     
     // TODO: remove me
@@ -21,7 +22,9 @@ public final class FireTVSelectionViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: IdentifierConstants.TableView.Cell.fireTVSelection)
+        tableView.backgroundColor = .clear
+        
+        tableView.register(FireTVSelectionTableViewCell.self, forCellReuseIdentifier: IdentifierConstants.TableView.Cell.fireTVSelection)
         
         presenter?.viewDidLoad()
     }
@@ -34,6 +37,13 @@ public final class FireTVSelectionViewController: UIViewController {
 extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol) {
         self.presenter = presenter
+    }
+    
+    func setTheme(_ theme: FireTVSelectionThemeProtocol) {
+        navigationController?.navigationBar.barTintColor = theme.navigationBarBarTintColor
+        view.backgroundColor = theme.backgroundColor
+        closeBarButtonItem.tintColor = theme.closeBarButtonItemTintColor
+        tableView.separatorColor = theme.cellSeparatorColor
     }
     
     func setTableViewDataSource(dataSource: UITableViewDataSource) {
