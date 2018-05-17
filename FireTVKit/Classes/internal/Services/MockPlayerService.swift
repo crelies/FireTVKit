@@ -26,6 +26,8 @@ final class MockPlayerService: PlayerServiceProtocol {
 	func connectToPlayer(_ newPlayer: RemoteMediaPlayer) -> Completable {
 		return Completable.create { completable in
 			completable(.completed)
+            let mediaPlayerStatus: MediaPlayerStatus = MediaPlayerStatus(state: ReadyToPlay, andCondition: Good)
+            self.playerDataVariable.value = PlayerData(status: mediaPlayerStatus, position: 5948)
 			return Disposables.create()
 		}
 	}
