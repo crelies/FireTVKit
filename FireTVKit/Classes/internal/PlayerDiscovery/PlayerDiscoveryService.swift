@@ -19,6 +19,7 @@ protocol PlayerDiscoveryServiceProtocol {
 	var devices: [RemoteMediaPlayer] { get }
 	var deviceInfo: Variable<DeviceInfo?> { get }
 	
+	init(dependencies: PlayerDiscoveryServiceDependenciesProtocol)
 	func startDiscovering() throws
 	func stopDiscovering()
 }

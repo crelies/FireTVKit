@@ -131,7 +131,11 @@ extension FireTVPlayerViewController {
     func setLocalizedTexts() {
         // TODO: move to string constants and localizables
         closeButton.setTitle("Close", for: .normal)
-        
+		
+		nameLabel.text = ""
+		statusLabel.text = ""
+		positionLabel.text = ""
+		durationLabel.text = ""
         playButton.setTitle("", for: .normal)
         pauseButton.setTitle("", for: .normal)
         stopButton.setTitle("", for: .normal)

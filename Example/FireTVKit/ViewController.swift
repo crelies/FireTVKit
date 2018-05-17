@@ -38,7 +38,8 @@ final class ViewController: UIViewController {
 				return
 			}
 			let media = FireTVMedia(metadata: SAMPLE_VIDEO_METADATA, url: url)
-            let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(theme: ExampleSelectionTheme(), playerId: "amzn.thin.pl", media: media, delegate: self)
+			let exampleSelectionTheme: ExampleSelectionTheme = ExampleSelectionTheme()
+			let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(theme: exampleSelectionTheme, playerId: "amzn.thin.pl", media: media, delegate: self)
             present(fireTVSelectionVC, animated: true)
         } catch {
             print(error)
@@ -77,7 +78,8 @@ final class ViewController: UIViewController {
 	@IBAction private func didPressDummyPlayerButtonDarkTheme(_ sender: UIButton) {
 		do {
 			let dummyPlayer: DummyPlayer = DummyPlayer()
-			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: FireTVPlayerDarkTheme(), delegate: self)
+			let playerTheme: FireTVPlayerDarkTheme = FireTVPlayerDarkTheme()
+			let fireTVPlayerVC = try MockFireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: playerTheme, delegate: self)
 			present(fireTVPlayerVC, animated: true)
 		} catch {
 			print(error)
@@ -87,7 +89,8 @@ final class ViewController: UIViewController {
     @IBAction private func didPressDummyPlayerButtonLightTheme(_ sender: UIButton) {
         do {
             let dummyPlayer: DummyPlayer = DummyPlayer()
-            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: FireTVPlayerLightTheme(), delegate: self)
+			let playerTheme: FireTVPlayerLightTheme = FireTVPlayerLightTheme()
+			let fireTVPlayerVC = try MockFireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: playerTheme, delegate: self)
             present(fireTVPlayerVC, animated: true)
         } catch {
             print(error)
@@ -101,7 +104,8 @@ extension ViewController: FireTVSelectionDelegateProtocol {
             fireTVSelectionViewController.dismiss(animated: true, completion: nil)
             
             selectedDevice = player
-            let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: FireTVPlayerDarkTheme(), delegate: self)
+			let playerTheme: FireTVPlayerDarkTheme = FireTVPlayerDarkTheme()
+			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: playerTheme, delegate: self)
             present(fireTVPlayerVC, animated: true)
         } catch {
             print(error)
