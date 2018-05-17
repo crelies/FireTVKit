@@ -120,12 +120,12 @@ final class ViewController: UIViewController {
 
 extension ViewController: FireTVSelectionDelegateProtocol {
     func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
-        guard player.uniqueIdentifier() != "DummyPlayerID" else {
-            return
-        }
-        
         do {
             fireTVSelectionViewController.dismiss(animated: true, completion: nil)
+            
+            if player.uniqueIdentifier() == "DummyPlayerID" {
+                return
+            }
             
             selectedDevice = player
 			let playerTheme = FireTVPlayerDarkTheme()
