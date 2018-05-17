@@ -10,8 +10,13 @@ import AmazonFling
 import Foundation
 
 public final class ServiceFactory: ServiceFactoryProtocol {
+	static func makePlayerDiscoveryController() -> PlayerDiscoveryControllerProtocol {
+		return PlayerDiscoveryController.shared
+	}
+	
     static func makePlayerDiscoveryService() -> PlayerDiscoveryServiceProtocol {
-        return PlayerDiscoveryService()
+		let dependencies = PlayerDiscoveryServiceDependencies()
+		return PlayerDiscoveryService(dependencies: dependencies)
     }
     
     static func makePlayerService() -> PlayerServiceProtocol {

@@ -24,17 +24,20 @@ protocol PlayerDiscoveryServiceProtocol {
 }
 
 final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
-    private(set) var devicesVariable: Variable<[RemoteMediaPlayer]?>
+	private let dependencies: PlayerDiscoveryServiceDependenciesProtocol
+	private(set) var devicesVariable: Variable<[RemoteMediaPlayer]?>
     var devices: [RemoteMediaPlayer] {
-        return PlayerDiscoveryController.shared.devices
+        return dependencies.playerDiscoveryController.devices
     }
 	private(set) var deviceInfo: Variable<DeviceInfo?>
     
-	init() {
+	init(dependencies: PlayerDiscoveryServiceDependenciesProtocol) {
+		self.dependencies = dependencies
         devicesVariable = Variable<[RemoteMediaPlayer]?>(nil)
 		deviceInfo = Variable<DeviceInfo?>(nil)
 		
-		PlayerDiscoveryController.shared.delegate = self
+		var playerDiscoveryController = self.dependencies.playerDiscoveryController
+		playerDiscoveryController.delegate = self
     }
 	
 	// TODO: remove me

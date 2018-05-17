@@ -409,6 +409,7 @@
 		CE10EDB5254BEE173EE6EA6E1AE2A43E /* PrimitiveSequence+Zip+arity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCA5E70D9E369D687B15B34FA87138 /* PrimitiveSequence+Zip+arity.swift */; };
 		CE5D7F1C20AC55A4001A50B9 /* FireTVPlayerDarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D7F1B20AC55A4001A50B9 /* FireTVPlayerDarkTheme.swift */; };
 		CE5D7F1E20AC57CF001A50B9 /* FireTVPlayerLightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D7F1D20AC57CF001A50B9 /* FireTVPlayerLightTheme.swift */; };
+		CE5D7F2020AD4D7F001A50B9 /* PlayerDiscoveryServiceDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D7F1F20AD4D7F001A50B9 /* PlayerDiscoveryServiceDependencies.swift */; };
 		CE8545C68FEC4E4DA1E390EFB2C42DEC /* ObserveOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C6956B3AB218234D916D8D5128F24 /* ObserveOn.swift */; };
 		CEA4EE05610829256397610A00BDED03 /* FireTVManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECF86E2F91757F0AD3342E11F7EBFE1 /* FireTVManagerProtocol.swift */; };
 		CF55697859D633C852C3586384647EB6 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B31AA9E82C86726B1097E342FCF8A4 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -1037,6 +1038,7 @@
 		CDBB8FE2C29B489BF4AF323046A9D586 /* RxPickerViewDataSourceProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewDataSourceProxy.swift; path = RxCocoa/iOS/Proxies/RxPickerViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CE5D7F1B20AC55A4001A50B9 /* FireTVPlayerDarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVPlayerDarkTheme.swift; sourceTree = "<group>"; };
 		CE5D7F1D20AC57CF001A50B9 /* FireTVPlayerLightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVPlayerLightTheme.swift; sourceTree = "<group>"; };
+		CE5D7F1F20AD4D7F001A50B9 /* PlayerDiscoveryServiceDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryServiceDependencies.swift; sourceTree = "<group>"; };
 		CE89C57CF6ED6F214695DA001FB0A878 /* Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		CEAC39E2087DD165D7465BAB511B9120 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		CEF5E6A37B92DD0BE6DA055DCBFD48C7 /* DiscoveringStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveringStatus.swift; sourceTree = "<group>"; };
@@ -1350,6 +1352,7 @@
 				28372C47DD2971F0563AAC18F8EE20D2 /* PlayerDiscoveryControllerProtocol.swift */,
 				5924AC511266DF9DFA7F6E147B5A006A /* PlayerDiscoveryService.swift */,
 				D8CA7626936A2657601ABC89BCF07128 /* Models */,
+				CE5D7F1F20AD4D7F001A50B9 /* PlayerDiscoveryServiceDependencies.swift */,
 			);
 			path = PlayerDiscovery;
 			sourceTree = "<group>";
@@ -2595,6 +2598,7 @@
 				87C61C5382B96E26CE505C105BCDF4B5 /* ReachabilityServiceProtocol.swift in Sources */,
 				47F1F405077D59E96DF9477E6070AD1F /* RemoteMediaPlayerProtocol.swift in Sources */,
 				C0EBEA5F1B8EA349C810ADDDB7A88DB7 /* ServiceFactory.swift in Sources */,
+				CE5D7F2020AD4D7F001A50B9 /* PlayerDiscoveryServiceDependencies.swift in Sources */,
 				6CDFAFD4F73495F18697130E38965AAF /* ServiceFactoryProtocol.swift in Sources */,
 				CC8E4479AB5BCEC66B9DDEEE56A6C44B /* Subtitle.swift in Sources */,
 				709F30DEF98586F14D92E48088F673E2 /* TimeStringFactory.swift in Sources */,

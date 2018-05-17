@@ -8,14 +8,16 @@
 
 import Foundation
 
-protocol FireTVManagerDependenciesProtocol: HasPlayerDiscoveryService {
+protocol FireTVManagerDependenciesProtocol: PlayerDiscoveryControllerProvider, HasPlayerDiscoveryService {
     
 }
 
 struct FireTVManagerDependencies: FireTVManagerDependenciesProtocol {
+	let playerDiscoveryController: PlayerDiscoveryControllerProtocol
     let playerDiscoveryService: PlayerDiscoveryServiceProtocol
     
     init() {
+		playerDiscoveryController = ServiceFactory.makePlayerDiscoveryController()
         playerDiscoveryService = ServiceFactory.makePlayerDiscoveryService()
     }
 }

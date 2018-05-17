@@ -10,6 +10,7 @@ import AmazonFling
 import Foundation
 
 protocol ServiceFactoryProtocol {
+	static func makePlayerDiscoveryController() -> PlayerDiscoveryControllerProtocol
     static func makePlayerDiscoveryService() -> PlayerDiscoveryServiceProtocol
     static func makePlayerService() -> PlayerServiceProtocol
     static func makePlayerService(withPlayer player: RemoteMediaPlayer) -> PlayerServiceProtocol

@@ -9,6 +9,10 @@
 import AmazonFling
 import Foundation
 
+protocol PlayerDiscoveryControllerProvider {
+	var playerDiscoveryController: PlayerDiscoveryControllerProtocol { get }
+}
+
 final class PlayerDiscoveryController {
 	static let shared = PlayerDiscoveryController()
 	

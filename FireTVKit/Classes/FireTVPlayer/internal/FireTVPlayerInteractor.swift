@@ -44,11 +44,11 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     }
 	
 	func startFireTVDiscovery() {
-		PlayerDiscoveryController.shared.startSearch(forPlayerId: nil)
+		dependencies.playerDiscoveryController.startSearch(forPlayerId: nil)
 	}
 	
 	func stopFireTVDiscovery() {
-		PlayerDiscoveryController.shared.stopSearch()
+		dependencies.playerDiscoveryController.stopSearch()
 	}
     
     func connect() -> Completable {
