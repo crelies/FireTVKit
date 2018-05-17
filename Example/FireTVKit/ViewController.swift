@@ -46,6 +46,26 @@ final class ViewController: UIViewController {
         }
     }
     
+    @IBAction private func didPressDummyPlayerSelectionButtonDarkTheme(_ sender: UIButton) {
+        do {
+            let selectionTheme: ExampleSelectionTheme = ExampleSelectionTheme()
+            let fireTVSelectionVC = try MockFireTVSelectionWireframe.makeViewController(theme: selectionTheme, playerId: "amzn.thin.pl", media: nil, delegate: self)
+            present(fireTVSelectionVC, animated: true)
+        } catch {
+            print(error)
+        }
+    }
+    
+    @IBAction private func didPressDummyPlayerSelectionButtonLightTheme(_ sender: UIButton) {
+        do {
+            let selectionTheme: ExampleSelectionTheme = ExampleSelectionTheme()
+            let fireTVSelectionVC = try MockFireTVSelectionWireframe.makeViewController(theme: selectionTheme, playerId: "amzn.thin.pl", media: nil, delegate: self)
+            present(fireTVSelectionVC, animated: true)
+        } catch {
+            print(error)
+        }
+    }
+    
     @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
         if let selectedDevice = selectedDevice {
 			let fireTVManager = FireTVManager()
@@ -100,6 +120,10 @@ final class ViewController: UIViewController {
 
 extension ViewController: FireTVSelectionDelegateProtocol {
     func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
+        guard player.uniqueIdentifier() != "DummyPlayerID" else {
+            return
+        }
+        
         do {
             fireTVSelectionViewController.dismiss(animated: true, completion: nil)
             

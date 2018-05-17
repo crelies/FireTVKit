@@ -25,10 +25,10 @@ final class MockPlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 	}
 	
 	func startDiscovering() throws {
-		
+		devicesVariable.value = devices
 	}
 	
 	func stopDiscovering() {
-		
+		devicesVariable.value = []
 	}
 }
