@@ -71,7 +71,7 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 	
 	func setTheme(_ theme: FireTVPlayerThemeProtocol) {
 		view.backgroundColor = theme.backgroundColor
-		closeButton.setTitleColor(theme.closeButtonTextColor, for: .normal)
+		closeButton.tintColor = theme.closeButtonTintColor
 		nameLabel.textColor = theme.labelColor
         statusLabel.textColor = theme.labelColor
 		positionLabel.textColor = theme.labelColor
@@ -119,7 +119,7 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 }
 
 extension FireTVPlayerViewController {
-    func setConstraints() {
+    private func setConstraints() {
         if #available(iOS 11.0, *) {
             mainStackView.setCustomSpacing(16.0, after: statusLabel)
             mainStackView.setCustomSpacing(16.0, after: positionStackView)
@@ -128,10 +128,8 @@ extension FireTVPlayerViewController {
         }
     }
     
-    func setLocalizedTexts() {
-        // TODO: move to string constants and localizables
-        closeButton.setTitle("Close", for: .normal)
-		
+    private func setLocalizedTexts() {
+        closeButton.setTitle("", for: .normal)
 		nameLabel.text = ""
 		statusLabel.text = ""
 		positionLabel.text = ""

@@ -10,14 +10,14 @@ import Foundation
 
 public struct FireTVPlayerDarkTheme: FireTVPlayerThemeProtocol {
 	public let backgroundColor: UIColor
-	public let closeButtonTextColor: UIColor
+	public let closeButtonTintColor: UIColor
 	public let labelColor: UIColor
 	public let positionSliderTintColor: UIColor
     public let controlButtonTintColor: UIColor
 	
 	public init() {
 		backgroundColor = .shadow
-		closeButtonTextColor = .stone
+		closeButtonTintColor = .autumnFoliage
 		labelColor = .autumnFoliage
 		positionSliderTintColor = .stone
         controlButtonTintColor = .stone

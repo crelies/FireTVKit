@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="NCG-ax-oPO"/>
                     </view>
                     <navigationItem key="navigationItem" id="JnA-qX-4Kw">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="DSc-r8-SIt">
+                        <barButtonItem key="rightBarButtonItem" image="close" id="DSc-r8-SIt">
                             <connections>
                                 <action selector="didPressCloseBarButtonItem:" destination="mYu-q3-N7i" id="xiu-dS-WIW"/>
                             </connections>
@@ -68,4 +68,7 @@
             <point key="canvasLocation" x="-1074.4000000000001" y="254.12293853073464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="50" height="50"/>
+    </resources>
 </document>

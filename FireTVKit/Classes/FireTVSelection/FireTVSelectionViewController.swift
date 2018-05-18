@@ -21,7 +21,9 @@ public final class FireTVSelectionViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+		
+		setLocalizedTexts()
+		
         tableView.backgroundColor = .clear
         
         tableView.register(FireTVSelectionTableViewCell.self, forCellReuseIdentifier: IdentifierConstants.TableView.Cell.fireTVSelection)
@@ -57,4 +59,10 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
     func reloadData() {
         tableView.reloadData()
     }
+}
+
+extension FireTVSelectionViewController {
+	private func setLocalizedTexts() {
+		closeBarButtonItem.title = ""
+	}
 }
