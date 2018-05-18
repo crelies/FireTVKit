@@ -17,7 +17,7 @@ public struct FireTVPlayerDarkTheme: FireTVPlayerThemeProtocol {
 	
 	public init() {
 		backgroundColor = .shadow
-		closeButtonTintColor = .autumnFoliage
+		closeButtonTintColor = .stone
 		labelColor = .autumnFoliage
 		positionSliderTintColor = .stone
         controlButtonTintColor = .stone
