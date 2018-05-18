@@ -61,10 +61,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAo-us-s4C">
+                                <rect key="frame" x="0.0" y="368" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="j7P-gF-wdO"/>
+                                </constraints>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bAo-us-s4C" secondAttribute="trailing" id="OZJ-bc-ePY"/>
+                            <constraint firstItem="bAo-us-s4C" firstAttribute="leading" secondItem="tqZ-wf-8Yq" secondAttribute="leading" id="V9i-TS-ZML"/>
                             <constraint firstItem="m8i-B4-I3T" firstAttribute="top" secondItem="fmj-mf-Edj" secondAttribute="bottom" constant="16" id="Voj-Dv-cor"/>
+                            <constraint firstItem="N7G-pu-ai0" firstAttribute="top" secondItem="bAo-us-s4C" secondAttribute="bottom" id="XSR-5C-wP8"/>
                             <constraint firstItem="m8i-B4-I3T" firstAttribute="centerX" secondItem="tqZ-wf-8Yq" secondAttribute="centerX" id="uXV-FX-lV0"/>
                         </constraints>
                     </view>
@@ -75,6 +84,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playerContainerView" destination="bAo-us-s4C" id="eJz-Nq-qZy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKw-GK-tdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,9 @@ import UIKit
 final class ViewController: UIViewController {
     private let disposeBag: DisposeBag = DisposeBag()
     private var selectedDevice: RemoteMediaPlayer?
+	private var presentPlayerModally: Bool = false
+	
+	@IBOutlet private weak var playerContainerView: UIView!
     
     // sample video
 	private lazy var SAMPLE_VIDEO_METADATA: Metadata = {
@@ -31,6 +34,12 @@ final class ViewController: UIViewController {
 		
 		return url
 	}()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		hidePlayerContainerView()
+	}
     
     @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
         do {
@@ -100,7 +109,7 @@ final class ViewController: UIViewController {
 			let dummyPlayer = DummyPlayer()
 			let playerTheme = FireTVPlayerDarkTheme()
 			let fireTVPlayerVC = try MockFireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: playerTheme, delegate: self)
-			present(fireTVPlayerVC, animated: true)
+			showPlayerViewController(fireTVPlayerVC)
 		} catch {
 			print(error)
 		}
@@ -111,7 +120,7 @@ final class ViewController: UIViewController {
             let dummyPlayer = DummyPlayer()
 			let playerTheme = FireTVPlayerLightTheme()
 			let fireTVPlayerVC = try MockFireTVPlayerWireframe.makeViewController(forPlayer: dummyPlayer, theme: playerTheme, delegate: self)
-            present(fireTVPlayerVC, animated: true)
+            showPlayerViewController(fireTVPlayerVC)
         } catch {
             print(error)
         }
@@ -143,6 +152,41 @@ extension ViewController: FireTVSelectionDelegateProtocol {
 
 extension ViewController: FireTVPlayerDelegateProtocol {
     func didPressCloseButton(_ fireTVPlayerViewController: FireTVPlayerViewController) {
-        fireTVPlayerViewController.dismiss(animated: true, completion: nil)
+		hidePlayerViewController(fireTVPlayerViewController)
     }
+}
+
+extension ViewController {
+	private func showPlayerViewController(_ viewController: FireTVPlayerViewController) {
+		if presentPlayerModally {
+			present(viewController, animated: true)
+		} else {
+			addChildViewController(viewController)
+			playerContainerView.addSubview(viewController.view)
+			
+			showPlayerContainerView()
+		}
+	}
+	
+	private func hidePlayerViewController(_ viewController: FireTVPlayerViewController) {
+		if presentPlayerModally {
+			viewController.dismiss(animated: true, completion: nil)
+			presentPlayerModally = false
+		} else {
+			viewController.removeFromParentViewController()
+			viewController.view.removeFromSuperview()
+			hidePlayerContainerView()
+			presentPlayerModally = true
+		}
+	}
+	
+	private func showPlayerContainerView() {
+		UIView.animate(withDuration: 0.6) {
+			self.playerContainerView.alpha = 1
+		}
+	}
+	
+	private func hidePlayerContainerView() {
+		playerContainerView.alpha = 0
+	}
 }
