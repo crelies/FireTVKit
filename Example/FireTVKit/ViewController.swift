@@ -26,7 +26,7 @@ final class ViewController: UIViewController {
 		metadata.noreplay = true
 		return metadata
 	}()
-    private let SAMPLE_VIDEO_URL = "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4"
+    private let SAMPLE_VIDEO_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 	private lazy var SAMPLE_VIDEO: URL? = {
 		guard let url = URL(string: SAMPLE_VIDEO_URL) else {
 			return nil
