@@ -6,15 +6,18 @@
 //  Copyright © 2018 Christian Elies. All rights reserved.
 //
 
+import AmazonFling
 import RxSwift
 import UIKit
 
 protocol FireTVPlayerPresenterProtocol: class, FireTVPlayerInteractorOutputProtocol {
     func viewDidLoad()
     func didPressCloseButton()
+    func didPressRewind10sButton()
     func didPressPlayButton()
     func didPressPauseButton()
     func didPressStopButton()
+    func didPressFastForward10sButton()
     func didChangePositionValue(_ position: Float)
     func didChangePosition(_ position: Float)
 }
@@ -94,6 +97,16 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             }).disposed(by: disposeBag)
     }
     
+    func didPressRewind10sButton() {
+        interactor.setPlayerPosition(-10, type: RELATIVE)
+            .subscribe(onCompleted: {
+                print("player rewind 10s")
+            }) { error in
+                // TODO:
+                print("interactor.setPlayerPosition() relative: \(error.localizedDescription)")
+            }.disposed(by: disposeBag)
+    }
+    
     func didPressPlayButton() {
         interactor.play().subscribe(onCompleted: { [weak self] in
             print("player played")
@@ -126,6 +139,16 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         }.disposed(by: disposeBag)
     }
     
+    func didPressFastForward10sButton() {
+        interactor.setPlayerPosition(10, type: RELATIVE)
+            .subscribe(onCompleted: {
+                print("player fast forward 10s")
+            }) { error in
+                // TODO:
+                print("interactor.setPlayerPosition() relative: \(error.localizedDescription)")
+            }.disposed(by: disposeBag)
+    }
+    
     func didChangePositionValue(_ position: Float) {
         let positionString = dependencies.timeStringFactory.makeTimeString(fromPositionValue: position)
         view?.setPositionText(positionString)
@@ -137,7 +160,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 print("player position changed")
             }) { error in
                 // TODO:
-                print("interactor.setPlayerPosition(): \(error.localizedDescription)")
+                print("interactor.setPlayerPosition() absolute: \(error.localizedDescription)")
             }.disposed(by: disposeBag)
     }
 }

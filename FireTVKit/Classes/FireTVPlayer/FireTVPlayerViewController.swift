@@ -27,9 +27,11 @@ public final class FireTVPlayerViewController: UIViewController {
     @IBOutlet private weak var positionLabel: UILabel!
     
     @IBOutlet private weak var controlStackView: UIStackView!
+    @IBOutlet private weak var rewind10sButton: UIButton!
     @IBOutlet private weak var playButton: UIButton!
     @IBOutlet private weak var pauseButton: UIButton!
     @IBOutlet private weak var stopButton: UIButton!
+    @IBOutlet private weak var fastForward10sButton: UIButton!
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,10 @@ public final class FireTVPlayerViewController: UIViewController {
         presenter?.didPressCloseButton()
     }
     
+    @IBAction private func didPressRewind10sButton(_ sender: UIButton) {
+        presenter?.didPressRewind10sButton()
+    }
+    
     @IBAction private func didPressPlayButton(_ sender: UIButton) {
         presenter?.didPressPlayButton()
     }
@@ -53,6 +59,10 @@ public final class FireTVPlayerViewController: UIViewController {
     
     @IBAction private func didPressStopButton(_ sender: UIButton) {
         presenter?.didPressStopButton()
+    }
+    
+    @IBAction private func didPressFastForward10sButton(_ sender: UIButton) {
+        presenter?.didPressFastForward10sButton()
     }
 	
 	@IBAction private func didChangePositionValue(_ sender: UISlider) {
@@ -77,9 +87,11 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 		positionLabel.textColor = theme.labelColor
 		durationLabel.textColor = theme.labelColor
 		positionSlider.tintColor = theme.positionSliderTintColor
+        rewind10sButton.tintColor = theme.controlButtonTintColor
         playButton.tintColor = theme.controlButtonTintColor
         pauseButton.tintColor = theme.controlButtonTintColor
         stopButton.tintColor = theme.controlButtonTintColor
+        fastForward10sButton.tintColor = theme.controlButtonTintColor
 	}
     
     func setPlayerName(_ playerName: String) {
@@ -107,9 +119,11 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
     }
     
     func updateUI(withViewModel viewModel: FireTVPlayerViewControllerViewModel) {
+        rewind10sButton.isEnabled = viewModel.isPlayerControlEnabled
         playButton.isEnabled = viewModel.isPlayerControlEnabled
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
         stopButton.isEnabled = viewModel.isPlayerControlEnabled
+        fastForward10sButton.isEnabled = viewModel.isPlayerControlEnabled
         positionSlider.isEnabled = viewModel.isPlayerControlEnabled
         
         activityIndicatorView.isHidden = viewModel.isActivityIndicatorViewHidden
@@ -134,21 +148,27 @@ extension FireTVPlayerViewController {
 		statusLabel.text = ""
 		positionLabel.text = ""
 		durationLabel.text = ""
+        rewind10sButton.setTitle("", for: .normal)
         playButton.setTitle("", for: .normal)
         pauseButton.setTitle("", for: .normal)
         stopButton.setTitle("", for: .normal)
+        fastForward10sButton.setTitle("", for: .normal)
     }
     
     private func setButtonImages() {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
         // TODO: move to constants
         if let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
+            rewind10sButton.setImage(UIImage(named: "ic_jump_back_10_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
+            rewind10sButton.setImage(UIImage(named: "ic_jump_back_10_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
             playButton.setImage(UIImage(named: "ic_play_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
             playButton.setImage(UIImage(named: "ic_play_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
             pauseButton.setImage(UIImage(named: "ic_pause_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
             pauseButton.setImage(UIImage(named: "ic_pause_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
             stopButton.setImage(UIImage(named: "ic_stop_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
             stopButton.setImage(UIImage(named: "ic_stop_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
+            fastForward10sButton.setImage(UIImage(named: "ic_jump_forward_10_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
+            fastForward10sButton.setImage(UIImage(named: "ic_jump_forward_10_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
         }
     }
 }
