@@ -36,6 +36,7 @@ public final class FireTVPlayerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        positionSlider.isEnabled = false
         setConstraints()
         setLocalizedTexts()
         setButtonImages()
@@ -130,11 +131,14 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
         stopButton.isEnabled = viewModel.isPlayerControlEnabled
         fastForward10sButton.isEnabled = viewModel.isPlayerControlEnabled
-        positionSlider.isEnabled = viewModel.isPlayerControlEnabled
         
         activityIndicatorView.isHidden = viewModel.isActivityIndicatorViewHidden
         positionStackView.isHidden = viewModel.isPositionStackViewHidden
         controlStackView.isHidden = viewModel.isControlStackViewHidden
+    }
+    
+    func updatePositionSliderUserInteractionEnabled(_ enabled: Bool) {
+        positionSlider.isEnabled = enabled
     }
 }
 

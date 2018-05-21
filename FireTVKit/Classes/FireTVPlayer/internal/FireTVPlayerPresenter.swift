@@ -85,6 +85,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         interactor.disconnect()
             .subscribe(onCompleted: {
                 self.state = .disconnected
+                self.view?.updatePositionSliderUserInteractionEnabled(false)
                 self.interactor.stopFireTVDiscovery()
                 self.delegate?.didPressCloseButton(viewController)
             }, onError: { error in
@@ -93,6 +94,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 
                 if let playerServiceError = error as? PlayerServiceError, playerServiceError == PlayerServiceError.currentPlayerComparisonFailed {
                     self.state = .disconnected
+                    self.view?.updatePositionSliderUserInteractionEnabled(false)
                     self.interactor.stopFireTVDiscovery()
                     self.delegate?.didPressCloseButton(viewController)
                 }
@@ -100,6 +102,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressRewind10sButton() {
+        guard state == .connected else {
+            return
+        }
+        
         interactor.setPlayerPosition(-10 * 1000, type: RELATIVE)
             .subscribe(onCompleted: {
                 print("player rewind 10s")
@@ -110,6 +116,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressPlayButton() {
+        guard state == .connected else {
+            return
+        }
+        
         interactor.play().subscribe(onCompleted: { [weak self] in
             print("player played")
             self?.getDuration()
@@ -120,6 +130,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressPauseButton() {
+        guard state == .connected else {
+            return
+        }
+        
         interactor.pause().subscribe(onCompleted: {
             print("player paused")
         }) { error in
@@ -129,6 +143,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressStopButton() {
+        guard state == .connected else {
+            return
+        }
+        
         interactor.stop().subscribe(onCompleted: { [weak self] in
             print("player stopped")
             self?.view?.setPosition(0)
@@ -142,6 +160,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressFastForward10sButton() {
+        guard state == .connected else {
+            return
+        }
+        
         interactor.setPlayerPosition(10 * 1000, type: RELATIVE)
             .subscribe(onCompleted: {
                 print("player fast forward 10s")
@@ -152,11 +174,19 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didChangePositionValue(_ position: Float) {
+        guard state == .connected else {
+            return
+        }
+        
         let positionString = dependencies.timeStringFactory.makeTimeString(fromPositionValue: position)
         view?.setPositionText(positionString)
     }
     
     func didChangePosition(_ position: Float) {
+        guard state == .connected else {
+            return
+        }
+        
         interactor.setPlayerPosition(position)
             .subscribe(onCompleted: {
                 print("player position changed")
@@ -174,6 +204,7 @@ extension FireTVPlayerPresenter {
                 if let durationText = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: duration) {
                     self?.view?.setMaximumPosition(Float(duration))
                     self?.view?.setDurationText(durationText)
+                    self?.view?.updatePositionSliderUserInteractionEnabled(true)
                 }
             }) { error in
                 // TODO:
@@ -238,6 +269,10 @@ extension FireTVPlayerPresenter {
                     }
                     if let status = playerData.status {
                         DispatchQueue.main.async { [weak self] in
+                            if status.rawValue == ReadyToPlay.rawValue {
+                                self?.getDuration()
+                            }
+                            
                             self?.view?.setStatus(status.stringValue)
                         }
                     }
