@@ -13,7 +13,7 @@ enum SubtitleKind: String {
 	case subtitles
 }
 
-public struct Subtitle: Encodable {
+public struct Subtitle: Codable {
 	let src: String // required – URL of the WebVTT file
 	let kind: String // required – always "subtitles"
 	let srclang: String // required – language code

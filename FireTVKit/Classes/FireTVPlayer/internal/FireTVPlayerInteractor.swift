@@ -22,6 +22,7 @@ protocol FireTVPlayerInteractorInputProtocol {
 	func stopFireTVDiscovery()
     func connect() -> Completable
     func getPlayerName() -> String
+    func getPlayerInfo() -> Single<MediaPlayerInfo>
     func getPlayerData() -> Single<PlayerData>
     func getDuration() -> Single<Int64>
     func play() -> Completable
@@ -70,6 +71,10 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     
     func getPlayerName() -> String {
         return player.name()
+    }
+    
+    func getPlayerInfo() -> Single<MediaPlayerInfo> {
+        return dependencies.playerService.getPlayerInfo()
     }
     
     func getPlayerData() -> Single<PlayerData> {

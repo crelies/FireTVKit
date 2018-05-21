@@ -68,6 +68,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             .subscribe(onCompleted: { [weak self] in
                 self?.state = .connected
                 self?.getDuration()
+                self?.getPlayerInfo()
                 self?.getPlayerData()
                 self?.observePlayerData()
             }) { error in
@@ -177,6 +178,30 @@ extension FireTVPlayerPresenter {
             }) { error in
                 // TODO:
                 print("interactor.getDuration(): \(error.localizedDescription)")
+            }.disposed(by: disposeBag)
+    }
+    
+    private func getPlayerInfo() {
+        interactor.getPlayerInfo()
+            .subscribe(onSuccess: { [weak self] playerInfo in
+                do {
+                    guard let metadataData = playerInfo.metadata().data(using: .utf8) else {
+                        return
+                    }
+                    
+                    let metadata = try JSONDecoder().decode(Metadata.self, from: metadataData)
+                    
+                    if let mediaName = metadata.title {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.view?.setMediaName(mediaName)
+                        }
+                    }
+                } catch {
+                    print("getPlayerInfo(): \(error.localizedDescription)")
+                }
+            }) { error in
+                // TODO:
+                print("interactor.getPlayerInfo(): \(error.localizedDescription)")
             }.disposed(by: disposeBag)
     }
     

@@ -17,7 +17,8 @@ public final class FireTVPlayerViewController: UIViewController {
     
     @IBOutlet private weak var mainStackView: UIStackView!
     
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var playerNameLabel: UILabel!
+    @IBOutlet private weak var mediaNameLabel: UILabel!
     @IBOutlet private weak var statusLabel: UILabel!
 	
     @IBOutlet private weak var positionStackView: UIStackView!
@@ -82,7 +83,8 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 	func setTheme(_ theme: FireTVPlayerThemeProtocol) {
 		view.backgroundColor = theme.backgroundColor
 		closeButton.tintColor = theme.closeButtonTintColor
-		nameLabel.textColor = theme.labelColor
+		playerNameLabel.textColor = theme.labelColor
+        mediaNameLabel.textColor = theme.labelColor
         statusLabel.textColor = theme.labelColor
 		positionLabel.textColor = theme.labelColor
 		durationLabel.textColor = theme.labelColor
@@ -95,7 +97,11 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 	}
     
     func setPlayerName(_ playerName: String) {
-        nameLabel.text = playerName
+        playerNameLabel.text = playerName
+    }
+    
+    func setMediaName(_ mediaName: String) {
+        mediaNameLabel.text = mediaName
     }
     
     func setStatus(_ status: String) {
@@ -144,7 +150,8 @@ extension FireTVPlayerViewController {
     
     private func setLocalizedTexts() {
         closeButton.setTitle("", for: .normal)
-		nameLabel.text = ""
+		playerNameLabel.text = ""
+        mediaNameLabel.text = ""
 		statusLabel.text = ""
 		positionLabel.text = ""
 		durationLabel.text = ""

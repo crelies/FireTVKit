@@ -13,7 +13,7 @@ enum MetadataType: String {
 	case video
 }
 
-public struct Metadata: Encodable {
+public struct Metadata: Codable {
 	public let type: String // required (if not present, video is assumed)
 	public var title: String? // optional
 	public var description: String? // optional

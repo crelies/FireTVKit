@@ -66,6 +66,14 @@ final class MockPlayerService: PlayerServiceProtocol {
 			return Disposables.create()
 		}
 	}
+    
+    func getPlayerInfo() -> Single<MediaPlayerInfo> {
+        return Single.create { single in
+            let playerInfo: MediaPlayerInfo = MediaPlayerInfo(source: "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4", metaData: "{\"title\": \"Testvideo\", \"description\": \"Only use for test purposes\"}", andExtra: "extra")
+            single(.success(playerInfo))
+            return Disposables.create()
+        }
+    }
 	
 	func getPlayerData() -> Single<PlayerData> {
 		return Single.create { single in
