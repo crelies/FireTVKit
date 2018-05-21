@@ -13,6 +13,7 @@ public enum PlayerServiceError: Error {
     case couldNotCastDurationToInt
     case couldNotCastPositionToInt64
     case couldNotCastTaskResultToMediaPlayerStatus
+    case couldNotCastTaskResultToMediaPlayerInfo
 	case invalidTaskResult
     case currentPlayerComparisonFailed
     case couldNotCreateStringFromMetadata

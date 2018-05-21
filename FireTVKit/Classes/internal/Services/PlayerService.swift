@@ -205,6 +205,33 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
     }
 	
 	// MARK: - player data
+    func getPlayerInfo() -> Single<MediaPlayerInfo> {
+        return Single.create { single -> Disposable in
+            let disposable = Disposables.create()
+            
+            guard let currentPlayer = self.player else {
+                single(.error(PlayerServiceError.noPlayer))
+                return disposable
+            }
+            
+            let _ = currentPlayer.getMediaInfo().continue(with: BFExecutor.mainThread(), with: { task -> Any? in
+                if let error = task.error {
+                    single(.error(error))
+                } else {
+                    if let playerInfo = task.result as? MediaPlayerInfo {
+                        single(.success(playerInfo))
+                    } else {
+                        single(.error(PlayerServiceError.couldNotCastTaskResultToMediaPlayerInfo))
+                    }
+                }
+                
+                return nil
+            })
+            
+            return disposable
+        }
+    }
+    
 	func getPlayerData() -> Single<PlayerData> {
 		return Single.create { single -> Disposable in
             let disposable = Disposables.create()

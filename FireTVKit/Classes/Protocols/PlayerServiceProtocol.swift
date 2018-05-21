@@ -20,6 +20,7 @@ public protocol PlayerServiceProtocol {
     func pause() -> Completable
     func setPosition(position: Int64, type: SeekType) -> Completable
     func stop() -> Completable
+    func getPlayerInfo -> Single<MediaPlayerInfo>
 	func getPlayerData() -> Single<PlayerData>
 	func getDuration() -> Single<Int64>
 	func getPosition() -> Single<Int64>
