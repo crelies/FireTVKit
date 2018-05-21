@@ -55,6 +55,47 @@ final class ViewController: UIViewController {
         }
     }
     
+    @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
+        if let selectedDevice = selectedDevice {
+            let fireTVManager = FireTVManager()
+            do {
+                try fireTVManager.startDiscovery(forPlayerID: "amzn.thin.pl")
+            } catch {
+                // TODO:
+            }
+            
+            let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
+            
+            _ = playerService.playerData
+                .subscribe(onNext: { playerData in
+                    if let playerData = playerData {
+                        print(playerData)
+                    }
+                })
+            
+            _ = playerService.play(withMetadata: SAMPLE_VIDEO_METADATA, url: SAMPLE_VIDEO_URL)
+                .subscribe(onCompleted: {
+                    print("success")
+                    fireTVManager.stopDiscovery()
+                }, onError: { error in
+                    print(error)
+                    fireTVManager.stopDiscovery()
+                })
+        }
+    }
+    
+    @IBAction private func didPressOpenPlayerButton(_ sender: UIButton) {
+        do {
+            if let selectedDevice = selectedDevice {
+                let theme = FireTVPlayerDarkTheme()
+                let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: selectedDevice, theme: theme, delegate: self)
+                showPlayerViewController(fireTVPlayerVC)
+            }
+        } catch {
+            
+        }
+    }
+    
     @IBAction private func didPressDummyPlayerSelectionButtonDarkTheme(_ sender: UIButton) {
         do {
             let selectionTheme = FireTVSelectionDarkTheme()
@@ -72,35 +113,6 @@ final class ViewController: UIViewController {
             present(fireTVSelectionVC, animated: true)
         } catch {
             print(error)
-        }
-    }
-    
-    @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
-        if let selectedDevice = selectedDevice {
-			let fireTVManager = FireTVManager()
-			do {
-				try fireTVManager.startDiscovery(forPlayerID: "amzn.thin.pl")
-			} catch {
-				// TODO:
-			}
-            
-            let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
-            
-            _ = playerService.playerData
-                .subscribe(onNext: { playerData in
-                    if let playerData = playerData {
-                        print(playerData)
-                    }
-                })
-			
-            _ = playerService.play(withMetadata: SAMPLE_VIDEO_METADATA, url: SAMPLE_VIDEO_URL)
-                .subscribe(onCompleted: {
-                    print("success")
-                    fireTVManager.stopDiscovery()
-                }, onError: { error in
-                    print(error)
-                    fireTVManager.stopDiscovery()
-                })
         }
     }
 	

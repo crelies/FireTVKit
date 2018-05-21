@@ -28,7 +28,7 @@ public struct MockFireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         let router = FireTVSelectionRouter()
         
         let interactorDependencies = MockFireTVSelectionInteractorDependencies()
-        let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId)
+        let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId, media: media)
         
         let presenterDependencies = FireTVSelectionPresenterDependencies()
         let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate)

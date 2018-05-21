@@ -99,7 +99,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressRewind10sButton() {
-        interactor.setPlayerPosition(-10, type: RELATIVE)
+        interactor.setPlayerPosition(-10 * 1000, type: RELATIVE)
             .subscribe(onCompleted: {
                 print("player rewind 10s")
             }) { error in
@@ -141,7 +141,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func didPressFastForward10sButton() {
-        interactor.setPlayerPosition(10, type: RELATIVE)
+        interactor.setPlayerPosition(10 * 1000, type: RELATIVE)
             .subscribe(onCompleted: {
                 print("player fast forward 10s")
             }) { error in

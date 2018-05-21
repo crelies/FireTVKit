@@ -115,6 +115,7 @@ extension FireTVSelectionPresenter: UITableViewDelegate {
         }
         
         let player = self.player[indexPath.row]
+        interactor.playMedia(onPlayer: player)
         delegate?.didSelectPlayer(viewController, player: player)
     }
 }

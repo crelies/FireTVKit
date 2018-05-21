@@ -11,9 +11,11 @@ import Foundation
 struct MockFireTVSelectionInteractorDependencies: FireTVSelectionInteractorDependenciesProtocol {
     let playerDiscoveryController: PlayerDiscoveryControllerProtocol
     let playerDiscoveryService: PlayerDiscoveryServiceProtocol
+    let playerService: PlayerServiceProtocol
     
     init() {
         playerDiscoveryController = MockServiceFactory.makePlayerDiscoveryController()
         playerDiscoveryService = MockServiceFactory.makePlayerDiscoveryService()
+        playerService = MockServiceFactory.makePlayerService()
     }
 }

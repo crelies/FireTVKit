@@ -18,6 +18,7 @@ protocol FireTVSelectionInteractorInputProtocol {
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol)
 	func startFireTVDiscovery() throws
 	func getFireTVs() -> Observable<[RemoteMediaPlayer]?>
+    func playMedia(onPlayer player: RemoteMediaPlayer)
 	func stopFireTVDiscovery()
 }
 
@@ -25,10 +26,14 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     private weak var presenter: FireTVSelectionPresenterProtocol?
     private var dependencies: FireTVSelectionInteractorDependenciesProtocol
     private let playerId: String
+    private var media: FireTVMedia?
+    private let disposeBag: DisposeBag
     
-    init(dependencies: FireTVSelectionInteractorDependenciesProtocol, playerId: String) {
+    init(dependencies: FireTVSelectionInteractorDependenciesProtocol, playerId: String, media: FireTVMedia?) {
         self.dependencies = dependencies
         self.playerId = playerId
+        self.media = media
+        self.disposeBag = DisposeBag()
     }
 	
 	// TODO: remove me
@@ -48,6 +53,22 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
 	func getFireTVs() -> Observable<[RemoteMediaPlayer]?> {
 		return dependencies.playerDiscoveryService.devicesVariable.asObservable()
 	}
+    
+    func playMedia(onPlayer player: RemoteMediaPlayer) {
+        guard let media = media else {
+            return
+        }
+        
+        var playerService = dependencies.playerService
+        playerService.player = player
+        
+        playerService.play(withMetadata: media.metadata, url: media.url.absoluteString)
+            .subscribe(onCompleted: {
+                print("media played")
+            }) { error in
+                print("interactor.playMedia(): \(error.localizedDescription)")
+            }.disposed(by: disposeBag)
+    }
 	
 	func stopFireTVDiscovery() {
         dependencies.playerDiscoveryService.stopDiscovering()
