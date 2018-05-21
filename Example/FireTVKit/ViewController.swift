@@ -139,7 +139,7 @@ extension ViewController: FireTVSelectionDelegateProtocol {
             selectedDevice = player
 			let playerTheme = FireTVPlayerDarkTheme()
 			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: playerTheme, delegate: self)
-            present(fireTVPlayerVC, animated: true)
+            showPlayerViewController(fireTVPlayerVC)
         } catch {
             print(error)
         }
