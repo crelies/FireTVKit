@@ -77,11 +77,11 @@ public final class FireTVPlayerViewController: UIViewController {
 }
 
 extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
-    func setPresenter(_ presenter: FireTVPlayerPresenterProtocol) {
+    public func setPresenter(_ presenter: FireTVPlayerPresenterProtocol) {
         self.presenter = presenter
     }
 	
-	func setTheme(_ theme: FireTVPlayerThemeProtocol) {
+	public func setTheme(_ theme: FireTVPlayerThemeProtocol) {
 		view.backgroundColor = theme.backgroundColor
 		closeButton.tintColor = theme.closeButtonTintColor
 		playerNameLabel.textColor = theme.labelColor
@@ -97,35 +97,35 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         fastForward10sButton.tintColor = theme.controlButtonTintColor
 	}
     
-    func setPlayerName(_ playerName: String) {
+    public func setPlayerName(_ playerName: String) {
         playerNameLabel.text = playerName
     }
     
-    func setMediaName(_ mediaName: String) {
+    public func setMediaName(_ mediaName: String) {
         mediaNameLabel.text = mediaName
     }
     
-    func setStatus(_ status: String) {
+    public func setStatus(_ status: String) {
         statusLabel.text = status
     }
     
-    func setPositionText(_ positionText: String) {
+    public func setPositionText(_ positionText: String) {
         positionLabel.text = positionText
     }
 	
-	func setPosition(_ position: Float) {
+	public func setPosition(_ position: Float) {
 		positionSlider.value = position
 	}
     
-    func setMaximumPosition(_ maximumPosition: Float) {
+    public func setMaximumPosition(_ maximumPosition: Float) {
         positionSlider.maximumValue = maximumPosition
     }
     
-    func setDurationText(_ durationText: String) {
+    public func setDurationText(_ durationText: String) {
         durationLabel.text = durationText
     }
     
-    func updateUI(withViewModel viewModel: FireTVPlayerViewControllerViewModel) {
+    public func updateUI(withViewModel viewModel: FireTVPlayerViewControllerViewModel) {
         rewind10sButton.isEnabled = viewModel.isPlayerControlEnabled
         playButton.isEnabled = viewModel.isPlayerControlEnabled
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
@@ -137,7 +137,7 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         controlStackView.isHidden = viewModel.isControlStackViewHidden
     }
     
-    func updatePositionSliderUserInteractionEnabled(_ enabled: Bool) {
+    public func updatePositionSliderUserInteractionEnabled(_ enabled: Bool) {
         positionSlider.isEnabled = enabled
     }
 }

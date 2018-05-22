@@ -10,18 +10,6 @@ import AmazonFling
 import RxSwift
 import UIKit
 
-protocol FireTVPlayerPresenterProtocol: class, FireTVPlayerInteractorOutputProtocol {
-    func viewDidLoad()
-    func didPressCloseButton()
-    func didPressRewind10sButton()
-    func didPressPlayButton()
-    func didPressPauseButton()
-    func didPressStopButton()
-    func didPressFastForward10sButton()
-    func didChangePositionValue(_ position: Float)
-    func didChangePosition(_ position: Float)
-}
-
 final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     private weak var view: FireTVPlayerViewProtocol?
     private let interactor: FireTVPlayerInteractorInputProtocol

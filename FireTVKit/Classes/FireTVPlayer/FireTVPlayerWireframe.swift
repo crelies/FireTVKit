@@ -35,4 +35,16 @@ public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
         
         return view
     }
+    
+    public static func configureView(_ view: FireTVPlayerViewProtocol, withPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) {
+        let router = FireTVPlayerRouter()
+        
+        let interactorDependencies = FireTVPlayerInteractorDependencies()
+        let presenterDependencies = FireTVPlayerPresenterDependencies()
+        
+        let interactor = FireTVPlayerInteractor(dependencies: interactorDependencies, player: player)
+        let presenter = FireTVPlayerPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate)
+        interactor.setPresenter(presenter)
+        view.setPresenter(presenter)
+    }
 }

@@ -364,6 +364,7 @@
 		B991B24220AE086900C08EEB /* FireTVSelectionDarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B24120AE086900C08EEB /* FireTVSelectionDarkTheme.swift */; };
 		B991B24420AE089100C08EEB /* FireTVSelectionLightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B24320AE089100C08EEB /* FireTVSelectionLightTheme.swift */; };
 		B991B24620AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B24520AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift */; };
+		B991B24820B49C5000C08EEB /* FireTVPlayerPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B24720B49C5000C08EEB /* FireTVPlayerPresenterProtocol.swift */; };
 		BA04EB6158337B2AB6687461450732E0 /* FireTVPlayerPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF357834BF5E497FD3ADF219F003AB4 /* FireTVPlayerPresenterState.swift */; };
 		BA261F3EE4311A40ACA78EEDF7D7EECC /* Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A20535BDC02E94818553BD52832C8 /* Reduce.swift */; };
 		BBA901D50768DBF3868AD5C472B35A1B /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E50A78B956C5A05EC157B79B5B3FD /* Timeout.swift */; };
@@ -1019,6 +1020,7 @@
 		B991B24120AE086900C08EEB /* FireTVSelectionDarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVSelectionDarkTheme.swift; sourceTree = "<group>"; };
 		B991B24320AE089100C08EEB /* FireTVSelectionLightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVSelectionLightTheme.swift; sourceTree = "<group>"; };
 		B991B24520AE1E2800C08EEB /* FireTVSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		B991B24720B49C5000C08EEB /* FireTVPlayerPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVPlayerPresenterProtocol.swift; sourceTree = "<group>"; };
 		B99C61284F5565A4550EDD59776A5B29 /* UIControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Rx.swift"; path = "RxCocoa/iOS/UIControl+Rx.swift"; sourceTree = "<group>"; };
 		BA5047EF34A4A809E05E82D5569E5C67 /* RxTableViewReactiveArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewReactiveArrayDataSource.swift; path = RxCocoa/iOS/DataSources/RxTableViewReactiveArrayDataSource.swift; sourceTree = "<group>"; };
 		BA78A2956278C87630DD94A51131EB96 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1320,8 +1322,6 @@
 				E3E04D4788AB77FDC0B0CFB8C653ECDB /* FireTVPlayerPresenterDependencies.swift */,
 				7BF357834BF5E497FD3ADF219F003AB4 /* FireTVPlayerPresenterState.swift */,
 				E8FD7F60683B67660660BD7014898D8A /* FireTVPlayerRouter.swift */,
-				232931B06816E9D49DF1BBE2F8BBEF8A /* FireTVPlayerViewControllerViewModel.swift */,
-				DD291D412D88A4F8D87E9BD3A1D354CD /* FireTVPlayerViewProtocol.swift */,
 				9A8395714BE0014859979B9E1B3382FD /* FireTVPlayerWireframeProtocol.swift */,
 				CE5D7F2620AD4FED001A50B9 /* MockFireTVPlayerInteractorDependencies.swift */,
 			);
@@ -2146,8 +2146,11 @@
 				731F105220D7A786065D88254DD14321 /* FireTVPlayerWireframeError.swift */,
 				CE5D7F1D20AC57CF001A50B9 /* FireTVPlayerLightTheme.swift */,
 				CE5D7F1B20AC55A4001A50B9 /* FireTVPlayerDarkTheme.swift */,
+				DD291D412D88A4F8D87E9BD3A1D354CD /* FireTVPlayerViewProtocol.swift */,
+				232931B06816E9D49DF1BBE2F8BBEF8A /* FireTVPlayerViewControllerViewModel.swift */,
 				CE5D7F2420AD4F80001A50B9 /* MockFireTVPlayerWireframe.swift */,
 				2327CCE742E432A0745FF04A34F7A656 /* internal */,
+				B991B24720B49C5000C08EEB /* FireTVPlayerPresenterProtocol.swift */,
 			);
 			name = FireTVPlayer;
 			path = FireTVKit/Classes/FireTVPlayer;
@@ -2640,6 +2643,7 @@
 				CE5D7F1E20AC57CF001A50B9 /* FireTVPlayerLightTheme.swift in Sources */,
 				CE5D7F2F20AD5D7F001A50B9 /* MockPlayerDiscoveryService.swift in Sources */,
 				78C1329CCB0BAE9261BAA9B6C6596285 /* PlayerViewModel.swift in Sources */,
+				B991B24820B49C5000C08EEB /* FireTVPlayerPresenterProtocol.swift in Sources */,
 				FFEEE02045E1F7E4C8A503EC7A713C35 /* ReachabilityService.swift in Sources */,
 				87C61C5382B96E26CE505C105BCDF4B5 /* ReachabilityServiceProtocol.swift in Sources */,
 				B991B24220AE086900C08EEB /* FireTVSelectionDarkTheme.swift in Sources */,

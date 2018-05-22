@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FireTVPlayerViewProtocol: class {
+public protocol FireTVPlayerViewProtocol: class {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)
 	func setTheme(_ theme: FireTVPlayerThemeProtocol)
 	func setPlayerName(_ playerName: String)

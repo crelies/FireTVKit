@@ -34,4 +34,8 @@ public struct MockFireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
 		
 		return view
 	}
+    
+    public static func configureView(_ view: FireTVPlayerViewProtocol, withPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) {
+        
+    }
 }
