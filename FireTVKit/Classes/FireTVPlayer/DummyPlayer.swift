@@ -95,6 +95,6 @@ public final class DummyPlayer: RemoteMediaPlayer {
 	}
 	
 	public func getMediaInfo() -> BFTask<AnyObject>! {
-		return BFTask<AnyObject>(result: MediaPlayerInfo(source: "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4", metaData: "{\"title\": \"Testvideo\", \"description\": \"Only use for test purposes\"}", andExtra: "extra"))
+		return BFTask<AnyObject>(result: MediaPlayerInfo(source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", metaData: "{\"title\": \"Testvideo\", \"description\": \"Only use for test purposes\", \"type\": \"video\"}", andExtra: ""))
 	}
 }
