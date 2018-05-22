@@ -10,11 +10,6 @@ import AmazonFling
 import RxSwift
 import UIKit
 
-protocol FireTVSelectionPresenterProtocol: class, FireTVSelectionInteractorOutputProtocol {
-    func viewDidLoad()
-    func didPressCloseBarButtonItem()
-}
-
 final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol {
     private let dependencies: FireTVSelectionPresenterDependenciesProtocol
     private weak var view: FireTVSelectionViewProtocol?

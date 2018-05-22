@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FireTVSelectionViewProtocol: class {
+public protocol FireTVSelectionViewProtocol: class {
     var tableView: UITableView! { get }
     
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol)

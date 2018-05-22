@@ -38,4 +38,17 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         
         return navigationController
     }
+    
+    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) {
+        let router = FireTVSelectionRouter()
+        
+        let interactorDependencies = FireTVSelectionInteractorDependencies()
+        let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId, media: media)
+        
+        let presenterDependencies = FireTVSelectionPresenterDependencies()
+        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate)
+        
+        interactor.setPresenter(presenter)
+        view.setPresenter(presenter)
+    }
 }

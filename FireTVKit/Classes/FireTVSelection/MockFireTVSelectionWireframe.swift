@@ -38,4 +38,8 @@ public struct MockFireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         
         return navigationController
     }
+    
+    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) {
+        
+    }
 }
