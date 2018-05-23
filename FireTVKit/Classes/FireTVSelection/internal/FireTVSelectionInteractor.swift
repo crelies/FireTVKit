@@ -15,9 +15,10 @@ protocol FireTVSelectionInteractorOutputProtocol {
 }
 
 protocol FireTVSelectionInteractorInputProtocol {
+    var fireTVs: Observable<[RemoteMediaPlayer]?> { get }
+    
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol)
 	func startFireTVDiscovery() throws
-	func getFireTVs() -> Observable<[RemoteMediaPlayer]?>
     func playMedia(onPlayer player: RemoteMediaPlayer)
 	func stopFireTVDiscovery()
 }
@@ -28,6 +29,10 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     private let playerId: String
     private var media: FireTVMedia?
     private let disposeBag: DisposeBag
+    
+    var fireTVs: Observable<[RemoteMediaPlayer]?> {
+        return dependencies.playerDiscoveryService.devicesVariable.asObservable()
+    }
     
     init(dependencies: FireTVSelectionInteractorDependenciesProtocol, playerId: String, media: FireTVMedia?) {
         self.dependencies = dependencies
@@ -48,10 +53,6 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
 	func startFireTVDiscovery() throws {
 		try dependencies.playerDiscoveryService.startDiscovering()
         dependencies.playerDiscoveryController.startSearch(forPlayerId: playerId)
-	}
-	
-	func getFireTVs() -> Observable<[RemoteMediaPlayer]?> {
-		return dependencies.playerDiscoveryService.devicesVariable.asObservable()
 	}
     
     func playMedia(onPlayer player: RemoteMediaPlayer) {

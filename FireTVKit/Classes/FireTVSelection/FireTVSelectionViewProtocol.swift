@@ -16,4 +16,5 @@ public protocol FireTVSelectionViewProtocol: class {
     func setTableViewDataSource(dataSource: UITableViewDataSource)
     func setTableViewDelegate(delegate: UITableViewDelegate)
     func reloadData()
+    func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel)
 }

@@ -1,5 +1,5 @@
 //
-//  FireTVPlayerViewControllerViewModel.swift
+//  FireTVPlayerViewViewModel.swift
 //  FireTVKit
 //
 //  Created by crelies on 05.05.2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct FireTVPlayerViewControllerViewModel {
+public struct FireTVPlayerViewViewModel {
     let isPlayerControlEnabled: Bool
     let isActivityIndicatorViewHidden: Bool
     let isPositionStackViewHidden: Bool

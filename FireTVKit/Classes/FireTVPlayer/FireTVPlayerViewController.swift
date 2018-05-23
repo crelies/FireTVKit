@@ -127,7 +127,7 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         durationLabel.text = durationText
     }
     
-    public func updateUI(withViewModel viewModel: FireTVPlayerViewControllerViewModel) {
+    public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel) {
         rewind10sButton.isEnabled = viewModel.isPlayerControlEnabled
         playButton.isEnabled = viewModel.isPlayerControlEnabled
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled

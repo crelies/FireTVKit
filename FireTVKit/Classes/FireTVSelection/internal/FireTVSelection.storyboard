@@ -18,6 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Fdp-79-1T6">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KR-2W-yvF">
+                                <rect key="frame" x="165.5" y="323" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n7T-1i-4sv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,9 +36,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="n7T-1i-4sv" firstAttribute="top" secondItem="NCG-ax-oPO" secondAttribute="top" id="7Ms-zX-PM1"/>
+                            <constraint firstItem="8KR-2W-yvF" firstAttribute="centerY" secondItem="qsw-cV-GiV" secondAttribute="centerY" id="BC4-UT-C6y"/>
                             <constraint firstItem="NCG-ax-oPO" firstAttribute="trailing" secondItem="n7T-1i-4sv" secondAttribute="trailing" id="JBf-gp-UTG"/>
                             <constraint firstItem="n7T-1i-4sv" firstAttribute="leading" secondItem="NCG-ax-oPO" secondAttribute="leading" id="Lir-Pr-2Lh"/>
+                            <constraint firstItem="8KR-2W-yvF" firstAttribute="centerX" secondItem="qsw-cV-GiV" secondAttribute="centerX" id="Lsi-D2-otZ"/>
                             <constraint firstItem="NCG-ax-oPO" firstAttribute="bottom" secondItem="n7T-1i-4sv" secondAttribute="bottom" id="WKF-az-fr7"/>
+                            <constraint firstItem="Fdp-79-1T6" firstAttribute="centerX" secondItem="qsw-cV-GiV" secondAttribute="centerX" id="mZ1-Kc-tRH"/>
+                            <constraint firstItem="Fdp-79-1T6" firstAttribute="centerY" secondItem="qsw-cV-GiV" secondAttribute="centerY" id="tn7-Po-ZJu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NCG-ax-oPO"/>
                     </view>
@@ -42,7 +55,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="Fdp-79-1T6" id="c4k-fW-qFO"/>
                         <outlet property="closeBarButtonItem" destination="DSc-r8-SIt" id="naE-hn-xvA"/>
+                        <outlet property="noDevicesLabel" destination="8KR-2W-yvF" id="ztU-Ac-jUt"/>
                         <outlet property="tableView" destination="n7T-1i-4sv" id="xab-bG-N7z"/>
                     </connections>
                 </viewController>

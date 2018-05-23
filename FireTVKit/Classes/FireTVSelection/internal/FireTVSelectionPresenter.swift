@@ -20,6 +20,11 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
 	private let disposeBag: DisposeBag
     private var player: [RemoteMediaPlayer]
     private var playerViewModels: [PlayerViewModel]
+    private var state: FireTVSelectionPresenterState {
+        didSet {
+            updateUI(withState: state)
+        }
+    }
     
     init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, theme: FireTVSelectionThemeProtocol, delegate: FireTVSelectionDelegateProtocol) {
         self.dependencies = dependencies
@@ -31,6 +36,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
 		disposeBag = DisposeBag()
         player = []
         playerViewModels = []
+        state = .noDevices
     }
     
     // TODO: remove me
@@ -40,6 +46,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     
     func viewDidLoad() {
         view?.setTheme(theme)
+        state = .noDevices
         
         do {
             try interactor.startFireTVDiscovery()
@@ -50,19 +57,25 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         view?.setTableViewDataSource(dataSource: self)
         view?.setTableViewDelegate(delegate: self)
         
-		interactor.getFireTVs().subscribe(onNext: { [weak self] player in
-            print("onNext player")
-            DispatchQueue.main.async {
-                if let player = player {
-                    self?.player = player
-                    let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
-                    self?.playerViewModels = playerViewModels
-                    self?.view?.reloadData()
+        state = .loading
+		interactor.fireTVs
+            .subscribe(onNext: { [weak self] player in
+                print("onNext player")
+                DispatchQueue.main.async {
+                    if let player = player {
+                        self?.state = .devicesFound
+                        self?.player = player
+                        let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
+                        self?.playerViewModels = playerViewModels
+                        self?.view?.reloadData()
+                    } else {
+                        self?.state = .noDevices
+                    }
                 }
-            }
-        }, onError: { error in
-            // TODO:
-        }).disposed(by: disposeBag)
+            }, onError: { [weak self] error in
+                // TODO:
+                self?.state = .noDevices
+            }).disposed(by: disposeBag)
     }
     
     func didPressCloseBarButtonItem() {
@@ -112,5 +125,23 @@ extension FireTVSelectionPresenter: UITableViewDelegate {
         let player = self.player[indexPath.row]
         interactor.playMedia(onPlayer: player)
         delegate?.didSelectPlayer(viewController, player: player)
+    }
+}
+
+extension FireTVSelectionPresenter {
+    private func updateUI(withState state: FireTVSelectionPresenterState) {
+        switch state {
+            case .loading:
+                let viewModel = FireTVSelectionViewViewModel(isTableViewHidden: true, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: false)
+                view?.updateUI(withViewModel: viewModel)
+            
+            case .devicesFound:
+                let viewModel = FireTVSelectionViewViewModel(isTableViewHidden: false, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: true)
+                view?.updateUI(withViewModel: viewModel)
+            
+            case .noDevices:
+                let viewModel = FireTVSelectionViewViewModel(isTableViewHidden: true, isNoDevicesLabelHidden: false, isActivityIndicatorViewHidden: true)
+                view?.updateUI(withViewModel: viewModel)
+        }
     }
 }

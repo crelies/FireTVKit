@@ -274,19 +274,19 @@ extension FireTVPlayerPresenter {
     private func updateUI(forState state: FireTVPlayerPresenterState) {
         switch state {
             case .connected:
-                let viewModel = FireTVPlayerViewControllerViewModel(isPlayerControlEnabled: true, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false)
+                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: true, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false)
                 view?.updateUI(withViewModel: viewModel)
             
             case .disconnected:
-                let viewModel = FireTVPlayerViewControllerViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false)
+                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false)
                 view?.updateUI(withViewModel: viewModel)
             
             case .loading:
-                let viewModel = FireTVPlayerViewControllerViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: false, isPositionStackViewHidden: true, isControlStackViewHidden: true)
+                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: false, isPositionStackViewHidden: true, isControlStackViewHidden: true)
                 view?.updateUI(withViewModel: viewModel)
             
             case .error:
-                let viewModel = FireTVPlayerViewControllerViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: true, isControlStackViewHidden: true)
+                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: true, isControlStackViewHidden: true)
                 view?.updateUI(withViewModel: viewModel)
         }
     }

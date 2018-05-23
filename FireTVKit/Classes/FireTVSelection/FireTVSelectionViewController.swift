@@ -13,6 +13,8 @@ public final class FireTVSelectionViewController: UIViewController {
     @IBOutlet private weak var closeBarButtonItem: UIBarButtonItem!
     
     @IBOutlet public private(set) weak var tableView: UITableView!
+    @IBOutlet private weak var noDevicesLabel: UILabel!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
     // TODO: remove me
     deinit {
@@ -25,6 +27,9 @@ public final class FireTVSelectionViewController: UIViewController {
 		setLocalizedTexts()
 		
         tableView.backgroundColor = .clear
+        tableView.isHidden = true
+        noDevicesLabel.isHidden = true
+        activityIndicatorView.hidesWhenStopped = false
         
         tableView.register(FireTVSelectionTableViewCell.self, forCellReuseIdentifier: IdentifierConstants.TableView.Cell.fireTVSelection)
         
@@ -59,10 +64,25 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
     public func reloadData() {
         tableView.reloadData()
     }
+    
+    public func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel) {
+        tableView.isHidden = viewModel.isTableViewHidden
+        noDevicesLabel.isHidden = viewModel.isNoDevicesLabelHidden
+        
+        let isActivityIndicatorViewHidden = viewModel.isActivityIndicatorViewHidden
+        if isActivityIndicatorViewHidden {
+            activityIndicatorView.stopAnimating()
+        } else {
+            activityIndicatorView.startAnimating()
+        }
+        activityIndicatorView.isHidden = isActivityIndicatorViewHidden
+    }
 }
 
 extension FireTVSelectionViewController {
 	private func setLocalizedTexts() {
 		closeBarButtonItem.title = ""
+        // TODO: move to localizables and string constants
+        noDevicesLabel.text = "No devices found"
 	}
 }
