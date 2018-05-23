@@ -14,4 +14,5 @@ public protocol FireTVPlayerThemeProtocol {
 	var labelColor: UIColor { get }
 	var positionSliderTintColor: UIColor { get }
     var controlButtonTintColor: UIColor { get }
+    var activityIndicatorViewColor: UIColor { get }
 }

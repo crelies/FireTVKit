@@ -14,6 +14,7 @@ public struct FireTVPlayerLightTheme: FireTVPlayerThemeProtocol {
 	public let labelColor: UIColor
 	public let positionSliderTintColor: UIColor
     public let controlButtonTintColor: UIColor
+    public let activityIndicatorViewColor: UIColor
 	
 	public init() {
 		backgroundColor = .seafoam
@@ -21,5 +22,6 @@ public struct FireTVPlayerLightTheme: FireTVPlayerThemeProtocol {
 		labelColor = .ocean
 		positionSliderTintColor = .ocean
         controlButtonTintColor = .ocean
+        activityIndicatorViewColor = .ocean
 	}
 }

@@ -36,6 +36,7 @@ public final class FireTVPlayerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicatorView.hidesWhenStopped = false
         positionSlider.isEnabled = false
         setConstraints()
         setLocalizedTexts()
@@ -82,6 +83,7 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
     }
 	
 	public func setTheme(_ theme: FireTVPlayerThemeProtocol) {
+        activityIndicatorView.color = theme.activityIndicatorViewColor
 		view.backgroundColor = theme.backgroundColor
 		closeButton.tintColor = theme.closeButtonTintColor
 		playerNameLabel.textColor = theme.labelColor
@@ -132,7 +134,14 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         stopButton.isEnabled = viewModel.isPlayerControlEnabled
         fastForward10sButton.isEnabled = viewModel.isPlayerControlEnabled
         
-        activityIndicatorView.isHidden = viewModel.isActivityIndicatorViewHidden
+        let isActivityIndicatorViewHidden = viewModel.isActivityIndicatorViewHidden
+        if isActivityIndicatorViewHidden {
+            activityIndicatorView.stopAnimating()
+        } else {
+            activityIndicatorView.startAnimating()
+        }
+        activityIndicatorView.isHidden = isActivityIndicatorViewHidden
+        
         positionStackView.isHidden = viewModel.isPositionStackViewHidden
         controlStackView.isHidden = viewModel.isControlStackViewHidden
     }

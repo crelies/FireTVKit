@@ -50,7 +50,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         view?.setPositionText("00:00:00")
         view?.setMaximumPosition(0)
         view?.setDurationText("00:00:00")
-        state = .disconnected
+        state = .loading
         
         interactor.connect()
             .subscribe(onCompleted: { [weak self] in
@@ -59,9 +59,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 self?.getPlayerInfo()
                 self?.getPlayerData()
                 self?.observePlayerData()
-            }) { error in
+            }) { [weak self] error in
                 // TODO:
                 print("interactor.connect(): \(error.localizedDescription)")
+                self?.state = .disconnected
             }.disposed(by: disposeBag)
     }
     
@@ -70,6 +71,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             return
         }
         
+        state = .loading
         interactor.disconnect()
             .subscribe(onCompleted: {
                 self.state = .disconnected

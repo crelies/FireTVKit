@@ -14,6 +14,7 @@ public struct FireTVPlayerDarkTheme: FireTVPlayerThemeProtocol {
 	public let labelColor: UIColor
 	public let positionSliderTintColor: UIColor
     public let controlButtonTintColor: UIColor
+    public let activityIndicatorViewColor: UIColor
 	
 	public init() {
 		backgroundColor = .shadow
@@ -21,5 +22,6 @@ public struct FireTVPlayerDarkTheme: FireTVPlayerThemeProtocol {
 		labelColor = .autumnFoliage
 		positionSliderTintColor = .stone
         controlButtonTintColor = .stone
+        activityIndicatorViewColor = .stone
 	}
 }
