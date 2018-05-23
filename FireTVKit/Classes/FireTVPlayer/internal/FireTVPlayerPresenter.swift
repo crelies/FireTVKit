@@ -82,12 +82,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 // TODO:
                 print("interactor.disconnect(): \(error.localizedDescription)")
                 
-                if let playerServiceError = error as? PlayerServiceError, playerServiceError == PlayerServiceError.currentPlayerComparisonFailed {
-                    self.state = .disconnected
-                    self.view?.updatePositionSliderUserInteractionEnabled(false)
-                    self.interactor.stopFireTVDiscovery()
-                    self.delegate?.didPressCloseButton(viewController)
-                }
+                self.state = .disconnected
+                self.view?.updatePositionSliderUserInteractionEnabled(false)
+                self.interactor.stopFireTVDiscovery()
+                self.delegate?.didPressCloseButton(viewController)
             }).disposed(by: disposeBag)
     }
     
