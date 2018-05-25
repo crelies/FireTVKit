@@ -12,11 +12,18 @@ import Foundation
 final class MockPlayerDiscoveryController: PlayerDiscoveryControllerProtocol {
 	static let shared = MockPlayerDiscoveryController()
 	
-	private(set) var devices: [RemoteMediaPlayer]
+	var devices: [RemoteMediaPlayer] {
+		let diceRoll = Int(arc4random_uniform(2))
+		if diceRoll == 0 {
+			return []
+		} else {
+			return [DummyPlayer()]
+		}
+	}
 	weak var delegate: PlayerDiscoveryControllerDelegateProtocol?
 	
 	private init() {
-		devices = [DummyPlayer()]
+		
 	}
 	
 	func startSearch(forPlayerId playerId: String?) {

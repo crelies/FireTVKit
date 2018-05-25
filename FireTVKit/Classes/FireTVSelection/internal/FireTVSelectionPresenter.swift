@@ -62,7 +62,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
             .subscribe(onNext: { [weak self] player in
                 print("onNext player")
                 DispatchQueue.main.async {
-                    if let player = player {
+                    if let player = player, !player.isEmpty {
                         self?.state = .devicesFound
                         self?.player = player
                         let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
