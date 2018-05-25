@@ -36,9 +36,8 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         self.state = .disconnected
     }
     
-    // TODO: remove me
     deinit {
-        print("FireTVPlayerPresenter deinit")
+        dependencies.logger.log(message: "FireTVPlayerPresenter deinit", event: .info)
     }
     
     func viewDidLoad() {
@@ -60,8 +59,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 self?.getPlayerData()
                 self?.observePlayerData()
             }) { [weak self] error in
-                // TODO:
-                print("interactor.connect(): \(error.localizedDescription)")
+                self?.dependencies.logger.log(message: "interactor.connect(): \(error.localizedDescription)", event: .error)
                 self?.state = .disconnected
             }.disposed(by: disposeBag)
     }
@@ -79,8 +77,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 self.interactor.stopFireTVDiscovery()
                 self.delegate?.didPressCloseButton(viewController)
             }, onError: { error in
-                // TODO:
-                print("interactor.disconnect(): \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.disconnect(): \(error.localizedDescription)", event: .error)
                 
                 self.state = .disconnected
                 self.view?.updatePositionSliderUserInteractionEnabled(false)
@@ -96,10 +93,9 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         
         interactor.setPlayerPosition(-10 * 1000, type: RELATIVE)
             .subscribe(onCompleted: {
-                print("player rewind 10s")
+                self.dependencies.logger.log(message: "player rewind 10s", event: .info)
             }) { error in
-                // TODO:
-                print("interactor.setPlayerPosition() relative: \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.setPlayerPosition() relative: \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
     
@@ -109,11 +105,10 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         }
         
         interactor.play().subscribe(onCompleted: { [weak self] in
-            print("player played")
+            self?.dependencies.logger.log(message: "player played", event: .info)
             self?.getDuration()
         }) { error in
-            // TODO:
-            print("interactor.play(): \(error.localizedDescription)")
+            self.dependencies.logger.log(message: "interactor.play(): \(error.localizedDescription)", event: .error)
         }.disposed(by: disposeBag)
     }
     
@@ -123,10 +118,9 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         }
         
         interactor.pause().subscribe(onCompleted: {
-            print("player paused")
+            self.dependencies.logger.log(message: "player paused", event: .info)
         }) { error in
-            // TODO:
-            print("interactor.pause(): \(error.localizedDescription)")
+            self.dependencies.logger.log(message: "interactor.pause(): \(error.localizedDescription)", event: .error)
         }.disposed(by: disposeBag)
     }
     
@@ -136,14 +130,13 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         }
         
         interactor.stop().subscribe(onCompleted: { [weak self] in
-            print("player stopped")
+            self?.dependencies.logger.log(message: "player stopped", event: .info)
             self?.view?.setPosition(0)
             self?.view?.setPositionText("00:00:00")
             self?.view?.setMaximumPosition(0)
             self?.view?.setDurationText("00:00:00")
         }) { error in
-            // TODO:
-            print("interactor.stop(): \(error.localizedDescription)")
+            self.dependencies.logger.log(message: "interactor.stop(): \(error.localizedDescription)", event: .error)
         }.disposed(by: disposeBag)
     }
     
@@ -154,10 +147,9 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         
         interactor.setPlayerPosition(10 * 1000, type: RELATIVE)
             .subscribe(onCompleted: {
-                print("player fast forward 10s")
+                self.dependencies.logger.log(message: "player fast forward 10s", event: .info)
             }) { error in
-                // TODO:
-                print("interactor.setPlayerPosition() relative: \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.setPlayerPosition() relative: \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
     
@@ -177,10 +169,9 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         
         interactor.setPlayerPosition(position)
             .subscribe(onCompleted: {
-                print("player position changed")
+                self.dependencies.logger.log(message: "player position changed", event: .info)
             }) { error in
-                // TODO:
-                print("interactor.setPlayerPosition() absolute: \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.setPlayerPosition() absolute: \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
 }
@@ -195,8 +186,7 @@ extension FireTVPlayerPresenter {
                     self?.view?.updatePositionSliderUserInteractionEnabled(true)
                 }
             }) { error in
-                // TODO:
-                print("interactor.getDuration(): \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.getDuration(): \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
     
@@ -216,11 +206,10 @@ extension FireTVPlayerPresenter {
                         }
                     }
                 } catch {
-                    print("getPlayerInfo(): \(error.localizedDescription)")
+                    self?.dependencies.logger.log(message: "getPlayerInfo(): \(error.localizedDescription)", event: .error)
                 }
             }) { error in
-                // TODO:
-                print("interactor.getPlayerInfo(): \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.getPlayerInfo(): \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
     
@@ -239,15 +228,14 @@ extension FireTVPlayerPresenter {
                     }
                 }
             }) { error in
-                // TODO:
-                print("interactor.getPlayerData(): \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.getPlayerData(): \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
     
     private func observePlayerData() {
         interactor.playerData
             .subscribe(onNext: { [weak self] playerData in
-                print("onNext getPlayerData()")
+                self?.dependencies.logger.log(message: "onNext getPlayerData()", event: .info)
                 if let playerData = playerData {
                     if let position = playerData.position, let positionString = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: position) {
                         DispatchQueue.main.async { [weak self] in
@@ -266,8 +254,7 @@ extension FireTVPlayerPresenter {
                     }
                 }
             }, onError: { error in
-                // TODO:
-                print("interactor.playerData: \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.playerData: \(error.localizedDescription)", event: .error)
             }).disposed(by: disposeBag)
     }
     

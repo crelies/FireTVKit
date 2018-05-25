@@ -41,9 +41,8 @@ final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 		playerDiscoveryController.delegate = self
     }
 	
-	// TODO: remove me
 	deinit {
-		print("PlayerDiscoveryService deinit")
+        dependencies.logger.log(message: "PlayerDiscoveryService deinit", event: .info)
 	}
 	
 	func startDiscovering() throws {
@@ -72,6 +71,6 @@ extension PlayerDiscoveryService: PlayerDiscoveryControllerDelegateProtocol {
     
 	func discoveryFailure(_ discoveryController: PlayerDiscoveryController) {
 		// TODO: what to do?
-        print("discovery failure")
+        dependencies.logger.log(message: "discovery failure", event: .error)
     }
 }

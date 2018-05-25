@@ -8,10 +8,14 @@
 
 import Foundation
 
-protocol FireTVSelectionPresenterDependenciesProtocol {
+protocol FireTVSelectionPresenterDependenciesProtocol: LoggerProvider {
     
 }
 
 struct FireTVSelectionPresenterDependencies: FireTVSelectionPresenterDependenciesProtocol {
+    let logger: LoggerProtocol
     
+    init() {
+        logger = ServiceFactory.makeLogger()
+    }
 }

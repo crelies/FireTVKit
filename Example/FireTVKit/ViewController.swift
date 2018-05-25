@@ -37,6 +37,9 @@ final class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        UserDefaults.standard.setValue(true, forKey: "FireTVKitLogging")
+        UserDefaults.standard.setValue(LogEvent.error.rawValue, forKey: "FireTVKitLogEvent")
 		
 		hidePlayerContainerView()
 	}

@@ -16,4 +16,5 @@ protocol ServiceFactoryProtocol {
     static func makePlayerService(withPlayer player: RemoteMediaPlayer) -> PlayerServiceProtocol
     static func makeReachabilityService() -> ReachabilityServiceProtocol?
     static func makeTimeStringFactory() -> TimeStringFactoryProtocol
+    static func makeLogger() -> LoggerProtocol
 }

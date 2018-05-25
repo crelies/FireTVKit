@@ -24,6 +24,8 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         guard let view = navigationController.viewControllers.first as? FireTVSelectionViewController else {
             throw FireTVSelectionWireframeError.noViewControllersInNavigationController
         }
+        let viewControllerDependencies = FireTVSelectionViewControllerDependencies()
+        view.dependencies = viewControllerDependencies
 
         let router = FireTVSelectionRouter()
 		

@@ -15,6 +15,7 @@ protocol PlayerServiceProvider {
 }
 
 final class PlayerService: NSObject, PlayerServiceProtocol {
+    private let dependencies: PlayerServiceDependenciesProtocol
     var player: RemoteMediaPlayer?
 	
 	var playerData: Observable<PlayerData?> {
@@ -24,20 +25,19 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
     private var playerDataVariable: Variable<PlayerData?>
 	private let disposeBag: DisposeBag
 	
-    init(withPlayer player: RemoteMediaPlayer?) {
+    init(dependencies: PlayerServiceDependenciesProtocol, withPlayer player: RemoteMediaPlayer?) {
+        self.dependencies = dependencies
         self.player = player
         playerDataVariable = Variable<PlayerData?>(nil)
         disposeBag = DisposeBag()
         
         super.init()
         
-        // TODO: remove me
-        print("PlayerService initialized")
+        dependencies.logger.log(message: "PlayerService initialized", event: .info)
     }
     
-    // TODO: remove me
     deinit {
-        print("PlayerService deinitialized")
+        dependencies.logger.log(message: "PlayerService deinitialized", event: .info)
     }
     
     func connectToPlayer(_ newPlayer: RemoteMediaPlayer) -> Completable {
@@ -55,8 +55,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                             self.player = newPlayer
                             completable(.completed)
                         }, onError: { error in
-                            // TODO:
-                            print("connectToPlayer: \(error)")
+                            self.dependencies.logger.log(message: "connectToPlayer: \(error)", event: .error)
                             completable(.error(error))
                         })
                 }
@@ -66,8 +65,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                         self.player = newPlayer
                         completable(.completed)
                     }, onError: { error in
-                        // TODO:
-                        print("connectToPlayer: \(error)")
+                        self.dependencies.logger.log(message: "connectToPlayer: \(error)", event: .error)
                         completable(.error(error))
                     })
             }
@@ -340,7 +338,7 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 
 extension PlayerService: MediaPlayerStatusListener {
     func onStatusChange(_ status: MediaPlayerStatus!, positionChangedTo position: Int64) {
-        print("onStatusChange")
+        dependencies.logger.log(message: "onStatusChange: \(status)", event: .info)
         let playerData = PlayerData(status: status, position: position)
         playerDataVariable.value = playerData
     }

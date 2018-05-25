@@ -22,13 +22,14 @@ public final class FireTVSelectionViewController: UIViewController {
 		return button
 	}()
     
-    @IBOutlet public private(set) weak var tableView: UITableView!
     @IBOutlet private weak var noDevicesLabel: UILabel!
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    var dependencies: FireTVSelectionViewControllerDependenciesProtocol?
     
-    // TODO: remove me
+    @IBOutlet public private(set) weak var tableView: UITableView!
+    
     deinit {
-        print("FireTVSelectionViewController deinit")
+        dependencies?.logger.log(message: "FireTVSelectionViewController deinit", event: .info)
     }
     
     override public func viewDidLoad() {

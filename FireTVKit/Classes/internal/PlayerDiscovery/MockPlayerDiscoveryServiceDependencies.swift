@@ -10,8 +10,10 @@ import Foundation
 
 struct MockPlayerDiscoveryServiceDependencies: PlayerDiscoveryServiceDependenciesProtocol {
 	let playerDiscoveryController: PlayerDiscoveryControllerProtocol
+    let logger: LoggerProtocol
 	
 	init() {
 		playerDiscoveryController = MockServiceFactory.makePlayerDiscoveryController()
+        logger = MockServiceFactory.makeLogger()
 	}
 }

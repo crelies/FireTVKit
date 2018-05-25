@@ -8,14 +8,16 @@
 
 import Foundation
 
-protocol PlayerDiscoveryServiceDependenciesProtocol: PlayerDiscoveryControllerProvider {
+protocol PlayerDiscoveryServiceDependenciesProtocol: PlayerDiscoveryControllerProvider, LoggerProvider {
 	
 }
 
 struct PlayerDiscoveryServiceDependencies: PlayerDiscoveryServiceDependenciesProtocol {
 	let playerDiscoveryController: PlayerDiscoveryControllerProtocol
+    let logger: LoggerProtocol
 	
 	init() {
 		playerDiscoveryController = ServiceFactory.makePlayerDiscoveryController()
+        logger = ServiceFactory.makeLogger()
 	}
 }

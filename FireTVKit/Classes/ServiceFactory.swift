@@ -20,11 +20,13 @@ public final class ServiceFactory: ServiceFactoryProtocol {
     }
     
     static func makePlayerService() -> PlayerServiceProtocol {
-        return PlayerService(withPlayer: nil)
+        let dependencies = PlayerServiceDependencies()
+        return PlayerService(dependencies: dependencies, withPlayer: nil)
     }
     
     public static func makePlayerService(withPlayer player: RemoteMediaPlayer) -> PlayerServiceProtocol {
-        return PlayerService(withPlayer: player)
+        let dependencies = PlayerServiceDependencies()
+        return PlayerService(dependencies: dependencies, withPlayer: player)
     }
     
 	static func makeReachabilityService() -> ReachabilityServiceProtocol? {
@@ -33,5 +35,9 @@ public final class ServiceFactory: ServiceFactoryProtocol {
     
     static func makeTimeStringFactory() -> TimeStringFactoryProtocol {
         return TimeStringFactory()
+    }
+    
+    static func makeLogger() -> LoggerProtocol {
+        return Logger()
     }
 }

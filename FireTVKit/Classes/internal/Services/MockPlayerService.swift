@@ -18,7 +18,7 @@ final class MockPlayerService: PlayerServiceProtocol {
 	
 	private let playerDataVariable: Variable<PlayerData?>
 	
-	init(withPlayer player: RemoteMediaPlayer?) {
+    init(dependencies: PlayerServiceDependenciesProtocol, withPlayer player: RemoteMediaPlayer?) {
 		self.player = player
 		playerDataVariable = Variable<PlayerData?>(nil)
 	}

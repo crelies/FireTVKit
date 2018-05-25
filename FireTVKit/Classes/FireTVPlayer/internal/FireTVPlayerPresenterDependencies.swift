@@ -8,14 +8,16 @@
 
 import Foundation
 
-protocol FireTVPlayerPresenterDependenciesProtocol: TimeStringFactoryProvider {
+protocol FireTVPlayerPresenterDependenciesProtocol: TimeStringFactoryProvider, LoggerProvider {
     
 }
 
 struct FireTVPlayerPresenterDependencies: FireTVPlayerPresenterDependenciesProtocol {
     let timeStringFactory: TimeStringFactoryProtocol
+    let logger: LoggerProtocol
     
     init() {
         timeStringFactory = ServiceFactory.makeTimeStringFactory()
+        logger = ServiceFactory.makeLogger()
     }
 }

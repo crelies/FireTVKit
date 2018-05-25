@@ -41,9 +41,8 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
         self.disposeBag = DisposeBag()
     }
 	
-	// TODO: remove me
 	deinit {
-		print("FireTVSelectionInteractor deinit")
+        dependencies.logger.log(message: "FireTVSelectionInteractor deinit", event: .info)
 	}
     
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol) {
@@ -65,9 +64,9 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
         
         playerService.play(withMetadata: media.metadata, url: media.url.absoluteString)
             .subscribe(onCompleted: {
-                print("media played")
+                self.dependencies.logger.log(message: "media played", event: .info)
             }) { error in
-                print("interactor.playMedia(): \(error.localizedDescription)")
+                self.dependencies.logger.log(message: "interactor.playMedia(): \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
 	

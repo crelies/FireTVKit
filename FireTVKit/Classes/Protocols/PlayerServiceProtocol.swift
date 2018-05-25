@@ -13,7 +13,7 @@ import RxSwift
 public protocol PlayerServiceProtocol {
     var player: RemoteMediaPlayer? { get set }
     var playerData: Observable<PlayerData?> { get }
-    init(withPlayer player: RemoteMediaPlayer?)
+    init(dependencies: PlayerServiceDependenciesProtocol, withPlayer player: RemoteMediaPlayer?)
     func connectToPlayer(_ newPlayer: RemoteMediaPlayer) -> Completable
     func play() -> Completable
     func play(withMetadata metadata: Metadata, url: String) -> Completable

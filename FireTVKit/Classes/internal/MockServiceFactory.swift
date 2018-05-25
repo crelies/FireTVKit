@@ -20,11 +20,13 @@ final class MockServiceFactory: ServiceFactoryProtocol {
 	}
 	
 	static func makePlayerService() -> PlayerServiceProtocol {
-		return MockPlayerService(withPlayer: nil)
+        let dependencies = MockPlayerServiceDependencies()
+        return MockPlayerService(dependencies: dependencies, withPlayer: nil)
 	}
 	
 	static func makePlayerService(withPlayer player: RemoteMediaPlayer) -> PlayerServiceProtocol {
-		return MockPlayerService(withPlayer: player)
+        let dependencies = MockPlayerServiceDependencies()
+		return MockPlayerService(dependencies: dependencies, withPlayer: player)
 	}
 	
 	static func makeReachabilityService() -> ReachabilityServiceProtocol? {
@@ -35,4 +37,8 @@ final class MockServiceFactory: ServiceFactoryProtocol {
 	static func makeTimeStringFactory() -> TimeStringFactoryProtocol {
 		return TimeStringFactory()
 	}
+    
+    static func makeLogger() -> LoggerProtocol {
+        return Logger()
+    }
 }

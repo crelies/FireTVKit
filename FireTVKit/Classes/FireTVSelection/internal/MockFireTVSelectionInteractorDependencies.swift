@@ -12,10 +12,12 @@ struct MockFireTVSelectionInteractorDependencies: FireTVSelectionInteractorDepen
     let playerDiscoveryController: PlayerDiscoveryControllerProtocol
     let playerDiscoveryService: PlayerDiscoveryServiceProtocol
     let playerService: PlayerServiceProtocol
+    let logger: LoggerProtocol
     
     init() {
         playerDiscoveryController = MockServiceFactory.makePlayerDiscoveryController()
         playerDiscoveryService = MockServiceFactory.makePlayerDiscoveryService()
         playerService = MockServiceFactory.makePlayerService()
+        logger = MockServiceFactory.makeLogger()
     }
 }

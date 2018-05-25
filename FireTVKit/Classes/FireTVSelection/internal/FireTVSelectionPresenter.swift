@@ -39,9 +39,8 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         state = .noDevices
     }
     
-    // TODO: remove me
     deinit {
-        print("FireTVSelectionPresenter deinit")
+        dependencies.logger.log(message: "FireTVSelectionPresenter deinit", event: .info)
     }
     
     func viewDidLoad() {
@@ -60,7 +59,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         state = .loading
 		interactor.fireTVs
             .subscribe(onNext: { [weak self] player in
-                print("onNext player")
+                self?.dependencies.logger.log(message: "onNext player", event: .info)
                 DispatchQueue.main.async {
                     if let player = player, !player.isEmpty {
                         self?.state = .devicesFound
