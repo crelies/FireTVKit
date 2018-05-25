@@ -43,6 +43,17 @@ public final class FireTVPlayerViewController: UIViewController {
         setButtonImages()
         presenter?.viewDidLoad()
     }
+	
+	public override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if let superview = view.superview {
+			let x = view.frame.origin.x
+			let y = view.frame.origin.y
+			let width = superview.frame.width
+			let height = superview.frame.height
+			view.frame = CGRect(x: x, y: y, width: width, height: height)
+		}
+	}
     
     @IBAction private func didPressCloseButton(_ sender: UIButton) {
         presenter?.didPressCloseButton()
