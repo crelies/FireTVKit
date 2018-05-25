@@ -274,19 +274,19 @@ extension FireTVPlayerPresenter {
     private func updateUI(forState state: FireTVPlayerPresenterState) {
         switch state {
             case .connected:
-                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: true, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false)
+				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: false, isPlayerControlEnabled: true, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false, hideLabels: false)
                 view?.updateUI(withViewModel: viewModel)
             
             case .disconnected:
-                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false)
+				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: false, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false, hideLabels: false)
                 view?.updateUI(withViewModel: viewModel)
             
             case .loading:
-                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: false, isPositionStackViewHidden: true, isControlStackViewHidden: true)
+				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: true, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: false, isPositionStackViewHidden: true, isControlStackViewHidden: true, hideLabels: true)
                 view?.updateUI(withViewModel: viewModel)
             
             case .error:
-                let viewModel = FireTVPlayerViewViewModel(isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: true, isControlStackViewHidden: true)
+				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: false, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: true, isControlStackViewHidden: true, hideLabels: false)
                 view?.updateUI(withViewModel: viewModel)
         }
     }

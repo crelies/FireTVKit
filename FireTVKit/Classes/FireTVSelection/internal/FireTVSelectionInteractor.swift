@@ -31,7 +31,7 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     private let disposeBag: DisposeBag
     
     var fireTVs: Observable<[RemoteMediaPlayer]?> {
-        return dependencies.playerDiscoveryService.devicesVariable.asObservable()
+        return dependencies.playerDiscoveryService.devicesVariable.asObservable().skip(1)
     }
     
     init(dependencies: FireTVSelectionInteractorDependenciesProtocol, playerId: String, media: FireTVMedia?) {

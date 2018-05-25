@@ -24,11 +24,11 @@ final class FireTVSelectionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if selected {
-            backgroundColor = theme?.cellLabelColor
+            backgroundColor = theme?.labelColor
             textLabel?.textColor = theme?.backgroundColor
         } else {
             backgroundColor = theme?.cellBackgroundColor
-            textLabel?.textColor = theme?.cellLabelColor
+            textLabel?.textColor = theme?.labelColor
         }
     }
 }
@@ -37,6 +37,6 @@ extension FireTVSelectionTableViewCell {
     func updateUI(withTheme theme: FireTVSelectionThemeProtocol) {
         self.theme = theme
         backgroundColor = theme.cellBackgroundColor
-        textLabel?.textColor = theme.cellLabelColor
+        textLabel?.textColor = theme.labelColor
     }
 }

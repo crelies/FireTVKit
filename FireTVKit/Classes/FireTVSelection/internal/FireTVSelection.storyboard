@@ -46,17 +46,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NCG-ax-oPO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JnA-qX-4Kw">
-                        <barButtonItem key="rightBarButtonItem" image="close" id="DSc-r8-SIt">
-                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-8" maxY="-8"/>
-                            <connections>
-                                <action selector="didPressCloseBarButtonItem:" destination="mYu-q3-N7i" id="xiu-dS-WIW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="JnA-qX-4Kw"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="Fdp-79-1T6" id="c4k-fW-qFO"/>
-                        <outlet property="closeBarButtonItem" destination="DSc-r8-SIt" id="naE-hn-xvA"/>
                         <outlet property="noDevicesLabel" destination="8KR-2W-yvF" id="ztU-Ac-jUt"/>
                         <outlet property="tableView" destination="n7T-1i-4sv" id="xab-bG-N7z"/>
                     </connections>
@@ -84,7 +76,4 @@
             <point key="canvasLocation" x="-1074.4000000000001" y="254.12293853073464"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="close" width="50" height="50"/>
-    </resources>
 </document>

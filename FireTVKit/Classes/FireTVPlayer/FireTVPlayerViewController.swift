@@ -128,7 +128,8 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
     }
     
     public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel) {
-        rewind10sButton.isEnabled = viewModel.isPlayerControlEnabled
+		closeButton.isHidden = viewModel.isCloseButtonHidden
+		rewind10sButton.isEnabled = viewModel.isPlayerControlEnabled
         playButton.isEnabled = viewModel.isPlayerControlEnabled
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
         stopButton.isEnabled = viewModel.isPlayerControlEnabled
@@ -144,6 +145,10 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         
         positionStackView.isHidden = viewModel.isPositionStackViewHidden
         controlStackView.isHidden = viewModel.isControlStackViewHidden
+		
+		playerNameLabel.isHidden = viewModel.hideLabels
+		mediaNameLabel.isHidden = viewModel.hideLabels
+		statusLabel.isHidden = viewModel.hideLabels
     }
     
     public func updatePositionSliderUserInteractionEnabled(_ enabled: Bool) {

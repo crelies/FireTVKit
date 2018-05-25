@@ -82,6 +82,8 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         guard let viewController = view as? FireTVSelectionViewController else {
             return
         }
+		
+		state = .loading
         
         interactor.stopFireTVDiscovery()
         
@@ -132,15 +134,15 @@ extension FireTVSelectionPresenter {
     private func updateUI(withState state: FireTVSelectionPresenterState) {
         switch state {
             case .loading:
-                let viewModel = FireTVSelectionViewViewModel(isTableViewHidden: true, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: false)
+				let viewModel = FireTVSelectionViewViewModel(isCloseButtonHidden: true, isTableViewHidden: true, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: false)
                 view?.updateUI(withViewModel: viewModel)
             
             case .devicesFound:
-                let viewModel = FireTVSelectionViewViewModel(isTableViewHidden: false, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: true)
+				let viewModel = FireTVSelectionViewViewModel(isCloseButtonHidden: false, isTableViewHidden: false, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: true)
                 view?.updateUI(withViewModel: viewModel)
             
             case .noDevices:
-                let viewModel = FireTVSelectionViewViewModel(isTableViewHidden: true, isNoDevicesLabelHidden: false, isActivityIndicatorViewHidden: true)
+				let viewModel = FireTVSelectionViewViewModel(isCloseButtonHidden: false, isTableViewHidden: true, isNoDevicesLabelHidden: false, isActivityIndicatorViewHidden: true)
                 view?.updateUI(withViewModel: viewModel)
         }
     }

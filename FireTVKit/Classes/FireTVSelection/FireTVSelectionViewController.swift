@@ -10,7 +10,17 @@ import Foundation
 
 public final class FireTVSelectionViewController: UIViewController {
     private var presenter: FireTVSelectionPresenterProtocol?
-    @IBOutlet private weak var closeBarButtonItem: UIBarButtonItem!
+	private lazy var closeBarButtonItem: UIBarButtonItem = {
+		let podBundle = Bundle(for: FireTVPlayerViewController.self)
+		var icon: UIImage?
+		// TODO: move to constants
+		if let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
+			icon = UIImage(named: "close", in: bundle, compatibleWith: nil)
+		}
+		let button = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(didPressCloseBarButtonItem(_:)))
+		button.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -8, right: -8)
+		return button
+	}()
     
     @IBOutlet public private(set) weak var tableView: UITableView!
     @IBOutlet private weak var noDevicesLabel: UILabel!
@@ -27,8 +37,6 @@ public final class FireTVSelectionViewController: UIViewController {
 		setLocalizedTexts()
 		
         tableView.backgroundColor = .clear
-        tableView.isHidden = true
-        noDevicesLabel.isHidden = true
         activityIndicatorView.hidesWhenStopped = false
         
         tableView.register(FireTVSelectionTableViewCell.self, forCellReuseIdentifier: IdentifierConstants.TableView.Cell.fireTVSelection)
@@ -36,7 +44,8 @@ public final class FireTVSelectionViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
-    @IBAction private func didPressCloseBarButtonItem(_ sender: UIBarButtonItem) {
+	@objc
+	private func didPressCloseBarButtonItem(_ sender: UIBarButtonItem) {
         presenter?.didPressCloseBarButtonItem()
     }
 }
@@ -49,8 +58,10 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
     public func setTheme(_ theme: FireTVSelectionThemeProtocol) {
         navigationController?.navigationBar.barTintColor = theme.navigationBarBarTintColor
         view.backgroundColor = theme.backgroundColor
+		activityIndicatorView.color = theme.activityIndicatorViewColor
         closeBarButtonItem.tintColor = theme.closeBarButtonItemTintColor
         tableView.separatorColor = theme.cellSeparatorColor
+		noDevicesLabel.textColor = theme.labelColor
     }
     
     public func setTableViewDataSource(dataSource: UITableViewDataSource) {
@@ -66,6 +77,12 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
     }
     
     public func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel) {
+		if viewModel.isCloseButtonHidden {
+			navigationItem.rightBarButtonItem = nil
+		} else {
+			navigationItem.rightBarButtonItem = closeBarButtonItem
+		}
+		
         tableView.isHidden = viewModel.isTableViewHidden
         noDevicesLabel.isHidden = viewModel.isNoDevicesLabelHidden
         

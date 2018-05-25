@@ -11,17 +11,19 @@ import Foundation
 public struct FireTVSelectionDarkTheme: FireTVSelectionThemeProtocol {
     public let navigationBarBarTintColor: UIColor
     public let backgroundColor: UIColor
+	public let activityIndicatorViewColor: UIColor
     public let closeBarButtonItemTintColor: UIColor
     public let cellBackgroundColor: UIColor
-    public let cellLabelColor: UIColor
+    public let labelColor: UIColor
     public let cellSeparatorColor: UIColor
     
     public init() {
         navigationBarBarTintColor = .shadow
         backgroundColor = .shadow
+		activityIndicatorViewColor = .stone
         closeBarButtonItemTintColor = .stone
         cellBackgroundColor = .clear
-        cellLabelColor = .autumnFoliage
+        labelColor = .autumnFoliage
         cellSeparatorColor = .stone
     }
 }
