@@ -21,9 +21,9 @@ public struct FireTVSelectionLightTheme: FireTVSelectionThemeProtocol {
         navigationBarBarTintColor = .seafoam
         backgroundColor = .seafoam
 		activityIndicatorViewColor = .ocean
-        closeBarButtonItemTintColor = .ocean
+        closeBarButtonItemTintColor = .deepAqua
         cellBackgroundColor = .clear
         labelColor = .ocean
-        cellSeparatorColor = .stone
+        cellSeparatorColor = .ocean
     }
 }

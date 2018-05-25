@@ -20,10 +20,10 @@ public struct FireTVSelectionDarkTheme: FireTVSelectionThemeProtocol {
     public init() {
         navigationBarBarTintColor = .shadow
         backgroundColor = .shadow
-		activityIndicatorViewColor = .stone
+		activityIndicatorViewColor = .autumnFoliage
         closeBarButtonItemTintColor = .stone
         cellBackgroundColor = .clear
         labelColor = .autumnFoliage
-        cellSeparatorColor = .stone
+        cellSeparatorColor = .autumnFoliage
     }
 }
