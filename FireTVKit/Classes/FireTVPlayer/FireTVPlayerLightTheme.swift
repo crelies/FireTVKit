@@ -18,10 +18,10 @@ public struct FireTVPlayerLightTheme: FireTVPlayerThemeProtocol {
 	
 	public init() {
 		backgroundColor = .seafoam
-		closeButtonTintColor = .ocean
+		closeButtonTintColor = .deepAqua
 		labelColor = .ocean
-		positionSliderTintColor = .ocean
-        controlButtonTintColor = .ocean
+		positionSliderTintColor = .deepAqua
+        controlButtonTintColor = .deepAqua
         activityIndicatorViewColor = .ocean
 	}
 }

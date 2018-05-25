@@ -13,6 +13,10 @@ extension UIColor {
         return .init(red: 118/255.0, green: 54/255.0, blue: 38/255.0, alpha: 1)
     }
     
+    static var deepAqua: UIColor {
+        return .init(red: 0/255.0, green: 59/255.0, blue: 70/255.0, alpha: 1)
+    }
+    
     static var ocean: UIColor {
         return .init(red: 0/255.0, green: 59/255.0, blue: 70/255.0, alpha: 1)
     }

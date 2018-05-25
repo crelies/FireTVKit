@@ -22,6 +22,6 @@ public struct FireTVPlayerDarkTheme: FireTVPlayerThemeProtocol {
 		labelColor = .autumnFoliage
 		positionSliderTintColor = .stone
         controlButtonTintColor = .stone
-        activityIndicatorViewColor = .stone
+        activityIndicatorViewColor = .autumnFoliage
 	}
 }
