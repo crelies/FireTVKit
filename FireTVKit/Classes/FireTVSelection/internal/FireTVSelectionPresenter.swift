@@ -17,6 +17,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     private let router: FireTVSelectionRouterProtocol
     private let theme: FireTVSelectionThemeProtocol
     private weak var delegate: FireTVSelectionDelegateProtocol?
+    private let noDevicesText: String
 	private let disposeBag: DisposeBag
     private var player: [RemoteMediaPlayer]
     private var playerViewModels: [PlayerViewModel]
@@ -26,13 +27,14 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         }
     }
     
-    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, theme: FireTVSelectionThemeProtocol, delegate: FireTVSelectionDelegateProtocol) {
+    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, theme: FireTVSelectionThemeProtocol, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String) {
         self.dependencies = dependencies
         self.view = view
         self.interactor = interactor
         self.router = router
         self.theme = theme
         self.delegate = delegate
+        self.noDevicesText = noDevicesText
 		disposeBag = DisposeBag()
         player = []
         playerViewModels = []
@@ -44,6 +46,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     }
     
     func viewDidLoad() {
+        view?.setNoDevicesLabelText(noDevicesText)
         view?.setTheme(theme)
         state = .noDevices
         
@@ -68,7 +71,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
                     }
                 }
             }, onError: { [weak self] error in
-                // TODO:
+                // TODO: what to do?
                 self?.dependencies.logger.log(message: error.localizedDescription, event: .error)
                 self?.state = .noDevices
             }).disposed(by: disposeBag)
