@@ -32,10 +32,6 @@ public final class ServiceFactory: ServiceFactoryProtocol {
         return PlayerService(dependencies: dependencies, withPlayer: player)
     }
     
-	static func makeReachabilityService() -> ReachabilityServiceProtocol? {
-        return ReachabilityService()
-    }
-    
     static func makeTimeStringFactory() -> TimeStringFactoryProtocol {
         return TimeStringFactory()
     }

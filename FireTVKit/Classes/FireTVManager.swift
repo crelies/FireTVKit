@@ -21,8 +21,8 @@ public final class FireTVManager: FireTVManagerProtocol {
         dependencies = FireTVManagerDependencies()
     }
     
-    public func startDiscovery(forPlayerID playerID: String) throws {
-        try dependencies.playerDiscoveryService.startDiscovering()
+    public func startDiscovery(forPlayerID playerID: String) {
+        dependencies.playerDiscoveryService.startDiscovering()
 		dependencies.playerDiscoveryController.startSearch(forPlayerId: playerID)
     }
     

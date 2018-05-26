@@ -20,7 +20,7 @@ final class ViewController: UIViewController {
     
     // sample video
 	private lazy var SAMPLE_VIDEO_METADATA: Metadata = {
-		var metadata = Metadata(type: "video")
+		var metadata = Metadata(type: .video)
 		metadata.title = "Testvideo"
 		metadata.description = "A video for test purposes"
 		metadata.noreplay = true
@@ -61,11 +61,7 @@ final class ViewController: UIViewController {
     @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
         if let selectedDevice = selectedDevice {
             let fireTVManager = FireTVManager()
-            do {
-                try fireTVManager.startDiscovery(forPlayerID: "amzn.thin.pl")
-            } catch {
-                // TODO:
-            }
+            fireTVManager.startDiscovery(forPlayerID: "amzn.thin.pl")
             
             let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
             

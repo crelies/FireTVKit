@@ -193,18 +193,17 @@ extension FireTVPlayerViewController {
     
     private func setButtonImages() {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
-        // TODO: move to constants
-        if let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
-            rewind10sButton.setImage(UIImage(named: "ic_jump_back_10_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
-            rewind10sButton.setImage(UIImage(named: "ic_jump_back_10_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
-            playButton.setImage(UIImage(named: "ic_play_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
-            playButton.setImage(UIImage(named: "ic_play_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
-            pauseButton.setImage(UIImage(named: "ic_pause_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
-            pauseButton.setImage(UIImage(named: "ic_pause_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
-            stopButton.setImage(UIImage(named: "ic_stop_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
-            stopButton.setImage(UIImage(named: "ic_stop_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
-            fastForward10sButton.setImage(UIImage(named: "ic_jump_forward_10_disabled_dark_48dp", in: bundle, compatibleWith: nil), for: .disabled)
-            fastForward10sButton.setImage(UIImage(named: "ic_jump_forward_10_default_dark_48dp", in: bundle, compatibleWith: nil), for: .normal)
+        if let bundleURL = podBundle.url(forResource: IdentifierConstants.Bundle.resource, withExtension: IdentifierConstants.Bundle.extensionName), let bundle = Bundle(url: bundleURL) {
+            rewind10sButton.setImage(UIImage(named: IdentifierConstants.Image.rewind10sDisabled, in: bundle, compatibleWith: nil), for: .disabled)
+            rewind10sButton.setImage(UIImage(named: IdentifierConstants.Image.rewind10s, in: bundle, compatibleWith: nil), for: .normal)
+            playButton.setImage(UIImage(named: IdentifierConstants.Image.playDisabled, in: bundle, compatibleWith: nil), for: .disabled)
+            playButton.setImage(UIImage(named: IdentifierConstants.Image.play, in: bundle, compatibleWith: nil), for: .normal)
+            pauseButton.setImage(UIImage(named: IdentifierConstants.Image.pauseDisabled, in: bundle, compatibleWith: nil), for: .disabled)
+            pauseButton.setImage(UIImage(named: IdentifierConstants.Image.pause, in: bundle, compatibleWith: nil), for: .normal)
+            stopButton.setImage(UIImage(named: IdentifierConstants.Image.stopDisabled, in: bundle, compatibleWith: nil), for: .disabled)
+            stopButton.setImage(UIImage(named: IdentifierConstants.Image.stop, in: bundle, compatibleWith: nil), for: .normal)
+            fastForward10sButton.setImage(UIImage(named: IdentifierConstants.Image.fastForward10sDisabled, in: bundle, compatibleWith: nil), for: .disabled)
+            fastForward10sButton.setImage(UIImage(named: IdentifierConstants.Image.fastForward10s, in: bundle, compatibleWith: nil), for: .normal)
         }
     }
 }

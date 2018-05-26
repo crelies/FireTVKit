@@ -47,17 +47,13 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         view?.setTheme(theme)
         state = .noDevices
         
-        do {
-            try interactor.startFireTVDiscovery()
-        } catch {
-            // TODO:
-        }
+        interactor.startFireTVDiscovery()
         
         view?.setTableViewDataSource(dataSource: self)
         view?.setTableViewDelegate(delegate: self)
         
         state = .loading
-		interactor.fireTVs
+        interactor.fireTVs
             .subscribe(onNext: { [weak self] player in
                 self?.dependencies.logger.log(message: "onNext player", event: .info)
                 DispatchQueue.main.async {
@@ -73,6 +69,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
                 }
             }, onError: { [weak self] error in
                 // TODO:
+                self?.dependencies.logger.log(message: error.localizedDescription, event: .error)
                 self?.state = .noDevices
             }).disposed(by: disposeBag)
     }

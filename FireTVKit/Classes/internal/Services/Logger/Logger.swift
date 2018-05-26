@@ -9,8 +9,7 @@
 import Foundation
 
 final class Logger: LoggerProtocol {
-    // TODO: move to constants
-    static let dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
+    static let dateFormat = IdentifierConstants.Date.logFormat
     static var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = dateFormat
@@ -20,10 +19,9 @@ final class Logger: LoggerProtocol {
     }
     
     func log(message: String, event: LogEvent, fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
-        // TODO: move to constants
-        let isFireTVKitLoggingEnabled = UserDefaults.standard.value(forKey: "FireTVKitLogging") as? Bool ?? false
+        let isFireTVKitLoggingEnabled = UserDefaults.standard.value(forKey: IdentifierConstants.UserDefaults.Keys.fireTVKitLogging) as? Bool ?? false
         if isFireTVKitLoggingEnabled {
-            let fireTVKitLogEventString = UserDefaults.standard.value(forKey: "FireTVKitLogEvent") as? String ?? ""
+            let fireTVKitLogEventString = UserDefaults.standard.value(forKey: IdentifierConstants.UserDefaults.Keys.fireTVKitLogEvent) as? String ?? ""
             if let logEvent = LogEvent(rawValue: fireTVKitLogEventString) {
                 if logEvent == event {
                     print("\(Date().stringValue) \(event.displayString)[\(sourceFileName(filePath: fileName))]:\(line) \(column) \(funcName) -> \(message)")

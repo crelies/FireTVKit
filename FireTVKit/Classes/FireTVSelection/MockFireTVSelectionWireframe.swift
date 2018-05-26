@@ -10,10 +10,13 @@ import Foundation
 
 public struct MockFireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
+        return try makeViewController(theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices)
+    }
+    
+    public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         
-        // TODO: move to constants
-        guard let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else {
+        guard let bundleURL = podBundle.url(forResource: IdentifierConstants.Bundle.resource, withExtension: IdentifierConstants.Bundle.extensionName), let bundle = Bundle(url: bundleURL) else {
             throw FireTVSelectionWireframeError.couldNotFindResourceBundle
         }
         
@@ -31,7 +34,7 @@ public struct MockFireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId, media: media)
         
         let presenterDependencies = FireTVSelectionPresenterDependencies()
-        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate)
+        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate, noDevicesText: noDevicesText)
         
         interactor.setPresenter(presenter)
         view.setPresenter(presenter)
@@ -40,6 +43,10 @@ public struct MockFireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
     }
     
     public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) {
+        
+    }
+    
+    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String) {
         
     }
 }

@@ -29,11 +29,6 @@ final class MockServiceFactory: ServiceFactoryProtocol {
 		return MockPlayerService(dependencies: dependencies, withPlayer: player)
 	}
 	
-	static func makeReachabilityService() -> ReachabilityServiceProtocol? {
-		// TODO:
-		return ReachabilityService()
-	}
-	
 	static func makeTimeStringFactory() -> TimeStringFactoryProtocol {
 		return TimeStringFactory()
 	}

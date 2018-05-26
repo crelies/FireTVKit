@@ -13,8 +13,7 @@ public struct MockFireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
 	public static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController {
 		let podBundle = Bundle(for: FireTVPlayerViewController.self)
 		
-		// TODO: move to constants
-		guard let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else {
+		guard let bundleURL = podBundle.url(forResource: IdentifierConstants.Bundle.resource, withExtension: IdentifierConstants.Bundle.extensionName), let bundle = Bundle(url: bundleURL) else {
 			throw FireTVPlayerWireframeError.couldNotFindResourceBundle
 		}
 		

@@ -13,12 +13,11 @@ public final class FireTVSelectionViewController: UIViewController {
 	private lazy var closeBarButtonItem: UIBarButtonItem = {
 		let podBundle = Bundle(for: FireTVPlayerViewController.self)
 		var icon: UIImage?
-		// TODO: move to constants
-		if let bundleURL = podBundle.url(forResource: "FireTVKit", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
-			icon = UIImage(named: "close", in: bundle, compatibleWith: nil)
+		if let bundleURL = podBundle.url(forResource: IdentifierConstants.Bundle.resource, withExtension: IdentifierConstants.Bundle.extensionName), let bundle = Bundle(url: bundleURL) {
+			icon = UIImage(named: IdentifierConstants.Image.close, in: bundle, compatibleWith: nil)
 		}
 		let button = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(didPressCloseBarButtonItem(_:)))
-		button.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -8, right: -8)
+		button.imageInsets = UIEdgeInsets(top: MetricConstants.ImageInsets.BarButtonItemImage.top, left: MetricConstants.ImageInsets.BarButtonItemImage.left, bottom: MetricConstants.ImageInsets.BarButtonItemImage.bottom, right: MetricConstants.ImageInsets.BarButtonItemImage.right)
 		return button
 	}()
     
@@ -54,6 +53,10 @@ public final class FireTVSelectionViewController: UIViewController {
 extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
     public func setPresenter(_ presenter: FireTVSelectionPresenterProtocol) {
         self.presenter = presenter
+    }
+    
+    public func setNoDevicesLabelText(_ noDevicesLabelText: String) {
+        noDevicesLabel.text = noDevicesLabelText
     }
     
     public func setTheme(_ theme: FireTVSelectionThemeProtocol) {
@@ -100,7 +103,5 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
 extension FireTVSelectionViewController {
 	private func setLocalizedTexts() {
 		closeBarButtonItem.title = ""
-        // TODO: move to localizables and string constants
-        noDevicesLabel.text = "No devices found"
 	}
 }

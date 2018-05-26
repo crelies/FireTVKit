@@ -24,7 +24,7 @@ final class MockPlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 		deviceInfo = Variable<DeviceInfo?>(nil)
 	}
 	
-	func startDiscovering() throws {
+	func startDiscovering() {
 		let timeToWait = DispatchTime.now() + 1.5
 		DispatchQueue.main.asyncAfter(deadline: timeToWait) { [weak self] in
 			self?.devicesVariable.value = self?.devices

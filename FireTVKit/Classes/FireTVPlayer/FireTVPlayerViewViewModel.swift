@@ -8,7 +8,6 @@
 
 import Foundation
 
-// TODO: activity indicator not visible if superview is not fullscreen
 public struct FireTVPlayerViewViewModel {
 	let isCloseButtonHidden: Bool
     let isPlayerControlEnabled: Bool

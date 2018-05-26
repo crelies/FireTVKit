@@ -20,7 +20,7 @@ protocol PlayerDiscoveryServiceProtocol {
 	var deviceInfo: Variable<DeviceInfo?> { get }
 	
 	init(dependencies: PlayerDiscoveryServiceDependenciesProtocol)
-	func startDiscovering() throws
+	func startDiscovering()
 	func stopDiscovering()
 }
 
@@ -45,7 +45,7 @@ final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
         dependencies.logger.log(message: "PlayerDiscoveryService deinit", event: .info)
 	}
 	
-	func startDiscovering() throws {
+	func startDiscovering() {
         devicesVariable.value = devices
 	}
 	
