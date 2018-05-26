@@ -1,5 +1,5 @@
 //
-//  FireTVSelectionViewControllerDependenciesProtocol.swift
+//  FireTVSelectionViewControllerDependencies.swift
 //  FireTVKit
 //
 //  Created by crelies on 25.05.2018.
@@ -7,10 +7,6 @@
 //
 
 import Foundation
-
-protocol FireTVSelectionViewControllerDependenciesProtocol: LoggerProvider {
-    
-}
 
 struct FireTVSelectionViewControllerDependencies: FireTVSelectionViewControllerDependenciesProtocol {
     let logger: LoggerProtocol

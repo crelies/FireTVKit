@@ -24,8 +24,8 @@ public final class FireTVSelectionViewController: UIViewController {
     
     @IBOutlet private weak var noDevicesLabel: UILabel!
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
-    var dependencies: FireTVSelectionViewControllerDependenciesProtocol?
     
+    public var dependencies: FireTVSelectionViewControllerDependenciesProtocol?
     @IBOutlet public private(set) weak var tableView: UITableView!
     
     deinit {

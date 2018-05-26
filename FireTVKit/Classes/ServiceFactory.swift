@@ -11,7 +11,10 @@ import Foundation
 
 public final class ServiceFactory: ServiceFactoryProtocol {
 	static func makePlayerDiscoveryController() -> PlayerDiscoveryControllerProtocol {
-		return PlayerDiscoveryController.shared
+		let playerDiscoveryController = PlayerDiscoveryController.shared
+        let dependencies = PlayerDiscoveryControllerDependencies()
+        playerDiscoveryController.dependencies = dependencies
+        return playerDiscoveryController
 	}
 	
     static func makePlayerDiscoveryService() -> PlayerDiscoveryServiceProtocol {

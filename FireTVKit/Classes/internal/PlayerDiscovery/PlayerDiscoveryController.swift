@@ -16,6 +16,7 @@ protocol PlayerDiscoveryControllerProvider {
 final class PlayerDiscoveryController {
 	static let shared = PlayerDiscoveryController()
 	
+    var dependencies: PlayerDiscoveryControllerDependenciesProtocol?
     private(set) var devices: [RemoteMediaPlayer]
 	weak var delegate: PlayerDiscoveryControllerDelegateProtocol?
 
@@ -56,7 +57,7 @@ extension PlayerDiscoveryController: PlayerDiscoveryControllerProtocol {
 
 extension PlayerDiscoveryController: DiscoveryListener {
     func deviceDiscovered(_ device: RemoteMediaPlayer!) {
-        print("deviceDiscovered: \(device.name())")
+        dependencies?.logger.log(message: "deviceDiscovered: \(device.name())", event: .info)
 		DispatchQueue.main.async { [weak self] in
 			guard let weakSelf = self else {
 				return
@@ -69,7 +70,7 @@ extension PlayerDiscoveryController: DiscoveryListener {
 	}
 	
     func deviceLost(_ device: RemoteMediaPlayer!) {
-        print("deviceLost: \(device.name())")
+        dependencies?.logger.log(message: "deviceLost: \(device.name())", event: .info)
 		DispatchQueue.main.async { [weak self] in
 			guard let weakSelf = self else {
 				return

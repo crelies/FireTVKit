@@ -10,6 +10,7 @@ import AmazonFling
 import Foundation
 
 protocol PlayerDiscoveryControllerProtocol {
+    var dependencies: PlayerDiscoveryControllerDependenciesProtocol? { get set }
     var devices: [RemoteMediaPlayer] { get }
     var delegate: PlayerDiscoveryControllerDelegateProtocol? { get set }
     func startSearch(forPlayerId playerId: String?)
