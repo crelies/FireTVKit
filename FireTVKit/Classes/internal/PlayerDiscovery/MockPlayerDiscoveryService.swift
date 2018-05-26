@@ -16,12 +16,15 @@ final class MockPlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 	var devices: [RemoteMediaPlayer] {
 		return dependencies.playerDiscoveryController.devices
 	}
-	var deviceInfo: Variable<DeviceInfo?>
+	var discoveringInfo: Variable<DiscoveringInfo?>
 	
 	init(dependencies: PlayerDiscoveryServiceDependenciesProtocol) {
 		self.dependencies = dependencies
 		devicesVariable = Variable<[RemoteMediaPlayer]?>(nil)
-		deviceInfo = Variable<DeviceInfo?>(nil)
+		discoveringInfo = Variable<DiscoveringInfo?>(nil)
+        
+        var playerDiscoveryController = self.dependencies.playerDiscoveryController
+        playerDiscoveryController.delegate = self
 	}
 	
 	func startDiscovering() {
@@ -34,4 +37,18 @@ final class MockPlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 	func stopDiscovering() {
 		devicesVariable.value = []
 	}
+}
+
+extension MockPlayerDiscoveryService: PlayerDiscoveryControllerDelegateProtocol {
+    func deviceDiscovered(_ discoveryController: PlayerDiscoveryControllerProtocol, device: RemoteMediaPlayer) {
+        
+    }
+    
+    func deviceLost(_ discoveryController: PlayerDiscoveryControllerProtocol, device: RemoteMediaPlayer) {
+        
+    }
+    
+    func discoveryFailure(_ discoveryController: PlayerDiscoveryControllerProtocol) {
+        discoveringInfo.value = DiscoveringInfo(status: .discoveryFailure)
+    }
 }

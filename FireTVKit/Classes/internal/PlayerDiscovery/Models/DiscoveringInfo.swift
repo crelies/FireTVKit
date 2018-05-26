@@ -1,5 +1,5 @@
 //
-//  DeviceInfo.swift
+//  DiscoveringInfo.swift
 //  FireTVKit
 //
 //  Created by crelies on 28.03.2018.
@@ -9,8 +9,8 @@
 import AmazonFling
 import Foundation
 
-struct DeviceInfo {
-    let status: DeviceInfoStatus
+struct DiscoveringInfo {
+    let status: DiscoveringInfoStatus
     var device: RemoteMediaPlayer?
     
     init(device: RemoteMediaPlayer) {
@@ -18,11 +18,11 @@ struct DeviceInfo {
         self.device = device
     }
     
-    init(status: DeviceInfoStatus) {
+    init(status: DiscoveringInfoStatus) {
         self.status = status
     }
     
-    init(status: DeviceInfoStatus, device: RemoteMediaPlayer) {
+    init(status: DiscoveringInfoStatus, device: RemoteMediaPlayer) {
         self.status = status
         self.device = device
     }

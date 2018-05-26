@@ -393,7 +393,7 @@
 		BD020B1F0EA3242C157538301383FF12 /* BFAppLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 739575A2AC76B79002AF308D77AA5582 /* BFAppLink.m */; };
 		BD07C92F239A2914A4165DEADF0568E8 /* UIProgressView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920073A62E21DD7CFC8D5D01AC72B240 /* UIProgressView+Rx.swift */; };
 		BD398DEE9E1592C0EBCE45E656AC55AF /* PlayerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECFAB4697D3F8936FA4378EC2551CD /* PlayerServiceProtocol.swift */; };
-		BD4292E8839A951EE755403C1907D409 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924B09CEBB45DD4A02A6C44F944D574 /* DeviceInfo.swift */; };
+		BD4292E8839A951EE755403C1907D409 /* DiscoveringInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924B09CEBB45DD4A02A6C44F944D574 /* DiscoveringInfo.swift */; };
 		BDFDFEED299C5385A31B3456CF0ED1E2 /* ConcurrentMainScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875029BE0C7682483C2DF1EF2CFCFD96 /* ConcurrentMainScheduler.swift */; };
 		BE0FBF4ABD6AF9B88C90955017DE5E93 /* FireTVSelectionThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49312CACA4ABF4BE7570F866D5B317A /* FireTVSelectionThemeProtocol.swift */; };
 		BEE3A90299749AE722BD8E98E928AED4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855925B68085D7C6FC350C610241112F /* Event.swift */; };
@@ -503,7 +503,7 @@
 		EF8A4326445919B5E72BF641C09079CB /* BooleanDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DCBA5A7A515C94DC1680D237CB6D11 /* BooleanDisposable.swift */; };
 		F0DBC41683AFA7D0C070731D05A3E012 /* Platform.Linux.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36FF2CE4B800E05E674B94D999039D /* Platform.Linux.swift */; };
 		F0ECEB9EF7945ED38B5669ED496FC146 /* _RXKVOObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = A2777B4991B097A57BDC2E3400407A1A /* _RXKVOObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F11614787B6400713F44D66B043292BB /* DeviceInfoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7DE1054D998B324330F3C165ACB9CB /* DeviceInfoStatus.swift */; };
+		F11614787B6400713F44D66B043292BB /* DiscoveringInfoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7DE1054D998B324330F3C165ACB9CB /* DiscoveringInfoStatus.swift */; };
 		F116CBE97C60BC46F8C8D0561DDE209C /* ControlEvent+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE10A1F3552C30A2C0B15F826304601 /* ControlEvent+Driver.swift */; };
 		F1C4B8E0A1DCCEAF57F7E8C00E1296FB /* FireTVPlayerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD291D412D88A4F8D87E9BD3A1D354CD /* FireTVPlayerViewProtocol.swift */; };
 		F1E01EC42587AA95E146174F69DC26A0 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF338938786520EB23BE3AC4DB34D13 /* DispatchQueue+Extensions.swift */; };
@@ -835,7 +835,7 @@
 		5B34320E1D5289C3C54D84916B2ABB70 /* UISearchBar+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISearchBar+Rx.swift"; path = "RxCocoa/iOS/UISearchBar+Rx.swift"; sourceTree = "<group>"; };
 		5BAEC11ADEDDEF0840AC409FA79C1491 /* Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rx.swift; path = RxSwift/Rx.swift; sourceTree = "<group>"; };
 		5BC470C312875ABF7CB95A3FAF7844BF /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
-		5C7DE1054D998B324330F3C165ACB9CB /* DeviceInfoStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeviceInfoStatus.swift; sourceTree = "<group>"; };
+		5C7DE1054D998B324330F3C165ACB9CB /* DiscoveringInfoStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveringInfoStatus.swift; sourceTree = "<group>"; };
 		5D49642BE12467CDF2F4191285F2DC6B /* Empty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Empty.swift; path = RxSwift/Observables/Empty.swift; sourceTree = "<group>"; };
 		5E97B05CB97D20CC28B0FB720729035C /* CombineLatest+Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CombineLatest+Collection.swift"; path = "RxSwift/Observables/CombineLatest+Collection.swift"; sourceTree = "<group>"; };
 		5EC93486FB02F5F33CB1AA9D14B0E3CB /* ShareReplayScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareReplayScope.swift; path = RxSwift/Observables/ShareReplayScope.swift; sourceTree = "<group>"; };
@@ -892,7 +892,7 @@
 		7853C5ED60028BBA8F0DBF86371AE61E /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Quick/Configuration/Configuration.swift; sourceTree = "<group>"; };
 		78D5392A03EB567BE0D9762B45624231 /* PlayerService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		78E2FA9B1FBD61BF9C63068EB2B8E6F6 /* AsMaybe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsMaybe.swift; path = RxSwift/Observables/AsMaybe.swift; sourceTree = "<group>"; };
-		7924B09CEBB45DD4A02A6C44F944D574 /* DeviceInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		7924B09CEBB45DD4A02A6C44F944D574 /* DiscoveringInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveringInfo.swift; sourceTree = "<group>"; };
 		7926C49F7462CBDDF07CF4FFE521BD0F /* _RX.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RX.m; path = RxCocoa/Runtime/_RX.m; sourceTree = "<group>"; };
 		79531E726ACAC1597858C63699B957E5 /* TakeLast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeLast.swift; path = RxSwift/Observables/TakeLast.swift; sourceTree = "<group>"; };
 		7960EBDDED212765C67C748414B82197 /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
@@ -2164,8 +2164,8 @@
 		D8CA7626936A2657601ABC89BCF07128 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7924B09CEBB45DD4A02A6C44F944D574 /* DeviceInfo.swift */,
-				5C7DE1054D998B324330F3C165ACB9CB /* DeviceInfoStatus.swift */,
+				7924B09CEBB45DD4A02A6C44F944D574 /* DiscoveringInfo.swift */,
+				5C7DE1054D998B324330F3C165ACB9CB /* DiscoveringInfoStatus.swift */,
 				CEF5E6A37B92DD0BE6DA055DCBFD48C7 /* DiscoveringStatus.swift */,
 			);
 			path = Models;
@@ -2645,8 +2645,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4292E8839A951EE755403C1907D409 /* DeviceInfo.swift in Sources */,
-				F11614787B6400713F44D66B043292BB /* DeviceInfoStatus.swift in Sources */,
+				BD4292E8839A951EE755403C1907D409 /* DiscoveringInfo.swift in Sources */,
+				F11614787B6400713F44D66B043292BB /* DiscoveringInfoStatus.swift in Sources */,
 				B991B2E620B957CA00C08EEB /* StringConstants.swift in Sources */,
 				A81AAD6B514ED81FD310E7C003CBCB36 /* DiscoveringStatus.swift in Sources */,
 				34FAFAABF2A6780AA046F775FA953370 /* DummyPlayer.swift in Sources */,

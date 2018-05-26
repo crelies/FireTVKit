@@ -10,7 +10,7 @@ import AmazonFling
 import Foundation
 
 protocol PlayerDiscoveryControllerDelegateProtocol: class {
-	func deviceDiscovered(_ discoveryController: PlayerDiscoveryController, device: RemoteMediaPlayer)
-	func deviceLost(_ discoveryController: PlayerDiscoveryController, device: RemoteMediaPlayer)
-	func discoveryFailure(_ discoveryController: PlayerDiscoveryController)
+	func deviceDiscovered(_ discoveryController: PlayerDiscoveryControllerProtocol, device: RemoteMediaPlayer)
+	func deviceLost(_ discoveryController: PlayerDiscoveryControllerProtocol, device: RemoteMediaPlayer)
+	func discoveryFailure(_ discoveryController: PlayerDiscoveryControllerProtocol)
 }

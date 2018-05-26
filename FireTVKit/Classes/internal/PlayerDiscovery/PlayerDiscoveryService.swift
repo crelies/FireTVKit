@@ -17,7 +17,7 @@ protocol HasPlayerDiscoveryService {
 protocol PlayerDiscoveryServiceProtocol {
     var devicesVariable: Variable<[RemoteMediaPlayer]?> { get }
 	var devices: [RemoteMediaPlayer] { get }
-	var deviceInfo: Variable<DeviceInfo?> { get }
+	var discoveringInfo: Variable<DiscoveringInfo?> { get }
 	
 	init(dependencies: PlayerDiscoveryServiceDependenciesProtocol)
 	func startDiscovering()
@@ -30,12 +30,12 @@ final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
     var devices: [RemoteMediaPlayer] {
         return dependencies.playerDiscoveryController.devices
     }
-	private(set) var deviceInfo: Variable<DeviceInfo?>
+	private(set) var discoveringInfo: Variable<DiscoveringInfo?>
     
 	init(dependencies: PlayerDiscoveryServiceDependenciesProtocol) {
 		self.dependencies = dependencies
         devicesVariable = Variable<[RemoteMediaPlayer]?>(nil)
-		deviceInfo = Variable<DeviceInfo?>(nil)
+		discoveringInfo = Variable<DiscoveringInfo?>(nil)
 		
 		var playerDiscoveryController = self.dependencies.playerDiscoveryController
 		playerDiscoveryController.delegate = self
@@ -55,22 +55,23 @@ final class PlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 }
 
 extension PlayerDiscoveryService: PlayerDiscoveryControllerDelegateProtocol {
-	func deviceDiscovered(_ discoveryController: PlayerDiscoveryController, device: RemoteMediaPlayer) {
-		let deviceInfo = DeviceInfo(device: device)
-		self.deviceInfo.value = deviceInfo
+	func deviceDiscovered(_ discoveryController: PlayerDiscoveryControllerProtocol, device: RemoteMediaPlayer) {
+		let discoveringInfo = DiscoveringInfo(device: device)
+		self.discoveringInfo.value = discoveringInfo
 		
 		self.devicesVariable.value = devices
     }
     
-	func deviceLost(_ discoveryController: PlayerDiscoveryController, device: RemoteMediaPlayer) {
+	func deviceLost(_ discoveryController: PlayerDiscoveryControllerProtocol, device: RemoteMediaPlayer) {
         self.devicesVariable.value = devices
 		
-		let deviceInfo = DeviceInfo(status: .deviceLost, device: device)
-		self.deviceInfo.value = deviceInfo
+		let discoveringInfo = DiscoveringInfo(status: .deviceLost, device: device)
+		self.discoveringInfo.value = discoveringInfo
     }
     
-	func discoveryFailure(_ discoveryController: PlayerDiscoveryController) {
-		// TODO: what to do?
+	func discoveryFailure(_ discoveryController: PlayerDiscoveryControllerProtocol) {
         dependencies.logger.log(message: "discovery failure", event: .error)
+        let discoveringInfo = DiscoveringInfo(status: .discoveryFailure)
+        self.discoveringInfo.value = discoveringInfo
     }
 }

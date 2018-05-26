@@ -60,7 +60,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
             .subscribe(onNext: { [weak self] player in
                 self?.dependencies.logger.log(message: "onNext player", event: .info)
                 DispatchQueue.main.async {
-                    if let player = player, !player.isEmpty {
+                    if !player.isEmpty {
                         self?.state = .devicesFound
                         self?.player = player
                         let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
@@ -71,10 +71,16 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
                     }
                 }
             }, onError: { [weak self] error in
-                // TODO: what to do?
                 self?.dependencies.logger.log(message: error.localizedDescription, event: .error)
                 self?.state = .noDevices
             }).disposed(by: disposeBag)
+        
+        interactor.discoveryFailure
+            .subscribe { [weak self] _ in
+                self?.dependencies.logger.log(message: "interactor.discoveryFailure onNext", event: .error)
+                
+                self?.didPressCloseBarButtonItem()
+            }.disposed(by: disposeBag)
     }
     
     func didPressCloseBarButtonItem() {
