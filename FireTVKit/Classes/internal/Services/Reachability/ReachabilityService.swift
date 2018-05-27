@@ -11,7 +11,7 @@ import RxSwift
 import UIKit
 
 protocol ReachabilityServiceProvider {
-    var reachabilityService: ReachabilityServiceProtocol { get set }
+    var reachabilityService: ReachabilityServiceProtocol { get }
 }
 
 final class ReachabilityService: ReachabilityServiceProtocol {

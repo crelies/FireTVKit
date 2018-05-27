@@ -8,12 +8,18 @@
 
 import UIKit
 
-public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
+extension FireTVSelectionWireframeProtocol {
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
-        return try makeViewController(theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices)
+        return try makeViewController(theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices, noWifiAlertTitle: StringConstants.Alert.Title.error, noWifiAlertMessage: StringConstants.Alert.Message.noWifi)
     }
     
-    public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String) throws -> UINavigationController {
+    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws {
+        try configureView(view, theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices, noWifiAlertTitle: StringConstants.Alert.Title.error, noWifiAlertMessage: StringConstants.Alert.Message.noWifi)
+    }
+}
+
+public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {    
+    public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String, noWifiAlertTitle: String, noWifiAlertMessage: String) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         
         guard let bundleURL = podBundle.url(forResource: IdentifierConstants.Bundle.resource, withExtension: IdentifierConstants.Bundle.extensionName), let bundle = Bundle(url: bundleURL) else {
@@ -35,8 +41,8 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
 		let interactorDependencies = FireTVSelectionInteractorDependencies()
         let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId, media: media)
 		
-		let presenterDependencies = FireTVSelectionPresenterDependencies()
-        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate, noDevicesText: noDevicesText)
+		let presenterDependencies = try FireTVSelectionPresenterDependencies()
+        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate, noDevicesText: noDevicesText, noWifiAlertTitle: noWifiAlertTitle, noWifiAlertMessage: noWifiAlertMessage)
 		
 		interactor.setPresenter(presenter)
         view.setPresenter(presenter)
@@ -44,18 +50,14 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         return navigationController
     }
     
-    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) {
-        configureView(view, theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices)
-    }
-    
-    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String) {
+    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String, noWifiAlertTitle: String, noWifiAlertMessage: String) throws {
         let router = FireTVSelectionRouter()
         
         let interactorDependencies = FireTVSelectionInteractorDependencies()
         let interactor = FireTVSelectionInteractor(dependencies: interactorDependencies, playerId: playerId, media: media)
         
-        let presenterDependencies = FireTVSelectionPresenterDependencies()
-        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate, noDevicesText: noDevicesText)
+        let presenterDependencies = try FireTVSelectionPresenterDependencies()
+        let presenter = FireTVSelectionPresenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router, theme: theme, delegate: delegate, noDevicesText: noDevicesText, noWifiAlertTitle: noWifiAlertTitle, noWifiAlertMessage: noWifiAlertMessage)
         
         interactor.setPresenter(presenter)
         view.setPresenter(presenter)

@@ -42,6 +42,11 @@ public final class FireTVPlayerViewController: UIViewController {
         setButtonImages()
         presenter?.viewDidLoad()
     }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+    }
 	
 	public override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)

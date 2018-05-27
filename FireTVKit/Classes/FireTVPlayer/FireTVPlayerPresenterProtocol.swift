@@ -10,6 +10,7 @@ import Foundation
 
 public protocol FireTVPlayerPresenterProtocol: class {
     func viewDidLoad()
+    func viewWillAppear()
     func didPressCloseButton()
     func didPressRewind10sButton()
     func didPressPlayButton()

@@ -41,7 +41,11 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func viewDidLoad() {
-        interactor.startFireTVDiscovery()
+        state = .disconnected
+        
+        if dependencies.reachabilityService.reachability.connection == .wifi {
+            interactor.startFireTVDiscovery()
+        }
 		
 		view?.setTheme(theme)
         view?.setPlayerName(interactor.getPlayerName())
@@ -49,19 +53,30 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         view?.setPositionText("00:00:00")
         view?.setMaximumPosition(0)
         view?.setDurationText("00:00:00")
-        state = .loading
         
-        interactor.connect()
-            .subscribe(onCompleted: { [weak self] in
-                self?.state = .connected
-                self?.getDuration()
-                self?.getPlayerInfo()
-                self?.getPlayerData()
-                self?.observePlayerData()
-            }) { [weak self] error in
-                self?.dependencies.logger.log(message: "interactor.connect(): \(error.localizedDescription)", event: .error)
-                self?.state = .disconnected
-            }.disposed(by: disposeBag)
+        if dependencies.reachabilityService.reachability.connection == .wifi {
+            state = .loading
+            interactor.connect()
+                .subscribe(onCompleted: { [weak self] in
+                    self?.state = .connected
+                    self?.getDuration()
+                    self?.getPlayerInfo()
+                    self?.getPlayerData()
+                    self?.observePlayerData()
+                }) { [weak self] error in
+                    self?.dependencies.logger.log(message: "interactor.connect(): \(error.localizedDescription)", event: .error)
+                    self?.state = .disconnected
+                }.disposed(by: disposeBag)
+        }
+    }
+    
+    func viewWillAppear() {
+        if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVPlayerViewController {
+            router.showNoWifiAlert(fromViewController: viewController) { [weak self] in
+                self?.state = .loading
+                self?.delegate?.didPressCloseButton(viewController)
+            }
+        }
     }
     
     func didPressCloseButton() {

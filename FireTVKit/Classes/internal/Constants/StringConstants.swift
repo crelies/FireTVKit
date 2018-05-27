@@ -9,7 +9,22 @@
 import Foundation
 
 struct StringConstants {
+    struct Alert {
+        struct Title {
+            static let error = "Error"
+        }
+        
+        struct Message {
+            static let discoveryFailure = "A discovery failure occurred. View will be closed."
+            static let noWifi = "You are not connected to a wifi network. The connection is required."
+        }
+    }
+    
     struct FireTVSelection {
         static let noDevices = "No devices found"
+    }
+    
+    struct Labels {
+        static let ok = "OK"
     }
 }

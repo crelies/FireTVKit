@@ -50,43 +50,57 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         view?.setTheme(theme)
         state = .noDevices
         
-        interactor.startFireTVDiscovery()
+        if dependencies.reachabilityService.reachability.connection == .wifi {
+            interactor.startFireTVDiscovery()
+        }
         
         view?.setTableViewDataSource(dataSource: self)
         view?.setTableViewDelegate(delegate: self)
         
-        state = .loading
-        interactor.fireTVs
-            .subscribe(onNext: { [weak self] player in
-                self?.dependencies.logger.log(message: "onNext player", event: .info)
-                DispatchQueue.main.async {
-                    if !player.isEmpty {
-                        self?.state = .devicesFound
-                        self?.player = player
-                        let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
-                        self?.playerViewModels = playerViewModels
-                        self?.view?.reloadData()
-                    } else {
-                        self?.state = .noDevices
+        if dependencies.reachabilityService.reachability.connection == .wifi {
+            state = .loading
+            
+            interactor.fireTVs
+                .subscribe(onNext: { [weak self] player in
+                    self?.dependencies.logger.log(message: "onNext player", event: .info)
+                    DispatchQueue.main.async {
+                        if !player.isEmpty {
+                            self?.state = .devicesFound
+                            self?.player = player
+                            let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
+                            self?.playerViewModels = playerViewModels
+                            self?.view?.reloadData()
+                        } else {
+                            self?.state = .noDevices
+                        }
                     }
-                }
-            }, onError: { [weak self] error in
-                self?.dependencies.logger.log(message: error.localizedDescription, event: .error)
-                self?.state = .noDevices
-            }).disposed(by: disposeBag)
-        
-        interactor.discoveryFailure
-            .subscribe { [weak self] _ in
-                self?.dependencies.logger.log(message: "interactor.discoveryFailure onNext", event: .error)
-                
-                guard let viewController = self?.view as? UIViewController else {
-                    return
-                }
-                
-                self?.router.showDiscoveryFailureAlert(fromViewController: viewController) {
-                    self?.didPressCloseBarButtonItem()
-                }
-            }.disposed(by: disposeBag)
+                }, onError: { [weak self] error in
+                    self?.dependencies.logger.log(message: error.localizedDescription, event: .error)
+                    self?.state = .noDevices
+                }).disposed(by: disposeBag)
+            
+            interactor.discoveryFailure
+                .subscribe { [weak self] _ in
+                    self?.dependencies.logger.log(message: "interactor.discoveryFailure onNext", event: .error)
+                    
+                    guard let viewController = self?.view as? UIViewController else {
+                        return
+                    }
+                    
+                    self?.router.showDiscoveryFailureAlert(fromViewController: viewController) {
+                        self?.didPressCloseBarButtonItem()
+                    }
+                }.disposed(by: disposeBag)
+        }
+    }
+    
+    func viewWillAppear() {
+        if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVSelectionViewController {
+            router.showNoWifiAlert(fromViewController: viewController) { [weak self] in
+                self?.state = .loading
+                self?.delegate?.didPressCloseButton(viewController)
+            }
+        }
     }
     
     func didPressCloseBarButtonItem() {

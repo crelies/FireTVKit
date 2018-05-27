@@ -39,4 +39,11 @@ public final class ServiceFactory: ServiceFactoryProtocol {
     static func makeLogger() -> LoggerProtocol {
         return Logger()
     }
+    
+    static func makeReachabilityService() throws -> ReachabilityServiceProtocol {
+        guard let service = ReachabilityService() else {
+            throw ServiceFactoryError.couldNotCreateReachabilityService
+        }
+        return service
+    }
 }

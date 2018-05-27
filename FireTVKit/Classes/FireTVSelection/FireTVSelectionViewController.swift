@@ -44,6 +44,11 @@ public final class FireTVSelectionViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+    }
+    
 	@objc
 	private func didPressCloseBarButtonItem(_ sender: UIBarButtonItem) {
         presenter?.didPressCloseBarButtonItem()

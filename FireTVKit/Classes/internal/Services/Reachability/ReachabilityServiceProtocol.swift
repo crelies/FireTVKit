@@ -15,6 +15,7 @@ protocol ReachabilityServiceProtocol {
     var reachabilityObservable: Observable<Reachability> { get }
     var listeningReachability: Bool { get }
     
+    init?()
     func startListening() throws
     func stopListening()
 }

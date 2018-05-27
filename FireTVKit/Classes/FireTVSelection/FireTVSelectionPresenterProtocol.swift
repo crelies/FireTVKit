@@ -10,5 +10,6 @@ import Foundation
 
 public protocol FireTVSelectionPresenterProtocol: class {
     func viewDidLoad()
+    func viewWillAppear()
     func didPressCloseBarButtonItem()
 }

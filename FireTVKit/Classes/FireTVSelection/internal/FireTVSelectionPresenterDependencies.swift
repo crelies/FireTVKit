@@ -8,14 +8,16 @@
 
 import Foundation
 
-protocol FireTVSelectionPresenterDependenciesProtocol: LoggerProvider {
+protocol FireTVSelectionPresenterDependenciesProtocol: LoggerProvider, ReachabilityServiceProvider {
     
 }
 
 struct FireTVSelectionPresenterDependencies: FireTVSelectionPresenterDependenciesProtocol {
     let logger: LoggerProtocol
+    let reachabilityService: ReachabilityServiceProtocol
     
-    init() {
+    init() throws {
         logger = ServiceFactory.makeLogger()
+        reachabilityService = try ServiceFactory.makeReachabilityService()
     }
 }
