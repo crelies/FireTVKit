@@ -267,6 +267,7 @@ extension FireTVPlayerPresenter {
             case .disconnected:
 				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: false, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false, hideLabels: false)
                 view?.updateUI(withViewModel: viewModel)
+                view?.setStatus(String(describing: state))
             
             case .loading:
 				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: true, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: false, isPositionStackViewHidden: true, isControlStackViewHidden: true, hideLabels: true)
