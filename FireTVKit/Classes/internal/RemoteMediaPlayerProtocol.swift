@@ -9,7 +9,7 @@
 import AmazonFling
 import Foundation
 
-public protocol RemoteMediaPlayerProtocol {
+protocol RemoteMediaPlayerProtocol {
     func name() -> String
     func uniqueIdentifier() -> String
     
