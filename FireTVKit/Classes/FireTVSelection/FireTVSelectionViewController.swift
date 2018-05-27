@@ -68,7 +68,7 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
         navigationController?.navigationBar.barTintColor = theme.navigationBarBarTintColor
         view.backgroundColor = theme.backgroundColor
 		activityIndicatorView.color = theme.activityIndicatorViewColor
-        closeBarButtonItem.tintColor = theme.closeBarButtonItemTintColor
+        closeBarButtonItem.tintColor = theme.buttonColor
         tableView.separatorColor = theme.cellSeparatorColor
 		noDevicesLabel.textColor = theme.labelColor
     }

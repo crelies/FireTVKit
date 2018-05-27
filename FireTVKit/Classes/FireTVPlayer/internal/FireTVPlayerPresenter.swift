@@ -76,7 +76,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     
     func viewWillAppear() {
         if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVPlayerViewController {
-            router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage) { [weak self] in
+            router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage, buttonColor: theme.closeButtonTintColor) { [weak self] in
                 self?.state = .loading
                 self?.delegate?.didPressCloseButton(viewController)
             }

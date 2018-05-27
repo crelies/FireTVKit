@@ -11,8 +11,8 @@ import Foundation
 public struct FireTVSelectionLightTheme: FireTVSelectionThemeProtocol {
     public let navigationBarBarTintColor: UIColor
     public let backgroundColor: UIColor
+    public let buttonColor: UIColor
 	public let activityIndicatorViewColor: UIColor
-    public let closeBarButtonItemTintColor: UIColor
     public let cellBackgroundColor: UIColor
     public let labelColor: UIColor
     public let cellSeparatorColor: UIColor
@@ -20,8 +20,8 @@ public struct FireTVSelectionLightTheme: FireTVSelectionThemeProtocol {
     public init() {
         navigationBarBarTintColor = .seafoam
         backgroundColor = .seafoam
+        buttonColor = .deepAqua
 		activityIndicatorViewColor = .ocean
-        closeBarButtonItemTintColor = .deepAqua
         cellBackgroundColor = .clear
         labelColor = .ocean
         cellSeparatorColor = .ocean

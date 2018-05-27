@@ -9,11 +9,11 @@
 import Foundation
 
 protocol FireTVPlayerRouterProtocol {
-    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, _ confirmHandler: @escaping () -> Void)
+    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, buttonColor: UIColor, _ confirmHandler: @escaping () -> Void)
 }
 
 final class FireTVPlayerRouter: FireTVPlayerRouterProtocol {
-    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, _ confirmHandler: @escaping () -> Void) {
+    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, buttonColor: UIColor, _ confirmHandler: @escaping () -> Void) {
         // TODO: move alert controller creation to extension
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -23,5 +23,7 @@ final class FireTVPlayerRouter: FireTVPlayerRouterProtocol {
         alertController.addAction(okAction)
         
         viewController.present(alertController, animated: true, completion: nil)
+        
+        alertController.view.tintColor = buttonColor
     }
 }

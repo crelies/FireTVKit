@@ -9,12 +9,12 @@
 import Foundation
 
 protocol FireTVSelectionRouterProtocol {
-    func showDiscoveryFailureAlert(fromViewController viewController: UIViewController, _ confirmHandler: @escaping () -> Void)
-    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, _ confirmHandler: @escaping () -> Void)
+    func showDiscoveryFailureAlert(fromViewController viewController: UIViewController, buttonColor: UIColor, _ confirmHandler: @escaping () -> Void)
+    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, buttonColor: UIColor, _ confirmHandler: @escaping () -> Void)
 }
 
 final class FireTVSelectionRouter: FireTVSelectionRouterProtocol {
-    func showDiscoveryFailureAlert(fromViewController viewController: UIViewController, _ confirmHandler: @escaping () -> Void) {
+    func showDiscoveryFailureAlert(fromViewController viewController: UIViewController, buttonColor: UIColor, _ confirmHandler: @escaping () -> Void) {
         let title = StringConstants.Alert.Title.error
         let message = StringConstants.Alert.Message.discoveryFailure
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -25,9 +25,11 @@ final class FireTVSelectionRouter: FireTVSelectionRouterProtocol {
         alertController.addAction(okAction)
         
         viewController.present(alertController, animated: true, completion: nil)
+        
+        alertController.view.tintColor = buttonColor
     }
     
-    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, _ confirmHandler: @escaping () -> Void) {
+    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, buttonColor: UIColor, _ confirmHandler: @escaping () -> Void) {
         // TODO: move alert controller creation to extension
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -37,5 +39,7 @@ final class FireTVSelectionRouter: FireTVSelectionRouterProtocol {
         alertController.addAction(okAction)
         
         viewController.present(alertController, animated: true, completion: nil)
+        
+        alertController.view.tintColor = buttonColor
     }
 }

@@ -91,7 +91,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
                         return
                     }
                     
-                    self?.router.showDiscoveryFailureAlert(fromViewController: viewController) {
+                    self?.router.showDiscoveryFailureAlert(fromViewController: viewController, buttonColor: self?.theme.buttonColor ?? .blue) {
                         self?.didPressCloseBarButtonItem()
                     }
                 }.disposed(by: disposeBag)
@@ -100,7 +100,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     
     func viewWillAppear() {
         if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVSelectionViewController {
-            router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage) { [weak self] in
+            router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage, buttonColor: theme.buttonColor) { [weak self] in
                 self?.state = .loading
                 self?.delegate?.didPressCloseButton(viewController)
             }
