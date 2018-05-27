@@ -79,7 +79,13 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
             .subscribe { [weak self] _ in
                 self?.dependencies.logger.log(message: "interactor.discoveryFailure onNext", event: .error)
                 
-                self?.didPressCloseBarButtonItem()
+                guard let viewController = self?.view as? UIViewController else {
+                    return
+                }
+                
+                self?.router.showDiscoveryFailureAlert(fromViewController: viewController) {
+                    self?.didPressCloseBarButtonItem()
+                }
             }.disposed(by: disposeBag)
     }
     
