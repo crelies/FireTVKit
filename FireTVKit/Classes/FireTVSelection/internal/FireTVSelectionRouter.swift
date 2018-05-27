@@ -10,18 +10,16 @@ import Foundation
 
 protocol FireTVSelectionRouterProtocol {
     func showDiscoveryFailureAlert(fromViewController viewController: UIViewController, _ confirmHandler: @escaping () -> Void)
-    func showNoWifiAlert(fromViewController viewController: UIViewController, _ confirmHandler: @escaping () -> Void)
+    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, _ confirmHandler: @escaping () -> Void)
 }
 
 final class FireTVSelectionRouter: FireTVSelectionRouterProtocol {
     func showDiscoveryFailureAlert(fromViewController viewController: UIViewController, _ confirmHandler: @escaping () -> Void) {
-        // TODO: move to constants
-        let title = "Error"
-        let message = "Discovery failure"
+        let title = StringConstants.Alert.Title.error
+        let message = StringConstants.Alert.Message.discoveryFailure
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        // TODO: move to constants
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        let okAction = UIAlertAction(title: StringConstants.Labels.ok, style: .default) { _ in
             confirmHandler()
         }
         alertController.addAction(okAction)
@@ -29,15 +27,11 @@ final class FireTVSelectionRouter: FireTVSelectionRouterProtocol {
         viewController.present(alertController, animated: true, completion: nil)
     }
     
-    func showNoWifiAlert(fromViewController viewController: UIViewController, _ confirmHandler: @escaping () -> Void) {
-        // TODO: move to constants
-        let title = "Error"
-        let message = "No wifi"
+    func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, _ confirmHandler: @escaping () -> Void) {
         // TODO: move alert controller creation to extension
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        // TODO: move to constants
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        let okAction = UIAlertAction(title: StringConstants.Labels.ok, style: .default) { _ in
             confirmHandler()
         }
         alertController.addAction(okAction)

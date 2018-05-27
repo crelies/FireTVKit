@@ -23,14 +23,18 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
 	private let theme: FireTVPlayerThemeProtocol
     private weak var delegate: FireTVPlayerDelegateProtocol?
+    private let noWifiAlertTitle: String
+    private let noWifiAlertMessage: String
     
-	init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) {
+    init(dependencies: FireTVPlayerPresenterDependenciesProtocol, view: FireTVPlayerViewProtocol, interactor: FireTVPlayerInteractorInputProtocol, router: FireTVPlayerRouterProtocol, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?, noWifiAlertTitle: String, noWifiAlertMessage: String) {
         self.dependencies = dependencies
         self.view = view
         self.interactor = interactor
         self.router = router
 		self.theme = theme
         self.delegate = delegate
+        self.noWifiAlertTitle = noWifiAlertTitle
+        self.noWifiAlertMessage = noWifiAlertMessage
         
         self.disposeBag = DisposeBag()
         self.state = .disconnected
@@ -72,7 +76,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     
     func viewWillAppear() {
         if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVPlayerViewController {
-            router.showNoWifiAlert(fromViewController: viewController) { [weak self] in
+            router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage) { [weak self] in
                 self?.state = .loading
                 self?.delegate?.didPressCloseButton(viewController)
             }

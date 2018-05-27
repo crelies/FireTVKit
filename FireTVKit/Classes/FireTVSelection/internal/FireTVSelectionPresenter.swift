@@ -18,6 +18,8 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     private let theme: FireTVSelectionThemeProtocol
     private weak var delegate: FireTVSelectionDelegateProtocol?
     private let noDevicesText: String
+    private let noWifiAlertTitle: String
+    private let noWifiAlertMessage: String
 	private let disposeBag: DisposeBag
     private var player: [RemoteMediaPlayer]
     private var playerViewModels: [PlayerViewModel]
@@ -27,7 +29,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         }
     }
     
-    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, theme: FireTVSelectionThemeProtocol, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String) {
+    init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, theme: FireTVSelectionThemeProtocol, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String, noWifiAlertTitle: String, noWifiAlertMessage: String) {
         self.dependencies = dependencies
         self.view = view
         self.interactor = interactor
@@ -35,6 +37,8 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         self.theme = theme
         self.delegate = delegate
         self.noDevicesText = noDevicesText
+        self.noWifiAlertTitle = noWifiAlertTitle
+        self.noWifiAlertMessage = noWifiAlertMessage
 		disposeBag = DisposeBag()
         player = []
         playerViewModels = []
@@ -96,7 +100,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     
     func viewWillAppear() {
         if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVSelectionViewController {
-            router.showNoWifiAlert(fromViewController: viewController) { [weak self] in
+            router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage) { [weak self] in
                 self?.state = .loading
                 self?.delegate?.didPressCloseButton(viewController)
             }
