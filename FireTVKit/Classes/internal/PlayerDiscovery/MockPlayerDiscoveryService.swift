@@ -12,7 +12,13 @@ import RxSwift
 
 final class MockPlayerDiscoveryService: PlayerDiscoveryServiceProtocol {
 	private let dependencies: PlayerDiscoveryServiceDependenciesProtocol
-	var devicesVariable: Variable<[RemoteMediaPlayer]?>
+	private let devicesVariable: Variable<[RemoteMediaPlayer]?>
+    
+    var devicesObservable: Observable<[RemoteMediaPlayer]> {
+        return devicesVariable
+            .asObservable()
+            .flatMap { Observable.from(optional: $0) }
+    }
 	var devices: [RemoteMediaPlayer] {
 		return dependencies.playerDiscoveryController.devices
 	}

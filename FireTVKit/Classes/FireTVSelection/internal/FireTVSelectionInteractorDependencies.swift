@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FireTVSelectionInteractorDependenciesProtocol: PlayerDiscoveryControllerProvider, HasPlayerDiscoveryService, PlayerServiceProvider, LoggerProvider {
+protocol FireTVSelectionInteractorDependenciesProtocol: PlayerDiscoveryControllerProvider, PlayerDiscoveryServiceProvider, PlayerServiceProvider, LoggerProvider {
     
 }
 

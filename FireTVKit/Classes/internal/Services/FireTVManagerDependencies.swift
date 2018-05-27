@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FireTVManagerDependenciesProtocol: PlayerDiscoveryControllerProvider, HasPlayerDiscoveryService {
+protocol FireTVManagerDependenciesProtocol: PlayerDiscoveryControllerProvider, PlayerDiscoveryServiceProvider {
     
 }
 

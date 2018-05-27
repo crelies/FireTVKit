@@ -32,15 +32,11 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
     private let disposeBag: DisposeBag
     
     var fireTVs: Observable<[RemoteMediaPlayer]> {
-        return dependencies.playerDiscoveryService.devicesVariable
-            .asObservable()
-            .flatMap { Observable.from(optional: $0) }
+        return dependencies.playerDiscoveryService.devicesObservable
     }
     
     var discoveryFailure: Observable<DiscoveringInfo> {
-        return dependencies.playerDiscoveryService.discoveringInfo
-            .asObservable()
-            .flatMap { Observable.from(optional: $0) }
+        return dependencies.playerDiscoveryService.discoveringInfoObservable
             .filter { $0.status == .discoveryFailure }
     }
     
