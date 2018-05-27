@@ -2322,6 +2322,7 @@
 		E597EA3F7C7D5E3FCC4693DA0D9E2EF0 /* FireTVPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				2327CCE742E432A0745FF04A34F7A656 /* internal */,
 				B976A2AC20BAE30000A6279B /* Models */,
 				B976A2AD20BAE30800A6279B /* Theme */,
 				B976A2AE20BAE31500A6279B /* ViewModels */,
@@ -2331,7 +2332,6 @@
 				731F105220D7A786065D88254DD14321 /* FireTVPlayerWireframeError.swift */,
 				DD291D412D88A4F8D87E9BD3A1D354CD /* FireTVPlayerViewProtocol.swift */,
 				CE5D7F2420AD4F80001A50B9 /* MockFireTVPlayerWireframe.swift */,
-				2327CCE742E432A0745FF04A34F7A656 /* internal */,
 				B991B24720B49C5000C08EEB /* FireTVPlayerPresenterProtocol.swift */,
 			);
 			name = FireTVPlayer;
