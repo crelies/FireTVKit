@@ -38,7 +38,6 @@ public final class FireTVPlayerViewController: UIViewController {
         super.viewDidLoad()
         activityIndicatorView.hidesWhenStopped = false
         positionSlider.isEnabled = false
-        setConstraints()
         setLocalizedTexts()
         setButtonImages()
         presenter?.viewDidLoad()
@@ -168,15 +167,6 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
 }
 
 extension FireTVPlayerViewController {
-    private func setConstraints() {
-        if #available(iOS 11.0, *) {
-            mainStackView.setCustomSpacing(16.0, after: statusLabel)
-            mainStackView.setCustomSpacing(16.0, after: positionStackView)
-        } else {
-            // TODO: fallback on earlier versions
-        }
-    }
-    
     private func setLocalizedTexts() {
         closeButton.setTitle("", for: .normal)
 		playerNameLabel.text = ""
