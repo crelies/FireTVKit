@@ -1342,6 +1342,7 @@
 				170020AC3CA65A8949B199BE6B0970F1 /* FireTVManagerDependencies.swift */,
 				FECF86E2F91757F0AD3342E11F7EBFE1 /* FireTVManagerProtocol.swift */,
 				78D5392A03EB567BE0D9762B45624231 /* PlayerService.swift */,
+				3041330FBF71860DE16BA5724FD7B920 /* ReachabilityServiceProtocol.swift */,
 				7D353F48AB43D4284A2E89525E1A7F58 /* ReachabilityService.swift */,
 				C8373F87E1ECD40EA9F0F3C2111E4B07 /* ServiceFactoryProtocol.swift */,
 				091E998353F109F5FA7657DAFA6A235D /* TimeStringFactory.swift */,
@@ -1559,7 +1560,6 @@
 			isa = PBXGroup;
 			children = (
 				AEECFAB4697D3F8936FA4378EC2551CD /* PlayerServiceProtocol.swift */,
-				3041330FBF71860DE16BA5724FD7B920 /* ReachabilityServiceProtocol.swift */,
 				61B349DCF8F3A41565ECD87F36411D59 /* RemoteMediaPlayerProtocol.swift */,
 				B991B2D720B89D6400C08EEB /* PlayerServiceDependenciesProtocol.swift */,
 				B991B2D920B89E3700C08EEB /* LoggerProvider.swift */,

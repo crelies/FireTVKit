@@ -10,12 +10,11 @@ import Foundation
 import Reachability
 import RxSwift
 
-public protocol ReachabilityServiceProtocol {
+protocol ReachabilityServiceProtocol {
     var reachability: Reachability { get }
-    var reachabilityInfo: Variable<Reachability?> { get }
+    var reachabilityObservable: Observable<Reachability> { get }
     var listeningReachability: Bool { get }
     
     func startListening() throws
-    func checkListening() -> Reachability?
     func stopListening()
 }

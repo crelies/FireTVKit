@@ -10,14 +10,20 @@ import Reachability
 import RxSwift
 import UIKit
 
-protocol HasReachabilityService {
+protocol ReachabilityServiceProvider {
     var reachabilityService: ReachabilityServiceProtocol { get set }
 }
 
 final class ReachabilityService: ReachabilityServiceProtocol {
+	private var reachabilityInfo: Variable<Reachability?>
+    
     private(set) var reachability: Reachability
-	private(set) var reachabilityInfo: Variable<Reachability?>
-	private(set) var listeningReachability: Bool
+    var reachabilityObservable: Observable<Reachability> {
+        return reachabilityInfo
+            .asObservable()
+            .flatMap { Observable.from(optional: $0) }
+    }
+    private(set) var listeningReachability: Bool
     
     init?() {
         guard let reachability = Reachability() else {
@@ -29,14 +35,14 @@ final class ReachabilityService: ReachabilityServiceProtocol {
         listeningReachability = false
         
         reachability.whenReachable = { reachability in
-            DispatchQueue.main.async {
-				self.reachabilityInfo.value = reachability
+            DispatchQueue.main.async { [weak self] in
+				self?.reachabilityInfo.value = reachability
             }
         }
         
         reachability.whenUnreachable = { reachability in
-            DispatchQueue.main.async {
-                self.reachabilityInfo.value = reachability
+            DispatchQueue.main.async { [weak self] in
+                self?.reachabilityInfo.value = reachability
             }
         }
     }
@@ -44,14 +50,6 @@ final class ReachabilityService: ReachabilityServiceProtocol {
     func startListening() throws {
         try reachability.startNotifier()
         listeningReachability = true
-    }
-    
-    func checkListening() -> Reachability? {
-        if listeningReachability {
-            return reachability
-		} else {
-			return nil
-		}
     }
     
     func stopListening() {
