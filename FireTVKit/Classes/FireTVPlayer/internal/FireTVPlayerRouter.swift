@@ -14,16 +14,7 @@ protocol FireTVPlayerRouterProtocol {
 
 final class FireTVPlayerRouter: FireTVPlayerRouterProtocol {
     func showNoWifiAlert(fromViewController viewController: UIViewController, title: String, message: String, buttonColor: UIColor, _ confirmHandler: @escaping () -> Void) {
-        // TODO: move alert controller creation to extension
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: StringConstants.Labels.ok, style: .default) { _ in
-            confirmHandler()
-        }
-        alertController.addAction(okAction)
-        
-        viewController.present(alertController, animated: true, completion: nil)
-        
-        alertController.view.tintColor = buttonColor
+		let alertController = UIAlertController.makeErrorAlert(title: title, message: message, buttonColor: buttonColor, confirmHandler)
+		viewController.present(alertController, animated: true, completion: nil)
     }
 }

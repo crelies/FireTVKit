@@ -444,6 +444,7 @@
 		CE5D7F2F20AD5D7F001A50B9 /* MockPlayerDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D7F2E20AD5D7F001A50B9 /* MockPlayerDiscoveryService.swift */; };
 		CE5D7F3120AD64D8001A50B9 /* MockPlayerDiscoveryServiceDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D7F3020AD64D8001A50B9 /* MockPlayerDiscoveryServiceDependencies.swift */; };
 		CE8545C68FEC4E4DA1E390EFB2C42DEC /* ObserveOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C6956B3AB218234D916D8D5128F24 /* ObserveOn.swift */; };
+		CE91D0CC20BBE0A600F57E82 /* UIAlertController+MakeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D0CB20BBE0A600F57E82 /* UIAlertController+MakeAlert.swift */; };
 		CEA4EE05610829256397610A00BDED03 /* FireTVManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECF86E2F91757F0AD3342E11F7EBFE1 /* FireTVManagerProtocol.swift */; };
 		CF55697859D633C852C3586384647EB6 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B31AA9E82C86726B1097E342FCF8A4 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D1290E19360BA465B5980CA491E4CF2B /* SubscriptionDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74475E84225522C82985B2B274CF046 /* SubscriptionDisposable.swift */; };
@@ -1106,6 +1107,7 @@
 		CE5D7F2E20AD5D7F001A50B9 /* MockPlayerDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDiscoveryService.swift; sourceTree = "<group>"; };
 		CE5D7F3020AD64D8001A50B9 /* MockPlayerDiscoveryServiceDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDiscoveryServiceDependencies.swift; sourceTree = "<group>"; };
 		CE89C57CF6ED6F214695DA001FB0A878 /* Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		CE91D0CB20BBE0A600F57E82 /* UIAlertController+MakeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+MakeAlert.swift"; sourceTree = "<group>"; };
 		CEAC39E2087DD165D7465BAB511B9120 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		CEF5E6A37B92DD0BE6DA055DCBFD48C7 /* DiscoveringStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveringStatus.swift; sourceTree = "<group>"; };
 		CF1FA9C3FBDB3C99A4F584BFDCB6DAED /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = RxSwift/Errors.swift; sourceTree = "<group>"; };
@@ -2044,6 +2046,7 @@
 			isa = PBXGroup;
 			children = (
 				B991B23B20ACC04500C08EEB /* UIColor+Colors.swift */,
+				CE91D0CB20BBE0A600F57E82 /* UIAlertController+MakeAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2800,6 +2803,7 @@
 				7CFC05BC92535513148F52C99939D8B7 /* FireTVPlayerThemeProtocol.swift in Sources */,
 				B991B2D820B89D6400C08EEB /* PlayerServiceDependenciesProtocol.swift in Sources */,
 				B991B2D020B893F000C08EEB /* LogEvent.swift in Sources */,
+				CE91D0CC20BBE0A600F57E82 /* UIAlertController+MakeAlert.swift in Sources */,
 				5B1F0A00943A98582AA67C3AE00FE922 /* FireTVPlayerViewController.swift in Sources */,
 				7F4D98F1C5E4F514006BA0D16CCBD91E /* FireTVPlayerViewViewModel.swift in Sources */,
 				F1C4B8E0A1DCCEAF57F7E8C00E1296FB /* FireTVPlayerViewProtocol.swift in Sources */,
