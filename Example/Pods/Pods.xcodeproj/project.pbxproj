@@ -130,7 +130,6 @@
 		463B8605C4DB64C43B49C293DF8D4FDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56618D1F7789C0CFEB4E3A6CAA425B0C /* Foundation.framework */; };
 		46A776E1BD04D7A97E5269CAE5C76D86 /* Pods-FireTVKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E404CFE256D367FE063F9A4EA025F36E /* Pods-FireTVKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EDD414FEA4690371057D4920327276 /* RxNavigationControllerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584C686859A10068BF86372278737D6 /* RxNavigationControllerDelegateProxy.swift */; };
-		47F1F405077D59E96DF9477E6070AD1F /* RemoteMediaPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B349DCF8F3A41565ECD87F36411D59 /* RemoteMediaPlayerProtocol.swift */; };
 		49E61590F6B6B5868F9165CE05D18729 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02664BEBB58DAB3CA5F2AF7AE64A96A3 /* Error.swift */; };
 		4AC800C76E59119DFBFDF4896C0A2DB7 /* CombineLatest+arity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65473BC512D311741C2C93342BA1DD /* CombineLatest+arity.swift */; };
 		4AD20BFCA86E4E6B4D9179DFA1DFC2E9 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E05D05FB5AF750504B9AFDD33C5A22B /* UITableView+Rx.swift */; };
@@ -2856,7 +2855,6 @@
 				87C61C5382B96E26CE505C105BCDF4B5 /* ReachabilityServiceProtocol.swift in Sources */,
 				B976A2B220BB27F300A6279B /* ServiceFactoryError.swift in Sources */,
 				B991B24220AE086900C08EEB /* FireTVSelectionDarkTheme.swift in Sources */,
-				47F1F405077D59E96DF9477E6070AD1F /* RemoteMediaPlayerProtocol.swift in Sources */,
 				C0EBEA5F1B8EA349C810ADDDB7A88DB7 /* ServiceFactory.swift in Sources */,
 				B991B2DE20B89F0000C08EEB /* MockPlayerServiceDependencies.swift in Sources */,
 				CE5D7F2020AD4D7F001A50B9 /* PlayerDiscoveryServiceDependencies.swift in Sources */,
