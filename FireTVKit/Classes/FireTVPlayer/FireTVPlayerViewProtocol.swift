@@ -19,5 +19,6 @@ public protocol FireTVPlayerViewProtocol: class {
     func setMaximumPosition(_ maximumPosition: Float)
     func setDurationText(_ durationText: String)
     func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel)
+	func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel, animated: Bool)
     func updatePositionSliderUserInteractionEnabled(_ enabled: Bool)
 }

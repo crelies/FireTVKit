@@ -16,11 +16,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     private let router: FireTVPlayerRouterProtocol
     private let dependencies: FireTVPlayerPresenterDependenciesProtocol
     private let disposeBag: DisposeBag
-    private var state: FireTVPlayerPresenterState {
-        didSet {
-            updateUI(forState: state)
-        }
-    }
+    private var state: FireTVPlayerPresenterState
 	private let theme: FireTVPlayerThemeProtocol
     private weak var delegate: FireTVPlayerDelegateProtocol?
     private let noWifiAlertTitle: String
@@ -45,7 +41,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     }
     
     func viewDidLoad() {
-        state = .disconnected
+        updateUI(forState: .disconnected, animated: false)
         
         if dependencies.reachabilityService.reachability.connection == .wifi {
             interactor.startFireTVDiscovery()
@@ -59,17 +55,17 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         view?.setDurationText("00:00:00")
         
         if dependencies.reachabilityService.reachability.connection == .wifi {
-            state = .loading
+            updateUI(forState: .loading, animated: false)
             interactor.connect()
                 .subscribe(onCompleted: { [weak self] in
-                    self?.state = .connected
+					self?.updateUI(forState: .connected, animated: true)
                     self?.getDuration()
                     self?.getPlayerInfo()
                     self?.getPlayerData()
                     self?.observePlayerData()
                 }) { [weak self] error in
                     self?.dependencies.logger.log(message: "interactor.connect(): \(error.localizedDescription)", event: .error)
-                    self?.state = .disconnected
+                    self?.updateUI(forState: .disconnected, animated: true)
                 }.disposed(by: disposeBag)
         }
     }
@@ -77,7 +73,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
     func viewWillAppear() {
         if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVPlayerViewController {
             router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage, buttonColor: theme.closeButtonTintColor) { [weak self] in
-                self?.state = .loading
+				self?.updateUI(forState: .loading, animated: true)
                 self?.delegate?.didPressCloseButton(viewController)
             }
         }
@@ -88,17 +84,17 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             return
         }
         
-        state = .loading
+        updateUI(forState: .loading, animated: true)
         interactor.disconnect()
             .subscribe(onCompleted: {
-                self.state = .disconnected
+                self.updateUI(forState: .disconnected, animated: true)
                 self.view?.updatePositionSliderUserInteractionEnabled(false)
                 self.interactor.stopFireTVDiscovery()
                 self.delegate?.didPressCloseButton(viewController)
             }, onError: { error in
                 self.dependencies.logger.log(message: "interactor.disconnect(): \(error.localizedDescription)", event: .error)
                 
-                self.state = .disconnected
+                self.updateUI(forState: .disconnected, animated: true)
                 self.view?.updatePositionSliderUserInteractionEnabled(false)
                 self.interactor.stopFireTVDiscovery()
                 self.delegate?.didPressCloseButton(viewController)
@@ -277,24 +273,25 @@ extension FireTVPlayerPresenter {
             }).disposed(by: disposeBag)
     }
     
-    private func updateUI(forState state: FireTVPlayerPresenterState) {
+	private func updateUI(forState state: FireTVPlayerPresenterState, animated: Bool) {
+		self.state = state
         switch state {
             case .connected:
 				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: false, isPlayerControlEnabled: true, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false, hideLabels: false)
-                view?.updateUI(withViewModel: viewModel)
+				view?.updateUI(withViewModel: viewModel, animated: animated)
             
             case .disconnected:
 				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: false, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: false, isControlStackViewHidden: false, hideLabels: false)
-                view?.updateUI(withViewModel: viewModel)
+                view?.updateUI(withViewModel: viewModel, animated: animated)
                 view?.setStatus(String(describing: state))
             
             case .loading:
 				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: true, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: false, isPositionStackViewHidden: true, isControlStackViewHidden: true, hideLabels: true)
-                view?.updateUI(withViewModel: viewModel)
+				view?.updateUI(withViewModel: viewModel, animated: animated)
             
             case .error:
 				let viewModel = FireTVPlayerViewViewModel(isCloseButtonHidden: false, isPlayerControlEnabled: false, isActivityIndicatorViewHidden: true, isPositionStackViewHidden: true, isControlStackViewHidden: true, hideLabels: false)
-                view?.updateUI(withViewModel: viewModel)
+                view?.updateUI(withViewModel: viewModel, animated: animated)
         }
     }
 }

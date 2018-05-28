@@ -141,9 +141,14 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
     public func setDurationText(_ durationText: String) {
         durationLabel.text = durationText
     }
-    
-    public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel) {
+	
+	public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel) {
+		updateUI(withViewModel: viewModel, animated: false)
+	}
+	
+	public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel, animated: Bool) {
 		closeButton.isHidden = viewModel.isCloseButtonHidden
+		
 		rewind10sButton.isEnabled = viewModel.isPlayerControlEnabled
         playButton.isEnabled = viewModel.isPlayerControlEnabled
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
@@ -157,12 +162,23 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
             activityIndicatorView.startAnimating()
         }
         activityIndicatorView.isHidden = isActivityIndicatorViewHidden
-        
-        positionStackView.isHidden = viewModel.isPositionStackViewHidden
-        controlStackView.isHidden = viewModel.isControlStackViewHidden
 		
-		playerNameLabel.isHidden = viewModel.hideLabels
-		mediaNameLabel.isHidden = viewModel.hideLabels
+		if animated {
+			UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+				self.positionStackView.isHidden = viewModel.isPositionStackViewHidden
+				self.controlStackView.isHidden = viewModel.isControlStackViewHidden
+				
+				self.playerNameLabel.isHidden = viewModel.hideLabels
+				self.mediaNameLabel.isHidden = viewModel.hideLabels
+			}, completion: nil)
+		} else {
+			positionStackView.isHidden = viewModel.isPositionStackViewHidden
+			controlStackView.isHidden = viewModel.isControlStackViewHidden
+			
+			playerNameLabel.isHidden = viewModel.hideLabels
+			mediaNameLabel.isHidden = viewModel.hideLabels
+		}
+		
 		statusLabel.isHidden = viewModel.hideLabels
     }
     
