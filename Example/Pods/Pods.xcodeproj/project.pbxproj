@@ -359,6 +359,8 @@
 		B9432A22C9BC7674892B31812B1DBD15 /* ControlTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27106AFFE45B0FC30D9B5931BE841C1B /* ControlTarget.swift */; };
 		B976A2B020BB24AA00A6279B /* MockReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2AF20BB24AA00A6279B /* MockReachabilityService.swift */; };
 		B976A2B220BB27F300A6279B /* ServiceFactoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2B120BB27F300A6279B /* ServiceFactoryError.swift */; };
+		B976A2D020BC94D700A6279B /* StubConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2CF20BC94D700A6279B /* StubConstants.swift */; };
+		B976A2D220BC99BD00A6279B /* FireTVPlayerInteractorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2D120BC99BD00A6279B /* FireTVPlayerInteractorError.swift */; };
 		B991B23C20ACC04500C08EEB /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23B20ACC04500C08EEB /* UIColor+Colors.swift */; };
 		B991B23E20AE045700C08EEB /* MockFireTVSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23D20AE045700C08EEB /* MockFireTVSelectionWireframe.swift */; };
 		B991B24020AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B991B23F20AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift */; };
@@ -1036,6 +1038,8 @@
 		B95288FFE7090462E7DDB3DC9609F2C4 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		B976A2AF20BB24AA00A6279B /* MockReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReachabilityService.swift; sourceTree = "<group>"; };
 		B976A2B120BB27F300A6279B /* ServiceFactoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactoryError.swift; sourceTree = "<group>"; };
+		B976A2CF20BC94D700A6279B /* StubConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubConstants.swift; sourceTree = "<group>"; };
+		B976A2D120BC99BD00A6279B /* FireTVPlayerInteractorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVPlayerInteractorError.swift; sourceTree = "<group>"; };
 		B991B23B20ACC04500C08EEB /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		B991B23D20AE045700C08EEB /* MockFireTVSelectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFireTVSelectionWireframe.swift; sourceTree = "<group>"; };
 		B991B23F20AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFireTVSelectionInteractorDependencies.swift; sourceTree = "<group>"; };
@@ -1365,6 +1369,7 @@
 				E8FD7F60683B67660660BD7014898D8A /* FireTVPlayerRouter.swift */,
 				9A8395714BE0014859979B9E1B3382FD /* FireTVPlayerWireframeProtocol.swift */,
 				CE5D7F2620AD4FED001A50B9 /* MockFireTVPlayerInteractorDependencies.swift */,
+				B976A2D120BC99BD00A6279B /* FireTVPlayerInteractorError.swift */,
 			);
 			path = internal;
 			sourceTree = "<group>";
@@ -2037,6 +2042,7 @@
 				E9D12ADFFD92073CC9889D32D4F8FD7C /* IdentifierConstants.swift */,
 				B991B2E320B955B200C08EEB /* MetricConstants.swift */,
 				B991B2E520B957CA00C08EEB /* StringConstants.swift */,
+				B976A2CF20BC94D700A6279B /* StubConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -2782,6 +2788,7 @@
 				E4D9BD2C14EFC7ED94EDAEA55D50C85A /* FireTVManager.swift in Sources */,
 				1182DE8A871175E6B09D46A4D1444AC3 /* FireTVManagerDependencies.swift in Sources */,
 				CE5D7F2D20AD5993001A50B9 /* MockServiceFactory.swift in Sources */,
+				B976A2D020BC94D700A6279B /* StubConstants.swift in Sources */,
 				CEA4EE05610829256397610A00BDED03 /* FireTVManagerProtocol.swift in Sources */,
 				B991B24A20B49E9600C08EEB /* FireTVSelectionPresenterProtocol.swift in Sources */,
 				611F5E7165333513546B50DCD198D1A4 /* FireTVMedia.swift in Sources */,
@@ -2810,6 +2817,7 @@
 				1C4B9A6C0A7966322E94B2ACFDE3CECD /* FireTVPlayerWireframeError.swift in Sources */,
 				222FBCFC66F5C17C976D45FA4E5DC6B7 /* FireTVPlayerWireframeProtocol.swift in Sources */,
 				B991B24020AE04A500C08EEB /* MockFireTVSelectionInteractorDependencies.swift in Sources */,
+				B976A2D220BC99BD00A6279B /* FireTVPlayerInteractorError.swift in Sources */,
 				B9CA3F2620B9DF54005E78DE /* SubtitleKind.swift in Sources */,
 				68D930B341AEA292DCAFD53430D8C6ED /* FireTVSelectionDelegateProtocol.swift in Sources */,
 				B991B2D620B89BCD00C08EEB /* FireTVSelectionViewControllerDependencies.swift in Sources */,

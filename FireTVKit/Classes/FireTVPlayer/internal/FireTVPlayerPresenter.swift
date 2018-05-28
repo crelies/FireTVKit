@@ -206,25 +206,15 @@ extension FireTVPlayerPresenter {
     }
     
     private func getPlayerInfo() {
-        interactor.getPlayerInfo()
-            .subscribe(onSuccess: { [weak self] playerInfo in
-                do {
-                    guard let metadataData = playerInfo.metadata().data(using: .utf8) else {
-                        return
+        interactor.getPlayerMetadata()
+            .subscribe(onSuccess: { [weak self] metadata in
+                if let mediaName = metadata.title {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.view?.setMediaName(mediaName)
                     }
-                    
-                    let metadata = try JSONDecoder().decode(Metadata.self, from: metadataData)
-                    
-                    if let mediaName = metadata.title {
-                        DispatchQueue.main.async { [weak self] in
-                            self?.view?.setMediaName(mediaName)
-                        }
-                    }
-                } catch {
-                    self?.dependencies.logger.log(message: "getPlayerInfo(): \(error.localizedDescription)", event: .error)
                 }
             }) { error in
-                self.dependencies.logger.log(message: "interactor.getPlayerInfo(): \(error.localizedDescription)", event: .error)
+                self.dependencies.logger.log(message: "interactor.getPlayerMetadata(): \(error.localizedDescription)", event: .error)
             }.disposed(by: disposeBag)
     }
     

@@ -22,7 +22,7 @@ protocol FireTVPlayerInteractorInputProtocol {
 	func stopFireTVDiscovery()
     func connect() -> Completable
     func getPlayerName() -> String
-    func getPlayerInfo() -> Single<MediaPlayerInfo>
+    func getPlayerMetadata() -> Single<Metadata>
     func getPlayerData() -> Single<PlayerData>
     func getDuration() -> Single<Int64>
     func play() -> Completable
@@ -43,6 +43,7 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     private weak var presenter: FireTVPlayerPresenterProtocol?
     private let dependencies: FireTVPlayerInteractorDependenciesProtocol
     private let player: RemoteMediaPlayer
+    private let disposeBag: DisposeBag
     
     var playerData: Observable<PlayerData?> {
         return dependencies.playerService.playerData
@@ -51,6 +52,7 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
     init(dependencies: FireTVPlayerInteractorDependenciesProtocol, player: RemoteMediaPlayer) {
         self.dependencies = dependencies
         self.player = player
+        self.disposeBag = DisposeBag()
     }
     
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol) {
@@ -73,8 +75,28 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
         return player.name()
     }
     
-    func getPlayerInfo() -> Single<MediaPlayerInfo> {
-        return dependencies.playerService.getPlayerInfo()
+    func getPlayerMetadata() -> Single<Metadata> {
+        return Single.create { single -> Disposable in
+            let disposable = Disposables.create()
+            
+            self.dependencies.playerService.getPlayerInfo()
+                .subscribe(onSuccess: { playerInfo in
+                    do {
+                        if let metadataData = playerInfo.metadata().data(using: .utf8) {
+                            let metadata = try JSONDecoder().decode(Metadata.self, from: metadataData)
+                            single(.success(metadata))
+                        } else {
+                            single(.error(FireTVPlayerInteractorError.couldNotCreateDataFromString))
+                        }
+                    } catch {
+                        single(.error(error))
+                    }
+                }, onError: { error in
+                    single(.error(error))
+                }).disposed(by: self.disposeBag)
+            
+            return disposable
+        }
     }
     
     func getPlayerData() -> Single<PlayerData> {

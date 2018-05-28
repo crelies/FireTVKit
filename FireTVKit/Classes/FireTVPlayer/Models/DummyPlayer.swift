@@ -15,11 +15,11 @@ public final class DummyPlayer: RemoteMediaPlayer {
 	}
 	
 	public func name() -> String! {
-		return "DummyPlayer"
+		return StubConstants.Player.name
 	}
 	
 	public func uniqueIdentifier() -> String! {
-		return "DummyPlayerID"
+		return StubConstants.Player.uniqueIdentifier
 	}
 	
 	public func getVolume() -> BFTask<AnyObject>! {
@@ -39,11 +39,11 @@ public final class DummyPlayer: RemoteMediaPlayer {
 	}
 	
 	public func getPosition() -> BFTask<AnyObject>! {
-		return BFTask<AnyObject>(result: NSNumber(value: 5948))
+		return BFTask<AnyObject>(result: NSNumber(value: StubConstants.Player.position))
 	}
 	
 	public func getDuration() -> BFTask<AnyObject>! {
-		return BFTask<AnyObject>(result: NSNumber(value: 178934))
+		return BFTask<AnyObject>(result: NSNumber(value: StubConstants.Player.duration))
 	}
 	
 	public func getStatus() -> BFTask<AnyObject>! {
@@ -51,7 +51,7 @@ public final class DummyPlayer: RemoteMediaPlayer {
 	}
 	
 	public func isMimeTypeSupported(_ mimeType: String!) -> BFTask<AnyObject>! {
-		return BFTask<AnyObject>(result: NSString(string: "true"))
+		return BFTask<AnyObject>(result: StubConstants.Player.isMimeTypeSupported)
 	}
 	
 	public func pause() -> BFTask<AnyObject>! {
@@ -95,6 +95,6 @@ public final class DummyPlayer: RemoteMediaPlayer {
 	}
 	
 	public func getMediaInfo() -> BFTask<AnyObject>! {
-		return BFTask<AnyObject>(result: MediaPlayerInfo(source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", metaData: "{\"title\": \"Testvideo\", \"description\": \"Only use for test purposes\", \"type\": \"video\"}", andExtra: ""))
+		return BFTask<AnyObject>(result: MediaPlayerInfo(source: StubConstants.Player.source, metaData: StubConstants.Player.metaData, andExtra: StubConstants.Player.extra))
 	}
 }
