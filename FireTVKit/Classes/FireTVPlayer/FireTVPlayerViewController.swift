@@ -38,6 +38,7 @@ public final class FireTVPlayerViewController: UIViewController {
         super.viewDidLoad()
         activityIndicatorView.hidesWhenStopped = false
         positionSlider.isEnabled = false
+        closeButton.contentEdgeInsets = UIEdgeInsets(top: MetricConstants.ContentInsets.CloseButton.top, left: MetricConstants.ContentInsets.CloseButton.left, bottom: MetricConstants.ContentInsets.CloseButton.bottom, right: MetricConstants.ContentInsets.CloseButton.right)
         setLocalizedTexts()
         setButtonImages()
         presenter?.viewDidLoad()

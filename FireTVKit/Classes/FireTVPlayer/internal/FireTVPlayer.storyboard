@@ -143,11 +143,12 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RET-fs-SuC">
-                                <rect key="frame" x="343" y="8" width="24" height="24"/>
+                                <rect key="frame" x="303" y="8" width="64" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="N19-zf-f23"/>
-                                    <constraint firstAttribute="width" constant="24" id="lVK-OV-Rpt"/>
+                                    <constraint firstAttribute="width" constant="64" id="lVK-OV-Rpt"/>
                                 </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button" image="close"/>
                                 <connections>
                                     <action selector="didPressCloseButton:" destination="iIG-Rk-DhD" eventType="touchUpInside" id="dTX-Ja-JL0"/>
