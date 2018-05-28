@@ -60,7 +60,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
                 .subscribe(onCompleted: { [weak self] in
 					self?.updateUI(forState: .connected, animated: true)
                     self?.getDuration()
-                    self?.getPlayerInfo()
+                    self?.getPlayerMetadata()
                     self?.getPlayerData()
                     self?.observePlayerData()
                 }) { [weak self] error in
@@ -205,7 +205,7 @@ extension FireTVPlayerPresenter {
             }.disposed(by: disposeBag)
     }
     
-    private func getPlayerInfo() {
+    private func getPlayerMetadata() {
         interactor.getPlayerMetadata()
             .subscribe(onSuccess: { [weak self] metadata in
                 if let mediaName = metadata.title {
