@@ -25,7 +25,7 @@
 		B976A2C720BC7E4C00A6279B /* ReachabilityServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2C620BC7E4C00A6279B /* ReachabilityServiceSpec.swift */; };
 		B976A2CA20BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2C920BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift */; };
 		B976A2CC20BC7EE100A6279B /* DiscoveringInfoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2CB20BC7EE100A6279B /* DiscoveringInfoSpec.swift */; };
-		B976A2CE20BC7F1B00A6279B /* PlayerDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryService.swift */; };
+		B976A2CE20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		B976A2C620BC7E4C00A6279B /* ReachabilityServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityServiceSpec.swift; sourceTree = "<group>"; };
 		B976A2C920BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryControllerSpec.swift; sourceTree = "<group>"; };
 		B976A2CB20BC7EE100A6279B /* DiscoveringInfoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveringInfoSpec.swift; sourceTree = "<group>"; };
-		B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryService.swift; sourceTree = "<group>"; };
+		B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryServiceSpec.swift; sourceTree = "<group>"; };
 		C9855DED2D19AE0ED77302AC /* Pods-FireTVKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTVKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireTVKit_Tests/Pods-FireTVKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DB5DECB0144A58ABAC7A97CF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EB81ECCEA1F547B2ADCE63E6 /* Pods-FireTVKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTVKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireTVKit_Tests/Pods-FireTVKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			children = (
 				B976A2C920BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift */,
 				B976A2CB20BC7EE100A6279B /* DiscoveringInfoSpec.swift */,
-				B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryService.swift */,
+				B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift */,
 			);
 			path = PlayerDiscovery;
 			sourceTree = "<group>";
@@ -452,7 +452,7 @@
 				B976A2BA20BC7C4600A6279B /* PlayerStatusSpec.swift in Sources */,
 				B976A2C320BC7DC000A6279B /* LoggerSpec.swift in Sources */,
 				B976A2B820BC7BF700A6279B /* SubtitleSpec.swift in Sources */,
-				B976A2CE20BC7F1B00A6279B /* PlayerDiscoveryService.swift in Sources */,
+				B976A2CE20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift in Sources */,
 				B976A2CC20BC7EE100A6279B /* DiscoveringInfoSpec.swift in Sources */,
 				B976A2B620BC7B8A00A6279B /* MetadataSpec.swift in Sources */,
 			);
