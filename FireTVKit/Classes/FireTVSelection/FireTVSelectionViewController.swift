@@ -85,15 +85,12 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
         tableView.reloadData()
     }
     
-    public func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel) {
+    public func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel, animated: Bool) {
 		if viewModel.isCloseButtonHidden {
 			navigationItem.rightBarButtonItem = nil
 		} else {
 			navigationItem.rightBarButtonItem = closeBarButtonItem
 		}
-		
-        tableView.isHidden = viewModel.isTableViewHidden
-        noDevicesLabel.isHidden = viewModel.isNoDevicesLabelHidden
         
         let isActivityIndicatorViewHidden = viewModel.isActivityIndicatorViewHidden
         if isActivityIndicatorViewHidden {
@@ -101,7 +98,18 @@ extension FireTVSelectionViewController: FireTVSelectionViewProtocol {
         } else {
             activityIndicatorView.startAnimating()
         }
-        activityIndicatorView.isHidden = isActivityIndicatorViewHidden
+        
+        if animated {
+            UIView.animate(withDuration: 0.5) {
+                self.tableView.alpha = viewModel.isTableViewHidden ? 0 : 1
+                self.noDevicesLabel.alpha = viewModel.isNoDevicesLabelHidden ? 0 : 1
+                self.activityIndicatorView.alpha = isActivityIndicatorViewHidden ? 0 : 1
+            }
+        } else {
+            tableView.alpha = viewModel.isTableViewHidden ? 0 : 1
+            noDevicesLabel.alpha = viewModel.isNoDevicesLabelHidden ? 0 : 1
+            activityIndicatorView.alpha = isActivityIndicatorViewHidden ? 0 : 1
+        }
     }
 }
 

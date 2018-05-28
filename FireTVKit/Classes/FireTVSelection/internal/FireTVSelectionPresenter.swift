@@ -23,11 +23,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
 	private let disposeBag: DisposeBag
     private var player: [RemoteMediaPlayer]
     private var playerViewModels: [PlayerViewModel]
-    private var state: FireTVSelectionPresenterState {
-        didSet {
-            updateUI(withState: state)
-        }
-    }
+    private var state: FireTVSelectionPresenterState
     
     init(dependencies: FireTVSelectionPresenterDependenciesProtocol, view: FireTVSelectionViewProtocol, interactor: FireTVSelectionInteractorInputProtocol, router: FireTVSelectionRouterProtocol, theme: FireTVSelectionThemeProtocol, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String, noWifiAlertTitle: String, noWifiAlertMessage: String) {
         self.dependencies = dependencies
@@ -52,7 +48,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     func viewDidLoad() {
         view?.setNoDevicesLabelText(noDevicesText)
         view?.setTheme(theme)
-        state = .noDevices
+        updateUI(withState: .noDevices, animated: false)
         
         if dependencies.reachabilityService.reachability.connection == .wifi {
             interactor.startFireTVDiscovery()
@@ -62,25 +58,25 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
         view?.setTableViewDelegate(delegate: self)
         
         if dependencies.reachabilityService.reachability.connection == .wifi {
-            state = .loading
+            updateUI(withState: .loading, animated: false)
             
             interactor.fireTVs
                 .subscribe(onNext: { [weak self] player in
                     self?.dependencies.logger.log(message: "onNext player", event: .info)
                     DispatchQueue.main.async {
                         if !player.isEmpty {
-                            self?.state = .devicesFound
+                            self?.updateUI(withState: .devicesFound, animated: true)
                             self?.player = player
                             let playerViewModels = player.map { PlayerViewModel(name: $0.name()) }
                             self?.playerViewModels = playerViewModels
                             self?.view?.reloadData()
                         } else {
-                            self?.state = .noDevices
+                            self?.updateUI(withState: .noDevices, animated: true)
                         }
                     }
                 }, onError: { [weak self] error in
                     self?.dependencies.logger.log(message: error.localizedDescription, event: .error)
-                    self?.state = .noDevices
+                    self?.updateUI(withState: .noDevices, animated: true)
                 }).disposed(by: disposeBag)
             
             interactor.discoveryFailure
@@ -101,7 +97,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
     func viewWillAppear() {
         if dependencies.reachabilityService.reachability.connection != .wifi, let viewController = view as? FireTVSelectionViewController {
             router.showNoWifiAlert(fromViewController: viewController, title: noWifiAlertTitle, message: noWifiAlertMessage, buttonColor: theme.buttonColor) { [weak self] in
-                self?.state = .loading
+                self?.updateUI(withState: .loading, animated: true)
                 self?.delegate?.didPressCloseButton(viewController)
             }
         }
@@ -112,7 +108,7 @@ final class FireTVSelectionPresenter: NSObject, FireTVSelectionPresenterProtocol
             return
         }
 		
-		state = .loading
+		updateUI(withState: .loading, animated: true)
         
         interactor.stopFireTVDiscovery()
         
@@ -160,19 +156,20 @@ extension FireTVSelectionPresenter: UITableViewDelegate {
 }
 
 extension FireTVSelectionPresenter {
-    private func updateUI(withState state: FireTVSelectionPresenterState) {
+    private func updateUI(withState state: FireTVSelectionPresenterState, animated: Bool) {
+        self.state = state
         switch state {
             case .loading:
 				let viewModel = FireTVSelectionViewViewModel(isCloseButtonHidden: true, isTableViewHidden: true, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: false)
-                view?.updateUI(withViewModel: viewModel)
+                view?.updateUI(withViewModel: viewModel, animated: animated)
             
             case .devicesFound:
 				let viewModel = FireTVSelectionViewViewModel(isCloseButtonHidden: false, isTableViewHidden: false, isNoDevicesLabelHidden: true, isActivityIndicatorViewHidden: true)
-                view?.updateUI(withViewModel: viewModel)
+                view?.updateUI(withViewModel: viewModel, animated: animated)
             
             case .noDevices:
 				let viewModel = FireTVSelectionViewViewModel(isCloseButtonHidden: false, isTableViewHidden: true, isNoDevicesLabelHidden: false, isActivityIndicatorViewHidden: true)
-                view?.updateUI(withViewModel: viewModel)
+                view?.updateUI(withViewModel: viewModel, animated: animated)
         }
     }
 }

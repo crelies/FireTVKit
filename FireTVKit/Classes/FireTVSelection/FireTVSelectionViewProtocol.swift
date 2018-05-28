@@ -19,4 +19,11 @@ public protocol FireTVSelectionViewProtocol: class {
     func setTableViewDelegate(delegate: UITableViewDelegate)
     func reloadData()
     func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel)
+    func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel, animated: Bool)
+}
+
+extension FireTVSelectionViewProtocol {
+    public func updateUI(withViewModel viewModel: FireTVSelectionViewViewModel) {
+        updateUI(withViewModel: viewModel, animated: false)
+    }
 }

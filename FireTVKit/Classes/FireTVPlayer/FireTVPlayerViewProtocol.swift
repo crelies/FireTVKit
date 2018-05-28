@@ -22,3 +22,9 @@ public protocol FireTVPlayerViewProtocol: class {
 	func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel, animated: Bool)
     func updatePositionSliderUserInteractionEnabled(_ enabled: Bool)
 }
+
+extension FireTVPlayerViewProtocol {
+    public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel) {
+        updateUI(withViewModel: viewModel, animated: false)
+    }
+}

@@ -142,13 +142,7 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         durationLabel.text = durationText
     }
 	
-	public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel) {
-		updateUI(withViewModel: viewModel, animated: false)
-	}
-	
 	public func updateUI(withViewModel viewModel: FireTVPlayerViewViewModel, animated: Bool) {
-		closeButton.isHidden = viewModel.isCloseButtonHidden
-		
 		rewind10sButton.isEnabled = viewModel.isPlayerControlEnabled
         playButton.isEnabled = viewModel.isPlayerControlEnabled
         pauseButton.isEnabled = viewModel.isPlayerControlEnabled
@@ -161,25 +155,34 @@ extension FireTVPlayerViewController: FireTVPlayerViewProtocol {
         } else {
             activityIndicatorView.startAnimating()
         }
-        activityIndicatorView.isHidden = isActivityIndicatorViewHidden
 		
 		if animated {
-			UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-				self.positionStackView.isHidden = viewModel.isPositionStackViewHidden
-				self.controlStackView.isHidden = viewModel.isControlStackViewHidden
+			UIView.animate(withDuration: 0.5) {
+                self.closeButton.alpha = viewModel.isCloseButtonHidden ? 0 : 1
+                
+                self.activityIndicatorView.alpha = isActivityIndicatorViewHidden ? 0 : 1
+                
+				self.positionStackView.alpha = viewModel.isPositionStackViewHidden ? 0 : 1
+				self.controlStackView.alpha = viewModel.isControlStackViewHidden ? 0 : 1
 				
-				self.playerNameLabel.isHidden = viewModel.hideLabels
-				self.mediaNameLabel.isHidden = viewModel.hideLabels
-			}, completion: nil)
+				self.playerNameLabel.alpha = viewModel.hideLabels ? 0 : 1
+				self.mediaNameLabel.alpha = viewModel.hideLabels ? 0 : 1
+                
+                self.statusLabel.alpha = viewModel.hideLabels ? 0 : 1
+			}
 		} else {
-			positionStackView.isHidden = viewModel.isPositionStackViewHidden
-			controlStackView.isHidden = viewModel.isControlStackViewHidden
+            closeButton.alpha = viewModel.isCloseButtonHidden ? 0 : 1
+            
+            activityIndicatorView.alpha = isActivityIndicatorViewHidden ? 0 : 1
+            
+            positionStackView.alpha = viewModel.isPositionStackViewHidden ? 0 : 1
+			controlStackView.alpha = viewModel.isControlStackViewHidden ? 0 : 1
 			
-			playerNameLabel.isHidden = viewModel.hideLabels
-			mediaNameLabel.isHidden = viewModel.hideLabels
+			playerNameLabel.alpha = viewModel.hideLabels ? 0 : 1
+			mediaNameLabel.alpha = viewModel.hideLabels ? 0 : 1
+            
+            statusLabel.alpha = viewModel.hideLabels ? 0 : 1
 		}
-		
-		statusLabel.isHidden = viewModel.hideLabels
     }
     
     public func updatePositionSliderUserInteractionEnabled(_ enabled: Bool) {
