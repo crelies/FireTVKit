@@ -18,7 +18,7 @@ public enum PlayerStatus: UInt32 {
     case finished
     case error
     
-    var stringValue: String {
+    public var stringValue: String {
         return String(describing: self)
     }
 }
