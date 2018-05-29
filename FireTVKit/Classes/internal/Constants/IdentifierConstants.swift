@@ -53,6 +53,15 @@ struct IdentifierConstants {
         static let fireTVPlayer = "FireTVPlayer"
     }
     
+    struct Subtitle {
+        struct Keys {
+            static let src = "src"
+            static let kind = "kind"
+            static let srclang = "srclang"
+            static let label = "label"
+        }
+    }
+    
     struct UserDefaults {
         struct Keys {
             static let fireTVKitLogging = "FireTVKitLogging"

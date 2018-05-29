@@ -28,6 +28,8 @@ struct StubConstants {
     }
 	
 	struct Subtitle {
-		
+        static let src = URL(string: "https://www.google.de")!
+        static let srclang = "de"
+        static let label = "German"
 	}
 }

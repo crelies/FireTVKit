@@ -13,25 +13,15 @@ protocol TimeStringFactoryProvider {
 }
 
 protocol TimeStringFactoryProtocol {
-    func makeTimeString(fromMilliseconds value: Int64) -> String
-    func makeTimeString(fromPositionValue positionValue: Float) -> String
+    func makeTimeString(fromMilliseconds milliseconds: Float) -> String
 }
 
 final class TimeStringFactory: TimeStringFactoryProtocol {
-    func makeTimeString(fromMilliseconds value: Int64) -> String {
-        let valueInSeconds = Int(value / 1000)
+    func makeTimeString(fromMilliseconds milliseconds: Float) -> String {
+        let valueInSeconds = Int(milliseconds / 1000)
         let hours = Int(valueInSeconds / 60 / 60)
         let minutes = Int(valueInSeconds / 60) - (hours * 60)
-        let seconds = Int(valueInSeconds) - (minutes * 60)
-        
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-    }
-    
-    func makeTimeString(fromPositionValue positionValue: Float) -> String {
-        let positionValueInSeconds = Int64(positionValue / 1000)
-        let hours = Int64(positionValueInSeconds / 60 / 60)
-        let minutes = Int64(positionValueInSeconds / 60) - (hours * 60)
-        let seconds = Int64(positionValueInSeconds) - (minutes * 60)
+        let seconds = Int(valueInSeconds) - (hours * 60 * 60) - (minutes * 60)
         
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }

@@ -173,7 +173,7 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
             return
         }
         
-        let positionString = dependencies.timeStringFactory.makeTimeString(fromPositionValue: position)
+        let positionString = dependencies.timeStringFactory.makeTimeString(fromMilliseconds: position)
         view?.setPositionText(positionString)
     }
     
@@ -195,7 +195,7 @@ extension FireTVPlayerPresenter {
     private func getDuration() {
         interactor.getDuration()
             .subscribe(onSuccess: { [weak self] duration in
-                if let durationText = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: duration) {
+                if let durationText = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: Float(duration)) {
                     self?.view?.setMaximumPosition(Float(duration))
                     self?.view?.setDurationText(durationText)
                     self?.view?.updatePositionSliderUserInteractionEnabled(true)
@@ -221,7 +221,7 @@ extension FireTVPlayerPresenter {
     private func getPlayerData() {
         interactor.getPlayerData()
             .subscribe(onSuccess: { [weak self] playerData in
-                if let position = playerData.position, let positionString = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: position) {
+                if let position = playerData.position, let positionString = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: Float(position)) {
                     DispatchQueue.main.async { [weak self] in
                         self?.view?.setPosition(Float(position))
                         self?.view?.setPositionText(positionString)
@@ -242,7 +242,7 @@ extension FireTVPlayerPresenter {
             .subscribe(onNext: { [weak self] playerData in
                 self?.dependencies.logger.log(message: "onNext getPlayerData()", event: .info)
                 if let playerData = playerData {
-                    if let position = playerData.position, let positionString = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: position) {
+                    if let position = playerData.position, let positionString = self?.dependencies.timeStringFactory.makeTimeString(fromMilliseconds: Float(position)) {
                         DispatchQueue.main.async { [weak self] in
                             self?.view?.setPosition(Float(position))
                             self?.view?.setPositionText(positionString)
