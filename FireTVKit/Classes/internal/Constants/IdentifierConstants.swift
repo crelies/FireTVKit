@@ -31,6 +31,16 @@ struct IdentifierConstants {
         static let fastForward10s = "ic_jump_forward_10_default_dark_48dp"
         static let close = "close"
     }
+	
+	struct Metadata {
+		struct Keys {
+			static let noreplay = "noreplay"
+			static let title = "title"
+			static let poster = "poster"
+			static let type = "type"
+			static let description = "description"
+		}
+	}
     
     struct TableView {
         struct Cell {

@@ -9,6 +9,13 @@
 import Foundation
 
 struct StubConstants {
+	struct Metadata {
+		static let title = "Testvideo"
+		static let description = "This is a testvideo"
+		static let poster = URL(string: "https://www.google.de")!
+		static let noreplay = true
+	}
+	
     struct Player {
         static let name = "DummyPlayer"
         static let uniqueIdentifier = "DummyPlayerID"
@@ -19,4 +26,8 @@ struct StubConstants {
         static let metaData = "{\"title\": \"Testvideo\", \"description\": \"Only use for test purposes\", \"type\": \"video\"}"
         static let extra = ""
     }
+	
+	struct Subtitle {
+		
+	}
 }
