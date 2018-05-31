@@ -14,14 +14,19 @@ final class MockPlayerDiscoveryController: PlayerDiscoveryControllerProtocol {
 	
     var dependencies: PlayerDiscoveryControllerDependenciesProtocol?
 	var devices: [RemoteMediaPlayer] {
-		let diceRoll = Int(arc4random_uniform(2))
-		if diceRoll == 0 {
-			return []
-		} else {
-			return [DummyPlayer()]
-		}
+        if diceRollEnabled {
+            let diceRoll = Int(arc4random_uniform(2))
+            if diceRoll == 0 {
+                return []
+            } else {
+                return [DummyPlayer()]
+            }
+        } else {
+            return [DummyPlayer()]
+        }
 	}
 	weak var delegate: PlayerDiscoveryControllerDelegateProtocol?
+    var diceRollEnabled = true
 	
 	private init() {
 		
