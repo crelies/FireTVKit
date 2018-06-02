@@ -143,7 +143,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RET-fs-SuC">
-                                <rect key="frame" x="303" y="8" width="64" height="24"/>
+                                <rect key="frame" x="283" y="8" width="64" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="N19-zf-f23"/>
                                     <constraint firstAttribute="width" constant="64" id="lVK-OV-Rpt"/>
@@ -155,7 +155,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xf-Im-nTG">
-                                <rect key="frame" x="8" y="8" width="28.5" height="24"/>
+                                <rect key="frame" x="28" y="8" width="28.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -165,11 +165,11 @@
                         <constraints>
                             <constraint firstItem="yec-i0-6Wh" firstAttribute="top" secondItem="RET-fs-SuC" secondAttribute="bottom" constant="8" id="3t0-zl-eoh"/>
                             <constraint firstItem="jEb-Ol-GBk" firstAttribute="centerY" secondItem="N7N-xn-Wp5" secondAttribute="centerY" id="9RD-g6-jiA"/>
-                            <constraint firstItem="Ord-RF-Sy8" firstAttribute="trailing" secondItem="RET-fs-SuC" secondAttribute="trailing" constant="8" id="DlO-Ic-UjC"/>
+                            <constraint firstItem="2xf-Im-nTG" firstAttribute="leading" secondItem="yec-i0-6Wh" secondAttribute="leading" id="FV4-ho-i63"/>
                             <constraint firstItem="2xf-Im-nTG" firstAttribute="top" secondItem="Ord-RF-Sy8" secondAttribute="top" constant="8" id="Kno-M6-tVc"/>
                             <constraint firstItem="jEb-Ol-GBk" firstAttribute="centerX" secondItem="N7N-xn-Wp5" secondAttribute="centerX" id="TZh-zI-8In"/>
                             <constraint firstItem="yec-i0-6Wh" firstAttribute="centerX" secondItem="N7N-xn-Wp5" secondAttribute="centerX" id="W7G-Nl-daP"/>
-                            <constraint firstItem="2xf-Im-nTG" firstAttribute="leading" secondItem="Ord-RF-Sy8" secondAttribute="leading" constant="8" id="Ym7-rI-wv8"/>
+                            <constraint firstItem="RET-fs-SuC" firstAttribute="trailing" secondItem="yec-i0-6Wh" secondAttribute="trailing" id="Yc6-fp-HRq"/>
                             <constraint firstItem="2xf-Im-nTG" firstAttribute="centerY" secondItem="RET-fs-SuC" secondAttribute="centerY" id="iHS-ew-6VW"/>
                             <constraint firstItem="RET-fs-SuC" firstAttribute="top" secondItem="Ord-RF-Sy8" secondAttribute="top" constant="8" id="rsi-OY-imk"/>
                         </constraints>
