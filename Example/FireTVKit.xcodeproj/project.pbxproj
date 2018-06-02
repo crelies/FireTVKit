@@ -12,7 +12,6 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AF199E9F8C725696FC0B3EEB /* Pods_FireTVKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5C4479EFCE1E95A0FEBE0 /* Pods_FireTVKit_Tests.framework */; };
 		B9299AF8209F883E002A2EEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9299AF7209F883E002A2EEE /* ViewController.swift */; };
 		B976A2B620BC7B8A00A6279B /* MetadataSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2B520BC7B8A00A6279B /* MetadataSpec.swift */; };
@@ -20,10 +19,8 @@
 		B976A2BA20BC7C4600A6279B /* PlayerStatusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2B920BC7C4600A6279B /* PlayerStatusSpec.swift */; };
 		B976A2BE20BC7D1300A6279B /* UIAlertController+MakeAlertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2BD20BC7D1300A6279B /* UIAlertController+MakeAlertSpec.swift */; };
 		B976A2C120BC7D7A00A6279B /* TimeStringFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2C020BC7D7A00A6279B /* TimeStringFactorySpec.swift */; };
-		B976A2C320BC7DC000A6279B /* LoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2C220BC7DC000A6279B /* LoggerSpec.swift */; };
 		B976A2C520BC7E1300A6279B /* PlayerServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2C420BC7E1300A6279B /* PlayerServiceSpec.swift */; };
 		B976A2C720BC7E4C00A6279B /* ReachabilityServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2C620BC7E4C00A6279B /* ReachabilityServiceSpec.swift */; };
-		B976A2CA20BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2C920BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift */; };
 		B976A2CC20BC7EE100A6279B /* DiscoveringInfoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2CB20BC7EE100A6279B /* DiscoveringInfoSpec.swift */; };
 		B976A2CE20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +47,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* FireTVKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireTVKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		91C7AB42EAEA90782A73ED12 /* Pods-FireTVKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTVKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireTVKit_Example/Pods-FireTVKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9569129EC8F788BFF2E877D9 /* Pods_FireTVKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireTVKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9299AF7209F883E002A2EEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +55,8 @@
 		B976A2B920BC7C4600A6279B /* PlayerStatusSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatusSpec.swift; sourceTree = "<group>"; };
 		B976A2BD20BC7D1300A6279B /* UIAlertController+MakeAlertSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+MakeAlertSpec.swift"; sourceTree = "<group>"; };
 		B976A2C020BC7D7A00A6279B /* TimeStringFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStringFactorySpec.swift; sourceTree = "<group>"; };
-		B976A2C220BC7DC000A6279B /* LoggerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerSpec.swift; sourceTree = "<group>"; };
 		B976A2C420BC7E1300A6279B /* PlayerServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerServiceSpec.swift; sourceTree = "<group>"; };
 		B976A2C620BC7E4C00A6279B /* ReachabilityServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityServiceSpec.swift; sourceTree = "<group>"; };
-		B976A2C920BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryControllerSpec.swift; sourceTree = "<group>"; };
 		B976A2CB20BC7EE100A6279B /* DiscoveringInfoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveringInfoSpec.swift; sourceTree = "<group>"; };
 		B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryServiceSpec.swift; sourceTree = "<group>"; };
 		C9855DED2D19AE0ED77302AC /* Pods-FireTVKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTVKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireTVKit_Tests/Pods-FireTVKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				B976A2B320BC7B5900A6279B /* UnitTests */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -214,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				B976A2C020BC7D7A00A6279B /* TimeStringFactorySpec.swift */,
-				B976A2C220BC7DC000A6279B /* LoggerSpec.swift */,
 				B976A2C420BC7E1300A6279B /* PlayerServiceSpec.swift */,
 				B976A2C620BC7E4C00A6279B /* ReachabilityServiceSpec.swift */,
 			);
@@ -224,7 +216,6 @@
 		B976A2C820BC7E8100A6279B /* PlayerDiscovery */ = {
 			isa = PBXGroup;
 			children = (
-				B976A2C920BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift */,
 				B976A2CB20BC7EE100A6279B /* DiscoveringInfoSpec.swift */,
 				B976A2CD20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift */,
 			);
@@ -445,12 +436,9 @@
 			files = (
 				B976A2BE20BC7D1300A6279B /* UIAlertController+MakeAlertSpec.swift in Sources */,
 				B976A2C120BC7D7A00A6279B /* TimeStringFactorySpec.swift in Sources */,
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 				B976A2C520BC7E1300A6279B /* PlayerServiceSpec.swift in Sources */,
-				B976A2CA20BC7E9300A6279B /* PlayerDiscoveryControllerSpec.swift in Sources */,
 				B976A2C720BC7E4C00A6279B /* ReachabilityServiceSpec.swift in Sources */,
 				B976A2BA20BC7C4600A6279B /* PlayerStatusSpec.swift in Sources */,
-				B976A2C320BC7DC000A6279B /* LoggerSpec.swift in Sources */,
 				B976A2B820BC7BF700A6279B /* SubtitleSpec.swift in Sources */,
 				B976A2CE20BC7F1B00A6279B /* PlayerDiscoveryServiceSpec.swift in Sources */,
 				B976A2CC20BC7EE100A6279B /* DiscoveringInfoSpec.swift in Sources */,

@@ -58,6 +58,8 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
                             self.dependencies.logger.log(message: "connectToPlayer: \(error)", event: .error)
                             completable(.error(error))
                         })
+                } else {
+                    completable(.completed)
                 }
             } else {
                 disposable = self.connect(toPlayer: newPlayer)
@@ -312,14 +314,16 @@ final class PlayerService: NSObject, PlayerServiceProtocol {
 		}
 	}
     
+    func disconnectFromCurrentPlayer() throws -> Completable {
+        guard let currentPlayer = player else {
+            throw PlayerServiceError.noPlayer
+        }
+        return disconnect(fromPlayer: currentPlayer)
+    }
+    
     func disconnect(fromPlayer oldPlayer: RemoteMediaPlayer) -> Completable {
         return Completable.create { completable -> Disposable in
             let disposable = Disposables.create()
-            
-            guard let currentPlayer = self.player, currentPlayer.uniqueIdentifier() == oldPlayer.uniqueIdentifier() else {
-                completable(.error(PlayerServiceError.currentPlayerComparisonFailed))
-                return disposable
-            }
             
             _ = oldPlayer.remove(self).continue(with: BFExecutor.mainThread(), with: { task -> Any? in
                 if let error = task.error {

@@ -102,6 +102,13 @@ final class MockPlayerService: PlayerServiceProtocol {
 			return Disposables.create()
 		}
 	}
+    
+    func disconnectFromCurrentPlayer() throws -> Completable {
+        return Completable.create { completable in
+            completable(.completed)
+            return Disposables.create()
+        }
+    }
 	
 	func disconnect(fromPlayer player: RemoteMediaPlayer) -> Completable {
 		return Completable.create { completable in

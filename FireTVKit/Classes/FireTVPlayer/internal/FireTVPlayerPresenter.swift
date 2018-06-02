@@ -85,20 +85,30 @@ final class FireTVPlayerPresenter: FireTVPlayerPresenterProtocol {
         }
         
         updateUI(forState: .loading, animated: true)
-        interactor.disconnect()
-            .subscribe(onCompleted: {
-                self.updateUI(forState: .disconnected, animated: true)
-                self.view?.updatePositionSliderUserInteractionEnabled(false)
-                self.interactor.stopFireTVDiscovery()
-                self.delegate?.didPressCloseButton(viewController)
-            }, onError: { error in
-                self.dependencies.logger.log(message: "interactor.disconnect(): \(error.localizedDescription)", event: .error)
-                
-                self.updateUI(forState: .disconnected, animated: true)
-                self.view?.updatePositionSliderUserInteractionEnabled(false)
-                self.interactor.stopFireTVDiscovery()
-                self.delegate?.didPressCloseButton(viewController)
-            }).disposed(by: disposeBag)
+        
+        do {
+            try interactor.disconnect()
+                .subscribe(onCompleted: {
+                    self.updateUI(forState: .disconnected, animated: true)
+                    self.view?.updatePositionSliderUserInteractionEnabled(false)
+                    self.interactor.stopFireTVDiscovery()
+                    self.delegate?.didPressCloseButton(viewController)
+                }, onError: { error in
+                    self.dependencies.logger.log(message: "interactor.disconnect(): \(error.localizedDescription)", event: .error)
+                    
+                    self.updateUI(forState: .disconnected, animated: true)
+                    self.view?.updatePositionSliderUserInteractionEnabled(false)
+                    self.interactor.stopFireTVDiscovery()
+                    self.delegate?.didPressCloseButton(viewController)
+                }).disposed(by: disposeBag)
+        } catch {
+            dependencies.logger.log(message: "interactor.disconnect(): \(error.localizedDescription)", event: .error)
+            
+            updateUI(forState: .disconnected, animated: true)
+            view?.updatePositionSliderUserInteractionEnabled(false)
+            interactor.stopFireTVDiscovery()
+            delegate?.didPressCloseButton(viewController)
+        }
     }
     
     func didPressRewind10sButton() {

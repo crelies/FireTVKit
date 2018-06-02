@@ -30,7 +30,7 @@ protocol FireTVPlayerInteractorInputProtocol {
     func stop() -> Completable
     func setPlayerPosition(_ playerPosition: Float) -> Completable
     func setPlayerPosition(_ playerPosition: Float, type: SeekType) -> Completable
-    func disconnect() -> Completable
+    func disconnect() throws -> Completable
 }
 
 extension FireTVPlayerInteractorInputProtocol {
@@ -123,7 +123,7 @@ final class FireTVPlayerInteractor: FireTVPlayerInteractorInputProtocol {
         return dependencies.playerService.setPosition(position: Int64(playerPosition), type: type)
     }
     
-    func disconnect() -> Completable {
-        return dependencies.playerService.disconnect(fromPlayer: player)
+    func disconnect() throws -> Completable {
+        return try dependencies.playerService.disconnectFromCurrentPlayer()
     }
 }
