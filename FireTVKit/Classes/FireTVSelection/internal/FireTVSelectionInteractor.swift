@@ -20,7 +20,7 @@ protocol FireTVSelectionInteractorInputProtocol {
     
     func setPresenter(_ presenter: FireTVSelectionPresenterProtocol)
 	func startFireTVDiscovery()
-    func playMedia(onPlayer player: RemoteMediaPlayer)
+    func playMedia(onPlayer player: RemoteMediaPlayer) -> Completable?
 	func stopFireTVDiscovery()
 }
 
@@ -60,20 +60,15 @@ final class FireTVSelectionInteractor: FireTVSelectionInteractorInputProtocol {
         dependencies.playerDiscoveryController.startSearch(forPlayerId: playerId)
 	}
     
-    func playMedia(onPlayer player: RemoteMediaPlayer) {
+    func playMedia(onPlayer player: RemoteMediaPlayer) -> Completable? {
         guard let media = media else {
-            return
+            return nil
         }
         
         var playerService = dependencies.playerService
         playerService.player = player
         
-        playerService.play(withMetadata: media.metadata, url: media.url.absoluteString)
-            .subscribe(onCompleted: {
-                self.dependencies.logger.log(message: "media played", event: .info)
-            }) { error in
-                self.dependencies.logger.log(message: "interactor.playMedia(): \(error.localizedDescription)", event: .error)
-            }.disposed(by: disposeBag)
+        return playerService.play(withMetadata: media.metadata, url: media.url.absoluteString)
     }
 	
 	func stopFireTVDiscovery() {

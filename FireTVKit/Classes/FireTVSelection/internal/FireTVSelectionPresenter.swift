@@ -150,7 +150,18 @@ extension FireTVSelectionPresenter: UITableViewDelegate {
         }
         
         let player = self.player[indexPath.row]
-        interactor.playMedia(onPlayer: player)
+        
+        let previousState = state
+        updateUI(withState: .loading, animated: true)
+        if let playMedia = interactor.playMedia(onPlayer: player) {
+            playMedia.subscribe(onCompleted: { [weak self] in
+                self?.dependencies.logger.log(message: "media played", event: .info)
+                self?.updateUI(withState: previousState, animated: true)
+            }) { [weak self] error in
+                self?.dependencies.logger.log(message: "interactor.playMedia(): \(error.localizedDescription)", event: .error)
+                self?.updateUI(withState: previousState, animated: true)
+            }.disposed(by: disposeBag)
+        }
         delegate?.didSelectPlayer(viewController, player: player)
     }
 }
