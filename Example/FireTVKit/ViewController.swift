@@ -99,7 +99,14 @@ final class ViewController: UIViewController {
         do {
             let selectionTheme = FireTVSelectionDarkTheme()
             let fireTVSelectionVC = try MockFireTVSelectionWireframe.makeViewController(theme: selectionTheme, playerId: "amzn.thin.pl", media: nil, delegate: self)
+            fireTVSelectionVC.modalPresentationStyle = .popover
+            
             present(fireTVSelectionVC, animated: true)
+            
+            let popoverPresentationController = fireTVSelectionVC.popoverPresentationController
+            popoverPresentationController?.permittedArrowDirections = [.up]
+            popoverPresentationController?.sourceRect = sender.frame
+            popoverPresentationController?.sourceView = sender
         } catch {
             print(error)
         }
@@ -109,7 +116,14 @@ final class ViewController: UIViewController {
         do {
             let selectionTheme = FireTVSelectionLightTheme()
             let fireTVSelectionVC = try MockFireTVSelectionWireframe.makeViewController(theme: selectionTheme, playerId: "amzn.thin.pl", media: nil, delegate: self)
+            fireTVSelectionVC.modalPresentationStyle = .popover
+            
             present(fireTVSelectionVC, animated: true)
+            
+            let popoverPresentationController = fireTVSelectionVC.popoverPresentationController
+            popoverPresentationController?.permittedArrowDirections = [.up]
+            popoverPresentationController?.sourceRect = sender.frame
+            popoverPresentationController?.sourceView = sender
         } catch {
             print(error)
         }
