@@ -1,6 +1,6 @@
 # FireTVKit
 
-Discovering and controlling your FireTV is now easy
+Discovering your FireTV and controlling the built-in media player is now easy
 
 [![Version](https://img.shields.io/cocoapods/v/FireTVKit.svg?longCache=true&style=flat-square)](http://cocoapods.org/pods/FireTVKit)
 [![Swift4](https://img.shields.io/badge/swift4-compatible-orange.svg?longCache=true&style=flat-square)](https://developer.apple.com/swift)
@@ -10,11 +10,38 @@ Discovering and controlling your FireTV is now easy
 
 ## Features ##
 
-Coming soon ...
+| | Feature |
+| --- | --- |
+| 🔎 | Themable view controller for FireTV discovery and selection |
+| 🎮 | Themable view controller for controlling the built-in media player of a FireTV |
+| 🐶 | FireTVManager to do the discovery and get the list of available FireTVs |
+| ✅ | Unit tested |
+| 🗽 | Extendable API |
+| 🚀 | Written in Swift |
 
 ## How to use
 
 Coming soon ...
+
+1. Create and present a `FireTVSelectionViewController`
+
+```swift
+final class ViewController: UIViewController {
+    override func viewDidLoad() {
+
+    }
+}
+```
+
+2. Create and present a `FireTVPlayerViewController`
+
+```swift
+```
+
+3. Usage of the  `FireTVManager`
+
+```swift
+```
 
 ```swift
 import AmazonFling
@@ -49,14 +76,12 @@ final class ViewController: UIViewController {
 
         if let reachabilityService = ServiceFactory.makeReachabilityService() {
             do {
-                reachabilityService.reachabilityInfo.asObservable()
+                reachabilityService.reachabilityObservable
                 .subscribe(onNext: { reachability in
-                    if let reachability = reachability {
-                        if reachability.connection == .wifi {
-                            self.fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
-                        } else {
-                            self.fireTVManager?.stopDiscovery()
-                        }
+                    if reachability.connection == .wifi {
+                        self.fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
+                    } else {
+                        self.fireTVManager?.stopDiscovery()
                     }
                 }).disposed(by: disposeBag)
 
@@ -115,7 +140,8 @@ Coming soon ...
 
 ## Requirements
 
-Coming soon ...
+Currently there is only a reactive implementation. That's why you need `RxSwift`.
+At the moment the `AmazonFling-SDK` doesn't support bitcode. So you need to disable it.
 
 ## Installation
 
