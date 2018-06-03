@@ -15,6 +15,8 @@ public final class FireTVPlayerViewController: UIViewController {
     
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
+    @IBOutlet private weak var containerView: UIView!
+    
     @IBOutlet private weak var mainStackView: UIStackView!
     
     @IBOutlet private weak var playerNameLabel: UILabel!
@@ -36,6 +38,7 @@ public final class FireTVPlayerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        containerView.backgroundColor = .clear
         activityIndicatorView.hidesWhenStopped = false
         positionSlider.isEnabled = false
         closeButton.contentEdgeInsets = UIEdgeInsets(top: MetricConstants.ContentInsets.CloseButton.top, left: MetricConstants.ContentInsets.CloseButton.left, bottom: MetricConstants.ContentInsets.CloseButton.bottom, right: MetricConstants.ContentInsets.CloseButton.right)
