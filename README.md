@@ -15,7 +15,7 @@ Discovering your FireTV and controlling the built-in media player is now easy
 | 🔎 | Themable view controller for FireTV discovery and selection |
 | 🎮 | Themable view controller for controlling the built-in media player of a FireTV |
 | 🐶 | FireTVManager to do the discovery and get the list of available FireTVs |
-|  | Built-in wifi connection validation |
+| 📡 | Built-in wifi connection validation |
 | ✅ | Unit tested |
 | 🗽 | Extendable API |
 | 🚀 | Written in Swift |
@@ -211,8 +211,7 @@ final class ViewController: UIViewController {
 ## Requirements
 
 1. Currently there is only a reactive implementation. That's why you need `RxSwift`.
-2. At the moment the `AmazonFling-SDK` doesn't support bitcode. So you need to disable it.
-3. Deployment target of your App is >= iOS 9.0 .
+2. Deployment target of your App is >= iOS 9.0 .
 
 ## Installation
 
