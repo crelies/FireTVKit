@@ -14,6 +14,6 @@ protocol FireTVManagerProtocol {
     var devicesObservable: Observable<[RemoteMediaPlayer]> { get }
     var devices: [RemoteMediaPlayer] { get }
     
-    func startDiscovery(forPlayerID playerID: String)
+    func startDiscovery(forPlayerID playerID: String) throws
     func stopDiscovery()
 }

@@ -21,27 +21,106 @@ Discovering your FireTV and controlling the built-in media player is now easy
 
 ## How to use
 
-Coming soon ...
-
 1. Create and present a `FireTVSelectionViewController`
 
 ```swift
-final class ViewController: UIViewController {
-    override func viewDidLoad() {
+import AmazonFling
+import FireTVKit
+import UIKit
 
+final class ViewController: UIViewController {
+	private lazy var SAMPLE_VIDEO_METADATA: Metadata = {
+		var metadata = Metadata(type: .video)
+		metadata.title = "Testvideo"
+		metadata.description = "A video for test purposes"
+		metadata.noreplay = true
+		return metadata
+	}()
+	private let SAMPLE_VIDEO_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+	private lazy var SAMPLE_VIDEO: URL? = {
+		guard let url = URL(string: SAMPLE_VIDEO_URL) else {
+			return nil
+		}
+
+		return url
+	}()
+	private var selectedPlayer: RemoteMediaPlayer?
+
+    override func viewDidLoad() {
+    	super.viewDidLoad()
+    	
+    	guard let url = SAMPLE_VIDEO else {
+    		return
+    	}
+    	
+    	let media = FireTVMedia(metadata: SAMPLE_VIDEO_METADATA, url: url)
+    	let theme = FireTVSelectionDarkTheme()
+    	let playerId = "amzn.thin.pl"
+    	let fireTVSelectionVC = try FireTVSelectionWireframe.makeViewController(theme: theme, playerId: playerId, media: media, delegate: self)
+    	present(fireTVSelectionVC, animated: true)
     }
+}
+
+extension ViewController: FireTVSelectionDelegateProtocol {
+	func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
+		do {
+			fireTVSelectionViewController.dismiss(animated: true, completion: nil)
+
+			selectedPlayer = player
+			
+			let theme = FireTVPlayerDarkTheme()
+			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: theme, delegate: self)
+			present(fireTVPlayerVC, animated: true)
+		} catch {
+			print(error)
+		}
+	}
+
+	func didPressCloseButton(_ fireTVSelectionViewController: FireTVSelectionViewController) {
+		fireTVSelectionViewController.dismiss(animated: true, completion: nil)
+	}
+}
+
+extension ViewController: FireTVPlayerDelegateProtocol {
+	func didPressCloseButton(_ fireTVPlayerViewController: FireTVPlayerViewController) {
+		fireTVPlayerViewController.dismiss(animated: true, completion: nil)
+	}
 }
 ```
 
 2. Create and present a `FireTVPlayerViewController`
 
 ```swift
+import AmazonFling
+import FireTVKit
+import UIKit
+
+final class ViewController: UIViewController {
+	private var selectedPlayer: RemoteMediaPlayer?
+
+    override func viewDidLoad() {
+    	super.viewDidLoad()
+    	
+    	guard let selectedPlayer = selectedPlayer else {
+    		return
+    	}
+    	
+    	let theme = FireTVPlayerDarkTheme()
+    	let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: theme, delegate: self)
+		present(fireTVPlayerVC, animated: true)
+    }
+}
+
+extension ViewController: FireTVPlayerDelegateProtocol {
+	func didPressCloseButton(_ fireTVPlayerViewController: FireTVPlayerViewController) {
+		fireTVPlayerViewController.dismiss(animated: true, completion: nil)
+	}
+}
 ```
 
-3. Usage of the  `FireTVManager`
+## Example
 
-```swift
-```
+**Usage of the  `FireTVManager`**
 
 ```swift
 import AmazonFling
@@ -50,87 +129,67 @@ import RxSwift
 import UIKit
 
 final class ViewController: UIViewController {
-    @IBOutlet private weak var foundDevicesLabel: UILabel!
-
-    private let disposeBag: DisposeBag = DisposeBag()
+	private lazy var SAMPLE_VIDEO_METADATA: Metadata = {
+		var metadata = Metadata(type: .video)
+		metadata.title = "Testvideo"
+		metadata.description = "A video for test purposes"
+		metadata.noreplay = true
+		return metadata
+	}()
+	private let SAMPLE_VIDEO_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    private let disposeBag = DisposeBag()
     private var fireTVManager: FireTVManager?
     private var devices: [RemoteMediaPlayer] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fireTVManager = FireTVManager()
+        let manager = FireTVManager()
+        fireTVManager = manager
 
-        fireTVManager?.devices
-        .subscribe(onNext: { devices in
-            DispatchQueue.main.async {
-                if let devices = devices {
-                    self.foundDevicesLabel.text = devices.flatMap { $0.name() }.joined(separator: "\n")
-
-                    self.devices = devices
-                } else {
-                    self.foundDevicesLabel.text = "No devices found"
-                }
-            }
-        }).disposed(by: disposeBag)
-
-        if let reachabilityService = ServiceFactory.makeReachabilityService() {
-            do {
-                reachabilityService.reachabilityObservable
-                .subscribe(onNext: { reachability in
-                    if reachability.connection == .wifi {
-                        self.fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
-                    } else {
-                        self.fireTVManager?.stopDiscovery()
-                    }
-                }).disposed(by: disposeBag)
-
-                try reachabilityService.startListening()
-            } catch {
-
-            }
-        }
+        manager.devicesObservable
+			.subscribe(onNext: { devices in
+				DispatchQueue.main.async {
+					self.devices = devices
+				}
+			}).disposed(by: disposeBag)
     }
 
-    @IBAction func didPressStartDiscoveryButton(_ sender: UIButton) {
+    @IBAction private func didPressStartDiscoveryButton(_ sender: UIButton) {
         fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
     }
 
-    @IBAction func didPressStopDiscoveryButton(_ sender: UIButton) {
+    @IBAction private func didPressStopDiscoveryButton(_ sender: UIButton) {
         fireTVManager?.stopDiscovery()
     }
 
-    @IBAction func didPressPlayTestVideoButton(_ sender: UIButton) {
+    @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
         if let firstDevice = devices.first {
             let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
             
-            _ = playerService.play(withMetadata: "Barcelona", url: "https://...")
-            .subscribe(onCompleted: {
-                print("success")
-            }, onError: { error in
-                print(error)
-            })
+            _ = playerService.play(withMetadata: SAMPLE_VIDEO_METADATA, url: SAMPLE_VIDEO_URL)
+				.subscribe(onCompleted: {
+					print("success")
+				}, onError: { error in
+					print(error)
+				}).disposed(by: disposeBag)
         }
     }
 
-    @IBAction func didPressStopPlaybackButton(_ sender: UIButton) {
+    @IBAction private func didPressStopPlaybackButton(_ sender: UIButton) {
         if let firstDevice = devices.first {
             let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
             
             _ = playerService.stop()
-            .subscribe(onCompleted: {
-                print("success")
-            }, onError: { error in
-                print(error)
-            })
+				.subscribe(onCompleted: {
+					print("success")
+				}, onError: { error in
+					print(error)
+				}).disposed(by: disposeBag)
         }
     }
 }
 ```
-
-## Example
-
-Coming soon ...
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 

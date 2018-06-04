@@ -8,16 +8,18 @@
 
 import Foundation
 
-protocol FireTVManagerDependenciesProtocol: PlayerDiscoveryControllerProvider, PlayerDiscoveryServiceProvider {
+protocol FireTVManagerDependenciesProtocol: PlayerDiscoveryControllerProvider, PlayerDiscoveryServiceProvider, ReachabilityServiceProvider {
     
 }
 
 struct FireTVManagerDependencies: FireTVManagerDependenciesProtocol {
 	let playerDiscoveryController: PlayerDiscoveryControllerProtocol
     let playerDiscoveryService: PlayerDiscoveryServiceProtocol
+	let reachabilityService: ReachabilityServiceProtocol
     
-    init() {
+    init() throws {
 		playerDiscoveryController = ServiceFactory.makePlayerDiscoveryController()
         playerDiscoveryService = ServiceFactory.makePlayerDiscoveryService()
+		reachabilityService = try ServiceFactory.makeReachabilityService()
     }
 }

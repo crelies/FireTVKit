@@ -12,6 +12,7 @@ import RxSwift
 
 public final class FireTVManager: FireTVManagerProtocol {
     private let dependencies: FireTVManagerDependenciesProtocol
+	private let disposeBag: DisposeBag
     
     public var devicesObservable: Observable<[RemoteMediaPlayer]> {
         return dependencies.playerDiscoveryService.devicesObservable
@@ -20,13 +21,23 @@ public final class FireTVManager: FireTVManagerProtocol {
         return dependencies.playerDiscoveryService.devices
     }
     
-    public init() {
-        dependencies = FireTVManagerDependencies()
+    public init() throws {
+        dependencies = try FireTVManagerDependencies()
+		disposeBag = DisposeBag()
     }
     
-    public func startDiscovery(forPlayerID playerID: String) {
-        dependencies.playerDiscoveryService.startDiscovering()
-		dependencies.playerDiscoveryController.startSearch(forPlayerId: playerID)
+    public func startDiscovery(forPlayerID playerID: String) throws {
+		dependencies.reachabilityService.reachabilityObservable
+			.subscribe(onNext: { [weak self] reachability in
+				if reachability.connection == .wifi {
+					self?.dependencies.playerDiscoveryService.startDiscovering()
+					self?.dependencies.playerDiscoveryController.startSearch(forPlayerId: playerID)
+				} else {
+					self?.stopDiscovery()
+				}
+			}).disposed(by: disposeBag)
+		
+		try dependencies.reachabilityService.startListening()
     }
     
     public func stopDiscovery() {
