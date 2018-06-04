@@ -15,9 +15,34 @@ Discovering your FireTV and controlling the built-in media player is now easy
 | 🔎 | Themable view controller for FireTV discovery and selection |
 | 🎮 | Themable view controller for controlling the built-in media player of a FireTV |
 | 🐶 | FireTVManager to do the discovery and get the list of available FireTVs |
+|  | Built-in wifi connection validation |
 | ✅ | Unit tested |
 | 🗽 | Extendable API |
 | 🚀 | Written in Swift |
+
+## Examples ##
+
+**1. FireTV Player Selection with Dark Theme**
+
+![FireTV Player Selection with Dark Theme](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player%20selection.gif)
+
+**2. FireTV Player Selection in no devices state**
+
+![FireTV Player Selection in no devices state](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player%20selection%20in%20no%20devices%20state.gif)
+
+**3. FireTV Player Selection in no wifi state**
+
+![FireTV Player Selection in no wifi state](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player%20selection%20in%20no%20wifi%20state.gif)
+
+**4. FireTV Player with Dark Theme**
+
+![FireTV Player with Dark Theme](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player.gif)
+
+**5. FireTV Player with Light Theme**
+
+![FireTV Player with Light Theme](https://github.com/crelies/FireTVKit/blob/develop/docs/light%20mock%20player.gif)
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## How to use
 
@@ -63,27 +88,13 @@ final class ViewController: UIViewController {
 
 extension ViewController: FireTVSelectionDelegateProtocol {
 	func didSelectPlayer(_ fireTVSelectionViewController: FireTVSelectionViewController, player: RemoteMediaPlayer) {
-		do {
-			fireTVSelectionViewController.dismiss(animated: true, completion: nil)
+		fireTVSelectionViewController.dismiss(animated: true, completion: nil)
 
-			selectedPlayer = player
-			
-			let theme = FireTVPlayerDarkTheme()
-			let fireTVPlayerVC = try FireTVPlayerWireframe.makeViewController(forPlayer: player, theme: theme, delegate: self)
-			present(fireTVPlayerVC, animated: true)
-		} catch {
-			print(error)
-		}
+		selectedPlayer = player
 	}
 
 	func didPressCloseButton(_ fireTVSelectionViewController: FireTVSelectionViewController) {
 		fireTVSelectionViewController.dismiss(animated: true, completion: nil)
-	}
-}
-
-extension ViewController: FireTVPlayerDelegateProtocol {
-	func didPressCloseButton(_ fireTVPlayerViewController: FireTVPlayerViewController) {
-		fireTVPlayerViewController.dismiss(animated: true, completion: nil)
 	}
 }
 ```
@@ -118,9 +129,9 @@ extension ViewController: FireTVPlayerDelegateProtocol {
 }
 ```
 
-## Example
+## FireTVManager
 
-**Usage of the  `FireTVManager`**
+In the following code example you will see how to discover and get the available FireTVs using a `FireTVManager` instance and control the built-in media player using a `PlayerService` instance.
 
 ```swift
 import AmazonFling
@@ -191,16 +202,17 @@ final class ViewController: UIViewController {
 }
 ```
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Customize
 
-Coming soon ...
+1. You can use the `FireTVSelectionViewProtocol` to create your own view for the fire tv selection.
+2. Use the `FireTVPlayerViewProtocol` to create your custom player view.
+3. With the `FireTVSelectionThemeProtocol` and the `FireTVPlayerThemeProtocol` you can build custom themes for the themable selection and player view controller.
 
 ## Requirements
 
-Currently there is only a reactive implementation. That's why you need `RxSwift`.
-At the moment the `AmazonFling-SDK` doesn't support bitcode. So you need to disable it.
+1. Currently there is only a reactive implementation. That's why you need `RxSwift`.
+2. At the moment the `AmazonFling-SDK` doesn't support bitcode. So you need to disable it.
+3. Deployment target of your App is >= iOS 9.0 .
 
 ## Installation
 

@@ -44,7 +44,7 @@ final class ViewController: UIViewController {
 		hidePlayerContainerView()
 	}
     
-    @IBAction private func didPressPlayerBarButtonItem(_ sender: UIBarButtonItem) {
+    @IBAction private func didPressPlayerSelectionBarButtonItem(_ sender: UIBarButtonItem) {
         do {
 			guard let url = SAMPLE_VIDEO else {
 				return
@@ -58,31 +58,6 @@ final class ViewController: UIViewController {
         }
     }
     
-    @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
-        if let selectedDevice = selectedDevice {
-            let fireTVManager = FireTVManager()
-            fireTVManager.startDiscovery(forPlayerID: "amzn.thin.pl")
-            
-            let playerService = ServiceFactory.makePlayerService(withPlayer: selectedDevice)
-            
-            _ = playerService.playerData
-                .subscribe(onNext: { playerData in
-                    if let playerData = playerData {
-                        print(playerData)
-                    }
-                })
-            
-            _ = playerService.play(withMetadata: SAMPLE_VIDEO_METADATA, url: SAMPLE_VIDEO_URL)
-                .subscribe(onCompleted: {
-                    print("success")
-                    fireTVManager.stopDiscovery()
-                }, onError: { error in
-                    print(error)
-                    fireTVManager.stopDiscovery()
-                })
-        }
-    }
-    
     @IBAction private func didPressOpenPlayerButton(_ sender: UIButton) {
         do {
             if let selectedDevice = selectedDevice {
@@ -91,7 +66,7 @@ final class ViewController: UIViewController {
                 showPlayerViewController(fireTVPlayerVC)
             }
         } catch {
-            
+            print(error)
         }
     }
     

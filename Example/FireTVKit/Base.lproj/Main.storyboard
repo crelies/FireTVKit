@@ -22,46 +22,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m8i-B4-I3T">
-                                <rect key="frame" x="33.5" y="80" width="253" height="220"/>
+                                <rect key="frame" x="40" y="80" width="240" height="184"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-WO-LrX">
-                                        <rect key="frame" x="74" y="0.0" width="105" height="30"/>
-                                        <state key="normal" title="Play Test Video"/>
-                                        <connections>
-                                            <action selector="didPressPlayTestVideoButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="l2Y-zb-FAw"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k07-5Q-NDc">
-                                        <rect key="frame" x="84.5" y="38" width="84" height="30"/>
-                                        <state key="normal" title="Open Player"/>
+                                        <rect key="frame" x="47" y="0.0" width="146" height="24"/>
+                                        <state key="normal" title="Open selected Player"/>
                                         <connections>
                                             <action selector="didPressOpenPlayerButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="MAt-K9-EZq"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXN-QP-r9u">
+                                        <rect key="frame" x="0.0" y="32" width="240" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="xZW-1l-umo"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgO-Ze-DC7">
-                                        <rect key="frame" x="0.0" y="76" width="253" height="30"/>
-                                        <state key="normal" title="Open Dummy Player Selection (dark)"/>
+                                        <rect key="frame" x="1" y="64" width="238" height="24"/>
+                                        <state key="normal" title="Open Mock Player Selection (dark)"/>
                                         <connections>
                                             <action selector="didPressDummyPlayerSelectionButtonDarkTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="faZ-nC-mUB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49Y-rH-HjF">
-                                        <rect key="frame" x="0.5" y="114" width="252" height="30"/>
-                                        <state key="normal" title="Open Dummy Player Selection (light)"/>
+                                        <rect key="frame" x="1" y="96" width="238" height="24"/>
+                                        <state key="normal" title="Open Mock Player Selection (light)"/>
                                         <connections>
                                             <action selector="didPressDummyPlayerSelectionButtonLightTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="tCl-L4-E3V"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xur-lf-b4X">
-                                        <rect key="frame" x="34" y="152" width="185" height="30"/>
-                                        <state key="normal" title="Open Dummy Player (dark)"/>
+                                        <rect key="frame" x="35" y="128" width="170" height="24"/>
+                                        <state key="normal" title="Open Mock Player (dark)"/>
                                         <connections>
                                             <action selector="didPressDummyPlayerButtonDarkTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="U2D-fo-Xzt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX4-yC-XFv">
-                                        <rect key="frame" x="34" y="190" width="185" height="30"/>
-                                        <state key="normal" title="Open Dummy Player (light)"/>
+                                        <rect key="frame" x="35" y="160" width="170" height="24"/>
+                                        <state key="normal" title="Open Mock Player (light)"/>
                                         <connections>
                                             <action selector="didPressDummyPlayerButtonLightTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="IPd-E9-l2k"/>
                                         </connections>
@@ -85,9 +85,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Example" id="n8c-QM-95T">
-                        <barButtonItem key="rightBarButtonItem" title="Player" id="SDt-BX-WOp">
+                        <barButtonItem key="rightBarButtonItem" title="Player selection" id="SDt-BX-WOp">
                             <connections>
-                                <action selector="didPressPlayerBarButtonItem:" destination="FUW-Tw-0Gq" id="fWG-SU-QeN"/>
+                                <action selector="didPressPlayerSelectionBarButtonItem:" destination="FUW-Tw-0Gq" id="fWG-SU-QeN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
