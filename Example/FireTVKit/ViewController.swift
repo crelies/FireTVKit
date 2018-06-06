@@ -70,6 +70,11 @@ final class ViewController: UIViewController {
         }
     }
     
+    @IBAction private func didPressFireTVManagerExampleViewController(_ sender: UIButton) {
+        let fireTVManagerExampleViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FireTVManagerExampleViewController")
+        present(fireTVManagerExampleViewController, animated: true, completion: nil)
+    }
+    
     @IBAction private func didPressDummyPlayerSelectionButtonDarkTheme(_ sender: UIButton) {
         do {
             let selectionTheme = FireTVSelectionDarkTheme()
