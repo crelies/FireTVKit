@@ -61,11 +61,4 @@ struct IdentifierConstants {
             static let label = "label"
         }
     }
-    
-    struct UserDefaults {
-        struct Keys {
-            static let fireTVKitLogging = "FireTVKitLogging"
-            static let fireTVKitLogEvent = "FireTVKitLogEvent"
-        }
-    }
 }

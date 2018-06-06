@@ -404,6 +404,7 @@
 		B657896AA9012EB130FD82E2370F7AD0 /* MainScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AC5B3317941F7A53DD453E5739CBB /* MainScheduler.swift */; };
 		B6BF81B3781DE090D5DC44795C292A63 /* MetadataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE582B7C0517A67CE0CB6C4AACC55654 /* MetadataType.swift */; };
 		B8A4398A8D264758E872007A7E9F76C9 /* ItemEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6AEF32775ACA88FC6837CF6BAA182 /* ItemEvents.swift */; };
+		B94E67D520C87D3B005CDC1B /* FireTVKitUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94E67D420C87D3B005CDC1B /* FireTVKitUserDefaultsKeys.swift */; };
 		B9687CE6E5582CE7877B3D01BE962A56 /* UILabel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F3C04CF5B8C59B1725EBC4A9E9F4E /* UILabel+Rx.swift */; };
 		B98C00DB3BEB488085E931419C68271E /* SynchronizedUnsubscribeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AB309829E501F39F3F99483BF9A18 /* SynchronizedUnsubscribeType.swift */; };
 		BA062BB7EA4E83372771F189E3B9162F /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1A06509095D9E6A410A3C8D434863 /* Single.swift */; };
@@ -1068,6 +1069,7 @@
 		B87A16A8FA141D56F52075F1599FDCCE /* BoltsVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BoltsVersion.h; path = Bolts/Common/BoltsVersion.h; sourceTree = "<group>"; };
 		B8A61D431997220B3899182DB78173EC /* SwitchIfEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchIfEmpty.swift; path = RxSwift/Observables/SwitchIfEmpty.swift; sourceTree = "<group>"; };
 		B936287E2821B8FD5567BB5E6BD0AC5F /* FireTVSelectionPresenterProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionPresenterProtocol.swift; sourceTree = "<group>"; };
+		B94E67D420C87D3B005CDC1B /* FireTVKitUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTVKitUserDefaultsKeys.swift; sourceTree = "<group>"; };
 		B95288FFE7090462E7DDB3DC9609F2C4 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		B99C61284F5565A4550EDD59776A5B29 /* UIControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Rx.swift"; path = "RxCocoa/iOS/UIControl+Rx.swift"; sourceTree = "<group>"; };
 		B9D8F1F478B47B853DD649A7D33952AE /* MockPlayerDiscoveryService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockPlayerDiscoveryService.swift; sourceTree = "<group>"; };
@@ -1340,7 +1342,6 @@
 				0FC4B4B005F05965F5BA7ACBE5A96AD0 /* FireTVManagerDependencies.swift */,
 				88127DB5A28B67A1172E5E84E5DE834D /* FireTVManagerProtocol.swift */,
 			);
-			name = FireTVManager;
 			path = FireTVManager;
 			sourceTree = "<group>";
 		};
@@ -1366,7 +1367,6 @@
 			children = (
 				9EB2CCD4981DE84333763CDFC39894BD /* internal */,
 			);
-			name = FireTVPlayer;
 			path = FireTVPlayer;
 			sourceTree = "<group>";
 		};
@@ -1394,7 +1394,6 @@
 				F517B2BD0D735F94DB8600199C94C449 /* PlayerDiscoveryControllerDependencies.swift */,
 				A3C4C2FD2165E625E63455D6F237A586 /* PlayerDiscoveryControllerProtocol.swift */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -1403,7 +1402,6 @@
 			children = (
 				EE1BF4901CEFC61E346E41574FB21D2F /* DummyPlayer.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1415,7 +1413,6 @@
 				C9A860C36B90D0047F85626D3A01A9B4 /* PlayerService.swift */,
 				CC57415494708D258DD224F47E5A1198 /* PlayerServiceDependencies.swift */,
 			);
-			name = Player;
 			path = Player;
 			sourceTree = "<group>";
 		};
@@ -1466,7 +1463,6 @@
 			children = (
 				658A133D3059A4EA8D56A20FEC07A4E6 /* FireTVSelectionViewViewModel.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -1497,7 +1493,6 @@
 			children = (
 				FE00611296F0E16F60B264916A9121CA /* internal */,
 			);
-			name = FireTVSelection;
 			path = FireTVSelection;
 			sourceTree = "<group>";
 		};
@@ -1544,7 +1539,6 @@
 				25B3CAF23D28F118CCD81EF5D22ED457 /* Player */,
 				69989865B5572D036021DF6B8BD0A9A6 /* Reachability */,
 			);
-			name = Services;
 			path = Services;
 			sourceTree = "<group>";
 		};
@@ -1555,7 +1549,6 @@
 				2B423BDFB806D31A38306875915A2839 /* DiscoveringInfoStatus.swift */,
 				A49FBF9A1B7BF48E110D7B7E62B5162C /* DiscoveringStatus.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1609,7 +1602,6 @@
 				A79AEBD6554DA1251F97DBD53FD8E969 /* FireTVPlayerWireframeProtocol.swift */,
 				AC084302596720F360685E2955868676 /* MockFireTVPlayerInteractorDependencies.swift */,
 			);
-			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -1681,7 +1673,6 @@
 				76EF14BF2483D58D37C96D9F9B423942 /* FireTVSelectionLightTheme.swift */,
 				6F9D3F58CEFA98B907A533A2BA4D3DEB /* FireTVSelectionThemeProtocol.swift */,
 			);
-			name = Theme;
 			path = Theme;
 			sourceTree = "<group>";
 		};
@@ -1693,7 +1684,6 @@
 				80A339334A96BC6DC8C3D1F399C7E46F /* PlayerDiscoveryService.swift */,
 				75BE16A0B4D3715FBED9AE0C0A2FC9C6 /* PlayerDiscoveryServiceDependencies.swift */,
 			);
-			name = Service;
 			path = Service;
 			sourceTree = "<group>";
 		};
@@ -1730,7 +1720,6 @@
 				B843EE4026B9DBB4A62612D7DCCF10A6 /* FireTVSelectionPresenterState.swift */,
 				3316B8C4EC0AAC735A2B4D9EF8C67DC2 /* PlayerViewModel.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -1739,7 +1728,6 @@
 			children = (
 				2FFC99646B9D8C754165BAF7981196DE /* FireTVSelectionTableViewCell.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -1751,7 +1739,6 @@
 				40B8AF4BC4702FFB08F435D647262612 /* StringConstants.swift */,
 				114764E82C77744F66B00FDABA30911A /* StubConstants.swift */,
 			);
-			name = Constants;
 			path = Constants;
 			sourceTree = "<group>";
 		};
@@ -1997,7 +1984,6 @@
 				8AD88C7003D13FCB6776B335B19E09EE /* ViewModels */,
 				8F1F01F5D4361C8BC424B08251ECD411 /* Views */,
 			);
-			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -2006,7 +1992,6 @@
 			children = (
 				73E9AEE245F6811022B03381672A67D0 /* FireTVPlayer.storyboard */,
 			);
-			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -2195,7 +2180,6 @@
 			children = (
 				948673D2EABE6233041D84E83E762C12 /* FireTVMedia.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -2206,7 +2190,6 @@
 				5EA568699EDD7A1A4D387465335D3261 /* FireTVPlayerLightTheme.swift */,
 				028BF8ABCB87E77B82781170FFF6E6B0 /* FireTVPlayerThemeProtocol.swift */,
 			);
-			name = Theme;
 			path = Theme;
 			sourceTree = "<group>";
 		};
@@ -2229,7 +2212,6 @@
 				4EF0B98321678264A1A009275D0ADD63 /* Models */,
 				7CE54901D55545C5CE479A80EDEF6D05 /* Service */,
 			);
-			name = PlayerDiscovery;
 			path = PlayerDiscovery;
 			sourceTree = "<group>";
 		};
@@ -2319,7 +2301,6 @@
 				9D573ABA92B708490D39E7F1E0E4CEC1 /* UIAlertController+MakeAlert.swift */,
 				535EAE717D1A4361FABED3C66003E931 /* UIColor+Colors.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -2346,7 +2327,6 @@
 				A13F7A3804B7659603F7BFDCBC18171E /* Date+StringValue.swift */,
 				39B5DDDD99D3A584AF5BF4A5AB637DD1 /* Logger.swift */,
 			);
-			name = Logger;
 			path = Logger;
 			sourceTree = "<group>";
 		};
@@ -2413,6 +2393,7 @@
 			children = (
 				E6BB6A7A0F777D1F220DE04C97C88B22 /* PlayerServiceError.swift */,
 				F9EDE70C9A2903797B6E5B163CA2320D /* ServiceFactoryError.swift */,
+				B94E67D420C87D3B005CDC1B /* FireTVKitUserDefaultsKeys.swift */,
 			);
 			name = Enums;
 			path = FireTVKit/Classes/Enums;
@@ -2441,7 +2422,6 @@
 			children = (
 				22419172DF4E49F1B00C07D641685E09 /* FireTVPlayerViewViewModel.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -2450,7 +2430,6 @@
 			children = (
 				E93D865B23F6436C9CA8AEE63951849B /* FireTVSelection.storyboard */,
 			);
-			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -3022,6 +3001,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEDE1AC8D6A3166F74DED1DD423A5E0F /* Date+StringValue.swift in Sources */,
+				B94E67D520C87D3B005CDC1B /* FireTVKitUserDefaultsKeys.swift in Sources */,
 				5409DFACD78B89057BCD3136866307E3 /* DiscoveringInfo.swift in Sources */,
 				530A76D1DD05DFC38FDA030526BE823F /* DiscoveringInfoStatus.swift in Sources */,
 				2823ECC9F27AABE274AC7FC2D68B793F /* DiscoveringStatus.swift in Sources */,

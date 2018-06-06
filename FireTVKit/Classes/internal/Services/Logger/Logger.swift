@@ -19,9 +19,9 @@ final class Logger: LoggerProtocol {
     }
     
     func log(message: String, event: LogEvent, fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
-        let isFireTVKitLoggingEnabled = UserDefaults.standard.value(forKey: IdentifierConstants.UserDefaults.Keys.fireTVKitLogging) as? Bool ?? false
+        let isFireTVKitLoggingEnabled = UserDefaults.standard.value(forKey: FireTVKitUserDefaultsKeys.fireTVKitLogging.rawValue) as? Bool ?? false
         if isFireTVKitLoggingEnabled {
-            let fireTVKitLogEventString = UserDefaults.standard.value(forKey: IdentifierConstants.UserDefaults.Keys.fireTVKitLogEvent) as? String ?? ""
+            let fireTVKitLogEventString = UserDefaults.standard.value(forKey: FireTVKitUserDefaultsKeys.fireTVKitLogEvent.rawValue) as? String ?? ""
             if let logEvent = LogEvent(rawValue: fireTVKitLogEventString) {
                 if logEvent == event {
                     print("\(Date().stringValue) \(event.displayString)[\(sourceFileName(filePath: fileName))]:\(line) \(column) \(funcName) -> \(message)")
