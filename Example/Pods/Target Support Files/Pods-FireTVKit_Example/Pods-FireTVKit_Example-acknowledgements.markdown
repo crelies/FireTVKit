@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## AmazonFling
 
-Copyright (c) 2018 Chris Eli <chris.elies13@gmail.com>
+Copyright (c) 2018 Christian Elies <chris.elies13@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
