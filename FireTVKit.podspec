@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
   
-  s.dependency 'AmazonFling', '1.3.4-rc.1'
+  s.dependency 'AmazonFling', '1.3.4'
   s.dependency 'ReachabilitySwift', '~> 4.1'
   s.dependency 'RxSwift', '~> 4.0'
   s.dependency 'RxCocoa', '~> 4.0'
