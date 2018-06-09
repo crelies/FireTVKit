@@ -14,10 +14,10 @@ The Amazon Fling SDK lacks a ready to use view controller for discovering FireTV
 
 | | Feature |
 | --- | --- |
-| 🔎 | Themable view controller for FireTV discovery and selection |
+| 🔎 | Themable view controller for FireTV discovery and selection (customize no devices text) |
 | 🎮 | Themable view controller for controlling the built-in media player of a FireTV |
 | 🐶 | FireTVManager to do the discovery and get the list of available FireTVs |
-| 📡 | Built-in wifi connection validation |
+| 📡 | Built-in wifi connection validation (customize alert title and message) |
 | ✅ | Unit tested |
 | 🗽 | Extendable API |
 | 🚀 | Written in Swift |
