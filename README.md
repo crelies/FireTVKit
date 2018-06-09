@@ -131,7 +131,7 @@ extension ViewController: FireTVPlayerDelegateProtocol {
 
 ## FireTVManager
 
-In the following code example you will see how to discover and get the available FireTVs using a `FireTVManager` instance and control the built-in media player using a `PlayerService` instance.
+In the following code example you will see how to discover and get the available FireTVs using a `FireTVManager` instance. You can control the built-in media player of a FireTV using a `PlayerService` instance.
 
 ```swift
 import AmazonFling
@@ -139,65 +139,49 @@ import FireTVKit
 import RxSwift
 import UIKit
 
-final class ViewController: UIViewController {
-	private lazy var SAMPLE_VIDEO_METADATA: Metadata = {
-		var metadata = Metadata(type: .video)
-		metadata.title = "Testvideo"
-		metadata.description = "A video for test purposes"
-		metadata.noreplay = true
-		return metadata
-	}()
-	private let SAMPLE_VIDEO_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-    private let disposeBag = DisposeBag()
+final class FireTVManagerExampleViewController: UIViewController {
     private var fireTVManager: FireTVManager?
-    private var devices: [RemoteMediaPlayer] = []
-
+    private var disposeBag: DisposeBag?
+    @IBOutlet private weak var firstPlayerLabel: UILabel!
+    
+    deinit {
+        print("FireTVManagerExampleViewController deinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let disposeBag = DisposeBag()
+        self.disposeBag = disposeBag
 
-        let manager = FireTVManager()
-        fireTVManager = manager
+        do {
+            fireTVManager = try FireTVManager()
 
-        manager.devicesObservable
-			.subscribe(onNext: { devices in
-				DispatchQueue.main.async {
-					self.devices = devices
-				}
-			}).disposed(by: disposeBag)
+            try fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
+
+            fireTVManager?.devicesObservable
+                .subscribe(onNext: { [weak self] player in
+                    if !player.isEmpty {
+                        self?.firstPlayerLabel?.text = player.first?.name()
+                    } else {
+                        self?.firstPlayerLabel.text = "No player found"
+                    }
+                }, onError: { error in
+                    print(error)
+                }).disposed(by: disposeBag)
+        } catch {
+            print(error)
+        }
     }
-
-    @IBAction private func didPressStartDiscoveryButton(_ sender: UIButton) {
-        fireTVManager?.startDiscovery(forPlayerID: "amzn.thin.pl")
-    }
-
-    @IBAction private func didPressStopDiscoveryButton(_ sender: UIButton) {
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         fireTVManager?.stopDiscovery()
     }
-
-    @IBAction private func didPressPlayTestVideoButton(_ sender: UIButton) {
-        if let firstDevice = devices.first {
-            let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
-            
-            _ = playerService.play(withMetadata: SAMPLE_VIDEO_METADATA, url: SAMPLE_VIDEO_URL)
-				.subscribe(onCompleted: {
-					print("success")
-				}, onError: { error in
-					print(error)
-				}).disposed(by: disposeBag)
-        }
-    }
-
-    @IBAction private func didPressStopPlaybackButton(_ sender: UIButton) {
-        if let firstDevice = devices.first {
-            let playerService = ServiceFactory.makePlayerService(withPlayer: firstDevice)
-            
-            _ = playerService.stop()
-				.subscribe(onCompleted: {
-					print("success")
-				}, onError: { error in
-					print(error)
-				}).disposed(by: disposeBag)
-        }
+    
+    @IBAction private func didPressCloseButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
 ```
@@ -212,6 +196,7 @@ final class ViewController: UIViewController {
 
 1. Currently there is only a reactive implementation. That's why you need `RxSwift`.
 2. Deployment target of your App is >= iOS 9.0 .
+3. At the moment Bitcode is not supported. I hope that I will make progress in the future.
 
 ## Installation
 
