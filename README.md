@@ -8,7 +8,7 @@ Discovering your FireTV and controlling the built-in media player is now easy an
 [![Carthage](https://img.shields.io/badge/carthage-compatible-green.svg?longCache=true&style=flat-square)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
 
-The Amazon Fling SDK lacks a ready to use view controller for discovering FireTVs and controlling the built in receiver (media player). That's why I created FireTVKit. It offers a themable view controller for discovering FireTVs in your network. All the necessary magic happens under the hood. In addition the FireTVKit brings a themable view controller for controlling the built in media player of a FireTV. Also there all the magic happens under the hood. Thanks to the protocol oriented approach you can easily create your own discovery and player view. If you want to be completely free just use the FireTVManager to do the discovery and get the FireTVs.
+The Amazon Fling SDK lacks a ready to use view controller for discovering FireTVs and controlling the built-in receiver app (media player). That's why I created FireTVKit. It offers a themable view controller for discovering FireTVs in your local network. All the necessary magic happens under the hood. In addition the FireTVKit brings a themable view controller for controlling the built-in media player of a FireTV. Even there all the magic happens under the hood. Thanks to the protocol oriented approach you can easily create your own discovery and player view. If you want to be completely free just use the FireTVManager to do the discovery and get the FireTVs. Then show the FireTVs to your users the way you want it.
 
 ## Features ##
 

@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Discovering your FireTV and controlling the built-in media player is now easy and reactive.'
 
   s.description      = <<-DESC
-  The Amazon Fling SDK lacks a ready to use view controller for discovering FireTVs and controlling the built in receiver (media player). That's why I created FireTVKit. It offers a themable view controller for discovering FireTVs in your network. All the necessary magic happens under the hood. In addition the FireTVKit brings a themable view controller for controlling the built in media player of a FireTV. Also there all the magic happens under the hood. Thanks to the protocol oriented approach you can easily create your own discovery and player view. If you want to be completely free just use the FireTVManager to do the discovery and get the FireTVs.
+  The Amazon Fling SDK lacks a ready to use view controller for discovering FireTVs and controlling the built-in receiver app (media player). That's why I created FireTVKit. It offers a themable view controller for discovering FireTVs in your local network. All the necessary magic happens under the hood. In addition the FireTVKit brings a themable view controller for controlling the built-in media player of a FireTV. Even there all the magic happens under the hood. Thanks to the protocol oriented approach you can easily create your own discovery and player view. If you want to be completely free just use the FireTVManager to do the discovery and get the FireTVs. Then show the FireTVs to your users the way you want it.
                        DESC
 
   s.homepage         = 'https://github.com/crelies/FireTVKit'
@@ -20,6 +20,8 @@ Pod::Spec.new do |s|
   s.author           = { 'Christian Elies' => 'chris.elies13@gmail.com' }
   s.source           = { :git => 'https://github.com/crelies/FireTVKit.git', :tag => s.version.to_s }
 
+  s.cocoapods_version = '>= 1.4'
+  s.swift_version = '4.0'
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'FireTVKit/Classes/**/*.swift'
