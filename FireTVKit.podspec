@@ -37,6 +37,7 @@ Pod::Spec.new do |s|
   # https://github.com/CocoaPods/CocoaPods/issues/2926#issuecomment-136766631
   s.pod_target_xcconfig = {
       'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/AmazonFling',
-      'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+      'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup',
+      'ENABLE_BITCODE'         => 'NO'
   }
 end
