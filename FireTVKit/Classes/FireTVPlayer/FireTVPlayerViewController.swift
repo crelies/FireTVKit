@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// Concrete implementation of the `FireTVPlayerViewProtocol`
+///
 public final class FireTVPlayerViewController: UIViewController {
     private var presenter: FireTVPlayerPresenterProtocol?
     

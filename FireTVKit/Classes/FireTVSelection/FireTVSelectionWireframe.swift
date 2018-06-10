@@ -18,7 +18,22 @@ extension FireTVSelectionWireframeProtocol {
     }
 }
 
-public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {    
+/// Responsible for making a `FireTVSelectionViewController` and configuring an implementation of `FireTVSelectionViewProtocol`
+///
+public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
+    /// Makes a `FireTVSelectionViewController`
+    ///
+    /// - Parameters:
+    ///   - theme: theme for the view controller
+    ///   - playerId: player id to be searched for
+    ///   - media: media to be played on player selection
+    ///   - delegate: delegate which will be notified about actions
+    ///   - noDevicesText: a custom no devices text
+    ///   - noWifiAlertTitle: a custom title for the no wifi alert
+    ///   - noWifiAlertMessage: a custom message for the no wifi alert
+    /// - Returns: a `UINavigationController` with a `FireTVSelectionViewController` as the root view controller
+    /// - Throws: an error if something unexpected happens
+    ///
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String, noWifiAlertTitle: String, noWifiAlertMessage: String) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         
@@ -50,6 +65,19 @@ public struct FireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
         return navigationController
     }
     
+    /// Configures the given view to be ready to go
+    ///
+    /// - Parameters:
+    ///   - view: view to be configured
+    ///   - theme: theme for the view
+    ///   - playerId: player id to be searched for
+    ///   - media: media to play on selected player
+    ///   - delegate: delegate which will be notified about actions
+    ///   - noDevicesText: custom text to show if no devices were found
+    ///   - noWifiAlertTitle: custom title to show in no wifi alert
+    ///   - noWifiAlertMessage: custom message to show in no wifi alert
+    /// - Throws: an error if something weird happens
+    ///
     public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String, noWifiAlertTitle: String, noWifiAlertMessage: String) throws {
         let router = FireTVSelectionRouter()
         

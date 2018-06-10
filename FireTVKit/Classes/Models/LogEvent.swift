@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Enum describing the log event types
+///
 public enum LogEvent: String {
     case error
     case info

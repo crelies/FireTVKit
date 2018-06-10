@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol describing the requirements for a `Logger`
+///
 public protocol LoggerProtocol {
     func log(message: String, event: LogEvent)
     func log(message: String, event: LogEvent, fileName: String, line: Int, column: Int, funcName: String)

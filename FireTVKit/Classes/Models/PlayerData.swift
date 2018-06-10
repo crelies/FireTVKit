@@ -9,6 +9,8 @@
 import AmazonFling
 import Foundation
 
+/// Represents data of player, like the current media position and status
+///
 public struct PlayerData {
 	var position: Int64?
 	var status: PlayerStatus?

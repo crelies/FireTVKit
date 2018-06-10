@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol for the dependencies of a `PlayerService` instance
+///
 public protocol PlayerServiceDependenciesProtocol: LoggerProvider {
     
 }

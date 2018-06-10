@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol describing the requirements for a fire tv selection theme
+///
 public protocol FireTVSelectionThemeProtocol {
     var navigationBarBarTintColor: UIColor { get }
     var backgroundColor: UIColor { get }

@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol describing the requirements of a fire tv player view
+///
 public protocol FireTVPlayerViewProtocol: class {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)
 	func setTheme(_ theme: FireTVPlayerThemeProtocol)

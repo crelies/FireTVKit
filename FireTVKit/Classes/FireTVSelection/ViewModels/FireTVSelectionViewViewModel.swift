@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Represents the view model for the fire tv selection view
+///
 public struct FireTVSelectionViewViewModel {
 	let isCloseButtonHidden: Bool
     let isTableViewHidden: Bool

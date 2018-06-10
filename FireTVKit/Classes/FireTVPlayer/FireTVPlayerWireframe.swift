@@ -19,7 +19,20 @@ extension FireTVPlayerWireframeProtocol {
     }
 }
 
+/// Responsible for creating a `FireTVPlayerViewController` and for configuring an implementation of the `FireTVPlayerViewProtocol`
+///
 public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
+    /// Makes a ready to use `FireTVPlayerViewController`
+    ///
+    /// - Parameters:
+    ///   - player: the player which should be represented
+    ///   - theme: the theme for the view controller
+    ///   - delegate: the delegate which will be notified about actions
+    ///   - noWifiAlertTitle: a custom title for the no wifi alert
+    ///   - noWifiAlertMessage: a custom message for the no wifi alert
+    /// - Returns: a configured `FireTVPlayerViewController` instance
+    /// - Throws: an error if something unexpected happens during the creation process
+    ///
     public static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?, noWifiAlertTitle: String, noWifiAlertMessage: String) throws -> FireTVPlayerViewController {
         let podBundle = Bundle(for: FireTVPlayerViewController.self)
         
@@ -44,6 +57,17 @@ public struct FireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
         return view
     }
     
+    /// Configures the given view to be ready to go
+    ///
+    /// - Parameters:
+    ///   - view: view which should be configured
+    ///   - player: player which is represented by the view
+    ///   - theme: theme for the view
+    ///   - delegate: delegate which will be notified about actions
+    ///   - noWifiAlertTitle: a custom title for the no wifi alert
+    ///   - noWifiAlertMessage: a custom message for the no wifi alert
+    /// - Throws: an error if something unexpected happens during configuration
+    ///
     public static func configureView(_ view: FireTVPlayerViewProtocol, withPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?, noWifiAlertTitle: String, noWifiAlertMessage: String) throws {
         let router = FireTVPlayerRouter()
         

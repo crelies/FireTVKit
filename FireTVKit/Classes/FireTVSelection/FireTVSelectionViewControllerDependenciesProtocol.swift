@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol for the dependencies of a `FireTVSelectionViewController`
+///
 public protocol FireTVSelectionViewControllerDependenciesProtocol: LoggerProvider {
     
 }

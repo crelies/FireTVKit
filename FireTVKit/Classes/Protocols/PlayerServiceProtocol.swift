@@ -10,6 +10,8 @@ import AmazonFling
 import Foundation
 import RxSwift
 
+/// Represents the requirements of a `PlayerService`
+///
 public protocol PlayerServiceProtocol {
     var player: RemoteMediaPlayer? { get set }
     var playerData: Observable<PlayerData?> { get }

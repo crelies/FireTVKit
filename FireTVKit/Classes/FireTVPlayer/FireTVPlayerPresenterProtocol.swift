@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol describing the requirements of a `FireTVPlayerPresenter`
+///
 public protocol FireTVPlayerPresenterProtocol: class {
     func viewDidLoad()
     func viewWillAppear()

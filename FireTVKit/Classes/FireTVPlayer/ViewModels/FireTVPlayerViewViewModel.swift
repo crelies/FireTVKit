@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Represents the view model for a fire tv player
+///
 public struct FireTVPlayerViewViewModel {
 	let isCloseButtonHidden: Bool
     let isPlayerControlEnabled: Bool

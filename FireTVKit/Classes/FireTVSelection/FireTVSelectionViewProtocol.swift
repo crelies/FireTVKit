@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// Protocol representing the requirements of a fire tv selection view
+///
 public protocol FireTVSelectionViewProtocol: class {
     var dependencies: FireTVSelectionViewControllerDependenciesProtocol? { get set }
     var tableView: UITableView! { get }

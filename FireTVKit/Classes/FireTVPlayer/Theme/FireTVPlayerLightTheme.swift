@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Light theme for a fire tv player
+///
 public struct FireTVPlayerLightTheme: FireTVPlayerThemeProtocol {
 	public let backgroundColor: UIColor
 	public let closeButtonTintColor: UIColor

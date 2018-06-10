@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol describing the delegate methods of a fire tv player
+///
 public protocol FireTVPlayerDelegateProtocol: class {
     func didPressCloseButton(_ fireTVPlayerViewController: FireTVPlayerViewController)
 }

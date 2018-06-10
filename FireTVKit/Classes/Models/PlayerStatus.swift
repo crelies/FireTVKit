@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Enum describing all possible status of a player
+///
 public enum PlayerStatus: UInt32 {
     case noMedia = 0
     case preparingMedia
@@ -18,6 +20,8 @@ public enum PlayerStatus: UInt32 {
     case finished
     case error
     
+    /// Returns a string representation of the status
+    ///
     public var stringValue: String {
         return String(describing: self)
     }

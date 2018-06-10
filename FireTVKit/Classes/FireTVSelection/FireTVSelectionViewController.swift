@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Concrete `FireTVSelectionViewProtocol` implementation
+///
 public final class FireTVSelectionViewController: UIViewController {
     private var presenter: FireTVSelectionPresenterProtocol?
 	private lazy var closeBarButtonItem: UIBarButtonItem = {

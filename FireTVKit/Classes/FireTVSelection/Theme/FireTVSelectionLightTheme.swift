@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Light theme for the fire tv selection
+///
 public struct FireTVSelectionLightTheme: FireTVSelectionThemeProtocol {
     public let navigationBarBarTintColor: UIColor
     public let backgroundColor: UIColor

@@ -8,6 +8,16 @@
 
 import Foundation
 
+/// Enum of possible errors thrown by a `PlayerService` instance
+///
+/// - noPlayer: thrown if the player property is nil
+/// - couldNotCastDurationToInt: thrown if a duration value could not be casted to `Int`
+/// - couldNotCastPositionToInt64: thrown if a duration value could not be casted to `Int64`
+/// - couldNotCastTaskResultToMediaPlayerStatus: thrown if a task result could not be casted to `MediaPlayerStatus`
+/// - couldNotCastTaskResultToMediaPlayerInfo: thrown if a task result could not be casted to `MediaPlayerInfo`
+/// - invalidTaskResult: thrown if a task result is invalid
+/// - couldNotCreateStringFromMetadata: thrown if a string could not be created using metadata
+///
 public enum PlayerServiceError: Error {
     case noPlayer
     case couldNotCastDurationToInt

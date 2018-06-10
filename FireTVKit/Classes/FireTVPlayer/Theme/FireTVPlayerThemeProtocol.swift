@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol describing the requirements of a fire tv player theme
+///
 public protocol FireTVPlayerThemeProtocol {
 	var backgroundColor: UIColor { get }
 	var closeButtonTintColor: UIColor { get }

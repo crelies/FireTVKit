@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// String enum used for storing data in UserDefaults
+///
+/// - fireTVKitLogging: boolean value which specifies if logging is enabled for the FireTVKit
+/// - fireTVKitLogEvent: string value describing which specific event type should be logged
+///
 public enum FireTVKitUserDefaultsKeys: String {
     case fireTVKitLogging
     case fireTVKitLogEvent

@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// Enum of possible errors thrown by the `ServiceFactory`
+///
+/// - couldNotCreateReachabilityService: thrown if a `ReachabilityService` instance could not be created
+///
 public enum ServiceFactoryError: Error {
     case couldNotCreateReachabilityService
 }

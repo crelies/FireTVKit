@@ -9,6 +9,10 @@
 import AmazonFling
 import Foundation
 
+/// Factory for creating services used by FireTVKit
+/// Most services the factory creates are internal
+/// Only the method for creating a player service is public
+///
 public final class ServiceFactory: ServiceFactoryProtocol {
 	static func makePlayerDiscoveryController() -> PlayerDiscoveryControllerProtocol {
 		let playerDiscoveryController = PlayerDiscoveryController.shared
@@ -27,6 +31,11 @@ public final class ServiceFactory: ServiceFactoryProtocol {
         return PlayerService(dependencies: dependencies, withPlayer: nil)
     }
     
+    /// Makes a player service for the given player
+    ///
+    /// - Parameter player: the player you want to control
+    /// - Returns: a player service instance conforming to the `PlayerServiceProtocol`
+    ///
     public static func makePlayerService(withPlayer player: RemoteMediaPlayer) -> PlayerServiceProtocol {
         let dependencies = PlayerServiceDependencies()
         return PlayerService(dependencies: dependencies, withPlayer: player)
