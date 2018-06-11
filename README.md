@@ -194,6 +194,10 @@ final class FireTVManagerExampleViewController: UIViewController {
 2. Use the `FireTVPlayerViewProtocol` to create your custom player view.
 3. With the `FireTVSelectionThemeProtocol` and the `FireTVPlayerThemeProtocol` you can build custom themes for the themable selection and player view controller.
 
+## Documentation ##
+
+[Code documentation](https://crelies.github.io/FireTVKit/)
+
 ## Requirements
 
 1. Currently there is only a reactive implementation. That's why you need `RxSwift`.
