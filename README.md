@@ -26,23 +26,23 @@ The Amazon Fling SDK lacks a ready to use view controller for discovering FireTV
 
 **1. FireTV Player Selection with Dark Theme**
 
-![FireTV Player Selection with Dark Theme](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player%20selection.gif)
+![FireTV Player Selection with Dark Theme](https://github.com/crelies/FireTVKit/blob/develop/images/dark%20mock%20player%20selection.gif)
 
 **2. FireTV Player Selection in no devices state**
 
-![FireTV Player Selection in no devices state](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player%20selection%20in%20no%20devices%20state.gif)
+![FireTV Player Selection in no devices state](https://github.com/crelies/FireTVKit/blob/develop/images/dark%20mock%20player%20selection%20in%20no%20devices%20state.gif)
 
 **3. FireTV Player Selection in no wifi state**
 
-![FireTV Player Selection in no wifi state](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player%20selection%20in%20no%20wifi%20state.gif)
+![FireTV Player Selection in no wifi state](https://github.com/crelies/FireTVKit/blob/develop/images/dark%20mock%20player%20selection%20in%20no%20wifi%20state.gif)
 
 **4. FireTV Player with Dark Theme**
 
-![FireTV Player with Dark Theme](https://github.com/crelies/FireTVKit/blob/develop/docs/dark%20mock%20player.gif)
+![FireTV Player with Dark Theme](https://github.com/crelies/FireTVKit/blob/develop/images/dark%20mock%20player.gif)
 
 **5. FireTV Player with Light Theme**
 
-![FireTV Player with Light Theme](https://github.com/crelies/FireTVKit/blob/develop/docs/light%20mock%20player.gif)
+![FireTV Player with Light Theme](https://github.com/crelies/FireTVKit/blob/develop/images/light%20mock%20player.gif)
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 

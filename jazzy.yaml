@@ -22,4 +22,4 @@ sdk: iphone
 
 xcodebuild_arguments: [-scheme, FireTVKit]
 
-output: ./documentation
+output: ./docs
