@@ -31,8 +31,10 @@ platform :ios do
       version = version_bump_podspec(path: "FireTVKit.podspec", bump_type: bump_type)
 
       pod_lib_lint(allow_warnings: false, sources: ["https://github.com/CocoaPods/Specs.git"])
+      
+      generate_docs
 
-      git_commit(path: ["./FireTVKit.podspec", "./Example/Podfile.lock"], message: "#{COMMIT_MESSAGE} #{version}")
+      git_commit(path: ["./FireTVKit.podspec", "./documentation", "./Example/Podfile.lock"], message: "#{COMMIT_MESSAGE} #{version}")
       push_to_git_remote(remote_branch: 'develop', force: false, tags: true)
 
       sh("git checkout master")
@@ -43,5 +45,9 @@ platform :ios do
 
       sh("git fetch --tags")
       pod_push(path: "FireTVKit.podspec", allow_warnings: true)
+    end
+    
+    lane :generate_docs do
+        jazzy(config: '../jazzy.yaml')
     end
 end

@@ -5,6 +5,15 @@
       location = "group:FireTVKit.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:../README.md">
+   </FileRef>
+   <FileRef
+      location = "group:../jazzy.yaml">
+   </FileRef>
+   <FileRef
+      location = "group:fastlane">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
