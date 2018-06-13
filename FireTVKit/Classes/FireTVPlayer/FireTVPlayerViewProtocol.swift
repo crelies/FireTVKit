@@ -9,6 +9,8 @@
 import Foundation
 
 /// Protocol describing the requirements of a fire tv player view
+/// Implement this protocol if you want to create your custom player view
+/// Set it up using the `configure` method of the `FireTVPlayerWireframe`
 ///
 public protocol FireTVPlayerViewProtocol: class {
     func setPresenter(_ presenter: FireTVPlayerPresenterProtocol)

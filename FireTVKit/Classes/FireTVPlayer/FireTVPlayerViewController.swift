@@ -38,7 +38,7 @@ public final class FireTVPlayerViewController: UIViewController {
     @IBOutlet private weak var stopButton: UIButton!
     @IBOutlet private weak var fastForward10sButton: UIButton!
     
-    override public func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         containerView.backgroundColor = .clear
         activityIndicatorView.hidesWhenStopped = false
