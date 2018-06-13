@@ -10,10 +10,34 @@ import AmazonFling
 import UIKit
 
 extension FireTVPlayerWireframeProtocol {
+    /// Makes a ready to use `FireTVPlayerViewController`
+    /// Uses `Error` as the title and `You are not connected to a wifi network. The connection is required.` as the message of the no wifi alert
+    ///
+    /// - Parameters:
+    ///   - player: the player which should be represented
+    ///   - theme: the theme for the view controller
+    ///   - delegate: the delegate which will be notified about actions
+    ///   - noWifiAlertTitle: a custom title for the no wifi alert
+    ///   - noWifiAlertMessage: a custom message for the no wifi alert
+    /// - Returns: a configured `FireTVPlayerViewController` instance
+    /// - Throws: an error if something unexpected happens during the creation process
+    ///
     public static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController {
         return try makeViewController(forPlayer: player, theme: theme, delegate: delegate, noWifiAlertTitle: StringConstants.Alert.Title.error, noWifiAlertMessage: StringConstants.Alert.Message.noWifi)
     }
     
+    /// Configures the given view to be ready to go
+    /// Uses `Error` as the title and `You are not connected to a wifi network. The connection is required.` as the message of the no wifi alert
+    ///
+    /// - Parameters:
+    ///   - view: view which should be configured
+    ///   - player: player which is represented by the view
+    ///   - theme: theme for the view
+    ///   - delegate: delegate which will be notified about actions
+    ///   - noWifiAlertTitle: a custom title for the no wifi alert
+    ///   - noWifiAlertMessage: a custom message for the no wifi alert
+    /// - Throws: an error if something unexpected happens during configuration
+    ///
     public static func configureView(_ view: FireTVPlayerViewProtocol, withPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws {
         try configureView(view, withPlayer: player, theme: theme, delegate: delegate, noWifiAlertTitle: StringConstants.Alert.Title.error, noWifiAlertMessage: StringConstants.Alert.Message.noWifi)
     }

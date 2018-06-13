@@ -9,7 +9,21 @@
 import AmazonFling
 import Foundation
 
+/// Mock implementation of `FireTVPlayerWireframeProtocol`
+/// Use only for creating a mock player view controller (testing purposes)
+///
 public struct MockFireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
+    /// Creates a mock player view controller
+    ///
+    /// - Parameters:
+    ///   - player: the player which should be represented
+    ///   - theme: the theme for the view controller
+    ///   - delegate: the delegate which will be notified about actions
+    ///   - noWifiAlertTitle: a custom title for the no wifi alert
+    ///   - noWifiAlertMessage: a custom message for the no wifi alert
+    /// - Returns: a configured `FireTVPlayerViewController` instance
+    /// - Throws: an error if something unexpected happens during the creation process
+    ///
 	public static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?, noWifiAlertTitle: String, noWifiAlertMessage: String) throws -> FireTVPlayerViewController {
 		let podBundle = Bundle(for: FireTVPlayerViewController.self)
 		
@@ -34,6 +48,8 @@ public struct MockFireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
 		return view
 	}
     
+    /// Mock implementation: does nothing!
+    ///
     public static func configureView(_ view: FireTVPlayerViewProtocol, withPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?, noWifiAlertTitle: String, noWifiAlertMessage: String) {
         
     }
