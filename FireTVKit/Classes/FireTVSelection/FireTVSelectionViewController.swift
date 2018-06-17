@@ -33,7 +33,7 @@ public final class FireTVSelectionViewController: UIViewController {
         dependencies?.logger.log(message: "FireTVSelectionViewController deinit", event: .info)
     }
     
-    override public func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 		
 		setLocalizedTexts()
