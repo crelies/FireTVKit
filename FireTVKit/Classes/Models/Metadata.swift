@@ -12,12 +12,24 @@ import Foundation
 /// Conforms to `Codable` to be represented as JSON
 ///
 public struct Metadata: Codable {
-	public let type: MetadataType // required (if not present, video is assumed)
-	public var title: String? // optional
+    /// Type of the media represented by the `Metadata`, for example `MetadataType.video`
+    ///
+	public let type: MetadataType
+    /// Title of the media represented by the `Metadata`
+    ///
+	public var title: String?
+    /// Description of the media represented by the `Metadata`
+    ///
 	public var description: String? // optional
-    public private(set) var poster: String? // optional – URL of the album art for an audio media source
-	public var tracks: [Subtitle]? // optional – subtitles presented to the user
-	public var noreplay: Bool?  //optional
+    /// URL string of the album art for an audio media source
+    ///
+    public private(set) var poster: String?
+    /// Subtitles of the media represented by the `Metadata`
+    ///
+	public var tracks: [Subtitle]?
+    /// Boolean indicating if the media should replay
+    ///
+	public var noreplay: Bool?
 	
     /// Initializes only using a `MetadataType`
     ///

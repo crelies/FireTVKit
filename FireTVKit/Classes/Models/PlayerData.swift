@@ -23,6 +23,6 @@ public struct PlayerData {
 
 extension PlayerData: CustomStringConvertible {
 	public var description: String {
-        return "Status: [\(String(describing: status))], Position: [\(String(describing: position))]"
+        return "PlayerData(status: \(String(describing: status)), position: \(String(describing: position)))"
     }
 }

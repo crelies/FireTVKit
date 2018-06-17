@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Protocol declaring the use of a logger
+/// Protocol stating the use of a logger
 ///
 public protocol LoggerProvider {
     var logger: LoggerProtocol { get }
