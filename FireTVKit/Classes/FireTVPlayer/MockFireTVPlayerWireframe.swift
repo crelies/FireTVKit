@@ -13,6 +13,14 @@ import Foundation
 /// Use only for creating a mock player view controller (testing purposes)
 ///
 public struct MockFireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
+    public static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController {
+        return try makeViewController(forPlayer: player, theme: theme, delegate: delegate, noWifiAlertTitle: "No Wifi", noWifiAlertMessage: "No Wifi")
+    }
+    
+    public static func configureView(_ view: FireTVPlayerViewProtocol, withPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws {
+        
+    }
+    
     /// Creates a mock player view controller
     ///
     /// - Parameters:

@@ -9,6 +9,14 @@
 import Foundation
 
 public struct MockFireTVSelectionWireframe: FireTVSelectionWireframeProtocol {
+    public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
+        return try makeViewController(theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: "No devices", noWifiAlertTitle: "No Wifi", noWifiAlertMessage: "No Wifi")
+    }
+    
+    public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws {
+        
+    }
+    
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol, noDevicesText: String, noWifiAlertTitle: String, noWifiAlertMessage: String) throws -> UINavigationController {
         let podBundle = Bundle(for: FireTVSelectionViewController.self)
         

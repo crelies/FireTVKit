@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension FireTVSelectionWireframeProtocol {
+extension FireTVSelectionWireframe {
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
         return try makeViewController(theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices, noWifiAlertTitle: StringConstants.Alert.Title.error, noWifiAlertMessage: StringConstants.Alert.Message.noWifi)
     }

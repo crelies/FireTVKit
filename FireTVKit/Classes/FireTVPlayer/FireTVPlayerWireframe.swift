@@ -9,7 +9,7 @@
 import AmazonFling
 import UIKit
 
-extension FireTVPlayerWireframeProtocol {
+extension FireTVPlayerWireframe {
     /// Makes a ready to use `FireTVPlayerViewController`
     /// Uses `Error` as the title and `You are not connected to a wifi network. The connection is required.` as the message of the no wifi alert
     ///
