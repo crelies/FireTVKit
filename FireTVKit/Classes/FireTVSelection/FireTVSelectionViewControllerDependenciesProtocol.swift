@@ -9,6 +9,7 @@
 import Foundation
 
 /// Protocol for the dependencies of a `FireTVSelectionViewController`
+/// Currently the only dependency is a `LoggerService` instance
 ///
 public protocol FireTVSelectionViewControllerDependenciesProtocol: LoggerProvider {
     
