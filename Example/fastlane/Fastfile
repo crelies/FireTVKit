@@ -30,7 +30,7 @@ platform :ios do
       tests # run unit tests before releasing a new version
       version = version_bump_podspec(path: "FireTVKit.podspec", bump_type: bump_type)
 
-      pod_lib_lint(allow_warnings: false, sources: ["https://github.com/CocoaPods/Specs.git"])
+      pod_lib_lint(allow_warnings: true, sources: ["https://github.com/CocoaPods/Specs.git"], use_libraries: true)
       
       generate_docs
 
