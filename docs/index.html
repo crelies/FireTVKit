@@ -187,6 +187,8 @@
 <a href="https://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square" alt="License"></a></p>
 
 <p>The Amazon Fling SDK lacks a ready to use view controller for discovering FireTVs and controlling the built-in receiver app (media player). That&rsquo;s why I created FireTVKit. It offers a themable view controller for discovering FireTVs in your local network. All the necessary magic happens under the hood. In addition the FireTVKit brings a themable view controller for controlling the built-in media player of a FireTV. Even there all the magic happens under the hood. Thanks to the protocol oriented approach you can easily create your own discovery and player view. If you want to be completely free just use the FireTVManager to do the discovery and get the FireTVs. Then show the FireTVs to your users the way you want it.</p>
+
+<p>The implementation of the <code>FireTVPlayer</code> and the <code>FireTVSelection</code> follows the <code>VIPER</code> architecture pattern. Make yourself comfortable with <code>VIPER</code> first if you want to implement a custom view.</p>
 <h2 id='features' class='heading'>Features</h2>
 
 <table><thead>
@@ -387,11 +389,18 @@
 </code></pre>
 <h2 id='customize' class='heading'>Customize</h2>
 
+<p>Before you start creating your own selection or player view make yourself familiar with the <code>VIPER</code> architecture pattern. <a href="https://auth0.com/blog/compare-mvvm-and-viper-architectures/">This article</a> is a good starting point.</p>
+
 <ol>
 <li>You can use the <code><a href="Protocols/FireTVSelectionViewProtocol.html">FireTVSelectionViewProtocol</a></code> to create your own view for the fire tv selection.</li>
 <li>Use the <code><a href="Protocols/FireTVPlayerViewProtocol.html">FireTVPlayerViewProtocol</a></code> to create your custom player view.</li>
 <li>With the <code><a href="Protocols/FireTVSelectionThemeProtocol.html">FireTVSelectionThemeProtocol</a></code> and the <code><a href="Protocols/FireTVPlayerThemeProtocol.html">FireTVPlayerThemeProtocol</a></code> you can build custom themes for the themable selection and player view controller.</li>
 </ol>
+<h2 id='logging' class='heading'>Logging</h2>
+
+<p>To enable logging store a boolean value using the key <code>FireTVKitUserDefaultsKeys.fireTVKitLogging.rawValue</code> in the <code>UserDefaults</code>.</p>
+
+<p>If you want to log only a specific event store a <code><a href="Enums/LogEvent.html">LogEvent</a></code> enum case as raw value using the key <code>FireTVKitUserDefaultsKeys.fireTVKitLogEvent.rawValue</code> in the <code>UserDefaults</code>.</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
 <p><a href="https://crelies.github.io/FireTVKit/">Code documentation</a></p>
@@ -401,7 +410,13 @@
 <li>Currently there is only a reactive implementation. That&rsquo;s why you need <code>RxSwift</code>.</li>
 <li>Deployment target of your App is &gt;= iOS 9.0 .</li>
 <li>At the moment Bitcode is not supported. I hope that I will make progress in the future.</li>
+<li>To get rid off the cocoapods warning <code>Transitive dependencies</code> use the following in your <code>Podfile</code> (origin: the <code>AmazonFling</code> dependency contains a static framework):</li>
 </ol>
+<pre class="highlight ruby"><code><span class="n">pre_install</span> <span class="k">do</span> <span class="o">|</span><span class="n">installer</span><span class="o">|</span>
+    <span class="c1"># workaround for https://github.com/CocoaPods/CocoaPods/issues/3289</span>
+    <span class="no">Pod</span><span class="o">::</span><span class="no">Installer</span><span class="o">::</span><span class="no">Xcode</span><span class="o">::</span><span class="no">TargetValidator</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:define_method</span><span class="p">,</span> <span class="ss">:verify_no_static_framework_transitive_dependencies</span><span class="p">)</span> <span class="p">{}</span>
+<span class="k">end</span>
+</code></pre>
 <h2 id='installation' class='heading'>Installation</h2>
 
 <p><em>FireTVKit</em> is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
