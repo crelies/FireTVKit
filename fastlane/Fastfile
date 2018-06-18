@@ -48,6 +48,6 @@ platform :ios do
     end
     
     lane :generate_docs do
-        jazzy(config: '../jazzy.yaml')
+        jazzy(config: './jazzy.yaml')
     end
 end
