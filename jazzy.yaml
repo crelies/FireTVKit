@@ -16,8 +16,6 @@ copyright: Copyright (c) 2018 Christian Elies <chris.elies13@gmail.com>
 
 module: FireTVKit
 
-swift_version: 4.1
-
 sdk: iphone
 
 xcodebuild_arguments: [-scheme, FireTVKit]
