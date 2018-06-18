@@ -32,9 +32,9 @@ platform :ios do
 
       pod_lib_lint(allow_warnings: true, sources: ["https://github.com/CocoaPods/Specs.git"], use_libraries: true)
       
-      generate_docs
+      #generate_docs
 
-      git_commit(path: ["./FireTVKit.podspec", "./docs", "./Example/Podfile.lock"], message: "#{COMMIT_MESSAGE} #{version}")
+      git_commit(path: ["./FireTVKit.podspec", "./Example/Podfile.lock"], message: "#{COMMIT_MESSAGE} #{version}")
       push_to_git_remote(remote_branch: 'develop', force: false, tags: true)
 
       sh("git checkout master")
