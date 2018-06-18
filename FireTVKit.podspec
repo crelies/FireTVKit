@@ -13,6 +13,8 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
   The Amazon Fling SDK lacks a ready to use view controller for discovering FireTVs and controlling the built-in receiver app (media player). That's why I created FireTVKit. It offers a themable view controller for discovering FireTVs in your local network. All the necessary magic happens under the hood. In addition the FireTVKit brings a themable view controller for controlling the built-in media player of a FireTV. Even there all the magic happens under the hood. Thanks to the protocol oriented approach you can easily create your own discovery and player view. If you want to be completely free just use the FireTVManager to do the discovery and get the FireTVs. Then show the FireTVs to your users the way you want it.
+  
+  The implementation of the `FireTVPlayer` and the `FireTVSelection` follows the `VIPER` architecture pattern. Make yourself comfortable with `VIPER` first if you want to implement a custom view.
                        DESC
 
   s.homepage         = 'https://github.com/crelies/FireTVKit'
