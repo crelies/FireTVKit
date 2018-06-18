@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -194,7 +183,9 @@
 
                 </div>
               </div>
-            <p>Responsible for discovering FireTVs in your local network</p>
+            <p>Responsible for discovering FireTVs in your local network
+Observe the <code>devicesObservable</code> to be notified about changes
+to the internal devices list (device discovered or device lost)</p>
 
           </section>
           <section class="section task-group-section">
@@ -213,7 +204,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Observe the internal devices list using this observable</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -239,7 +231,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Get the current devices list</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -265,7 +258,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Initializes a <code>FireTVManager</code> instance
+All the magic (reachability and discovery setup) happens
+under the hood</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an error if the internal reachability service couldn&rsquo;t be initialized
+
+</div>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>

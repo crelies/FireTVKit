@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -194,7 +183,9 @@
 
                 </div>
               </div>
-            <p>Protocol describing the requirements of a fire tv player view</p>
+            <p>Protocol describing the requirements of a fire tv player view
+Implement this protocol if you want to create your custom player view
+Set it up using the <code>configure</code> method of the <code><a href="../Structs/FireTVPlayerWireframe.html">FireTVPlayerWireframe</a></code></p>
 
           </section>
           <section class="section task-group-section">
@@ -213,7 +204,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Method is called inside wireframe methods
+Store the presenter in a property inside your custom view
+That way you can notify the presenter about actions happening in the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -222,6 +216,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setPresenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerPresenterProtocol.html">FireTVPlayerPresenterProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>presenter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>related presenter</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -239,7 +252,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Method will be called from the presenter
+Use the theme to style your view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -248,6 +263,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setTheme</span><span class="p">(</span><span class="n">_</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerThemeProtocol.html">FireTVPlayerThemeProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theme</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>theme for styling your view</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -265,7 +299,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called from the presenter to notify you about the player name</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -274,6 +309,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setPlayerName</span><span class="p">(</span><span class="n">_</span> <span class="nv">playerName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>playerName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the name of the player</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -291,7 +345,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Method will be called from the presenter to tell the
+view the name of the currently playing media</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -300,6 +356,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setMediaName</span><span class="p">(</span><span class="n">_</span> <span class="nv">mediaName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>name of the media playing</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -317,7 +392,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Notifies about the current player status</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -326,6 +402,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setStatus</span><span class="p">(</span><span class="n">_</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>status</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the current player status</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -343,7 +438,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Tells the view about the current position text</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -352,6 +448,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setPositionText</span><span class="p">(</span><span class="n">_</span> <span class="nv">positionText</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>positionText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the current position text of the player, for example 00:04:34</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -369,7 +484,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Notifies the view about the current position in milliseconds</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -378,6 +494,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setPosition</span><span class="p">(</span><span class="n">_</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the current position</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -395,7 +530,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Passes the maximum position (duration of the currently playing media) to the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -404,6 +540,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setMaximumPosition</span><span class="p">(</span><span class="n">_</span> <span class="nv">maximumPosition</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maximumPosition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the maximum position</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -421,7 +576,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Notifies the view about the duration text of the currently playing media, for example 01:36:40</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -430,6 +586,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setDurationText</span><span class="p">(</span><span class="n">_</span> <span class="nv">durationText</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>durationText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the duration text of the playing media</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -450,11 +625,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Presenter calls this method to trigger an ui update without animation</p>
+
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        
+                        <p>Presenter calls this method to trigger an ui update without animation</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -463,6 +640,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateUI</span><span class="p">(</span><span class="n">withViewModel</span> <span class="nv">viewModel</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:9FireTVKit0a12TVPlayerViewD5ModelV">FireTVPlayerViewViewModel</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewModel</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>view model for the ui update</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -480,7 +676,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Presenter calls this method to trigger an ui update with or without animation</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -489,6 +686,37 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateUI</span><span class="p">(</span><span class="n">withViewModel</span> <span class="nv">viewModel</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:9FireTVKit0a12TVPlayerViewD5ModelV">FireTVPlayerViewViewModel</a></span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewModel</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>view model for the ui update</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>boolean value indicating if the ui update should animate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -506,7 +734,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Presenter calls this method to enable or disable the user interaction of a slider
+representing the position of the currently playing media</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -515,6 +745,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updatePositionSliderUserInteractionEnabled</span><span class="p">(</span><span class="n">_</span> <span class="nv">enabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>enabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>boolean value indicating if user interaction is enabled or not</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

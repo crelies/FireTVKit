@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -194,7 +183,9 @@
 
                 </div>
               </div>
-            
+            <p>Mock FireTV / player
+Use only for testing purposes</p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -212,7 +203,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Initializes the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -238,7 +230,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns the name of player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -247,6 +240,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">name</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><q>DummyPlayer</q></p>
                       </div>
                     </section>
                   </div>
@@ -264,7 +261,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns the unique identifier of the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -273,6 +271,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">uniqueIdentifier</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><q>DummyPlayerID</q></p>
                       </div>
                     </section>
                   </div>
@@ -290,7 +292,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns the current volume of the player
+The volume api is currently not supported
+by the built-in receiver app</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -299,6 +304,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getVolume</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -316,7 +325,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Sets the volume of the player
+The volume api is currently not supported
+by the built-in receiver app</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -325,6 +337,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setVolume</span><span class="p">(</span><span class="n">_</span> <span class="nv">volume</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -342,7 +358,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Asks the player if he is muted
+The mute api is currently not supported
+by the built-in receiver app</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -351,6 +370,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isMute</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -368,7 +391,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Mutes or unmutes the player
+The mute api is currently not supported
+by the built-in receiver app</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -377,6 +403,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setMute</span><span class="p">(</span><span class="n">_</span> <span class="nv">mute</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -394,7 +424,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns the current position of the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -403,6 +434,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getPosition</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a <code>NSNumber</code> with the value <code>5948</code> as task result</p>
                       </div>
                     </section>
                   </div>
@@ -420,7 +455,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns the duration of the currently playing media</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -429,6 +465,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDuration</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a <code>NSNumber</code> with the value <code>178934</code> as task result</p>
                       </div>
                     </section>
                   </div>
@@ -446,7 +486,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Fetch the current player status</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -455,6 +496,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getStatus</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a <code>MediaPlayerStatus</code> with the state <code>ReadyToPlay</code> and the condition <code>Good</code> as task result</p>
                       </div>
                     </section>
                   </div>
@@ -472,7 +517,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Asks the player if the given mime type is supported</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -481,6 +527,29 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isMimeTypeSupported</span><span class="p">(</span><span class="n">_</span> <span class="nv">mimeType</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mimeType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>mime type to check</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the string <code>true</code> as task result</p>
                       </div>
                     </section>
                   </div>
@@ -498,7 +567,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Pauses the playback on the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -507,6 +577,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pause</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -524,7 +598,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Starts the playback on the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -533,6 +608,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">play</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -550,7 +629,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Stops the playback on the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -559,6 +639,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">stop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -576,7 +660,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Seeks the player position to the given milliseconds using the given mode</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -585,6 +670,41 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">seek</span><span class="p">(</span><span class="n">toPosition</span> <span class="nv">positionMilliseconds</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">,</span> <span class="n">andMode</span> <span class="nv">seekMode</span><span class="p">:</span> <span class="kt">SeekType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>positionMilliseconds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>position to seek to in milliseconds</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>seekMode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>mode to use for the seeking</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -602,7 +722,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Sets the media source of the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -611,6 +732,65 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setMediaSourceToURL</span><span class="p">(</span><span class="n">_</span> <span class="nv">mediaLoc</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">metaData</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">autoPlay</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">andPlayInBackground</span> <span class="nv">playInBg</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaLoc</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the url of the media which should be played</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>metaData</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the metadata of the media</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>autoPlay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicates if media should be autoplayed, currently not supported by the built-in media receiver</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>playInBg</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicates if media should be played in background, currently not supported by the built-in media receiver</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -628,7 +808,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Adds a status listener to the player
+Currently only one listener is supported by the built-in media receiver</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -637,6 +819,29 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">listener</span><span class="p">:</span> <span class="kt">MediaPlayerStatusListener</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>listener</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an object conforming to <code>MediaPlayerStatusListener</code> which will get status updates from the player</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -654,7 +859,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Removes the given listener from the playe</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -663,6 +869,29 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">listener</span><span class="p">:</span> <span class="kt">MediaPlayerStatusListener</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>listener</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>listener to remove</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -680,7 +909,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Sets the position update interval</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -689,6 +919,29 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPositionUpdateInterval</span><span class="p">(</span><span class="n">_</span> <span class="nv">intervalMs</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>intervalMs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>update interval in milliseconds</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -706,7 +959,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Sends the given command to the player
+Currently not supported by the built-in media receiver</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -715,6 +970,29 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendCommand</span><span class="p">(</span><span class="n">_</span> <span class="nv">cmd</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cmd</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the command string</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -732,7 +1010,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Sets the style of the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -741,6 +1020,29 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPlayerStyle</span><span class="p">(</span><span class="n">_</span> <span class="nv">styleJson</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>styleJson</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the json encoded player style</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a nil task result</p>
                       </div>
                     </section>
                   </div>
@@ -758,7 +1060,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Fetches the info of the currently playing media</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -767,6 +1070,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMediaInfo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">BFTask</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a media player info with <q>http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4</q> as source, <q>{\</q>title\<q>: \</q>Testvideo\<q>, \</q>description\<q>: \</q>Only use for test purposes\<q>, \</q>type\<q>: \</q>video\<q>}</q> as metadata and &ldquo;&rdquo; as extra</p>
                       </div>
                     </section>
                   </div>

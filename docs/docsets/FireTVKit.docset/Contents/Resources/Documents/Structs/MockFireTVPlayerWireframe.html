@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -194,7 +183,9 @@
 
                 </div>
               </div>
-            
+            <p>Mock implementation of <code>FireTVPlayerWireframeProtocol</code>
+Use only for creating a mock player view controller (testing purposes)</p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -202,9 +193,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9FireTVKit04MockA17TVPlayerWireframeV18makeViewControllerAA0adgH0CSo17RemoteMediaPlayer_p03forK0_AA0aD13ThemeProtocol_p5themeAA0ad8DelegateN0_pSg8delegateSS16noWifiAlertTitleSS0rsT7MessagetKFZ"></a>
-                    <a name="//apple_ref/swift/Method/makeViewController(forPlayer:theme:delegate:noWifiAlertTitle:noWifiAlertMessage:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9FireTVKit04MockA17TVPlayerWireframeV18makeViewControllerAA0adgH0CSo17RemoteMediaPlayer_p03forK0_AA0aD13ThemeProtocol_p5themeAA0ad8DelegateN0_pSg8delegateSS16noWifiAlertTitleSS0rsT7MessagetKFZ">makeViewController(forPlayer:theme:delegate:noWifiAlertTitle:noWifiAlertMessage:)</a>
+                    <a name="/s:9FireTVKit04MockA17TVPlayerWireframeV18makeViewControllerAA0adgH0CSo17RemoteMediaPlayer_p03forK0_AA0aD13ThemeProtocol_p5themeAA0ad8DelegateN0_pSg8delegatetKFZ"></a>
+                    <a name="//apple_ref/swift/Method/makeViewController(forPlayer:theme:delegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9FireTVKit04MockA17TVPlayerWireframeV18makeViewControllerAA0adgH0CSo17RemoteMediaPlayer_p03forK0_AA0aD13ThemeProtocol_p5themeAA0ad8DelegateN0_pSg8delegatetKFZ">makeViewController(forPlayer:theme:delegate:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -218,9 +209,139 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">makeViewController</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">RemoteMediaPlayer</span><span class="p">,</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerThemeProtocol.html">FireTVPlayerThemeProtocol</a></span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerDelegateProtocol.html">FireTVPlayerDelegateProtocol</a></span><span class="p">?)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/FireTVPlayerViewController.html">FireTVPlayerViewController</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9FireTVKit04MockA17TVPlayerWireframeV13configureViewyAA0adG8Protocol_p_So17RemoteMediaPlayer_p04withK0AA0ad5ThemeH0_p5themeAA0ad8DelegateH0_pSg8delegatetKFZ"></a>
+                    <a name="//apple_ref/swift/Method/configureView(_:withPlayer:theme:delegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9FireTVKit04MockA17TVPlayerWireframeV13configureViewyAA0adG8Protocol_p_So17RemoteMediaPlayer_p04withK0AA0ad5ThemeH0_p5themeAA0ad8DelegateH0_pSg8delegatetKFZ">configureView(_:withPlayer:theme:delegate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mock implementation: does nothing!</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">configureView</span><span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerViewProtocol.html">FireTVPlayerViewProtocol</a></span><span class="p">,</span> <span class="n">withPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">RemoteMediaPlayer</span><span class="p">,</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerThemeProtocol.html">FireTVPlayerThemeProtocol</a></span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerDelegateProtocol.html">FireTVPlayerDelegateProtocol</a></span><span class="p">?)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9FireTVKit04MockA17TVPlayerWireframeV18makeViewControllerAA0adgH0CSo17RemoteMediaPlayer_p03forK0_AA0aD13ThemeProtocol_p5themeAA0ad8DelegateN0_pSg8delegateSS16noWifiAlertTitleSS0rsT7MessagetKFZ"></a>
+                    <a name="//apple_ref/swift/Method/makeViewController(forPlayer:theme:delegate:noWifiAlertTitle:noWifiAlertMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9FireTVKit04MockA17TVPlayerWireframeV18makeViewControllerAA0adgH0CSo17RemoteMediaPlayer_p03forK0_AA0aD13ThemeProtocol_p5themeAA0ad8DelegateN0_pSg8delegateSS16noWifiAlertTitleSS0rsT7MessagetKFZ">makeViewController(forPlayer:theme:delegate:noWifiAlertTitle:noWifiAlertMessage:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a mock player view controller</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an error if something unexpected happens during the creation process
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">makeViewController</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">RemoteMediaPlayer</span><span class="p">,</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerThemeProtocol.html">FireTVPlayerThemeProtocol</a></span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVPlayerDelegateProtocol.html">FireTVPlayerDelegateProtocol</a></span><span class="p">?,</span> <span class="nv">noWifiAlertTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">noWifiAlertMessage</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/FireTVPlayerViewController.html">FireTVPlayerViewController</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the player which should be represented</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theme</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the theme for the view controller</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the delegate which will be notified about actions</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>noWifiAlertTitle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a custom title for the no wifi alert</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>noWifiAlertMessage</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a custom message for the no wifi alert</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a configured <code><a href="../Classes/FireTVPlayerViewController.html">FireTVPlayerViewController</a></code> instance</p>
                       </div>
                     </section>
                   </div>
@@ -238,7 +359,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Mock implementation: does nothing!</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>

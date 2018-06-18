@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -194,7 +183,10 @@
 
                 </div>
               </div>
-            <p>Protocol describing the requirements of a <code>FireTVSelectionPresenter</code></p>
+            <p>Protocol describing the requirements of a <code>FireTVSelectionPresenter</code>
+The presenter in the <code>VIPER</code> architecture is responsible for a view
+and the counterpart of the view
+Comes to play if you implement a custom <code><a href="../Protocols/FireTVSelectionViewProtocol.html">FireTVSelectionViewProtocol</a></code></p>
 
           </section>
           <section class="section task-group-section">
@@ -213,7 +205,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Should be called by a custom <code><a href="../Protocols/FireTVSelectionViewProtocol.html">FireTVSelectionViewProtocol</a></code> if
+your custom view did load</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -239,7 +233,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Should be called by a custom <code><a href="../Protocols/FireTVSelectionViewProtocol.html">FireTVSelectionViewProtocol</a></code> if
+your custom view will appear</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -265,7 +261,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Should be called by your custom <code><a href="../Protocols/FireTVSelectionViewProtocol.html">FireTVSelectionViewProtocol</a></code>
+if you have a close button which was pressed
+The presenter will clean up to be ready to close the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
