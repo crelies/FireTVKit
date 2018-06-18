@@ -198,6 +198,12 @@ Before you start creating your own selection or player view make yourself famili
 2. Use the `FireTVPlayerViewProtocol` to create your custom player view.
 3. With the `FireTVSelectionThemeProtocol` and the `FireTVPlayerThemeProtocol` you can build custom themes for the themable selection and player view controller.
 
+## Logging ##
+
+To enable logging store a boolean value using the key `FireTVKitUserDefaultsKeys.fireTVKitLogging.rawValue` in the `UserDefaults`.
+
+If you want to log only a specific event store a `LogEvent` enum case as raw value using the key `FireTVKitUserDefaultsKeys.fireTVKitLogEvent.rawValue` in the `UserDefaults`.
+
 ## Documentation ##
 
 [Code documentation](https://crelies.github.io/FireTVKit/)
