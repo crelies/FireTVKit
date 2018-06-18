@@ -11,7 +11,7 @@
       location = "group:../jazzy.yaml">
    </FileRef>
    <FileRef
-      location = "group:fastlane">
+      location = "group:../fastlane">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
