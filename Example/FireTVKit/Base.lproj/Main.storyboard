@@ -1,30 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yiI-oa-UyT">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Example-->
+        <scene sceneID="WFR-ua-jIq">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FUW-Tw-0Gq" customClass="ViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="fmj-mf-Edj"/>
+                        <viewControllerLayoutGuide type="bottom" id="N7G-pu-ai0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <view key="view" contentMode="scaleToFill" id="tqZ-wf-8Yq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m8i-B4-I3T">
+                                <rect key="frame" x="25" y="80" width="270" height="216"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k07-5Q-NDc">
+                                        <rect key="frame" x="62" y="0.0" width="146" height="24"/>
+                                        <state key="normal" title="Open selected Player"/>
+                                        <connections>
+                                            <action selector="didPressOpenPlayerButton:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="MAt-K9-EZq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF8-97-eNW">
+                                        <rect key="frame" x="0.0" y="32" width="270" height="24"/>
+                                        <state key="normal" title="FireTVManager Example ViewController"/>
+                                        <connections>
+                                            <action selector="didPressFireTVManagerExampleViewController:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="mli-Rn-Nuj"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXN-QP-r9u">
+                                        <rect key="frame" x="15" y="64" width="240" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="xZW-1l-umo"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgO-Ze-DC7">
+                                        <rect key="frame" x="16" y="96" width="238" height="24"/>
+                                        <state key="normal" title="Open Mock Player Selection (dark)"/>
+                                        <connections>
+                                            <action selector="didPressDummyPlayerSelectionButtonDarkTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="faZ-nC-mUB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49Y-rH-HjF">
+                                        <rect key="frame" x="16" y="128" width="238" height="24"/>
+                                        <state key="normal" title="Open Mock Player Selection (light)"/>
+                                        <connections>
+                                            <action selector="didPressDummyPlayerSelectionButtonLightTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="tCl-L4-E3V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xur-lf-b4X">
+                                        <rect key="frame" x="50" y="160" width="170" height="24"/>
+                                        <state key="normal" title="Open Mock Player (dark)"/>
+                                        <connections>
+                                            <action selector="didPressDummyPlayerButtonDarkTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="U2D-fo-Xzt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX4-yC-XFv">
+                                        <rect key="frame" x="50" y="192" width="170" height="24"/>
+                                        <state key="normal" title="Open Mock Player (light)"/>
+                                        <connections>
+                                            <action selector="didPressDummyPlayerButtonLightTheme:" destination="FUW-Tw-0Gq" eventType="touchUpInside" id="IPd-E9-l2k"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAo-us-s4C">
+                                <rect key="frame" x="0.0" y="368" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="j7P-gF-wdO"/>
+                                </constraints>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bAo-us-s4C" secondAttribute="trailing" id="OZJ-bc-ePY"/>
+                            <constraint firstItem="bAo-us-s4C" firstAttribute="leading" secondItem="tqZ-wf-8Yq" secondAttribute="leading" id="V9i-TS-ZML"/>
+                            <constraint firstItem="m8i-B4-I3T" firstAttribute="top" secondItem="fmj-mf-Edj" secondAttribute="bottom" constant="16" id="Voj-Dv-cor"/>
+                            <constraint firstItem="N7G-pu-ai0" firstAttribute="top" secondItem="bAo-us-s4C" secondAttribute="bottom" id="XSR-5C-wP8"/>
+                            <constraint firstItem="m8i-B4-I3T" firstAttribute="centerX" secondItem="tqZ-wf-8Yq" secondAttribute="centerX" id="uXV-FX-lV0"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Example" id="n8c-QM-95T">
+                        <barButtonItem key="rightBarButtonItem" title="Player selection" id="SDt-BX-WOp">
+                            <connections>
+                                <action selector="didPressPlayerSelectionBarButtonItem:" destination="FUW-Tw-0Gq" id="fWG-SU-QeN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playerContainerView" destination="bAo-us-s4C" id="eJz-Nq-qZy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKw-GK-tdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1793" y="800"/>
+        </scene>
+        <!--FireTV Manager Example View Controller-->
+        <scene sceneID="C50-jC-aVh">
+            <objects>
+                <viewController storyboardIdentifier="FireTVManagerExampleViewController" id="pyn-Og-GjP" customClass="FireTVManagerExampleViewController" customModule="FireTVKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V0Z-wX-NyT"/>
+                        <viewControllerLayoutGuide type="bottom" id="s85-d5-AyD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Gd-J3-Ixf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYR-JW-GzO">
+                                <rect key="frame" x="273" y="28" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="didPressCloseButton:" destination="pyn-Og-GjP" eventType="touchUpInside" id="cZZ-CS-LgA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-bS-Pql">
+                                <rect key="frame" x="113" y="274" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Do9-bS-Pql" firstAttribute="centerY" secondItem="7Gd-J3-Ixf" secondAttribute="centerY" id="HgK-4X-gvI"/>
+                            <constraint firstItem="Do9-bS-Pql" firstAttribute="centerX" secondItem="7Gd-J3-Ixf" secondAttribute="centerX" id="PGB-xt-LWL"/>
+                            <constraint firstItem="FYR-JW-GzO" firstAttribute="top" secondItem="V0Z-wX-NyT" secondAttribute="bottom" constant="8" id="Yw4-G6-mDq"/>
+                            <constraint firstAttribute="trailing" secondItem="FYR-JW-GzO" secondAttribute="trailing" constant="8" id="aOe-7t-d0E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstPlayerLabel" destination="Do9-bS-Pql" id="QXZ-Uj-bfc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBz-Lf-die" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2619" y="800"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I3K-Uj-Ijg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yiI-oa-UyT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Im6-PX-XuJ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FUW-Tw-0Gq" kind="relationship" relationship="rootViewController" id="lUr-Yk-Rj3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1D-aX-zX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="800"/>
         </scene>
     </scenes>
 </document>

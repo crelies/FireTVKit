@@ -1,0 +1,53 @@
+# Customize this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.68.1"
+
+default_platform :ios
+
+COMMIT_MESSAGE = "Bump podspec to"
+
+platform :ios do
+    lane :tests do
+        scan(workspace: "Example/FireTVKit.xcworkspace", scheme: "UnitTests", clean: true)
+    end
+    
+    lane :release do |options|
+      bump_type = options[:bump_type]
+
+      sh("git checkout develop")
+      ensure_git_branch(branch: 'develop') # make sure that we are on develop branch
+      tests # run unit tests before releasing a new version
+      version = version_bump_podspec(path: "FireTVKit.podspec", bump_type: bump_type)
+
+      pod_lib_lint(allow_warnings: true, sources: ["https://github.com/CocoaPods/Specs.git"], use_libraries: true)
+      
+      #generate_docs
+
+      git_commit(path: ["./FireTVKit.podspec", "./Example/Podfile.lock"], message: "#{COMMIT_MESSAGE} #{version}")
+      push_to_git_remote(remote_branch: 'develop', force: false, tags: true)
+
+      sh("git checkout master")
+      sh("git merge develop")
+
+      add_git_tag(tag:"#{version}")
+      sh("git push origin master --tags")
+
+      sh("git fetch --tags")
+      pod_push(path: "FireTVKit.podspec", allow_warnings: true)
+    end
+    
+    lane :generate_docs do
+        jazzy(config: './jazzy.yaml')
+    end
+end

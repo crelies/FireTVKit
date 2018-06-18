@@ -10,6 +10,8 @@ Discovering your FireTV and controlling the built-in media player is now easy an
 
 The Amazon Fling SDK lacks a ready to use view controller for discovering FireTVs and controlling the built-in receiver app (media player). That's why I created FireTVKit. It offers a themable view controller for discovering FireTVs in your local network. All the necessary magic happens under the hood. In addition the FireTVKit brings a themable view controller for controlling the built-in media player of a FireTV. Even there all the magic happens under the hood. Thanks to the protocol oriented approach you can easily create your own discovery and player view. If you want to be completely free just use the FireTVManager to do the discovery and get the FireTVs. Then show the FireTVs to your users the way you want it.
 
+The implementation of the `FireTVPlayer` and the `FireTVSelection` follows the `VIPER` architecture pattern. Make yourself comfortable with `VIPER` first if you want to implement a custom view.
+
 ## Features ##
 
 | | Feature |
@@ -190,9 +192,17 @@ final class FireTVManagerExampleViewController: UIViewController {
 
 ## Customize
 
+Before you start creating your own selection or player view make yourself familiar with the `VIPER` architecture pattern. [This article](https://auth0.com/blog/compare-mvvm-and-viper-architectures/) is a good starting point.
+
 1. You can use the `FireTVSelectionViewProtocol` to create your own view for the fire tv selection.
 2. Use the `FireTVPlayerViewProtocol` to create your custom player view.
 3. With the `FireTVSelectionThemeProtocol` and the `FireTVPlayerThemeProtocol` you can build custom themes for the themable selection and player view controller.
+
+## Logging ##
+
+To enable logging store a boolean value using the key `FireTVKitUserDefaultsKeys.fireTVKitLogging.rawValue` in the `UserDefaults`.
+
+If you want to log only a specific event store a `LogEvent` enum case as raw value using the key `FireTVKitUserDefaultsKeys.fireTVKitLogEvent.rawValue` in the `UserDefaults`.
 
 ## Documentation ##
 
@@ -203,6 +213,14 @@ final class FireTVManagerExampleViewController: UIViewController {
 1. Currently there is only a reactive implementation. That's why you need `RxSwift`.
 2. Deployment target of your App is >= iOS 9.0 .
 3. At the moment Bitcode is not supported. I hope that I will make progress in the future.
+4. To get rid off the cocoapods warning `Transitive dependencies` use the following in your `Podfile` (origin: the `AmazonFling` dependency contains a static framework):
+
+```ruby
+pre_install do |installer|
+    # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289
+    Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+end
+```
 
 ## Installation
 

@@ -1,0 +1,23 @@
+author: Christian Elies
+
+min_acl: public
+
+source_directory: ./Example/Pods
+
+include: ["./FireTVKit/Classes/**"]
+
+theme: apple
+
+github_url: https://github.com/crelies/FireTVKit
+
+readme: ./README.md
+
+copyright: Copyright (c) 2018 Christian Elies <chris.elies13@gmail.com>
+
+module: FireTVKit
+
+sdk: iphone
+
+xcodebuild_arguments: [-scheme, FireTVKit]
+
+output: ./docs
