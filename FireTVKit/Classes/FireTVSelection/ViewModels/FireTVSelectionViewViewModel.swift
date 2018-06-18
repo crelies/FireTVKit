@@ -11,8 +11,16 @@ import Foundation
 /// Represents the view model for the fire tv selection view
 ///
 public struct FireTVSelectionViewViewModel {
+	/// Declares if the close button is hidden
+	///
 	let isCloseButtonHidden: Bool
+    /// Specifies if the table view is hidden
+	///
     let isTableViewHidden: Bool
+    /// Defines if the no devices label is hidden
+	///
     let isNoDevicesLabelHidden: Bool
+    /// Specifies if the activity indicator is hidden
+	///
     let isActivityIndicatorViewHidden: Bool
 }

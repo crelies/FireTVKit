@@ -16,7 +16,9 @@ public struct MockFireTVPlayerWireframe: FireTVPlayerWireframeProtocol {
     public static func makeViewController(forPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws -> FireTVPlayerViewController {
         return try makeViewController(forPlayer: player, theme: theme, delegate: delegate, noWifiAlertTitle: "No Wifi", noWifiAlertMessage: "No Wifi")
     }
-    
+	
+	/// Mock implementation: does nothing!
+	///
     public static func configureView(_ view: FireTVPlayerViewProtocol, withPlayer player: RemoteMediaPlayer, theme: FireTVPlayerThemeProtocol, delegate: FireTVPlayerDelegateProtocol?) throws {
         
     }

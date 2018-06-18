@@ -9,10 +9,34 @@
 import UIKit
 
 extension FireTVSelectionWireframe {
+	/// Makes a `FireTVSelectionViewController` using default string values
+	/// for the `noDevicesText` ("No devices found"), the `noWifiAlertTitle` ("Error")
+	/// and the `noWifiAlertMessage` ("You are not connected to a wifi network. The connection is required.")
+	///
+	/// - Parameters:
+	///   - theme: theme for the view controller
+	///   - playerId: player id to be searched for
+	///   - media: media to be played on player selection
+	///   - delegate: delegate which will be notified about actions
+	/// - Returns: a `UINavigationController` with a `FireTVSelectionViewController` as the root view controller
+	/// - Throws: an error if something unexpected happens
+	///
     public static func makeViewController(theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws -> UINavigationController {
         return try makeViewController(theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices, noWifiAlertTitle: StringConstants.Alert.Title.error, noWifiAlertMessage: StringConstants.Alert.Message.noWifi)
     }
     
+	/// Configures the given view to be ready to go using default string values
+	/// for the `noDevicesText` ("No devices found"), the `noWifiAlertTitle` ("Error")
+	/// and the `noWifiAlertMessage` ("You are not connected to a wifi network. The connection is required.")
+	///
+	/// - Parameters:
+	///   - view: view to be configured
+	///   - theme: theme for the view
+	///   - playerId: player id to be searched for
+	///   - media: media to play on selected player
+	///   - delegate: delegate which will be notified about actions
+	/// - Throws: an error if something weird happens
+	///
     public static func configureView(_ view: FireTVSelectionViewProtocol, theme: FireTVSelectionThemeProtocol, playerId: String, media: FireTVMedia?, delegate: FireTVSelectionDelegateProtocol) throws {
         try configureView(view, theme: theme, playerId: playerId, media: media, delegate: delegate, noDevicesText: StringConstants.FireTVSelection.noDevices, noWifiAlertTitle: StringConstants.Alert.Title.error, noWifiAlertMessage: StringConstants.Alert.Message.noWifi)
     }
