@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -194,7 +183,10 @@
 
                 </div>
               </div>
-            <p>Protocol describing the requirements of a <code>FireTVPlayerPresenter</code></p>
+            <p>Protocol describing the requirements of a <code>FireTVPlayerPresenter</code>
+The presenter is responsible for a <code>FireTVViewProtocol</code> and needs to
+be notified about certain actions happening in the view
+Call the appropriate method if you implement a custom fire tv player view</p>
 
           </section>
           <section class="section task-group-section">
@@ -213,7 +205,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Tell the presenter that your view did load</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -239,7 +232,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Tell the presenter that your view will appear</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -265,7 +259,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Call this method to let the presenter do
+the necessary preparations for closing the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -291,7 +287,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Call this method if you want to rewind the player for 10 seconds</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -317,7 +314,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Call this method to send the play action to the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -343,7 +341,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Call this method to send the pause action to the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -369,7 +368,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Call this method to send the stop action to the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -395,7 +395,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Call this method to fast forward the player for 10 seconds</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -421,7 +422,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Updates the position label text using a position</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -430,6 +432,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didChangePositionValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the updated position</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -447,7 +468,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Updates the playback position of the player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -456,6 +478,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didChangePosition</span><span class="p">(</span><span class="n">_</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the new player position</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -194,7 +183,8 @@
 
                 </div>
               </div>
-            <p>Protocol representing the requirements of a fire tv selection view</p>
+            <p>Protocol representing the requirements of a fire tv selection view
+Methods will be called by an implementation of the <code><a href="../Protocols/FireTVSelectionPresenterProtocol.html">FireTVSelectionPresenterProtocol</a></code></p>
 
           </section>
           <section class="section task-group-section">
@@ -213,7 +203,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Property for storing the dependencies of the view
+Will be set by the methods of the <code><a href="../Structs/FireTVSelectionWireframe.html">FireTVSelectionWireframe</a></code></p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -239,7 +231,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>The table view presenting the found fire tvs</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -265,7 +258,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called by the <code><a href="../Structs/FireTVSelectionWireframe.html">FireTVSelectionWireframe</a></code>
+Store the presenter in a property
+The presenter is the counterpart of the view in the <code>VIPER</code> architecture
+He is responsible for updating the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -274,6 +271,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setPresenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVSelectionPresenterProtocol.html">FireTVSelectionPresenterProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>presenter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>presenter for the view</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -291,7 +307,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called by the presenter to pass the text for the no devices label to the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -300,6 +317,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setNoDevicesLabelText</span><span class="p">(</span><span class="n">_</span> <span class="nv">noDevicesLabelText</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>noDevicesLabelText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>text to show in the no devices label</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -317,7 +353,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Presenter calls the method to tell the view to use the given theme</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -326,6 +363,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setTheme</span><span class="p">(</span><span class="n">_</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVSelectionThemeProtocol.html">FireTVSelectionThemeProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theme</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>theme which should be set</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -343,7 +399,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called by the presenter to pass a data source for the table view of the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -352,6 +409,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setTableViewDataSource</span><span class="p">(</span><span class="nv">dataSource</span><span class="p">:</span> <span class="kt">UITableViewDataSource</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataSource</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>table view data source</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -369,7 +445,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Presenter calls the method to pass a delegate for the table view to the view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -378,6 +455,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setTableViewDelegate</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt">UITableViewDelegate</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>table view delegate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -395,7 +491,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called by the presenter to tell the view to reload the data of the table view</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -424,11 +521,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called by the presenter to tell the view to update the ui using the given view model
+without an animation</p>
+
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        
+                        <p>Default implementation updating the ui using
+the given view model without an animation</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -437,6 +538,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateUI</span><span class="p">(</span><span class="n">withViewModel</span> <span class="nv">viewModel</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:9FireTVKit0a15TVSelectionViewD5ModelV">FireTVSelectionViewViewModel</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewModel</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>view model for the ui update</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -454,7 +574,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Presenter calls the method to tell the view to update the ui
+with or without an animation using the given view model</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -463,6 +585,37 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateUI</span><span class="p">(</span><span class="n">withViewModel</span> <span class="nv">viewModel</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:9FireTVKit0a15TVSelectionViewD5ModelV">FireTVSelectionViewViewModel</a></span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewModel</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>view model for the ui update</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>boolean value indicating if the ui update should be animated or not</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

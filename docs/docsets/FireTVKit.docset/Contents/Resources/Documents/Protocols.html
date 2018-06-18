@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -239,7 +228,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Protocol describing the requirements of a <code>FireTVPlayerPresenter</code></p>
+                        <p>Protocol describing the requirements of a <code>FireTVPlayerPresenter</code>
+The presenter is responsible for a <code>FireTVViewProtocol</code> and needs to
+be notified about certain actions happening in the view
+Call the appropriate method if you implement a custom fire tv player view</p>
 
                         <a href="Protocols/FireTVPlayerPresenterProtocol.html" class="slightly-smaller">See more</a>
                       </div>
@@ -271,7 +263,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Protocol describing the requirements of a fire tv player view</p>
+                        <p>Protocol describing the requirements of a fire tv player view
+Implement this protocol if you want to create your custom player view
+Set it up using the <code>configure</code> method of the <code><a href="Structs/FireTVPlayerWireframe.html">FireTVPlayerWireframe</a></code></p>
 
                         <a href="Protocols/FireTVPlayerViewProtocol.html" class="slightly-smaller">See more</a>
                       </div>
@@ -367,7 +361,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Protocol describing the requirements of a <code>FireTVSelectionPresenter</code></p>
+                        <p>Protocol describing the requirements of a <code>FireTVSelectionPresenter</code>
+The presenter in the <code>VIPER</code> architecture is responsible for a view
+and the counterpart of the view
+Comes to play if you implement a custom <code><a href="Protocols/FireTVSelectionViewProtocol.html">FireTVSelectionViewProtocol</a></code></p>
 
                         <a href="Protocols/FireTVSelectionPresenterProtocol.html" class="slightly-smaller">See more</a>
                       </div>
@@ -399,7 +396,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Protocol for the dependencies of a <code><a href="Classes/FireTVSelectionViewController.html">FireTVSelectionViewController</a></code></p>
+                        <p>Protocol for the dependencies of a <code><a href="Classes/FireTVSelectionViewController.html">FireTVSelectionViewController</a></code>
+Currently the only dependency is a <code>LoggerService</code> instance</p>
 
                       </div>
                       <div class="declaration">
@@ -430,7 +428,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Protocol representing the requirements of a fire tv selection view</p>
+                        <p>Protocol representing the requirements of a fire tv selection view
+Methods will be called by an implementation of the <code><a href="Protocols/FireTVSelectionPresenterProtocol.html">FireTVSelectionPresenterProtocol</a></code></p>
 
                         <a href="Protocols/FireTVSelectionViewProtocol.html" class="slightly-smaller">See more</a>
                       </div>
@@ -526,7 +525,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Protocol declaring the use of a logger</p>
+                        <p>Protocol stating the use of a logger</p>
 
                         <a href="Protocols/LoggerProvider.html" class="slightly-smaller">See more</a>
                       </div>
@@ -558,7 +557,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Protocol for the dependencies of a <code>PlayerService</code> instance</p>
+                        <p>Protocol declaring the dependencies for a <code>PlayerService</code> instance
+Currently only a logger is required</p>
 
                       </div>
                       <div class="declaration">

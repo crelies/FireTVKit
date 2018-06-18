@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -203,9 +192,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9FireTVKit21PlayerServiceProtocolP6playerSo011RemoteMediaC0_pSgvp"></a>
+                    <a name="/s:9FireTVKit21PlayerServiceProtocolP6playerXevp"></a>
                     <a name="//apple_ref/swift/Property/player" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP6playerSo011RemoteMediaC0_pSgvp">player</a>
+                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP6playerXevp">player</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -213,7 +202,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>The player managed by the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -239,7 +229,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Observable stream of player data emitted during playback</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -255,9 +246,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9FireTVKit21PlayerServiceProtocolPxAA0cd12DependenciesE0_p12dependencies_So011RemoteMediaC0_pSg04withC0tcfc"></a>
+                    <a name="/s:9FireTVKit21PlayerServiceProtocolPXeXecfc"></a>
                     <a name="//apple_ref/swift/Method/init(dependencies:withPlayer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolPxAA0cd12DependenciesE0_p12dependencies_So011RemoteMediaC0_pSg04withC0tcfc">init(dependencies:withPlayer:)</a>
+                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolPXeXecfc">init(dependencies:withPlayer:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -265,7 +256,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Initializes the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -275,15 +267,46 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dependencies</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>player service dependencies</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>player which should be managed and controlled</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9FireTVKit21PlayerServiceProtocolP09connectToC07RxSwift17PrimitiveSequenceVyAE16CompletableTraitOs5NeverOGSo011RemoteMediaC0_pF"></a>
+                    <a name="/s:9FireTVKit21PlayerServiceProtocolP09connectToC0XeXeF"></a>
                     <a name="//apple_ref/swift/Method/connectToPlayer(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP09connectToC07RxSwift17PrimitiveSequenceVyAE16CompletableTraitOs5NeverOGSo011RemoteMediaC0_pF">connectToPlayer(_:)</a>
+                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP09connectToC0XeXeF">connectToPlayer(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -291,7 +314,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Connects to the given player to receive player status feedback</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -300,6 +324,29 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">connectToPlayer</span><span class="p">(</span><span class="n">_</span> <span class="nv">newPlayer</span><span class="p">:</span> <span class="kt">RemoteMediaPlayer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Completable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newPlayer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>player to connect to</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful connection or an error</p>
                       </div>
                     </section>
                   </div>
@@ -317,7 +364,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Tries to play the player handled by the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -326,6 +374,10 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">play</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Completable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful action or an error</p>
                       </div>
                     </section>
                   </div>
@@ -343,7 +395,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Plays the given url with the passed metadata on the player handled by the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -352,6 +405,41 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">play</span><span class="p">(</span><span class="n">withMetadata</span> <span class="nv">metadata</span><span class="p">:</span> <span class="kt"><a href="../Structs/Metadata.html">Metadata</a></span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Completable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>metadata</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>metadata describing the media at the given url</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the url of the media which should be played</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful action or an error</p>
                       </div>
                     </section>
                   </div>
@@ -369,7 +457,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Pauses the current playback of the player handled by the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -379,15 +468,19 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful action or an error</p>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9FireTVKit21PlayerServiceProtocolP11setPosition7RxSwift17PrimitiveSequenceVyAE16CompletableTraitOs5NeverOGs5Int64V8position_SC8SeekTypeV4typetF"></a>
+                    <a name="/s:9FireTVKit21PlayerServiceProtocolP11setPositionXeXeF"></a>
                     <a name="//apple_ref/swift/Method/setPosition(position:type:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP11setPosition7RxSwift17PrimitiveSequenceVyAE16CompletableTraitOs5NeverOGs5Int64V8position_SC8SeekTypeV4typetF">setPosition(position:type:)</a>
+                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP11setPositionXeXeF">setPosition(position:type:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -395,7 +488,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Modifies the playback position of the player handled by the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -404,6 +498,41 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setPosition</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">SeekType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Completable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>position to seek to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>seek type, to be able to set an absolute position or a relative position</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful action or an error</p>
                       </div>
                     </section>
                   </div>
@@ -421,7 +550,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Stops the playback of the player handled by the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -431,15 +561,19 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful action or an error</p>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9FireTVKit21PlayerServiceProtocolP03getC4Info7RxSwift17PrimitiveSequenceVyAE11SingleTraitOSo05MediacG0CGyF"></a>
+                    <a name="/s:9FireTVKit21PlayerServiceProtocolP03getC4InfoXeXeF"></a>
                     <a name="//apple_ref/swift/Method/getPlayerInfo()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP03getC4Info7RxSwift17PrimitiveSequenceVyAE11SingleTraitOSo05MediacG0CGyF">getPlayerInfo()</a>
+                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP03getC4InfoXeXeF">getPlayerInfo()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -447,7 +581,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Gets the <code>MediaPlayerInfo</code> of the player handled by the service (url and metadata of the currently played media)</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -456,6 +591,10 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getPlayerInfo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Single</span><span class="o">&lt;</span><span class="kt">MediaPlayerInfo</span><span class="o">&gt;</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get the <code>MediaPlayerInfo</code> on success or an error</p>
                       </div>
                     </section>
                   </div>
@@ -473,7 +612,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Gets the data of the player handled by service (current status and position of the player)</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -482,6 +622,10 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getPlayerData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Single</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/PlayerData.html">PlayerData</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get the <code><a href="../Structs/PlayerData.html">PlayerData</a></code> on success or an error</p>
                       </div>
                     </section>
                   </div>
@@ -499,7 +643,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Fetches the duration of the currently played media</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -508,6 +653,10 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getDuration</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Single</span><span class="o">&lt;</span><span class="kt">Int64</span><span class="o">&gt;</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get the duration on success or an error</p>
                       </div>
                     </section>
                   </div>
@@ -525,7 +674,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Fetches the current playback position of the player handled by the service</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -534,6 +684,10 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getPosition</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Single</span><span class="o">&lt;</span><span class="kt">Int64</span><span class="o">&gt;</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get the position on success or an error</p>
                       </div>
                     </section>
                   </div>
@@ -551,7 +705,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Disconnects from the player handled by the service</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an error if service has no player
+
+</div>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -561,15 +721,19 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful disconnection or an error</p>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9FireTVKit21PlayerServiceProtocolP10disconnect7RxSwift17PrimitiveSequenceVyAE16CompletableTraitOs5NeverOGSo011RemoteMediaC0_p04fromC0_tF"></a>
+                    <a name="/s:9FireTVKit21PlayerServiceProtocolP10disconnectXeXeF"></a>
                     <a name="//apple_ref/swift/Method/disconnect(fromPlayer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP10disconnect7RxSwift17PrimitiveSequenceVyAE16CompletableTraitOs5NeverOGSo011RemoteMediaC0_p04fromC0_tF">disconnect(fromPlayer:)</a>
+                    <a class="token" href="#/s:9FireTVKit21PlayerServiceProtocolP10disconnectXeXeF">disconnect(fromPlayer:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -577,7 +741,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Disconnects from the given player</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -586,6 +751,29 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">disconnect</span><span class="p">(</span><span class="n">fromPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">RemoteMediaPlayer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Completable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>player to disconnect from</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an observable to get notified about a successful disconnection or an error</p>
                       </div>
                     </section>
                   </div>

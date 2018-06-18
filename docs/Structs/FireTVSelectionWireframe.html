@@ -81,17 +81,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVPlayerWireframeProtocol.html">FireTVPlayerWireframeProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/FireTVSelectionWireframeProtocol.html">FireTVSelectionWireframeProtocol</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -453,6 +442,204 @@
                               <td>
                                 <div>
                                   <p>custom message to show in no wifi alert</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9FireTVKit0A20TVSelectionWireframeV18makeViewControllerSo012UINavigationG0CAA0aC13ThemeProtocol_p5theme_SS8playerIdAA0A7TVMediaVSg5mediaAA0ac8DelegateJ0_p8delegatetKFZ"></a>
+                    <a name="//apple_ref/swift/Method/makeViewController(theme:playerId:media:delegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9FireTVKit0A20TVSelectionWireframeV18makeViewControllerSo012UINavigationG0CAA0aC13ThemeProtocol_p5theme_SS8playerIdAA0A7TVMediaVSg5mediaAA0ac8DelegateJ0_p8delegatetKFZ">makeViewController(theme:playerId:media:delegate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Makes a <code><a href="../Classes/FireTVSelectionViewController.html">FireTVSelectionViewController</a></code> using default string values
+for the <code>noDevicesText</code> (<q>No devices found</q>), the <code>noWifiAlertTitle</code> (<q>Error</q>)
+and the <code>noWifiAlertMessage</code> (<q>You are not connected to a wifi network. The connection is required.</q>)</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an error if something unexpected happens
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">makeViewController</span><span class="p">(</span><span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVSelectionThemeProtocol.html">FireTVSelectionThemeProtocol</a></span><span class="p">,</span> <span class="nv">playerId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">media</span><span class="p">:</span> <span class="kt"><a href="../Structs/FireTVMedia.html">FireTVMedia</a></span><span class="p">?,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVSelectionDelegateProtocol.html">FireTVSelectionDelegateProtocol</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UINavigationController</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theme</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>theme for the view controller</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>playerId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>player id to be searched for</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>media</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>media to be played on player selection</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>delegate which will be notified about actions</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a <code>UINavigationController</code> with a <code><a href="../Classes/FireTVSelectionViewController.html">FireTVSelectionViewController</a></code> as the root view controller</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9FireTVKit0A20TVSelectionWireframeV13configureViewyAA0acF8Protocol_p_AA0ac5ThemeG0_p5themeSS8playerIdAA0A7TVMediaVSg5mediaAA0ac8DelegateG0_p8delegatetKFZ"></a>
+                    <a name="//apple_ref/swift/Method/configureView(_:theme:playerId:media:delegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9FireTVKit0A20TVSelectionWireframeV13configureViewyAA0acF8Protocol_p_AA0ac5ThemeG0_p5themeSS8playerIdAA0A7TVMediaVSg5mediaAA0ac8DelegateG0_p8delegatetKFZ">configureView(_:theme:playerId:media:delegate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configures the given view to be ready to go using default string values
+for the <code>noDevicesText</code> (<q>No devices found</q>), the <code>noWifiAlertTitle</code> (<q>Error</q>)
+and the <code>noWifiAlertMessage</code> (<q>You are not connected to a wifi network. The connection is required.</q>)</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an error if something weird happens
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">configureView</span><span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVSelectionViewProtocol.html">FireTVSelectionViewProtocol</a></span><span class="p">,</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVSelectionThemeProtocol.html">FireTVSelectionThemeProtocol</a></span><span class="p">,</span> <span class="nv">playerId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">media</span><span class="p">:</span> <span class="kt"><a href="../Structs/FireTVMedia.html">FireTVMedia</a></span><span class="p">?,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FireTVSelectionDelegateProtocol.html">FireTVSelectionDelegateProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>view to be configured</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>theme</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>theme for the view</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>playerId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>player id to be searched for</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>media</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>media to play on selected player</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>delegate which will be notified about actions</p>
                                 </div>
                               </td>
                             </tr>
