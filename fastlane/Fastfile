@@ -44,7 +44,7 @@ platform :ios do
       sh("git push origin master --tags")
 
       sh("git fetch --tags")
-      pod_push(path: "FireTVKit.podspec", allow_warnings: true)
+      pod_push(path: "FireTVKit.podspec", allow_warnings: true, use_libraries: true)
     end
     
     lane :generate_docs do
