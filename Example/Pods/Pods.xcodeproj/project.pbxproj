@@ -821,7 +821,6 @@
 		5A446B444C4C22B115F66BF055570341 /* Maybe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Maybe.swift; path = RxSwift/Traits/Maybe.swift; sourceTree = "<group>"; };
 		5A45FB0F4889586A736B5EFFBBD64A15 /* TakeUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeUntil.swift; path = RxSwift/Observables/TakeUntil.swift; sourceTree = "<group>"; };
 		5B1F3D978518F9BAB2135A707D5648A7 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
-		5B52FA0CE2D043EE999841627E1A673C /* AmazonFling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AmazonFling.framework; path = Frameworks/AmazonFling.framework; sourceTree = "<group>"; };
 		5B6670849050DE74CC3E9D93671E8085 /* RemoteMediaPlayerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RemoteMediaPlayerProtocol.swift; sourceTree = "<group>"; };
 		5B677364CD0CD4CA45CE91ED4F5BF659 /* UIAlertController+MakeAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIAlertController+MakeAlert.swift"; sourceTree = "<group>"; };
 		5B797BE590852E4484C466A10C57FC27 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Nimble/Expression.swift; sourceTree = "<group>"; };
@@ -993,6 +992,7 @@
 		9C29B37EBCD55E85370FA1AF770B1465 /* Completable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Completable.swift; path = RxSwift/Traits/Completable.swift; sourceTree = "<group>"; };
 		9D8858D8A03B5B78F92DA44073B92FAA /* ObserverBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserverBase.swift; path = RxSwift/Observers/ObserverBase.swift; sourceTree = "<group>"; };
 		9E329F2161D65284E94C7402219DB44A /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E3EEB2AD0D4FDA13D7C2C27CB701E96 /* AmazonFling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AmazonFling.framework; path = Frameworks/AmazonFling.framework; sourceTree = "<group>"; };
 		9E4C32A7F20DA64B51E43BF4D32AE454 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBObjCMatcher.swift; path = Sources/Nimble/Adapters/NMBObjCMatcher.swift; sourceTree = "<group>"; };
 		9EAF9F9170A5856523EFEDA602EB8CD4 /* TakeLast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeLast.swift; path = RxSwift/Observables/TakeLast.swift; sourceTree = "<group>"; };
 		9F7F0A9CF6650919519B775F9C0F05D0 /* AnyObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyObserver.swift; path = RxSwift/AnyObserver.swift; sourceTree = "<group>"; };
@@ -1009,6 +1009,7 @@
 		A488DBA020D36F0E4C1A14074E43B43B /* PlayerDiscoveryControllerDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryControllerDelegateProtocol.swift; sourceTree = "<group>"; };
 		A4C5A63664B17FF05E507ED115BF596C /* PlayerServiceDependenciesProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerServiceDependenciesProtocol.swift; sourceTree = "<group>"; };
 		A56F9F56CDB045BE0AAEAD9139553B56 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
+		A5D927DB8B2ADAB701B1D09092691BA5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		A6A6E656ADEA3EDCF75A1519BF730408 /* FireTVSelectionThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionThemeProtocol.html; path = docs/Protocols/FireTVSelectionThemeProtocol.html; sourceTree = "<group>"; };
 		A6D5BA000E959D7525174AA9BB28359E /* ControlEvent+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlEvent+Driver.swift"; path = "RxCocoa/Traits/Driver/ControlEvent+Driver.swift"; sourceTree = "<group>"; };
 		A711F89E0682A0EEEC58B9E9982C472B /* Skip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Skip.swift; path = RxSwift/Observables/Skip.swift; sourceTree = "<group>"; };
@@ -1347,20 +1348,21 @@
 			path = "Example/Pods/Target Support Files/FireTVKit";
 			sourceTree = "<group>";
 		};
+		0E4324CA81AB794ACB6756EE9362E9BB /* AmazonFling */ = {
+			isa = PBXGroup;
+			children = (
+				4BAC25C876C817259B54C19966324887 /* Frameworks */,
+			);
+			name = AmazonFling;
+			path = AmazonFling;
+			sourceTree = "<group>";
+		};
 		0E5E4F8366C93B2C2A051987880DAFA6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
 				1EFB1226686C37F0243591C3F3EE6B59 /* FireTVKit */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		11C421FF2A0BCC46661E0F988936CDCA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5B52FA0CE2D043EE999841627E1A673C /* AmazonFling.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		176CA049385C0C627C4AF0D584CAE533 /* FireTVSelection */ = {
@@ -1484,7 +1486,7 @@
 		3E89404D417437D18406C70A658AF112 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF640AE1A905D3CBFBAED3FCC5839FB9 /* AmazonFling */,
+				0E4324CA81AB794ACB6756EE9362E9BB /* AmazonFling */,
 				6D1E9B27D8A10FD749DABCCEB2B34C0A /* Nimble */,
 				F745FBF4D94A0C65225B21ED471720C0 /* Quick */,
 				274204E1513D8CB95BCD2A69F68AEBD9 /* ReachabilitySwift */,
@@ -1546,6 +1548,15 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/RxSwift";
+			sourceTree = "<group>";
+		};
+		4BAC25C876C817259B54C19966324887 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E3EEB2AD0D4FDA13D7C2C27CB701E96 /* AmazonFling.framework */,
+				A5D927DB8B2ADAB701B1D09092691BA5 /* Bolts.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4EB5C13091B5AAC3991D98CCC2A18519 /* Protocols */ = {
@@ -2486,15 +2497,6 @@
 			);
 			name = Assets;
 			path = FireTVKit/Assets;
-			sourceTree = "<group>";
-		};
-		FF640AE1A905D3CBFBAED3FCC5839FB9 /* AmazonFling */ = {
-			isa = PBXGroup;
-			children = (
-				11C421FF2A0BCC46661E0F988936CDCA /* Frameworks */,
-			);
-			name = AmazonFling;
-			path = AmazonFling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
