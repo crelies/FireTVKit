@@ -33,10 +33,10 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
   
-  s.dependency 'AmazonFling', '1.3.4-hotfix.1'
-  s.dependency 'ReachabilitySwift', '~> 4.1'
-  s.dependency 'RxSwift', '~> 4.0'
-  s.dependency 'RxCocoa', '~> 4.0'
+  s.dependency 'AmazonFling', '1.3.5'
+  s.dependency 'ReachabilitySwift', '~> 4.3'
+  s.dependency 'RxSwift', '~> 4.5'
+  s.dependency 'RxCocoa', '~> 4.5'
   
   # https://github.com/CocoaPods/CocoaPods/issues/2926#issuecomment-136766631
   s.pod_target_xcconfig = {
