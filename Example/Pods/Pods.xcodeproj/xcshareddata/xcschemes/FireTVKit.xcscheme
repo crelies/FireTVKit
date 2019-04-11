@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77521B787A6DFFB560EE12037B95D5A6"
+               BlueprintIdentifier = "4650BF47CB0FCF7A56AF3A0553A4062F"
                BuildableName = "FireTVKit.framework"
                BlueprintName = "FireTVKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77521B787A6DFFB560EE12037B95D5A6"
+            BlueprintIdentifier = "4650BF47CB0FCF7A56AF3A0553A4062F"
             BuildableName = "FireTVKit.framework"
             BlueprintName = "FireTVKit"
             ReferencedContainer = "container:Pods.xcodeproj">

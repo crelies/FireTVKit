@@ -76,7 +76,7 @@ extension PlayerDiscoveryController: DiscoveryListener {
 				return
 			}
             
-            if let index = weakSelf.devices.index (where: { $0.uniqueIdentifier() == device.uniqueIdentifier() }) {
+            if let index = weakSelf.devices.firstIndex (where: { $0.uniqueIdentifier() == device.uniqueIdentifier() }) {
                 weakSelf.devices.remove(at: index)
             }
 			
