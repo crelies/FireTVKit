@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = AmazonFling;
-			productName = AmazonFling;
 		};
 /* End PBXAggregateTarget section */
 
@@ -630,30 +629,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001E1D0F425565D107C8598F2A25BE29 /* FireTVSelectionViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionViewController.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/FireTVSelectionViewController.html; sourceTree = "<group>"; };
+		001E1D0F425565D107C8598F2A25BE29 /* FireTVSelectionViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionViewController.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/FireTVSelectionViewController.html; sourceTree = "<group>"; };
 		0172A922FCB9918848C2005E1025DF8A /* Subtitle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
-		0196FD8DCEF0064BC5A8E0B2A8F8C0D1 /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Classes.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes.html; sourceTree = "<group>"; };
+		0196FD8DCEF0064BC5A8E0B2A8F8C0D1 /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Classes.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes.html; sourceTree = "<group>"; };
 		0259089B588B67470DE0219ECBDAE6F3 /* PrimitiveSequence+Zip+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PrimitiveSequence+Zip+arity.swift"; path = "RxSwift/Traits/PrimitiveSequence+Zip+arity.swift"; sourceTree = "<group>"; };
 		02615BB532D194A054D1FFF604A5B0EE /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
 		02681776902A59C7A849E3A457959EFF /* _RX.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RX.m; path = RxCocoa/Runtime/_RX.m; sourceTree = "<group>"; };
 		03208EDB36918594823DA73EC2F730F1 /* CombineLatest+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CombineLatest+arity.swift"; path = "RxSwift/Observables/CombineLatest+arity.swift"; sourceTree = "<group>"; };
-		03273CA59D1049B9F9E5DEBE2E352AD0 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = highlight.css; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/css/highlight.css; sourceTree = "<group>"; };
+		03273CA59D1049B9F9E5DEBE2E352AD0 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; name = highlight.css; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/css/highlight.css; sourceTree = "<group>"; };
 		04FAA90B89E7213F85228848CA14FF11 /* _RXKVOObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _RXKVOObserver.h; path = RxCocoa/Runtime/include/_RXKVOObserver.h; sourceTree = "<group>"; };
 		05960A3728737979B1EB80DDB86CB1E9 /* RetryWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryWhen.swift; path = RxSwift/Observables/RetryWhen.swift; sourceTree = "<group>"; };
-		066844ACA630132BFE0162B87297B9B0 /* PlayerServiceProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = PlayerServiceProtocol.html; path = docs/Protocols/PlayerServiceProtocol.html; sourceTree = "<group>"; };
+		066844ACA630132BFE0162B87297B9B0 /* PlayerServiceProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerServiceProtocol.html; path = docs/Protocols/PlayerServiceProtocol.html; sourceTree = "<group>"; };
 		0694AC8E1914491398F4D0CA2D4335D6 /* MockFireTVPlayerWireframe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockFireTVPlayerWireframe.swift; sourceTree = "<group>"; };
 		06C4FA6C98299A4F75292E575C95397B /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = RxCocoa/Deprecated.swift; sourceTree = "<group>"; };
 		07526BCA2C437CA41E52FEF141945BF1 /* SingleAsync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAsync.swift; path = RxSwift/Observables/SingleAsync.swift; sourceTree = "<group>"; };
-		075B4F2AD27A1D2C52190B013C928F3D /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = badge.svg; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/badge.svg; sourceTree = "<group>"; };
+		075B4F2AD27A1D2C52190B013C928F3D /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = badge.svg; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/badge.svg; sourceTree = "<group>"; };
 		076A56445D62BCE65BFAA63B11E2E887 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
 		07A9D3F10330EB456D8DE2FBC9D548C9 /* ScheduledItemType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScheduledItemType.swift; path = RxSwift/Schedulers/Internal/ScheduledItemType.swift; sourceTree = "<group>"; };
-		07F559721E334824FCC67E16F56CD016 /* FireTVSelectionPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionPresenterProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionPresenterProtocol.html; sourceTree = "<group>"; };
+		07F559721E334824FCC67E16F56CD016 /* FireTVSelectionPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionPresenterProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionPresenterProtocol.html; sourceTree = "<group>"; };
 		08AD92C107BDB117B4BE24B5B969D596 /* NSSlider+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSSlider+Rx.swift"; path = "RxCocoa/macOS/NSSlider+Rx.swift"; sourceTree = "<group>"; };
-		08B32A3C35473F06E0779E432FF36B0A /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = docs/index.html; sourceTree = "<group>"; };
+		08B32A3C35473F06E0779E432FF36B0A /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = docs/index.html; sourceTree = "<group>"; };
 		08BF52252EE1179AD2B7C4A75C043F14 /* PlayerDiscoveryControllerDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryControllerDependencies.swift; sourceTree = "<group>"; };
 		0929655853E90D5935C5BF6386464011 /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
 		099FB4AAADA1D7393647AF8D2DD3D1EC /* Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signal.swift; path = RxCocoa/Traits/Signal/Signal.swift; sourceTree = "<group>"; };
-		09A6644B11D73E8D0EC960B4C7A71003 /* FireTVSelectionViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionViewProtocol.html; path = docs/Protocols/FireTVSelectionViewProtocol.html; sourceTree = "<group>"; };
+		09A6644B11D73E8D0EC960B4C7A71003 /* FireTVSelectionViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionViewProtocol.html; path = docs/Protocols/FireTVSelectionViewProtocol.html; sourceTree = "<group>"; };
 		0A11A86BB03AE7DD73CA79954C1B99D5 /* ReachabilityServiceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReachabilityServiceProtocol.swift; sourceTree = "<group>"; };
 		0A80CB64C82837B17610D6B0DCDA11D0 /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
 		0A8517ABB40242A4D18F3B31F526A69D /* UINavigationItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationItem+Rx.swift"; path = "RxCocoa/iOS/UINavigationItem+Rx.swift"; sourceTree = "<group>"; };
@@ -661,7 +660,7 @@
 		0AD1D6815B8AF79B9E8DFC4F46E334F0 /* PublishRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublishRelay.swift; path = RxCocoa/Traits/PublishRelay.swift; sourceTree = "<group>"; };
 		0B2EB789D17AB85A7C290A3725C49225 /* ResourceBundle-FireTVKit-FireTVKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-FireTVKit-FireTVKit-Info.plist"; sourceTree = "<group>"; };
 		0B76CB694A69CAAE9F2F2C97A48EE64F /* RxCocoaObjCRuntimeError+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RxCocoaObjCRuntimeError+Extensions.swift"; path = "RxCocoa/Common/RxCocoaObjCRuntimeError+Extensions.swift"; sourceTree = "<group>"; };
-		0BACFE95017BA771369BB12D4774DDA1 /* MockFireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = MockFireTVSelectionWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/MockFireTVSelectionWireframe.html; sourceTree = "<group>"; };
+		0BACFE95017BA771369BB12D4774DDA1 /* MockFireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = MockFireTVSelectionWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/MockFireTVSelectionWireframe.html; sourceTree = "<group>"; };
 		0BC0A2632D0FFEC804F7795698E35BCE /* SubjectType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubjectType.swift; path = RxSwift/Subjects/SubjectType.swift; sourceTree = "<group>"; };
 		0C73B5ADFB9364743C2C5BEC56E80273 /* UIProgressView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIProgressView+Rx.swift"; path = "RxCocoa/iOS/UIProgressView+Rx.swift"; sourceTree = "<group>"; };
 		0C9934FAC2F150475FA270B3835EB668 /* SynchronizedDisposeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedDisposeType.swift; path = RxSwift/Concurrency/SynchronizedDisposeType.swift; sourceTree = "<group>"; };
@@ -671,16 +670,16 @@
 		0DE62CA2953CBBCDA04FEF7D46D48FE8 /* AtomicInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AtomicInt.swift; path = Platform/AtomicInt.swift; sourceTree = "<group>"; };
 		0E30E64F618A92004FEA6CA695D05BCD /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
 		0F4319056D2655D4B1897EEFB1487FB8 /* ControlTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlTarget.swift; path = RxCocoa/Common/ControlTarget.swift; sourceTree = "<group>"; };
-		100CAD560A06131FE5ECEB14D5053F59 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1040070A63712985DA24CE969BF76205 /* FireTVPlayerDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerDarkTheme.html; path = docs/Structs/FireTVPlayerDarkTheme.html; sourceTree = "<group>"; };
-		1042347B00A230E5DD35B1A14360224B /* DummyPlayer.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DummyPlayer.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/DummyPlayer.html; sourceTree = "<group>"; };
+		100CAD560A06131FE5ECEB14D5053F59 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1040070A63712985DA24CE969BF76205 /* FireTVPlayerDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerDarkTheme.html; path = docs/Structs/FireTVPlayerDarkTheme.html; sourceTree = "<group>"; };
+		1042347B00A230E5DD35B1A14360224B /* DummyPlayer.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DummyPlayer.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/DummyPlayer.html; sourceTree = "<group>"; };
 		107893E6B758DE7F777DCF71805B03B7 /* NSLayoutConstraint+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Rx.swift"; path = "RxCocoa/Common/NSLayoutConstraint+Rx.swift"; sourceTree = "<group>"; };
 		10827FAC5114A29513680E87DE7FC912 /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
 		1132E0779E8A1EB3F044BB2026CD7D04 /* ControlEvent+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlEvent+Driver.swift"; path = "RxCocoa/Traits/Driver/ControlEvent+Driver.swift"; sourceTree = "<group>"; };
 		11422E578720034A13DA8D0A1E53DD2F /* _RXObjCRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _RXObjCRuntime.h; path = RxCocoa/Runtime/include/_RXObjCRuntime.h; sourceTree = "<group>"; };
 		11B7C85CDF9826C0CEC0A7F75DA1A6D7 /* FireTVSelectionPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionPresenter.swift; sourceTree = "<group>"; };
 		11D44E77ACD13B12D0F9761A0831624E /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Event.swift; path = RxSwift/Event.swift; sourceTree = "<group>"; };
-		127C5D2B3D03626FF34A913E202254D0 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = jazzy.css; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/css/jazzy.css; sourceTree = "<group>"; };
+		127C5D2B3D03626FF34A913E202254D0 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.css; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/css/jazzy.css; sourceTree = "<group>"; };
 		1386061A7CEBC357A00D4A87918B10C7 /* Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debug.swift; path = RxSwift/Observables/Debug.swift; sourceTree = "<group>"; };
 		13928D01EEF5E7C16ED909370342B676 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Rx.swift"; path = "RxCocoa/iOS/UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		13C188BF7229CC8C7909547C1D8ECDF9 /* BinaryDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDisposable.swift; path = RxSwift/Disposables/BinaryDisposable.swift; sourceTree = "<group>"; };
@@ -694,18 +693,18 @@
 		16536AD963CE9FF083BC018C6BEC93A4 /* FireTVSelectionThemeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionThemeProtocol.swift; sourceTree = "<group>"; };
 		1695B98EB69E5B2D9ADF94BA47879B3A /* RxCocoa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-umbrella.h"; sourceTree = "<group>"; };
 		16FBFE79CE178EAFF6D5BD43B38F2294 /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
-		17826D8AF2BDD4CFC5B70074BEAE2C5A /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Protocols.html; path = docs/Protocols.html; sourceTree = "<group>"; };
+		17826D8AF2BDD4CFC5B70074BEAE2C5A /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Protocols.html; path = docs/Protocols.html; sourceTree = "<group>"; };
 		17FB34764751A45990519306A4F7D7C1 /* Materialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Materialize.swift; path = RxSwift/Observables/Materialize.swift; sourceTree = "<group>"; };
 		184846992A48B3FB2F45D32E7AEF4D97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		18B043CAC0B0A908138C05EC0E8ABBB1 /* Bag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = Platform/DataStructures/Bag.swift; sourceTree = "<group>"; };
 		1919B803E2930D86EB32714C4B5F7D61 /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		199823741F29496A0F2DCC4A57EE5B48 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
-		19C193C20ADCF9E294637BD66C059869 /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Enums.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums.html; sourceTree = "<group>"; };
+		19C193C20ADCF9E294637BD66C059869 /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Enums.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums.html; sourceTree = "<group>"; };
 		1A721E903F6A65392095B9CE671B8AFB /* TakeLast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeLast.swift; path = RxSwift/Observables/TakeLast.swift; sourceTree = "<group>"; };
-		1A9024C48572CD6A591042B41281E2EC /* FireTVSelectionDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionDelegateProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionDelegateProtocol.html; sourceTree = "<group>"; };
+		1A9024C48572CD6A591042B41281E2EC /* FireTVSelectionDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionDelegateProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionDelegateProtocol.html; sourceTree = "<group>"; };
 		1B16B74DE34EBFD9866E2A1B4E26A068 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
 		1B180031FC4B7861BF07EDC79AE9A453 /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
-		1B25A993C5C6953EFAFD676F8AF2F5FE /* FireTVSelectionLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionLightTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVSelectionLightTheme.html; sourceTree = "<group>"; };
+		1B25A993C5C6953EFAFD676F8AF2F5FE /* FireTVSelectionLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionLightTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVSelectionLightTheme.html; sourceTree = "<group>"; };
 		1BC185975D010558B47F900E0E03FFE2 /* ReachabilityService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		1BCB33F1932CFB47640276EFAF2BFBA9 /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
 		1BECDDCCB2EAD828F2DD7B70C2287755 /* FireTVPlayerWireframeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerWireframeProtocol.swift; sourceTree = "<group>"; };
@@ -718,11 +717,11 @@
 		1E411C27C3A94AC08019F544F2208EB9 /* Deferred.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deferred.swift; path = RxSwift/Observables/Deferred.swift; sourceTree = "<group>"; };
 		1E925FB4AC394AB79DBCA195141623CC /* ControlProperty+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlProperty+Driver.swift"; path = "RxCocoa/Traits/Driver/ControlProperty+Driver.swift"; sourceTree = "<group>"; };
 		1F1E87A1F94A9244555E7BAD738C5388 /* MockPlayerService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockPlayerService.swift; sourceTree = "<group>"; };
-		1F53C7CA16CF5732E37773C00CD2E68D /* Subtitle.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Subtitle.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/Subtitle.html; sourceTree = "<group>"; };
+		1F53C7CA16CF5732E37773C00CD2E68D /* Subtitle.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Subtitle.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/Subtitle.html; sourceTree = "<group>"; };
 		1F54A6C6C84B7C5C02B3AE5AB6BF3BDF /* PlayerDiscoveryControllerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryControllerProtocol.swift; sourceTree = "<group>"; };
 		1F6F851B4F1309DE4C69C29EE50E0F6A /* AsSingle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsSingle.swift; path = RxSwift/Observables/AsSingle.swift; sourceTree = "<group>"; };
 		1FC66598460E522D11BA467A0F502454 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
-		200DB021D8E927149E907F81127311FF /* FireTVPlayerDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerDarkTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVPlayerDarkTheme.html; sourceTree = "<group>"; };
+		200DB021D8E927149E907F81127311FF /* FireTVPlayerDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerDarkTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVPlayerDarkTheme.html; sourceTree = "<group>"; };
 		202E82A8B15710599C1F746986DF2B8B /* MockPlayerDiscoveryService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockPlayerDiscoveryService.swift; sourceTree = "<group>"; };
 		204E42A4D2A0B0EB06C36EF00222439F /* ImmediateSchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmediateSchedulerType.swift; path = RxSwift/ImmediateSchedulerType.swift; sourceTree = "<group>"; };
 		210D0D15B3C729DB36C7AC7F1D919943 /* Multicast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multicast.swift; path = RxSwift/Observables/Multicast.swift; sourceTree = "<group>"; };
@@ -739,31 +738,31 @@
 		2642AE55BF43291FF73E343ACBE08CE2 /* DisposeBag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisposeBag.swift; path = RxSwift/Disposables/DisposeBag.swift; sourceTree = "<group>"; };
 		267A4060295481FF233BC6FAC43014B8 /* NSView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSView+Rx.swift"; path = "RxCocoa/macOS/NSView+Rx.swift"; sourceTree = "<group>"; };
 		26F7B10D8E255871BC6E0186A65576FC /* MockFireTVPlayerInteractorDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockFireTVPlayerInteractorDependencies.swift; sourceTree = "<group>"; };
-		271EE9ABC3711ADF20FB4666A46BE2EF /* FireTVSelectionWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionWireframeError.html; path = docs/Enums/FireTVSelectionWireframeError.html; sourceTree = "<group>"; };
+		271EE9ABC3711ADF20FB4666A46BE2EF /* FireTVSelectionWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionWireframeError.html; path = docs/Enums/FireTVSelectionWireframeError.html; sourceTree = "<group>"; };
 		27251AF5DDED6E51A69CF379D19C324F /* MainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainScheduler.swift; path = RxSwift/Schedulers/MainScheduler.swift; sourceTree = "<group>"; };
 		276F052CC53AE3408FA7EAF4D27BD042 /* FireTVSelectionWireframeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionWireframeError.swift; sourceTree = "<group>"; };
 		2783132BBAD31BF8198B88F4DB850931 /* ConnectableObservableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectableObservableType.swift; path = RxSwift/ConnectableObservableType.swift; sourceTree = "<group>"; };
 		27A66F4567609638835C3664E6B0C649 /* UIView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Rx.swift"; path = "RxCocoa/iOS/UIView+Rx.swift"; sourceTree = "<group>"; };
 		28368BC1AD205A6E3CB05E2E9E577CFD /* Producer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Producer.swift; path = RxSwift/Observables/Producer.swift; sourceTree = "<group>"; };
 		2861C456AEE77B8156580237CCDFF1C9 /* UIDatePicker+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDatePicker+Rx.swift"; path = "RxCocoa/iOS/UIDatePicker+Rx.swift"; sourceTree = "<group>"; };
-		2890FDFDE8AE5111DE627DA1E1BC8CA7 /* FireTVPlayerPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerPresenterProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerPresenterProtocol.html; sourceTree = "<group>"; };
-		28FF1185C7DA7CF72D0E131E5E4B9590 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2890FDFDE8AE5111DE627DA1E1BC8CA7 /* FireTVPlayerPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerPresenterProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerPresenterProtocol.html; sourceTree = "<group>"; };
+		28FF1185C7DA7CF72D0E131E5E4B9590 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		295D01A0F9495D75ACE69EDBE5D2572A /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Quick/Filter.swift; sourceTree = "<group>"; };
 		2961227AA2552221EBC4E6A9D5AB24B1 /* CombineLatest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineLatest.swift; path = RxSwift/Observables/CombineLatest.swift; sourceTree = "<group>"; };
 		2A1549A39F59C0576F36F9E718D8BA8A /* RxSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-prefix.pch"; sourceTree = "<group>"; };
 		2A80BFDD8C532FF9F315568BB8FE7AF5 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		2B5847C79205579CA22B1593396E4970 /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
-		2BC508993C4B2C4D37A5776F986C77CE /* FireTVSelectionWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionWireframeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Extensions/FireTVSelectionWireframeProtocol.html; sourceTree = "<group>"; };
+		2BC508993C4B2C4D37A5776F986C77CE /* FireTVSelectionWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionWireframeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Extensions/FireTVSelectionWireframeProtocol.html; sourceTree = "<group>"; };
 		2BEBB464C55005E3FF0D97B388F6579B /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
-		2C348BF88D7BDEDBC478B16FCD799C28 /* Metadata.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Metadata.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/Metadata.html; sourceTree = "<group>"; };
+		2C348BF88D7BDEDBC478B16FCD799C28 /* Metadata.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Metadata.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/Metadata.html; sourceTree = "<group>"; };
 		2C5E236C7F27C302F6115F9EC04EF689 /* NSTextView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTextView+Rx.swift"; path = "RxCocoa/macOS/NSTextView+Rx.swift"; sourceTree = "<group>"; };
 		2CBDD304A3834A6EC901484352B4F345 /* FireTVMedia.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVMedia.swift; sourceTree = "<group>"; };
-		2CC377A7630684DA3AE4167F6970A3DE /* FireTVPlayerWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerWireframeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Extensions/FireTVPlayerWireframeProtocol.html; sourceTree = "<group>"; };
+		2CC377A7630684DA3AE4167F6970A3DE /* FireTVPlayerWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerWireframeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Extensions/FireTVPlayerWireframeProtocol.html; sourceTree = "<group>"; };
 		2D45D0F60844672BDB0373B206EBB31F /* NotificationCenter+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NotificationCenter+Rx.swift"; path = "RxCocoa/Foundation/NotificationCenter+Rx.swift"; sourceTree = "<group>"; };
 		2D5C2C05D176B028E0CB98F00137AB9F /* FireTVKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FireTVKit-umbrella.h"; sourceTree = "<group>"; };
 		2EABA92F56AE4094E302BB221CC08867 /* RxSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.xcconfig; sourceTree = "<group>"; };
 		2ED04745EB546AF07FB770CD7C11767F /* RxPickerViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewDataSourceType.swift; path = RxCocoa/iOS/Protocols/RxPickerViewDataSourceType.swift; sourceTree = "<group>"; };
-		3078EF277829DA5E03634E795DCAE566 /* FireTVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FireTVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3078EF277829DA5E03634E795DCAE566 /* FireTVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FireTVKit.framework; path = FireTVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		310458269AEC9AE5BDA955989EDCEAF0 /* BeLessThanOrEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThanOrEqual.swift; path = Sources/Nimble/Matchers/BeLessThanOrEqual.swift; sourceTree = "<group>"; };
 		314C4B7F2A9E351B025F28714533D6E5 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		317A1568B1921F335055986F90E0C31C /* RemoteMediaPlayerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RemoteMediaPlayerProtocol.swift; sourceTree = "<group>"; };
@@ -771,15 +770,15 @@
 		322512BDEC51A6A9025798C26B29933B /* Pods-FireTVKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FireTVKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3238CC1EA7A76D22D1EAB68F420A65D5 /* DelaySubscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelaySubscription.swift; path = RxSwift/Observables/DelaySubscription.swift; sourceTree = "<group>"; };
 		323F094BEBA24F125DE04B4D5E975E47 /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
-		345B7F20B3A2DD57F178A701F99C4329 /* FireTVSelectionLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionLightTheme.html; path = docs/Structs/FireTVSelectionLightTheme.html; sourceTree = "<group>"; };
+		345B7F20B3A2DD57F178A701F99C4329 /* FireTVSelectionLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionLightTheme.html; path = docs/Structs/FireTVSelectionLightTheme.html; sourceTree = "<group>"; };
 		34719891482F31052126FBA5F607445F /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = RxSwift/Observables/Range.swift; sourceTree = "<group>"; };
 		34EAAEF7D2E3212A44C3652677ADE512 /* Pods-FireTVKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FireTVKit_Example-umbrella.h"; sourceTree = "<group>"; };
-		36E3DDD65C63C5ED322FDE5752F3D54E /* FireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVSelectionWireframe.html; sourceTree = "<group>"; };
+		36E3DDD65C63C5ED322FDE5752F3D54E /* FireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVSelectionWireframe.html; sourceTree = "<group>"; };
 		36F165771F74BBADCACFB91E2A8D4351 /* Pods-FireTVKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FireTVKit_Example.modulemap"; sourceTree = "<group>"; };
 		3748BA084A9CEFBBFFA73B75F9801304 /* RxCollectionViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxCollectionViewDelegateProxy.swift; sourceTree = "<group>"; };
 		376698E7E6959AAC00BA171C41923FC9 /* FireTVPlayer.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = FireTVPlayer.storyboard; sourceTree = "<group>"; };
 		377728EDD536C0395375607B7A58264A /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
-		37E1E235B7BCF8D139A662A568D6C833 /* FireTVPlayerLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerLightTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVPlayerLightTheme.html; sourceTree = "<group>"; };
+		37E1E235B7BCF8D139A662A568D6C833 /* FireTVPlayerLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerLightTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVPlayerLightTheme.html; sourceTree = "<group>"; };
 		3851A1D7CCD16E48336927881700D27C /* Pods-FireTVKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FireTVKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3887489BFA3A16C9022531F9F264425F /* Empty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Empty.swift; path = RxSwift/Observables/Empty.swift; sourceTree = "<group>"; };
 		3894F9A1AC6F646155DC7A895A8D366C /* FireTVSelectionWireframe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionWireframe.swift; sourceTree = "<group>"; };
@@ -789,30 +788,30 @@
 		39CE318C098851370EA94BF2C76ECF84 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		39E6FAAEB953AED56D6F716A91C58CC8 /* Queue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Platform/DataStructures/Queue.swift; sourceTree = "<group>"; };
 		3A11C418A30372A935DA9402EEB03C39 /* OperationQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OperationQueueScheduler.swift; path = RxSwift/Schedulers/OperationQueueScheduler.swift; sourceTree = "<group>"; };
-		3A8DC5C40C8F72B097D9D811CA1402FE /* PlayerData.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = PlayerData.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/PlayerData.html; sourceTree = "<group>"; };
+		3A8DC5C40C8F72B097D9D811CA1402FE /* PlayerData.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerData.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/PlayerData.html; sourceTree = "<group>"; };
 		3A99234A53C982F8A5D8491E8F71213C /* FireTVManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FireTVManager.swift; path = FireTVKit/Classes/FireTVManager.swift; sourceTree = "<group>"; };
 		3AA6082C67518E159ACDD48C7E3DC98F /* Behavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Behavior.swift; path = Sources/Quick/Behavior.swift; sourceTree = "<group>"; };
 		3B17D5F73D944A6D2B7346AB9416269C /* AsyncSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncSubject.swift; path = RxSwift/Subjects/AsyncSubject.swift; sourceTree = "<group>"; };
-		3B3545B11F485FD5193F36DE77D01C53 /* FireTVManager.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVManager.html; path = docs/Classes/FireTVManager.html; sourceTree = "<group>"; };
+		3B3545B11F485FD5193F36DE77D01C53 /* FireTVManager.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVManager.html; path = docs/Classes/FireTVManager.html; sourceTree = "<group>"; };
 		3B6B34F7C4D1E8674FB1EB6F458B794E /* ContainElementSatisfying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainElementSatisfying.swift; path = Sources/Nimble/Matchers/ContainElementSatisfying.swift; sourceTree = "<group>"; };
 		3B80B9AB925FEDA5F5617BBFF6A91BF4 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		3C2EB7CC753813F8B709D00FD859DF7C /* DisposeBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisposeBase.swift; path = RxSwift/Disposables/DisposeBase.swift; sourceTree = "<group>"; };
 		3C86345CD51D3A9CC3E28505B2BFFF22 /* NSObject+Rx+RawRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Rx+RawRepresentable.swift"; path = "RxCocoa/Foundation/NSObject+Rx+RawRepresentable.swift"; sourceTree = "<group>"; };
 		3D665576EEBF6684F452EC58FAF4E233 /* FireTVSelectionDarkTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionDarkTheme.swift; sourceTree = "<group>"; };
 		3DFA4BC81F7379BC147CE8CD545CEC3D /* Pods-FireTVKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FireTVKit_Tests-umbrella.h"; sourceTree = "<group>"; };
-		3EF7CC1C3AB9A8A58DDFD16D950B36F2 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = highlight.css; path = docs/css/highlight.css; sourceTree = "<group>"; };
+		3EF7CC1C3AB9A8A58DDFD16D950B36F2 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; name = highlight.css; path = docs/css/highlight.css; sourceTree = "<group>"; };
 		3F3BB8820EE8066096F8F1EAD4207F28 /* SourceLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceLocation.swift; path = Sources/Nimble/Utils/SourceLocation.swift; sourceTree = "<group>"; };
 		3F63A160256A8DCC4BF11D646340ECDE /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "Platform/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		40AB14A6775331897995BBDF13987B5C /* Using.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Using.swift; path = RxSwift/Observables/Using.swift; sourceTree = "<group>"; };
 		416ED6B567589AD1781220D12A9B67AA /* WithLatestFrom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WithLatestFrom.swift; path = RxSwift/Observables/WithLatestFrom.swift; sourceTree = "<group>"; };
-		41A932C7A28D2C172CCDA67F2F128A33 /* PlayerStatus.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = PlayerStatus.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/PlayerStatus.html; sourceTree = "<group>"; };
+		41A932C7A28D2C172CCDA67F2F128A33 /* PlayerStatus.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerStatus.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/PlayerStatus.html; sourceTree = "<group>"; };
 		41D6D71CE474F819D164FB91EAAB4546 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Rx.swift"; path = "RxCocoa/iOS/UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		41DF23FDF9CBFCC4413E8D509A704551 /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
 		420A40AF8248828D5423096CC15732DE /* ScheduledItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScheduledItem.swift; path = RxSwift/Schedulers/Internal/ScheduledItem.swift; sourceTree = "<group>"; };
 		431FD4D2990F0EB070F0C27EB567CE1F /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
 		434BEB2D76B7AF8E83821F66FDD4CFF4 /* PlayerServiceDependenciesProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerServiceDependenciesProtocol.swift; sourceTree = "<group>"; };
 		43861D9D5097BA8FBC8B932B46EB3F3F /* Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
-		43CD9119560376644E04CA8E3EB9B118 /* FireTVPlayerDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerDelegateProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerDelegateProtocol.html; sourceTree = "<group>"; };
+		43CD9119560376644E04CA8E3EB9B118 /* FireTVPlayerDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerDelegateProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerDelegateProtocol.html; sourceTree = "<group>"; };
 		43D18726044BB08428CE4FB870243C9D /* RxCocoa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxCocoa.xcconfig; sourceTree = "<group>"; };
 		4475FE054006290F0911D0AEE09CA8BA /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		448A3DA90B725F637A38A85AE669428E /* FireTVSelectionInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionInteractor.swift; sourceTree = "<group>"; };
@@ -820,13 +819,13 @@
 		451EA6ABCEF424298D3C4B70162781FB /* Sink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sink.swift; path = RxSwift/Observables/Sink.swift; sourceTree = "<group>"; };
 		45240D8AE841356CEC029959965A36DD /* PublishRelay+Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PublishRelay+Signal.swift"; path = "RxCocoa/Traits/Signal/PublishRelay+Signal.swift"; sourceTree = "<group>"; };
 		453BF953A15B981FADEBBFCC14324C9D /* PlayerServiceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerServiceProtocol.swift; sourceTree = "<group>"; };
-		4640122A97E4EF950B0A782010B27567 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4640122A97E4EF950B0A782010B27567 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46502AD3D1EB5F72336732067A1BA7CA /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
 		4684F1774D17269F21E1E4BF4C3BB19E /* PlayerService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
-		471F14CAC0C128E79C02465EE8840F34 /* MockFireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = MockFireTVPlayerWireframe.html; path = docs/Structs/MockFireTVPlayerWireframe.html; sourceTree = "<group>"; };
+		471F14CAC0C128E79C02465EE8840F34 /* MockFireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = MockFireTVPlayerWireframe.html; path = docs/Structs/MockFireTVPlayerWireframe.html; sourceTree = "<group>"; };
 		4736A08DF06943C7AE551D45FBC22711 /* Quick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-umbrella.h"; sourceTree = "<group>"; };
 		4774EF0204F56F2251FE19441D76BCC1 /* RxCocoaRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RxCocoaRuntime.h; path = RxCocoa/Runtime/include/RxCocoaRuntime.h; sourceTree = "<group>"; };
-		487A4515CF0312F4700FC51FA77FE4A9 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
+		487A4515CF0312F4700FC51FA77FE4A9 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		48ACDC6199CEDBF2DE39862F5627CD96 /* Do.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Do.swift; path = RxSwift/Observables/Do.swift; sourceTree = "<group>"; };
 		48BCD537AF69101E5A5826BF31CA963A /* _RX.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _RX.h; path = RxCocoa/Runtime/include/_RX.h; sourceTree = "<group>"; };
 		48DB78E99DD36CB7D2635F0FF3F040FF /* Scan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scan.swift; path = RxSwift/Observables/Scan.swift; sourceTree = "<group>"; };
@@ -834,7 +833,7 @@
 		49A4E370B9E4CAB5B61123182E093BF4 /* HistoricalSchedulerTimeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HistoricalSchedulerTimeConverter.swift; path = RxSwift/Schedulers/HistoricalSchedulerTimeConverter.swift; sourceTree = "<group>"; };
 		4A1E40053E3B2E6010318BE08B98492D /* RxCollectionViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDataSourceType.swift; path = RxCocoa/iOS/Protocols/RxCollectionViewDataSourceType.swift; sourceTree = "<group>"; };
 		4A6DE4505A41D054A55E9392F2F6978E /* Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = RxSwift/Observables/Optional.swift; sourceTree = "<group>"; };
-		4A7D8C803C2DE1CA0A3B92440346D9D6 /* LoggerProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = LoggerProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/LoggerProtocol.html; sourceTree = "<group>"; };
+		4A7D8C803C2DE1CA0A3B92440346D9D6 /* LoggerProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = LoggerProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/LoggerProtocol.html; sourceTree = "<group>"; };
 		4ABC9E7D415727A55878DC6BE53539CB /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
 		4B065AD5AF11E1DB85982A5B60659064 /* UITabBarController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITabBarController+Rx.swift"; path = "RxCocoa/iOS/UITabBarController+Rx.swift"; sourceTree = "<group>"; };
 		4B0D70700E657F04DD59D05534FC50C5 /* UIPickerView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPickerView+Rx.swift"; path = "RxCocoa/iOS/UIPickerView+Rx.swift"; sourceTree = "<group>"; };
@@ -843,12 +842,12 @@
 		4BE7F60CF7B1CAE85D64F2CED016B061 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 		4BFC5E48CA6919DD0DF5D6DD907DE423 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nimble.modulemap; sourceTree = "<group>"; };
 		4C5064E081942025741B7C549F5D576D /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Sources/Quick/Example.swift; sourceTree = "<group>"; };
-		4C58AC474795D6FD8138769E7B596A53 /* LoggerProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = LoggerProtocol.html; path = docs/Protocols/LoggerProtocol.html; sourceTree = "<group>"; };
-		4C7D6CF7B77834BF72FBA4E40C7E7F05 /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = undocumented.json; path = docs/undocumented.json; sourceTree = "<group>"; };
-		4D0309A3E853EE4BF51FECB75FC4F4DF /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jazzy.js; path = docs/js/jazzy.js; sourceTree = "<group>"; };
+		4C58AC474795D6FD8138769E7B596A53 /* LoggerProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = LoggerProtocol.html; path = docs/Protocols/LoggerProtocol.html; sourceTree = "<group>"; };
+		4C7D6CF7B77834BF72FBA4E40C7E7F05 /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; name = undocumented.json; path = docs/undocumented.json; sourceTree = "<group>"; };
+		4D0309A3E853EE4BF51FECB75FC4F4DF /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.js; path = docs/js/jazzy.js; sourceTree = "<group>"; };
 		4D4075DEB1F62D96BEE498D0DF04DEA4 /* MockPlayerDiscoveryController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockPlayerDiscoveryController.swift; sourceTree = "<group>"; };
 		4D52AB09E764EBC2D08A495937E291B3 /* Pods-FireTVKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FireTVKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		4DF708ADE11E22C38B96520A733C0A72 /* PlayerServiceError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = PlayerServiceError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/PlayerServiceError.html; sourceTree = "<group>"; };
+		4DF708ADE11E22C38B96520A733C0A72 /* PlayerServiceError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerServiceError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/PlayerServiceError.html; sourceTree = "<group>"; };
 		4E69AB819E40747D56B3DE63CA4B25ED /* TakeWhile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeWhile.swift; path = RxSwift/Observables/TakeWhile.swift; sourceTree = "<group>"; };
 		4ED7B01278DA7A5E8BD6E2A847958AFE /* FireTVSelectionViewControllerDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionViewControllerDependencies.swift; sourceTree = "<group>"; };
 		4EDBF2BFE5BD9B5444E1AD94112CD6C0 /* Disposables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposables.swift; path = RxSwift/Disposables/Disposables.swift; sourceTree = "<group>"; };
@@ -866,17 +865,17 @@
 		543185402BE93213E0DECB30E9F27D80 /* carat.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = carat.png; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/img/carat.png; sourceTree = "<group>"; };
 		54565B093D95E840D47BB081B81EB7E4 /* ExampleMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleMetadata.swift; path = Sources/Quick/ExampleMetadata.swift; sourceTree = "<group>"; };
 		5486425E40ED5066DF4F63852579D5A4 /* Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequence.swift; path = RxSwift/Observables/Sequence.swift; sourceTree = "<group>"; };
-		54B7E35AA005BC3458CFBB4A2B72B8FD /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Extensions.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Extensions.html; sourceTree = "<group>"; };
-		5554A9F2DFA08DBDA99D8832C07F74AB /* FireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVPlayerWireframe.html; sourceTree = "<group>"; };
+		54B7E35AA005BC3458CFBB4A2B72B8FD /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Extensions.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Extensions.html; sourceTree = "<group>"; };
+		5554A9F2DFA08DBDA99D8832C07F74AB /* FireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVPlayerWireframe.html; sourceTree = "<group>"; };
 		5609C1372A82D578102708E62EC8878D /* StartWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StartWith.swift; path = RxSwift/Observables/StartWith.swift; sourceTree = "<group>"; };
 		562084C58FE57D62503482E31865D706 /* CwlPreconditionTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlPreconditionTesting.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/Mach/CwlPreconditionTesting.h; sourceTree = "<group>"; };
 		566D2529EFF0D85D54B6699E6F0B7CBF /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		567FB305BDAE5BF2E32D57C59419AE1F /* DeprecationWarner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeprecationWarner.swift; path = Platform/DeprecationWarner.swift; sourceTree = "<group>"; };
 		57037B4C8FBC9499449C8B9EFB8570BE /* AnonymousObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnonymousObserver.swift; path = RxSwift/Observers/AnonymousObserver.swift; sourceTree = "<group>"; };
-		57BBD155B3D7B5D12C4B84BF4D1135E4 /* FireTVKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = FireTVKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		57BBD155B3D7B5D12C4B84BF4D1135E4 /* FireTVKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FireTVKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		589D3DA7ABFC8E4606480D8486468FB6 /* Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Driver.swift; path = RxCocoa/Traits/Driver/Driver.swift; sourceTree = "<group>"; };
-		58EBBD6507B0366EBDC779F00FB75DB0 /* LoggerProvider.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = LoggerProvider.html; path = docs/Protocols/LoggerProvider.html; sourceTree = "<group>"; };
-		5A291BCCF45CFF5D37B5C5682D68E00F /* FireTVSelectionThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionThemeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionThemeProtocol.html; sourceTree = "<group>"; };
+		58EBBD6507B0366EBDC779F00FB75DB0 /* LoggerProvider.html */ = {isa = PBXFileReference; includeInIndex = 1; name = LoggerProvider.html; path = docs/Protocols/LoggerProvider.html; sourceTree = "<group>"; };
+		5A291BCCF45CFF5D37B5C5682D68E00F /* FireTVSelectionThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionThemeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionThemeProtocol.html; sourceTree = "<group>"; };
 		5A3E0586333BAF7E83E7E72B55782A5F /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		5A814BD98119889DFAF9D260CFBCBD5F /* gh.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = gh.png; path = docs/img/gh.png; sourceTree = "<group>"; };
 		5B45CFAA9FCB3EB54D9B97343366C345 /* BehaviorRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorRelay.swift; path = RxCocoa/Traits/BehaviorRelay.swift; sourceTree = "<group>"; };
@@ -889,16 +888,16 @@
 		5E98B455600A5918628E23CF0D0D23A5 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Quick.modulemap; sourceTree = "<group>"; };
 		5F6A8536C391AD6156F04BC3F14E7F85 /* First.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = First.swift; path = RxSwift/Observables/First.swift; sourceTree = "<group>"; };
 		601773970B16793779243DED1BFEEEAA /* FireTVPlayerViewViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerViewViewModel.swift; sourceTree = "<group>"; };
-		613D2CC4B20CF575265FBC6A2913E299 /* FireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerWireframe.html; path = docs/Structs/FireTVPlayerWireframe.html; sourceTree = "<group>"; };
+		613D2CC4B20CF575265FBC6A2913E299 /* FireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerWireframe.html; path = docs/Structs/FireTVPlayerWireframe.html; sourceTree = "<group>"; };
 		6192FC8232F104B468A0ACADEEF3ACF9 /* _RXDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RXDelegateProxy.m; path = RxCocoa/Runtime/_RXDelegateProxy.m; sourceTree = "<group>"; };
 		61D7E304FC0CD1E2EE6C50A0566316EC /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
-		6280EDD49BA54BC186C5C5F0882D58F1 /* FireTVSelectionDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionDarkTheme.html; path = docs/Structs/FireTVSelectionDarkTheme.html; sourceTree = "<group>"; };
+		6280EDD49BA54BC186C5C5F0882D58F1 /* FireTVSelectionDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionDarkTheme.html; path = docs/Structs/FireTVSelectionDarkTheme.html; sourceTree = "<group>"; };
 		63B111D9A8215A254B246F307DBED891 /* Queue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Platform/DataStructures/Queue.swift; sourceTree = "<group>"; };
 		6403CA6FE0E6A72C7286138E21AD25D5 /* RxSearchBarDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxSearchBarDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxSearchBarDelegateProxy.swift; sourceTree = "<group>"; };
 		654E0BDB243B91A397E3A68A0FCE17B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		65F668ABF9FB247A0E9D04808C73C7B6 /* DelegateProxyType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxyType.swift; path = RxCocoa/Common/DelegateProxyType.swift; sourceTree = "<group>"; };
 		662659A0D9BD4CFF518CA5362795CC31 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
-		66453B5868B357143E3AB9E98B3E8317 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Structs.html; path = docs/Structs.html; sourceTree = "<group>"; };
+		66453B5868B357143E3AB9E98B3E8317 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Structs.html; path = docs/Structs.html; sourceTree = "<group>"; };
 		666FF1214C772CA45FB434D3C27EB1B2 /* RxCocoa-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxCocoa-Info.plist"; sourceTree = "<group>"; };
 		6735B10991192FF6CBD98F77E0D35193 /* SectionedViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionedViewDataSourceType.swift; path = RxCocoa/Common/SectionedViewDataSourceType.swift; sourceTree = "<group>"; };
 		676E2D901E84FB986F7C234503A4F6DB /* DiscoveringInfoStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveringInfoStatus.swift; sourceTree = "<group>"; };
@@ -907,8 +906,8 @@
 		67ED72D9CBB23C256D40D8857A6D5FCE /* MockPlayerDiscoveryServiceDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockPlayerDiscoveryServiceDependencies.swift; sourceTree = "<group>"; };
 		68A2D2090503B414CB842D7EE895FECC /* Generate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generate.swift; path = RxSwift/Observables/Generate.swift; sourceTree = "<group>"; };
 		695BC96DD4C5867C0214DB96C049483D /* CwlCatchException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlCatchException.m; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/CwlCatchException.m; sourceTree = "<group>"; };
-		6961A92B5878666F62E66F8F89573065 /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Extensions.html; path = docs/Extensions.html; sourceTree = "<group>"; };
-		6989D0A82706FE7AC42A6C1A0B76C0CA /* FireTVKitUserDefaultsKeys.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVKitUserDefaultsKeys.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/FireTVKitUserDefaultsKeys.html; sourceTree = "<group>"; };
+		6961A92B5878666F62E66F8F89573065 /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Extensions.html; path = docs/Extensions.html; sourceTree = "<group>"; };
+		6989D0A82706FE7AC42A6C1A0B76C0CA /* FireTVKitUserDefaultsKeys.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVKitUserDefaultsKeys.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/FireTVKitUserDefaultsKeys.html; sourceTree = "<group>"; };
 		6AC664E9D42FF52902EFD9AA82B511F5 /* Zip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zip.swift; path = RxSwift/Observables/Zip.swift; sourceTree = "<group>"; };
 		6AD5D5A7C8013048DE96FC5EDC968A10 /* MetadataType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MetadataType.swift; sourceTree = "<group>"; };
 		6B189BF68766F3D5EE11034AAD497EFD /* Bag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = Platform/DataStructures/Bag.swift; sourceTree = "<group>"; };
@@ -916,10 +915,10 @@
 		6BB64B845C0FD5AB6BC99B0B5B96F8C1 /* FireTVPlayerWireframeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerWireframeError.swift; sourceTree = "<group>"; };
 		6BCC4050B0136D4900EDC9D1A1D26D72 /* Lock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lock.swift; path = RxSwift/Concurrency/Lock.swift; sourceTree = "<group>"; };
 		6C0485DF68D5BA0CA808B36D01469FFA /* BehaviorRelay+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BehaviorRelay+Driver.swift"; path = "RxCocoa/Traits/Driver/BehaviorRelay+Driver.swift"; sourceTree = "<group>"; };
-		6C123C94616F4AD065A20EBB702D2697 /* PlayerServiceError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = PlayerServiceError.html; path = docs/Enums/PlayerServiceError.html; sourceTree = "<group>"; };
+		6C123C94616F4AD065A20EBB702D2697 /* PlayerServiceError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerServiceError.html; path = docs/Enums/PlayerServiceError.html; sourceTree = "<group>"; };
 		6CC8D49DB306ABCEE4C493ED9558C53B /* PublishSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublishSubject.swift; path = RxSwift/Subjects/PublishSubject.swift; sourceTree = "<group>"; };
 		6CE8D3BF4F2B841AD79068EC0E1CF734 /* TailRecursiveSink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TailRecursiveSink.swift; path = RxSwift/Observers/TailRecursiveSink.swift; sourceTree = "<group>"; };
-		6D849586359A7605D2CB55D9AA090F11 /* ServiceFactoryError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = ServiceFactoryError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/ServiceFactoryError.html; sourceTree = "<group>"; };
+		6D849586359A7605D2CB55D9AA090F11 /* ServiceFactoryError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = ServiceFactoryError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/ServiceFactoryError.html; sourceTree = "<group>"; };
 		6D8AD78B2605E7C4258893FE3B5FEF5E /* Bag+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bag+Rx.swift"; path = "RxSwift/Extensions/Bag+Rx.swift"; sourceTree = "<group>"; };
 		6E2906579176506E5A6662B25739A615 /* FireTVPlayerInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerInteractor.swift; sourceTree = "<group>"; };
 		6E4930AF1910B926C9D21B1168AC7DD2 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
@@ -932,7 +931,7 @@
 		70524263C426E91A0F5F32FD64431B84 /* FireTVSelectionPresenterProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionPresenterProtocol.swift; sourceTree = "<group>"; };
 		70914A387C9D83065582DA9A576969EB /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		709D48B15DC8F97BE84B0490483E3D49 /* UITextField+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Rx.swift"; path = "RxCocoa/iOS/UITextField+Rx.swift"; sourceTree = "<group>"; };
-		70A6B6F02DB8D91A437DEB70C31D4BCC /* PlayerStatus.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = PlayerStatus.html; path = docs/Enums/PlayerStatus.html; sourceTree = "<group>"; };
+		70A6B6F02DB8D91A437DEB70C31D4BCC /* PlayerStatus.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerStatus.html; path = docs/Enums/PlayerStatus.html; sourceTree = "<group>"; };
 		715478F353A4EFBF5E980A8157972EDD /* DiscoveringInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveringInfo.swift; sourceTree = "<group>"; };
 		71DAFF2EE9C178A63739BD1B03BD9884 /* FireTVPlayerInteractorDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerInteractorDependencies.swift; sourceTree = "<group>"; };
 		7200B0F842667DDE43FE81239F67851C /* Pods-FireTVKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FireTVKit_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -946,34 +945,34 @@
 		7652015B107273F2DFC6C91C9275A1B5 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		771CB9E631F78348CBCFF73483A39128 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = RxSwift/SwiftSupport/SwiftSupport.swift; sourceTree = "<group>"; };
 		779158B0B22999DD5B48B2D251959FA7 /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
-		77C6761519B69F7900BEDD0F949929D8 /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = badge.svg; path = docs/badge.svg; sourceTree = "<group>"; };
+		77C6761519B69F7900BEDD0F949929D8 /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = badge.svg; path = docs/badge.svg; sourceTree = "<group>"; };
 		785C3DA12D2ECE58A347B648DA666574 /* FireTVPlayerPresenterDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerPresenterDependencies.swift; sourceTree = "<group>"; };
 		787CFEF2332C5150D7C8A46DB1320C6E /* DSL+Wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DSL+Wait.swift"; path = "Sources/Nimble/DSL+Wait.swift"; sourceTree = "<group>"; };
 		789E6F9C14DE8D9E370DA8C965F0BABF /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
-		78FCA9D7B0A44ACEB1BFB8A8537F4BCD /* PlayerServiceProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = PlayerServiceProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/PlayerServiceProtocol.html; sourceTree = "<group>"; };
+		78FCA9D7B0A44ACEB1BFB8A8537F4BCD /* PlayerServiceProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerServiceProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/PlayerServiceProtocol.html; sourceTree = "<group>"; };
 		79D3F19B3D3AFA0B8086B1CA5A843727 /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Create.swift; path = RxSwift/Observables/Create.swift; sourceTree = "<group>"; };
-		7A5176E4148195F43721EBDDE8554CBB /* FireTVSelectionPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionPresenterProtocol.html; path = docs/Protocols/FireTVSelectionPresenterProtocol.html; sourceTree = "<group>"; };
+		7A5176E4148195F43721EBDDE8554CBB /* FireTVSelectionPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionPresenterProtocol.html; path = docs/Protocols/FireTVSelectionPresenterProtocol.html; sourceTree = "<group>"; };
 		7A7FD3416253DFAD5F6F10F88073D4EA /* HistoricalScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HistoricalScheduler.swift; path = RxSwift/Schedulers/HistoricalScheduler.swift; sourceTree = "<group>"; };
 		7A86557BC0EDA07AD090C7E1BD45DE19 /* SkipUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkipUntil.swift; path = RxSwift/Observables/SkipUntil.swift; sourceTree = "<group>"; };
 		7B529BBF678C1E466600F854727CBFF4 /* CwlDarwinDefinitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlDarwinDefinitions.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlDarwinDefinitions.swift; sourceTree = "<group>"; };
-		7B712080442E490D640B4795BE5A7C98 /* LoggerProvider.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = LoggerProvider.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/LoggerProvider.html; sourceTree = "<group>"; };
+		7B712080442E490D640B4795BE5A7C98 /* LoggerProvider.html */ = {isa = PBXFileReference; includeInIndex = 1; name = LoggerProvider.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/LoggerProvider.html; sourceTree = "<group>"; };
 		7C49133E3E3E0F6E8D393D2DBCB884A9 /* Timer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = RxSwift/Observables/Timer.swift; sourceTree = "<group>"; };
 		7C7AE94CD3D8F495C896373EE3883F52 /* LoggerProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoggerProvider.swift; sourceTree = "<group>"; };
 		7CC57B544037604973CC39CD02DFF1C5 /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Window.swift; path = RxSwift/Observables/Window.swift; sourceTree = "<group>"; };
 		7D320AA2F233F2FCA351ADD04C80BE90 /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
 		7D32B46FB79F9E24502480E8DAD62AE9 /* ShareReplayScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareReplayScope.swift; path = RxSwift/Observables/ShareReplayScope.swift; sourceTree = "<group>"; };
 		7D835DA26D89B6BC69AEC927BF68B7A1 /* FireTVKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FireTVKit.modulemap; sourceTree = "<group>"; };
-		7DB0AC21D6522707E7C8E40DF32BB813 /* FireTVKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireTVKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DB0AC21D6522707E7C8E40DF32BB813 /* FireTVKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FireTVKit.bundle; path = "FireTVKit-FireTVKit.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD807D171758EFE0EBC9533A8273496 /* ObservableConvertibleType+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableConvertibleType+Driver.swift"; path = "RxCocoa/Traits/Driver/ObservableConvertibleType+Driver.swift"; sourceTree = "<group>"; };
 		7DDCAA419765A0122C502B05A5931A82 /* Pods-FireTVKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FireTVKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		7E1B39EA7E66DD66B4CB74B41215385A /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = docs/js/jquery.min.js; sourceTree = "<group>"; };
+		7E1B39EA7E66DD66B4CB74B41215385A /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = docs/js/jquery.min.js; sourceTree = "<group>"; };
 		7E5E43DC098E23631BE66D405FA4520A /* dash.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dash.png; path = docs/img/dash.png; sourceTree = "<group>"; };
-		7EB069988640EB47F929135D46A2846D /* FireTVSelectionWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionWireframeProtocol.html; path = docs/Extensions/FireTVSelectionWireframeProtocol.html; sourceTree = "<group>"; };
+		7EB069988640EB47F929135D46A2846D /* FireTVSelectionWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionWireframeProtocol.html; path = docs/Extensions/FireTVSelectionWireframeProtocol.html; sourceTree = "<group>"; };
 		7F97862C58C2631687B7383A2F007584 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8002D9FB9AA218EA53CFE5FEC46FDE2B /* FireTVPlayerLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerLightTheme.html; path = docs/Structs/FireTVPlayerLightTheme.html; sourceTree = "<group>"; };
+		8002D9FB9AA218EA53CFE5FEC46FDE2B /* FireTVPlayerLightTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerLightTheme.html; path = docs/Structs/FireTVPlayerLightTheme.html; sourceTree = "<group>"; };
 		801469E8B68EDD10FAB45970C196EBC0 /* RxTextStorageDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTextStorageDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTextStorageDelegateProxy.swift; sourceTree = "<group>"; };
-		80436CCE42E4CD75CD2CA6752D823AC3 /* LogEvent.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = LogEvent.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/LogEvent.html; sourceTree = "<group>"; };
-		80DBBA6DD2B293787A2BE6558A1F6BAF /* FireTVKit.tgz */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FireTVKit.tgz; path = docs/docsets/FireTVKit.tgz; sourceTree = "<group>"; };
+		80436CCE42E4CD75CD2CA6752D823AC3 /* LogEvent.html */ = {isa = PBXFileReference; includeInIndex = 1; name = LogEvent.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/LogEvent.html; sourceTree = "<group>"; };
+		80DBBA6DD2B293787A2BE6558A1F6BAF /* FireTVKit.tgz */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVKit.tgz; path = docs/docsets/FireTVKit.tgz; sourceTree = "<group>"; };
 		810EF03D04EA3DCFE655EABA427D8297 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = RxSwift/Observables/Filter.swift; sourceTree = "<group>"; };
 		81644B993B4A1CE228DEAA1BB4E0C236 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		81D46724DAC1F810F6E3324309B14551 /* StringConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -986,7 +985,7 @@
 		8586A83DC2649CE7F0D41EFAE8B7EF7D /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Quick/DSL/DSL.swift; sourceTree = "<group>"; };
 		85C986BDF956F48E62D0D777E172E729 /* Enumerated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enumerated.swift; path = RxSwift/Observables/Enumerated.swift; sourceTree = "<group>"; };
 		8602164B901157B4B3D11521BB9D12A3 /* FireTVSelectionPresenterDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionPresenterDependencies.swift; sourceTree = "<group>"; };
-		867374B6D4ACE404F7D466C394A7A79C /* PlayerData.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = PlayerData.html; path = docs/Structs/PlayerData.html; sourceTree = "<group>"; };
+		867374B6D4ACE404F7D466C394A7A79C /* PlayerData.html */ = {isa = PBXFileReference; includeInIndex = 1; name = PlayerData.html; path = docs/Structs/PlayerData.html; sourceTree = "<group>"; };
 		87656E69143C689B594D771D7C75A650 /* VirtualTimeConverterType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VirtualTimeConverterType.swift; path = RxSwift/Schedulers/VirtualTimeConverterType.swift; sourceTree = "<group>"; };
 		87D0B3C7D5FE85948776B73C6E164966 /* AddRef.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddRef.swift; path = RxSwift/Observables/AddRef.swift; sourceTree = "<group>"; };
 		8887B6122EA4A4F9EBDCC0B233E14A3F /* RxCocoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RxCocoa.h; path = RxCocoa/RxCocoa.h; sourceTree = "<group>"; };
@@ -998,7 +997,7 @@
 		8BD9D20061DE5217EBC639037C037001 /* ControlEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlEvent.swift; path = RxCocoa/Traits/ControlEvent.swift; sourceTree = "<group>"; };
 		8BE15AF1644D27085DC232A3E2FDB028 /* ObserveOn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserveOn.swift; path = RxSwift/Observables/ObserveOn.swift; sourceTree = "<group>"; };
 		8C026439AC68862FDE0DCEC64E7828A2 /* ConcurrentMainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentMainScheduler.swift; path = RxSwift/Schedulers/ConcurrentMainScheduler.swift; sourceTree = "<group>"; };
-		8C4F7B7C4F0E270DBB37535398D211E1 /* Pods_FireTVKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireTVKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4F7B7C4F0E270DBB37535398D211E1 /* Pods_FireTVKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FireTVKit_Tests.framework; path = "Pods-FireTVKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5955DF0468FE33341C2F2D0C15A082 /* Platform.Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Linux.swift; path = Platform/Platform.Linux.swift; sourceTree = "<group>"; };
 		8CCAF698B2C09D89AA94904095BF534C /* RxWebViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxWebViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxWebViewDelegateProxy.swift; sourceTree = "<group>"; };
 		8CF84770B5CB4D1863D71B56FD0AB355 /* RxSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwift.modulemap; sourceTree = "<group>"; };
@@ -1007,9 +1006,9 @@
 		8D9E4A0624BF41DEF2E3C7976BAF07CC /* DiscoveringStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveringStatus.swift; sourceTree = "<group>"; };
 		8EA009BCFAE16ACE8F1E2D9FDF60934E /* Observable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = RxSwift/Observable.swift; sourceTree = "<group>"; };
 		8EA4BE92E607D3C7512A6301B966D59E /* PlayerDiscoveryControllerDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryControllerDelegateProtocol.swift; sourceTree = "<group>"; };
-		8EEFBB2A399B8B4BF9D220C8FBAACC9C /* FireTVPlayerWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerWireframeProtocol.html; path = docs/Extensions/FireTVPlayerWireframeProtocol.html; sourceTree = "<group>"; };
+		8EEFBB2A399B8B4BF9D220C8FBAACC9C /* FireTVPlayerWireframeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerWireframeProtocol.html; path = docs/Extensions/FireTVPlayerWireframeProtocol.html; sourceTree = "<group>"; };
 		8F9ADA16FAC0AB80E3599CB2F99F8C0C /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
-		8FCA077B5C9D7124F48DE917C6EF2548 /* FireTVPlayerViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerViewController.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/FireTVPlayerViewController.html; sourceTree = "<group>"; };
+		8FCA077B5C9D7124F48DE917C6EF2548 /* FireTVPlayerViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerViewController.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/FireTVPlayerViewController.html; sourceTree = "<group>"; };
 		8FCAE0DE67A2695542AC17448D394B44 /* LoggerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
 		8FF2EBDF4C46FBB93C52BDBB81A97926 /* Concat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concat.swift; path = RxSwift/Observables/Concat.swift; sourceTree = "<group>"; };
 		9049968FF833197D6A2E02C9C6947592 /* PriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PriorityQueue.swift; path = Platform/DataStructures/PriorityQueue.swift; sourceTree = "<group>"; };
@@ -1018,14 +1017,14 @@
 		9153E8B7AE7113C09D567172B77F60C2 /* FireTVKitUserDefaultsKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVKitUserDefaultsKeys.swift; sourceTree = "<group>"; };
 		916D5AE394BB450D0192C6AE026B66D1 /* Reactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reactive.swift; path = RxSwift/Reactive.swift; sourceTree = "<group>"; };
 		925160A9E7187E3F05A6B823D91B23D9 /* ScheduledDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScheduledDisposable.swift; path = RxSwift/Disposables/ScheduledDisposable.swift; sourceTree = "<group>"; };
-		928E9AB8A6214168F7B0C9C3ADE13647 /* FireTVPlayerWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerWireframeError.html; path = docs/Enums/FireTVPlayerWireframeError.html; sourceTree = "<group>"; };
+		928E9AB8A6214168F7B0C9C3ADE13647 /* FireTVPlayerWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerWireframeError.html; path = docs/Enums/FireTVPlayerWireframeError.html; sourceTree = "<group>"; };
 		9303ED28317A88CF5E101D0F7AE586F9 /* UISearchController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISearchController+Rx.swift"; path = "RxCocoa/iOS/UISearchController+Rx.swift"; sourceTree = "<group>"; };
 		9381B5DE150BBA0C6989BEC95568F8A4 /* UIControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Rx.swift"; path = "RxCocoa/iOS/UIControl+Rx.swift"; sourceTree = "<group>"; };
 		93F1E2E9F054E88CD634A2AD2CFC7791 /* CurrentThreadScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurrentThreadScheduler.swift; path = RxSwift/Schedulers/CurrentThreadScheduler.swift; sourceTree = "<group>"; };
 		9429B5A38866BF2FA10C2BE690F71DA8 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
 		94F50A78E79F3197D649DA3C8BE66B8E /* Pods-FireTVKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FireTVKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		94FC0FB6CE5528A58DADFAF54043F053 /* FireTVPlayerRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerRouter.swift; sourceTree = "<group>"; };
-		951F1CB3CAD75E8F631D5264E8C96104 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		951F1CB3CAD75E8F631D5264E8C96104 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxCocoa.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954531C346612949C87B9ABC1AA6D49B /* AsMaybe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsMaybe.swift; path = RxSwift/Observables/AsMaybe.swift; sourceTree = "<group>"; };
 		96B62D153E9D565BCD0BE8AE3DF94D33 /* UITabBar+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITabBar+Rx.swift"; path = "RxCocoa/iOS/UITabBar+Rx.swift"; sourceTree = "<group>"; };
 		972B1D9FD69B9A4E73C154B46D67A9EA /* UIAlertController+MakeAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIAlertController+MakeAlert.swift"; sourceTree = "<group>"; };
@@ -1033,37 +1032,37 @@
 		98621149155A2CA759F690DE1304FB19 /* ServiceFactoryProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceFactoryProtocol.swift; sourceTree = "<group>"; };
 		989662EBA165D53B23D5BFE1A35FA8FF /* Disposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposable.swift; path = RxSwift/Disposable.swift; sourceTree = "<group>"; };
 		990EF56CCF83DD014C95857495AFEB38 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
-		99C3BDA4F99BA7974EE7218B7CD22732 /* docSet.dsidx */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = docSet.dsidx; path = docs/docsets/FireTVKit.docset/Contents/Resources/docSet.dsidx; sourceTree = "<group>"; };
+		99C3BDA4F99BA7974EE7218B7CD22732 /* docSet.dsidx */ = {isa = PBXFileReference; includeInIndex = 1; name = docSet.dsidx; path = docs/docsets/FireTVKit.docset/Contents/Resources/docSet.dsidx; sourceTree = "<group>"; };
 		9A17B7BE2DE36B4CC59104B9DE473E76 /* KVORepresentable+Swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "KVORepresentable+Swift.swift"; path = "RxCocoa/Foundation/KVORepresentable+Swift.swift"; sourceTree = "<group>"; };
 		9A5642FD35F8CAD0FF4ED1D305142110 /* CombineLatest+Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CombineLatest+Collection.swift"; path = "RxSwift/Observables/CombineLatest+Collection.swift"; sourceTree = "<group>"; };
 		9A5A07EAEC0024B987DC10C2FAA7E009 /* Signal+Subscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Signal+Subscription.swift"; path = "RxCocoa/Traits/Signal/Signal+Subscription.swift"; sourceTree = "<group>"; };
 		9A6A417526AC2F1C637F5250BFF66B97 /* FireTVSelectionViewControllerDependenciesProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionViewControllerDependenciesProtocol.swift; sourceTree = "<group>"; };
 		9ADC76A90D2E0CCEEDE39B33740A4302 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = docs/docsets/FireTVKit.docset/Contents/Info.plist; sourceTree = "<group>"; };
 		9B40B4AC2C035F2A08BCB45BBD574900 /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
-		9B512C002EC8784B236A55EB9184C372 /* DummyPlayer.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DummyPlayer.html; path = docs/Classes/DummyPlayer.html; sourceTree = "<group>"; };
+		9B512C002EC8784B236A55EB9184C372 /* DummyPlayer.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DummyPlayer.html; path = docs/Classes/DummyPlayer.html; sourceTree = "<group>"; };
 		9B5F2F169738BE67B6EBC566B6612B80 /* DelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxy.swift; path = RxCocoa/Common/DelegateProxy.swift; sourceTree = "<group>"; };
 		9C1C3271A4D352AC1E9EBF2487D4A970 /* RxCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-prefix.pch"; sourceTree = "<group>"; };
 		9C9A2EA9F3D3BFF20A6279BE54B02509 /* dash.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dash.png; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/img/dash.png; sourceTree = "<group>"; };
 		9D6C16F348CB90821628E066EC7120ED /* DefaultIfEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultIfEmpty.swift; path = RxSwift/Observables/DefaultIfEmpty.swift; sourceTree = "<group>"; };
 		9D7F35E019A4E1788B338817DE64F93E /* CwlMachBadInstructionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlMachBadInstructionHandler.m; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/CwlMachBadInstructionHandler.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EA9C2BA9C06BE5DEA3136BC985B35C6 /* String+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Rx.swift"; path = "RxSwift/Extensions/String+Rx.swift"; sourceTree = "<group>"; };
 		9EDCF256EEE627D1885AE18D201E07EA /* NSString+C99ExtendedIdentifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSString+C99ExtendedIdentifier.swift"; path = "Sources/Quick/NSString+C99ExtendedIdentifier.swift"; sourceTree = "<group>"; };
 		9EEEA6F529BDDFA1CAD54FB4F39BF665 /* CompositeDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositeDisposable.swift; path = RxSwift/Disposables/CompositeDisposable.swift; sourceTree = "<group>"; };
 		9F38A87888145892A763F0F9E2227BE7 /* FireTVPlayerPresenterProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerPresenterProtocol.swift; sourceTree = "<group>"; };
-		9F6A40525CC31330F98F0878A671CDB5 /* FireTVPlayerWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerWireframeError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/FireTVPlayerWireframeError.html; sourceTree = "<group>"; };
+		9F6A40525CC31330F98F0878A671CDB5 /* FireTVPlayerWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerWireframeError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/FireTVPlayerWireframeError.html; sourceTree = "<group>"; };
 		9FA68BA87D1BCB8CF28514421EE11A3E /* FireTVPlayerDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerDelegateProtocol.swift; sourceTree = "<group>"; };
 		9FAF031C11FC07C09CB72E6CB4951254 /* Catch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Catch.swift; path = RxSwift/Observables/Catch.swift; sourceTree = "<group>"; };
 		A034330765724BF3A2871D740203B9F1 /* RxTextViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTextViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTextViewDelegateProxy.swift; sourceTree = "<group>"; };
 		A05F1EDBD340D95B0CD84EED555FD799 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
-		A12944778B540DA0546CC53B98524752 /* SubtitleKind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = SubtitleKind.html; path = docs/Enums/SubtitleKind.html; sourceTree = "<group>"; };
+		A12944778B540DA0546CC53B98524752 /* SubtitleKind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = SubtitleKind.html; path = docs/Enums/SubtitleKind.html; sourceTree = "<group>"; };
 		A1504B7E39915F8B43E231CBB0E1B412 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
 		A1BBCAC63691CD2C5FBE202C5144C0AE /* KVORepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KVORepresentable.swift; path = RxCocoa/Foundation/KVORepresentable.swift; sourceTree = "<group>"; };
-		A223F45BFD8B03CFFABEE5D6F0F14D99 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A223F45BFD8B03CFFABEE5D6F0F14D99 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxSwift.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A2495B01920EC30A9DF7D57B7DEA93 /* UIPageControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPageControl+Rx.swift"; path = "RxCocoa/iOS/UIPageControl+Rx.swift"; sourceTree = "<group>"; };
 		A2E017E270B0A42C6E9CC22B221E4AF3 /* FireTVSelectionPresenterState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionPresenterState.swift; sourceTree = "<group>"; };
 		A30AF31D266AB26ADA51485D992D98B5 /* _RXDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _RXDelegateProxy.h; path = RxCocoa/Runtime/include/_RXDelegateProxy.h; sourceTree = "<group>"; };
-		A3C6E60D28E95A4E47DF2441A7730B18 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Structs.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs.html; sourceTree = "<group>"; };
+		A3C6E60D28E95A4E47DF2441A7730B18 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Structs.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs.html; sourceTree = "<group>"; };
 		A3D294CA95DC9505EEE013E8E26A59B1 /* Amb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Amb.swift; path = RxSwift/Observables/Amb.swift; sourceTree = "<group>"; };
 		A405EFE663FE2AC70DF49B402E0D8878 /* UITabBarItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITabBarItem+Rx.swift"; path = "RxCocoa/iOS/UITabBarItem+Rx.swift"; sourceTree = "<group>"; };
 		A40CA928515471A17700B7451318EC3E /* RxTableViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewDataSourceType.swift; path = RxCocoa/iOS/Protocols/RxTableViewDataSourceType.swift; sourceTree = "<group>"; };
@@ -1072,34 +1071,34 @@
 		A5107D8F383E74FF81767686950AC201 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A59620D49072094F62AEAFF620501792 /* Quick-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Quick-dummy.m"; sourceTree = "<group>"; };
 		A59BB61844D5EEBA4E5591ACA458DF91 /* SharedSequence+Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SharedSequence+Operators.swift"; path = "RxCocoa/Traits/SharedSequence/SharedSequence+Operators.swift"; sourceTree = "<group>"; };
-		A622BF219207F8E15189F09C6EDDF2DD /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = search.json; path = docs/search.json; sourceTree = "<group>"; };
+		A622BF219207F8E15189F09C6EDDF2DD /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; name = search.json; path = docs/search.json; sourceTree = "<group>"; };
 		A653E87994B46FD93D311D8FCDA5AA74 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		A65A8FFE954D413C0E9BE6C44B67CD88 /* SharedSequence+Operators+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SharedSequence+Operators+arity.swift"; path = "RxCocoa/Traits/SharedSequence/SharedSequence+Operators+arity.swift"; sourceTree = "<group>"; };
 		A6957F7F3EF336291D575F65DC5870B3 /* UIButton+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Rx.swift"; path = "RxCocoa/iOS/UIButton+Rx.swift"; sourceTree = "<group>"; };
-		A7BA40F9716B517743A3AE5992F36C84 /* FireTVMedia.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVMedia.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVMedia.html; sourceTree = "<group>"; };
+		A7BA40F9716B517743A3AE5992F36C84 /* FireTVMedia.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVMedia.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVMedia.html; sourceTree = "<group>"; };
 		A9ADE9684357AA3858363D929023C979 /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
-		A9DE761D5A0990AD7B99D07F39D5F07D /* Metadata.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Metadata.html; path = docs/Structs/Metadata.html; sourceTree = "<group>"; };
+		A9DE761D5A0990AD7B99D07F39D5F07D /* Metadata.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Metadata.html; path = docs/Structs/Metadata.html; sourceTree = "<group>"; };
 		AA97380B744E8FC5DB6ED289BCA04B03 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		AAEFB2A5444618A73CB75AB3FA035165 /* _RXObjCRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RXObjCRuntime.m; path = RxCocoa/Runtime/_RXObjCRuntime.m; sourceTree = "<group>"; };
 		AB4FC817F4EA3241E8BE07F087F5C142 /* Pods-FireTVKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FireTVKit_Tests-Info.plist"; sourceTree = "<group>"; };
 		AB543718BC863CCB6372C32D761DBB45 /* UIBarButtonItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Rx.swift"; path = "RxCocoa/iOS/UIBarButtonItem+Rx.swift"; sourceTree = "<group>"; };
-		ACB11FAAD602F061021F3F43DA29E29C /* FireTVSelectionThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionThemeProtocol.html; path = docs/Protocols/FireTVSelectionThemeProtocol.html; sourceTree = "<group>"; };
+		ACB11FAAD602F061021F3F43DA29E29C /* FireTVSelectionThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionThemeProtocol.html; path = docs/Protocols/FireTVSelectionThemeProtocol.html; sourceTree = "<group>"; };
 		AD148D46175D13C7C945C5F45CBC1305 /* Pods-FireTVKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FireTVKit_Example-dummy.m"; sourceTree = "<group>"; };
-		AE04E260CCBF13B65E337AE3F0C9B324 /* MetadataType.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = MetadataType.html; path = docs/Enums/MetadataType.html; sourceTree = "<group>"; };
-		AF25CF041F8F2D0960A8F32EF140AB6C /* FireTVPlayerViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerViewController.html; path = docs/Classes/FireTVPlayerViewController.html; sourceTree = "<group>"; };
+		AE04E260CCBF13B65E337AE3F0C9B324 /* MetadataType.html */ = {isa = PBXFileReference; includeInIndex = 1; name = MetadataType.html; path = docs/Enums/MetadataType.html; sourceTree = "<group>"; };
+		AF25CF041F8F2D0960A8F32EF140AB6C /* FireTVPlayerViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerViewController.html; path = docs/Classes/FireTVPlayerViewController.html; sourceTree = "<group>"; };
 		AFE64A1FD9BC52F1D65E9CC7E2081C25 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		B275C9C1B57703DBA3E54F816878FDB4 /* ObservableConvertibleType+Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableConvertibleType+Signal.swift"; path = "RxCocoa/Traits/Signal/ObservableConvertibleType+Signal.swift"; sourceTree = "<group>"; };
 		B2D6C146FDE24A523B6CFA2F672A1A28 /* UIGestureRecognizer+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIGestureRecognizer+Rx.swift"; path = "RxCocoa/iOS/UIGestureRecognizer+Rx.swift"; sourceTree = "<group>"; };
 		B3A11E9AA145E946AC1BDAD6676E2E75 /* UITextView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Rx.swift"; path = "RxCocoa/iOS/UITextView+Rx.swift"; sourceTree = "<group>"; };
 		B5436ADEE658A01AAB6832076F041145 /* FireTVKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FireTVKit-dummy.m"; sourceTree = "<group>"; };
 		B613DD5F52194AD4BE424B87BFC20E41 /* SynchronizedUnsubscribeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedUnsubscribeType.swift; path = RxSwift/Concurrency/SynchronizedUnsubscribeType.swift; sourceTree = "<group>"; };
-		B6A69390B82793F9FCF2FD0D6E52FC1D /* MockFireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = MockFireTVSelectionWireframe.html; path = docs/Structs/MockFireTVSelectionWireframe.html; sourceTree = "<group>"; };
+		B6A69390B82793F9FCF2FD0D6E52FC1D /* MockFireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = MockFireTVSelectionWireframe.html; path = docs/Structs/MockFireTVSelectionWireframe.html; sourceTree = "<group>"; };
 		B78D6D14E02D228B14AC5FAE18D0FFB1 /* FireTVSelectionWireframeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionWireframeProtocol.swift; sourceTree = "<group>"; };
-		B7AF96D9BC28B3EC99283125D461E140 /* FireTVPlayerThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerThemeProtocol.html; path = docs/Protocols/FireTVPlayerThemeProtocol.html; sourceTree = "<group>"; };
+		B7AF96D9BC28B3EC99283125D461E140 /* FireTVPlayerThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerThemeProtocol.html; path = docs/Protocols/FireTVPlayerThemeProtocol.html; sourceTree = "<group>"; };
 		B7B69768E2EA749BB3F213E795177235 /* TakeUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeUntil.swift; path = RxSwift/Observables/TakeUntil.swift; sourceTree = "<group>"; };
 		B978133F169B12F23BBA8C2DC6F626DB /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		B9BB2B1FB6AD5F543CBEE05891DD6500 /* UILabel+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILabel+Rx.swift"; path = "RxCocoa/iOS/UILabel+Rx.swift"; sourceTree = "<group>"; };
-		B9C2FF3F004E0110790D7E371EE076BC /* MockFireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = MockFireTVPlayerWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/MockFireTVPlayerWireframe.html; sourceTree = "<group>"; };
+		B9C2FF3F004E0110790D7E371EE076BC /* MockFireTVPlayerWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = MockFireTVPlayerWireframe.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/MockFireTVPlayerWireframe.html; sourceTree = "<group>"; };
 		BA1023A4A9BB36C05188C64665B78EE7 /* Never.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Never.swift; path = RxSwift/Observables/Never.swift; sourceTree = "<group>"; };
 		BA7D518F91C91753B86ACACC6DBE25DD /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThanOrEqualTo.swift; path = Sources/Nimble/Matchers/BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
 		BAB26F788228570E61CD7A7F2197DD37 /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
@@ -1127,23 +1126,23 @@
 		C11C285E392E4ABCB07FC1B489A81D2A /* Debounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debounce.swift; path = RxSwift/Observables/Debounce.swift; sourceTree = "<group>"; };
 		C13071305DD671F9F0E9D74D0EE0400E /* MockFireTVSelectionWireframe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockFireTVSelectionWireframe.swift; sourceTree = "<group>"; };
 		C1C5C389927637D7F3F1178F3C4C2549 /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
-		C246EC0A3DD031AC67234FA77E22C088 /* SubtitleKind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = SubtitleKind.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/SubtitleKind.html; sourceTree = "<group>"; };
+		C246EC0A3DD031AC67234FA77E22C088 /* SubtitleKind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = SubtitleKind.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/SubtitleKind.html; sourceTree = "<group>"; };
 		C2BD5E1EAFAABA2DC3DA1F5D483D2578 /* RxCocoa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxCocoa.modulemap; sourceTree = "<group>"; };
 		C31C4AFE0428FFA59F38847D56E987E3 /* NSTextField+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTextField+Rx.swift"; path = "RxCocoa/macOS/NSTextField+Rx.swift"; sourceTree = "<group>"; };
 		C32C82DF1A4293C1452A17D9E1D6F532 /* GroupBy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupBy.swift; path = RxSwift/Observables/GroupBy.swift; sourceTree = "<group>"; };
-		C3566293E409DA031F5D75FE5EEF5A90 /* FireTVKitUserDefaultsKeys.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVKitUserDefaultsKeys.html; path = docs/Enums/FireTVKitUserDefaultsKeys.html; sourceTree = "<group>"; };
+		C3566293E409DA031F5D75FE5EEF5A90 /* FireTVKitUserDefaultsKeys.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVKitUserDefaultsKeys.html; path = docs/Enums/FireTVKitUserDefaultsKeys.html; sourceTree = "<group>"; };
 		C3AD173A0A44C118A0C1F088698AACD4 /* Zip+Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Zip+Collection.swift"; path = "RxSwift/Observables/Zip+Collection.swift"; sourceTree = "<group>"; };
 		C3BF1704AE226065B472D0B5FEF8BFFD /* SerialDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SerialDisposable.swift; path = RxSwift/Disposables/SerialDisposable.swift; sourceTree = "<group>"; };
 		C4415343A33EA4ED8A6747195F055F00 /* RxTableViewDataSourcePrefetchingProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewDataSourcePrefetchingProxy.swift; path = RxCocoa/iOS/Proxies/RxTableViewDataSourcePrefetchingProxy.swift; sourceTree = "<group>"; };
 		C50D766C40BD9F57AB0173DA412C35B6 /* AmazonFling.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AmazonFling.xcconfig; sourceTree = "<group>"; };
-		C5286F9B16AD82FF8269440056F50E9E /* ServiceFactory.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = ServiceFactory.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/ServiceFactory.html; sourceTree = "<group>"; };
-		C52C1FA813D36083E7BCD3A8E26A331F /* FireTVPlayerDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerDelegateProtocol.html; path = docs/Protocols/FireTVPlayerDelegateProtocol.html; sourceTree = "<group>"; };
-		C5F587459EB4784011ED0FF2CA0ACEBF /* FireTVSelectionWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionWireframeError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/FireTVSelectionWireframeError.html; sourceTree = "<group>"; };
+		C5286F9B16AD82FF8269440056F50E9E /* ServiceFactory.html */ = {isa = PBXFileReference; includeInIndex = 1; name = ServiceFactory.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/ServiceFactory.html; sourceTree = "<group>"; };
+		C52C1FA813D36083E7BCD3A8E26A331F /* FireTVPlayerDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerDelegateProtocol.html; path = docs/Protocols/FireTVPlayerDelegateProtocol.html; sourceTree = "<group>"; };
+		C5F587459EB4784011ED0FF2CA0ACEBF /* FireTVSelectionWireframeError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionWireframeError.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/FireTVSelectionWireframeError.html; sourceTree = "<group>"; };
 		C618C0951AB45FCF2B634914D4309129 /* URLSession+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSession+Rx.swift"; path = "RxCocoa/Foundation/URLSession+Rx.swift"; sourceTree = "<group>"; };
-		C66A0DA1712C95DC107EDD98A6B761CA /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Enums.html; path = docs/Enums.html; sourceTree = "<group>"; };
+		C66A0DA1712C95DC107EDD98A6B761CA /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Enums.html; path = docs/Enums.html; sourceTree = "<group>"; };
 		C66A53A908387208F3C3BC6B91862E89 /* PriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PriorityQueue.swift; path = Platform/DataStructures/PriorityQueue.swift; sourceTree = "<group>"; };
 		C69352B6945C3DDB83156A638834AE95 /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
-		C7267D93FA541A2E52CE1105454FB09F /* FireTVSelectionDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionDelegateProtocol.html; path = docs/Protocols/FireTVSelectionDelegateProtocol.html; sourceTree = "<group>"; };
+		C7267D93FA541A2E52CE1105454FB09F /* FireTVSelectionDelegateProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionDelegateProtocol.html; path = docs/Protocols/FireTVSelectionDelegateProtocol.html; sourceTree = "<group>"; };
 		C7281D3BCC8ABB34EBC0CE784E7CFD7D /* carat.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = carat.png; path = docs/img/carat.png; sourceTree = "<group>"; };
 		C7687B04509616266B48F955C56BAC69 /* UIActivityIndicatorView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIActivityIndicatorView+Rx.swift"; path = "RxCocoa/iOS/UIActivityIndicatorView+Rx.swift"; sourceTree = "<group>"; };
 		C79217CD939FECD958EE9316988F6506 /* InvocableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvocableType.swift; path = RxSwift/Schedulers/Internal/InvocableType.swift; sourceTree = "<group>"; };
@@ -1151,19 +1150,19 @@
 		C88893B0799550ED1DA996AE956C6589 /* DummyPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DummyPlayer.swift; sourceTree = "<group>"; };
 		C9991E6C13F3E94AC41A188C443FB80F /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = RxSwift/Observables/Error.swift; sourceTree = "<group>"; };
 		CA1267D5487F69C032FD2D01662FECAC /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Sources/QuickObjectiveC/DSL/QCKDSL.h; sourceTree = "<group>"; };
-		CA9047AC385264ABC70CCDEF197E59E8 /* FireTVMedia.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVMedia.html; path = docs/Structs/FireTVMedia.html; sourceTree = "<group>"; };
-		CA960FD87A269B20FD70762397ED783D /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = index.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/index.html; sourceTree = "<group>"; };
-		CAA627A9507B841AF41FFA2ACFBF85B6 /* LogEvent.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = LogEvent.html; path = docs/Enums/LogEvent.html; sourceTree = "<group>"; };
+		CA9047AC385264ABC70CCDEF197E59E8 /* FireTVMedia.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVMedia.html; path = docs/Structs/FireTVMedia.html; sourceTree = "<group>"; };
+		CA960FD87A269B20FD70762397ED783D /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/index.html; sourceTree = "<group>"; };
+		CAA627A9507B841AF41FFA2ACFBF85B6 /* LogEvent.html */ = {isa = PBXFileReference; includeInIndex = 1; name = LogEvent.html; path = docs/Enums/LogEvent.html; sourceTree = "<group>"; };
 		CADB1770A52DA3213C10721791F4CF9C /* FireTVSelectionViewProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionViewProtocol.swift; sourceTree = "<group>"; };
 		CBA9E13D0D97C2B8359F82244D4B7801 /* FireTVPlayerPresenterState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerPresenterState.swift; sourceTree = "<group>"; };
 		CC33D5F747B4F0BBF925FA8AB76CB1CC /* RecursiveScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveScheduler.swift; path = RxSwift/Schedulers/RecursiveScheduler.swift; sourceTree = "<group>"; };
-		CC66002630635C42B11ED103C83329EC /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jazzy.js; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/js/jazzy.js; sourceTree = "<group>"; };
+		CC66002630635C42B11ED103C83329EC /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.js; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/js/jazzy.js; sourceTree = "<group>"; };
 		CCA517559F3F20C0DB5020748387299A /* Nimble-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Info.plist"; sourceTree = "<group>"; };
 		CDD657E05263691FB65386CB533C2390 /* Completable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Completable.swift; path = RxSwift/Traits/Completable.swift; sourceTree = "<group>"; };
 		CDDB789F7AA550D65048367C5F37E809 /* Date+StringValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+StringValue.swift"; sourceTree = "<group>"; };
 		CDF682E3E089F4CB2B9F01476E63366C /* RxTabBarDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTabBarDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTabBarDelegateProxy.swift; sourceTree = "<group>"; };
 		CE0FC8245C2E39AE6BEE4FF64D15D426 /* Reduce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reduce.swift; path = RxSwift/Observables/Reduce.swift; sourceTree = "<group>"; };
-		CEB4D67304A4B3CAA9B603D89B23F289 /* FireTVManager.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVManager.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/FireTVManager.html; sourceTree = "<group>"; };
+		CEB4D67304A4B3CAA9B603D89B23F289 /* FireTVManager.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVManager.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Classes/FireTVManager.html; sourceTree = "<group>"; };
 		CF339AC5745A423EF5824CBCA34E1C38 /* FireTVPlayerThemeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerThemeProtocol.swift; sourceTree = "<group>"; };
 		CF5A6EA4BA2DE092023961038F082897 /* Binder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Binder.swift; path = RxCocoa/Common/Binder.swift; sourceTree = "<group>"; };
 		D0ABDC1DF70EC2AD399F210B50B46A5D /* ObservableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableType.swift; path = RxSwift/ObservableType.swift; sourceTree = "<group>"; };
@@ -1189,12 +1188,12 @@
 		D8980BA8AEDC9FBDEE5E395A1CF56E74 /* Quick-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Quick-Info.plist"; sourceTree = "<group>"; };
 		D8DEE80C2B1A11AB0E49EA98972D2770 /* ObserverBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserverBase.swift; path = RxSwift/Observers/ObserverBase.swift; sourceTree = "<group>"; };
 		D92142B04BD56E754EA5092B443D3BD8 /* Buffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Buffer.swift; path = RxSwift/Observables/Buffer.swift; sourceTree = "<group>"; };
-		D95025B07824C9B4EAAAF03D6E3D23B9 /* FireTVPlayerViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerViewProtocol.html; path = docs/Protocols/FireTVPlayerViewProtocol.html; sourceTree = "<group>"; };
+		D95025B07824C9B4EAAAF03D6E3D23B9 /* FireTVPlayerViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerViewProtocol.html; path = docs/Protocols/FireTVPlayerViewProtocol.html; sourceTree = "<group>"; };
 		D95EB7E1CC568E51F234760577759655 /* ObservableConvertibleType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableConvertibleType.swift; path = RxSwift/ObservableConvertibleType.swift; sourceTree = "<group>"; };
 		D9816652069098AD9594BCA80C7A1D6B /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
 		D99B2B177EA1C5434FCF65620E579A3F /* FireTVSelectionDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionDelegateProtocol.swift; sourceTree = "<group>"; };
-		D99B9276C2BC0B48FD8BE7A46BF72D80 /* FireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionWireframe.html; path = docs/Structs/FireTVSelectionWireframe.html; sourceTree = "<group>"; };
-		D9A73D910B2BF246C696867D091A2E77 /* MetadataType.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = MetadataType.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/MetadataType.html; sourceTree = "<group>"; };
+		D99B9276C2BC0B48FD8BE7A46BF72D80 /* FireTVSelectionWireframe.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionWireframe.html; path = docs/Structs/FireTVSelectionWireframe.html; sourceTree = "<group>"; };
+		D9A73D910B2BF246C696867D091A2E77 /* MetadataType.html */ = {isa = PBXFileReference; includeInIndex = 1; name = MetadataType.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Enums/MetadataType.html; sourceTree = "<group>"; };
 		D9AAE903B7B2A352868A7301618CB3CF /* RxNavigationControllerDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxNavigationControllerDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxNavigationControllerDelegateProxy.swift; sourceTree = "<group>"; };
 		D9E3FD8D5DF2C63277FD91855B7F81DF /* ThrowAssertion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowAssertion.swift; path = Sources/Nimble/Matchers/ThrowAssertion.swift; sourceTree = "<group>"; };
 		D9E40ED36FE13BAC8946B626FBD2919D /* RxCocoa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCocoa.swift; path = RxCocoa/RxCocoa.swift; sourceTree = "<group>"; };
@@ -1206,18 +1205,18 @@
 		DD1B7E42FBDA92EF2046940572F9EC78 /* NSImageView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSImageView+Rx.swift"; path = "RxCocoa/macOS/NSImageView+Rx.swift"; sourceTree = "<group>"; };
 		DD4159021B94D1ABAF11656286E39418 /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = RxCocoa/Foundation/Logging.swift; sourceTree = "<group>"; };
 		DF734269944B30B83238BE6D8EA5BAC5 /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickSelectedTestSuiteBuilder.swift; path = Sources/Quick/QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
-		DF83AB04FD6D0BBA26004690D698C6F6 /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Classes.html; path = docs/Classes.html; sourceTree = "<group>"; };
+		DF83AB04FD6D0BBA26004690D698C6F6 /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Classes.html; path = docs/Classes.html; sourceTree = "<group>"; };
 		DFC657CD0384BD7F67279D012321E65B /* SingleAssignmentDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAssignmentDisposable.swift; path = RxSwift/Disposables/SingleAssignmentDisposable.swift; sourceTree = "<group>"; };
 		E20ADC8B39232ED4FDA24B5519EAB44F /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		E210945F2CB7A9CB39DE0933BB6EFA1F /* Completable+AndThen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Completable+AndThen.swift"; path = "RxSwift/Traits/Completable+AndThen.swift"; sourceTree = "<group>"; };
 		E25E4D1C944859F42E5F7416D7517C5D /* UIAlertAction+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIAlertAction+Rx.swift"; path = "RxCocoa/iOS/UIAlertAction+Rx.swift"; sourceTree = "<group>"; };
-		E2D0D066DAADAAC94BF72854998595BF /* Pods_FireTVKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireTVKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D0D066DAADAAC94BF72854998595BF /* Pods_FireTVKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FireTVKit_Example.framework; path = "Pods-FireTVKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B28B98332C34F87193D3DD0C09FC10 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		E47B9AE7D15C01F0155955A8FF10F124 /* TimeStringFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeStringFactory.swift; sourceTree = "<group>"; };
 		E4EE119EA8BF2081B1D2B142FDED26EC /* Sample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sample.swift; path = RxSwift/Observables/Sample.swift; sourceTree = "<group>"; };
 		E5002F79A89DC47FA6963F39C1D169FE /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
 		E5269BAF3C620C7F6C89460FFED39085 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E56F7D74E3B3BBA3227D036614233D90 /* FireTVPlayerViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerViewProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerViewProtocol.html; sourceTree = "<group>"; };
+		E56F7D74E3B3BBA3227D036614233D90 /* FireTVPlayerViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerViewProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerViewProtocol.html; sourceTree = "<group>"; };
 		E5714B2C5FC604E29FAB7F30C4C2C46C /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		E59FE1E24BE77CC3CD320EE26F155738 /* NSButton+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSButton+Rx.swift"; path = "RxCocoa/macOS/NSButton+Rx.swift"; sourceTree = "<group>"; };
 		E600045201C54176D87BA5D8B6CDF462 /* FireTVPlayerDarkTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerDarkTheme.swift; sourceTree = "<group>"; };
@@ -1225,8 +1224,8 @@
 		E79A006168700CEB547B002F37B98890 /* RxSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxSwift-dummy.m"; sourceTree = "<group>"; };
 		E7A3D00058D748376EF9E97A2337C834 /* RxPickerViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxPickerViewDelegateProxy.swift; sourceTree = "<group>"; };
 		E7ABE998696EB37CCF22A4C85BB3A33C /* NSObject+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Rx.swift"; path = "RxCocoa/Foundation/NSObject+Rx.swift"; sourceTree = "<group>"; };
-		E80CB214D99AE9545D324CA08CE30585 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E8140650E3B50E702F71A1FECC76CAA1 /* ServiceFactoryError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = ServiceFactoryError.html; path = docs/Enums/ServiceFactoryError.html; sourceTree = "<group>"; };
+		E80CB214D99AE9545D324CA08CE30585 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E8140650E3B50E702F71A1FECC76CAA1 /* ServiceFactoryError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = ServiceFactoryError.html; path = docs/Enums/ServiceFactoryError.html; sourceTree = "<group>"; };
 		E87C3C4D0A346D4A17ACB1B93C0F89A5 /* SchedulerServices+Emulation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SchedulerServices+Emulation.swift"; path = "RxSwift/Schedulers/SchedulerServices+Emulation.swift"; sourceTree = "<group>"; };
 		E8887677DE7ECADAF6EA494702FD3871 /* DeprecationWarner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeprecationWarner.swift; path = Platform/DeprecationWarner.swift; sourceTree = "<group>"; };
 		E8B62E5C18243C41ABFFCEC18321B591 /* RxScrollViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxScrollViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxScrollViewDelegateProxy.swift; sourceTree = "<group>"; };
@@ -1235,18 +1234,18 @@
 		E90D7C403D3D754153AA21636A017BB7 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
 		E91BFBFEE8B84427F670241D63029351 /* FireTVKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FireTVKit-Info.plist"; sourceTree = "<group>"; };
 		E9895976BD321585E07C9644913A0C4D /* ControlEvent+Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlEvent+Signal.swift"; path = "RxCocoa/Traits/Signal/ControlEvent+Signal.swift"; sourceTree = "<group>"; };
-		EAA5D8A18C209800745E1068A1DA8D63 /* Subtitle.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Subtitle.html; path = docs/Structs/Subtitle.html; sourceTree = "<group>"; };
+		EAA5D8A18C209800745E1068A1DA8D63 /* Subtitle.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Subtitle.html; path = docs/Structs/Subtitle.html; sourceTree = "<group>"; };
 		EAF3C119AA3BD7DA739B9684929512B7 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = RxSwift/Observables/Map.swift; sourceTree = "<group>"; };
 		EBA4F679583CCEB8FDC14AEC389DE4B1 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "Platform/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		EC083ECDF635F1E168EF1381BB296464 /* Observable+Bind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Bind.swift"; path = "RxCocoa/Common/Observable+Bind.swift"; sourceTree = "<group>"; };
-		EC8A0F444966D441483C9FDDC9AA3C8B /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8A0F444966D441483C9FDDC9AA3C8B /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAF77F121F5DFE7BB27DB9A4D0856E8 /* Timeout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeout.swift; path = RxSwift/Observables/Timeout.swift; sourceTree = "<group>"; };
 		ECB1EF669FB60D9CA36EE66FD6EE73D6 /* SubscriptionDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscriptionDisposable.swift; path = RxSwift/Disposables/SubscriptionDisposable.swift; sourceTree = "<group>"; };
-		ED93F27E94B293C5F63FC22311EBDAE9 /* FireTVSelectionViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionViewProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionViewProtocol.html; sourceTree = "<group>"; };
+		ED93F27E94B293C5F63FC22311EBDAE9 /* FireTVSelectionViewProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionViewProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVSelectionViewProtocol.html; sourceTree = "<group>"; };
 		EDA14EF47839B9B77445BB1B9B13CBA6 /* FireTVSelectionViewViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionViewViewModel.swift; sourceTree = "<group>"; };
 		EE5E84BCFB712DDC4CC98663F3CCA952 /* MockPlayerServiceDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockPlayerServiceDependencies.swift; sourceTree = "<group>"; };
 		EE63DA191D89DD4A63F9B89C7CC082FC /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaySubject.swift; path = RxSwift/Subjects/ReplaySubject.swift; sourceTree = "<group>"; };
-		EE9B9BB0F0621477F24FECEB4E2401C8 /* FireTVPlayerPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVPlayerPresenterProtocol.html; path = docs/Protocols/FireTVPlayerPresenterProtocol.html; sourceTree = "<group>"; };
+		EE9B9BB0F0621477F24FECEB4E2401C8 /* FireTVPlayerPresenterProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerPresenterProtocol.html; path = docs/Protocols/FireTVPlayerPresenterProtocol.html; sourceTree = "<group>"; };
 		EF219A7494128F781F7337BD8ADEAD07 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableType+Extensions.swift"; path = "RxSwift/ObservableType+Extensions.swift"; sourceTree = "<group>"; };
 		EF615C496C195F8623EC354E753A2E03 /* DistinctUntilChanged.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DistinctUntilChanged.swift; path = RxSwift/Observables/DistinctUntilChanged.swift; sourceTree = "<group>"; };
 		EFE7DA96E1C76E50D92A316A8769FF4F /* UISlider+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Rx.swift"; path = "RxCocoa/iOS/UISlider+Rx.swift"; sourceTree = "<group>"; };
@@ -1263,38 +1262,38 @@
 		F4BCEF7758608284CFE5522CA0F96BA4 /* Merge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Merge.swift; path = RxSwift/Observables/Merge.swift; sourceTree = "<group>"; };
 		F5E790FBEC0D112FE66D1D2BA4953A68 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Quick/Configuration/Configuration.swift; sourceTree = "<group>"; };
 		F6282226798E51115175EEED86B87F11 /* InfiniteSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfiniteSequence.swift; path = Platform/DataStructures/InfiniteSequence.swift; sourceTree = "<group>"; };
-		F6E39A3877424584E02FBBA673BEEC75 /* FireTVSelectionDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVSelectionDarkTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVSelectionDarkTheme.html; sourceTree = "<group>"; };
+		F6E39A3877424584E02FBBA673BEEC75 /* FireTVSelectionDarkTheme.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionDarkTheme.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Structs/FireTVSelectionDarkTheme.html; sourceTree = "<group>"; };
 		F719F9CACB6454225A24E4C011CF0344 /* PlayerDiscoveryController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerDiscoveryController.swift; sourceTree = "<group>"; };
 		F7862F6244D12B297CEBD9B2A77ABF17 /* RxSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-umbrella.h"; sourceTree = "<group>"; };
 		F7B57C86B3F0596C4E65551841C92A91 /* FireTVSelection.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = FireTVSelection.storyboard; sourceTree = "<group>"; };
 		F806A0A3A0666E37F82C2CB09A1701A0 /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Sources/QuickObjectiveC/QuickSpec.m; sourceTree = "<group>"; };
 		F81B16E12DFFBCC9CA74561D906DB8E3 /* FireTVPlayerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerViewController.swift; sourceTree = "<group>"; };
 		F82B4EE3D9A04D9C87097B1D50EB4DC3 /* ToArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToArray.swift; path = RxSwift/Observables/ToArray.swift; sourceTree = "<group>"; };
-		F88BDC2A89234D7D21CE1E3B00E8947A /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = search.json; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/search.json; sourceTree = "<group>"; };
+		F88BDC2A89234D7D21CE1E3B00E8947A /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; name = search.json; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/search.json; sourceTree = "<group>"; };
 		F8A8CE3694EEA57F6E57150812696D40 /* FireTVSelectionInteractorDependencies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionInteractorDependencies.swift; sourceTree = "<group>"; };
 		F8D640BF1BB3FA7B7F19E7DAB7B835FD /* SubtitleKind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubtitleKind.swift; sourceTree = "<group>"; };
 		F9BA18867675244A4B987E474A80C264 /* FireTVSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVSelectionViewController.swift; sourceTree = "<group>"; };
 		FA4468CFAF2EE72FAEC742BDD1511EF6 /* CwlMachBadInstructionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlMachBadInstructionHandler.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include/CwlMachBadInstructionHandler.h; sourceTree = "<group>"; };
-		FA4BC92F1584A5153C7AA67400ED4E96 /* FireTVPlayerThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = FireTVPlayerThemeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerThemeProtocol.html; sourceTree = "<group>"; };
+		FA4BC92F1584A5153C7AA67400ED4E96 /* FireTVPlayerThemeProtocol.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVPlayerThemeProtocol.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols/FireTVPlayerThemeProtocol.html; sourceTree = "<group>"; };
 		FA5C0515FE6EC42E00E215D665A958EB /* SerialDispatchQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SerialDispatchQueueScheduler.swift; path = RxSwift/Schedulers/SerialDispatchQueueScheduler.swift; sourceTree = "<group>"; };
 		FA8CE063A6FEB7D68BCF46C6524B7890 /* FireTVPlayerWireframe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerWireframe.swift; sourceTree = "<group>"; };
-		FAE82496702696B8E9D646F582F575F5 /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/js/jquery.min.js; sourceTree = "<group>"; };
+		FAE82496702696B8E9D646F582F575F5 /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/js/jquery.min.js; sourceTree = "<group>"; };
 		FB92897CA4DB012978E1F1A6115D15A4 /* SchedulerType+SharedSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SchedulerType+SharedSequence.swift"; path = "RxCocoa/Traits/SharedSequence/SchedulerType+SharedSequence.swift"; sourceTree = "<group>"; };
 		FC02D31B4D1935C785812F5B2818E0FA /* SynchronizedOnType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedOnType.swift; path = RxSwift/Concurrency/SynchronizedOnType.swift; sourceTree = "<group>"; };
 		FC8F974C890EC959521AFD62E6DEBE40 /* MetricConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MetricConstants.swift; sourceTree = "<group>"; };
 		FCA67EC9F84B93B8C022640DFB80B2D3 /* ServiceFactoryError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceFactoryError.swift; sourceTree = "<group>"; };
-		FD4298C223BB8E41B11CC05D1AEA96F8 /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = undocumented.json; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/undocumented.json; sourceTree = "<group>"; };
+		FD4298C223BB8E41B11CC05D1AEA96F8 /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; name = undocumented.json; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/undocumented.json; sourceTree = "<group>"; };
 		FD592CE55E97699C956D63442AFFD298 /* FireTVPlayerPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FireTVPlayerPresenter.swift; sourceTree = "<group>"; };
-		FDD007D14C2E2A2E2778C5083A2D3E40 /* ServiceFactory.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = ServiceFactory.html; path = docs/Classes/ServiceFactory.html; sourceTree = "<group>"; };
+		FDD007D14C2E2A2E2778C5083A2D3E40 /* ServiceFactory.html */ = {isa = PBXFileReference; includeInIndex = 1; name = ServiceFactory.html; path = docs/Classes/ServiceFactory.html; sourceTree = "<group>"; };
 		FDDA0497D3AEB3238DAA03FDCAF23DE8 /* UISearchBar+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISearchBar+Rx.swift"; path = "RxCocoa/iOS/UISearchBar+Rx.swift"; sourceTree = "<group>"; };
 		FE0DD3FE39C14F371929A096B70EAFAE /* Platform.Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Linux.swift; path = Platform/Platform.Linux.swift; sourceTree = "<group>"; };
 		FEBED834C06EE380B5B7B5E53FB0AC16 /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
-		FED2473B8A9D650F2E722B1FB69512BC /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = jazzy.css; path = docs/css/jazzy.css; sourceTree = "<group>"; };
-		FEE943B4C9CE719D6DECDB08A93DA4A0 /* FireTVSelectionViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = FireTVSelectionViewController.html; path = docs/Classes/FireTVSelectionViewController.html; sourceTree = "<group>"; };
+		FED2473B8A9D650F2E722B1FB69512BC /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.css; path = docs/css/jazzy.css; sourceTree = "<group>"; };
+		FEE943B4C9CE719D6DECDB08A93DA4A0 /* FireTVSelectionViewController.html */ = {isa = PBXFileReference; includeInIndex = 1; name = FireTVSelectionViewController.html; path = docs/Classes/FireTVSelectionViewController.html; sourceTree = "<group>"; };
 		FF1BCC0ED4DE3E765D865CFF800DA4FD /* PrimitiveSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimitiveSequence.swift; path = RxSwift/Traits/PrimitiveSequence.swift; sourceTree = "<group>"; };
 		FF66861C20C21C5AB61BC26A2D380D53 /* InfiniteSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfiniteSequence.swift; path = Platform/DataStructures/InfiniteSequence.swift; sourceTree = "<group>"; };
 		FFEF8052C419A5D2745E15637CD7B11A /* mach_excServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mach_excServer.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.h; sourceTree = "<group>"; };
-		FFFEA5B6654DAAC501DCFCD056285995 /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Protocols.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols.html; sourceTree = "<group>"; };
+		FFFEA5B6654DAAC501DCFCD056285995 /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Protocols.html; path = docs/docsets/FireTVKit.docset/Contents/Resources/Documents/Protocols.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1399,6 +1398,7 @@
 			children = (
 				AA2B6ED686D347ABC2E32688DC9B58CA /* internal */,
 			);
+			name = FireTVPlayer;
 			path = FireTVPlayer;
 			sourceTree = "<group>";
 		};
@@ -1533,6 +1533,7 @@
 				C618C0951AB45FCF2B634914D4309129 /* URLSession+Rx.swift */,
 				D473CAABEBCDD910965F4C37CCDFEA00 /* Support Files */,
 			);
+			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -1543,6 +1544,7 @@
 				676E2D901E84FB986F7C234503A4F6DB /* DiscoveringInfoStatus.swift */,
 				8D9E4A0624BF41DEF2E3C7976BAF07CC /* DiscoveringStatus.swift */,
 			);
+			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1564,6 +1566,7 @@
 				972B1D9FD69B9A4E73C154B46D67A9EA /* UIAlertController+MakeAlert.swift */,
 				744C6BB1C0748DBE0396994918ACEA91 /* UIColor+Colors.swift */,
 			);
+			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -1573,6 +1576,7 @@
 				BE7CB65EE96EF29C766F37A8824AA685 /* FireTVManagerDependencies.swift */,
 				97C683F968D9C65C287D79ED3039A419 /* FireTVManagerProtocol.swift */,
 			);
+			name = FireTVManager;
 			path = FireTVManager;
 			sourceTree = "<group>";
 		};
@@ -1581,6 +1585,7 @@
 			children = (
 				F7B57C86B3F0596C4E65551841C92A91 /* FireTVSelection.storyboard */,
 			);
+			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -1732,6 +1737,7 @@
 				CDDB789F7AA550D65048367C5F37E809 /* Date+StringValue.swift */,
 				A5107D8F383E74FF81767686950AC201 /* Logger.swift */,
 			);
+			name = Logger;
 			path = Logger;
 			sourceTree = "<group>";
 		};
@@ -1773,6 +1779,7 @@
 				6BABD5A9862EAB177A49756F54C9678C /* ViewModels */,
 				4D0CC0B26BB3FF9A79E14EF7767BF506 /* Views */,
 			);
+			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -1793,6 +1800,7 @@
 				A1504B7E39915F8B43E231CBB0E1B412 /* Reachability.swift */,
 				F7E2FA2228F2C0481F128170C5ABC188 /* Support Files */,
 			);
+			name = ReachabilitySwift;
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
@@ -1801,6 +1809,7 @@
 			children = (
 				C028660A1634D8609D6E3CE72DA66E3B /* FireTVSelectionTableViewCell.swift */,
 			);
+			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -1829,6 +1838,7 @@
 			children = (
 				601773970B16793779243DED1BFEEEAA /* FireTVPlayerViewViewModel.swift */,
 			);
+			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -1864,6 +1874,7 @@
 				1BECDDCCB2EAD828F2DD7B70C2287755 /* FireTVPlayerWireframeProtocol.swift */,
 				26F7B10D8E255871BC6E0186A65576FC /* MockFireTVPlayerInteractorDependencies.swift */,
 			);
+			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -1941,6 +1952,7 @@
 				8A86330F2D14F5FF6EAA22A4A97777F8 /* XCTestObservationCenter+Register.m */,
 				0337ED687FCA6522D678228F620D9F2B /* Support Files */,
 			);
+			name = Nimble;
 			path = Nimble;
 			sourceTree = "<group>";
 		};
@@ -1950,6 +1962,7 @@
 				A2E017E270B0A42C6E9CC22B221E4AF3 /* FireTVSelectionPresenterState.swift */,
 				D66DFBB26CB7EA243F080A0CA1DCD73D /* PlayerViewModel.swift */,
 			);
+			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -1978,6 +1991,7 @@
 				D85BD01CDFA6DA01BBB6390540CD7969 /* PlayerDiscoveryService.swift */,
 				A414BD6FF109F57FCA1417F4D6CFEBE9 /* PlayerDiscoveryServiceDependencies.swift */,
 			);
+			name = Service;
 			path = Service;
 			sourceTree = "<group>";
 		};
@@ -2004,6 +2018,7 @@
 				81D46724DAC1F810F6E3324309B14551 /* StringConstants.swift */,
 				D5D6FA355999A1ABD421C5C3F5A35523 /* StubConstants.swift */,
 			);
+			name = Constants;
 			path = Constants;
 			sourceTree = "<group>";
 		};
@@ -2035,6 +2050,7 @@
 				5BA3199B832F027CE26751BCDFE10CB9 /* FireTVPlayerLightTheme.swift */,
 				CF339AC5745A423EF5824CBCA34E1C38 /* FireTVPlayerThemeProtocol.swift */,
 			);
+			name = Theme;
 			path = Theme;
 			sourceTree = "<group>";
 		};
@@ -2078,6 +2094,7 @@
 			children = (
 				376698E7E6959AAC00BA171C41923FC9 /* FireTVPlayer.storyboard */,
 			);
+			name = internal;
 			path = internal;
 			sourceTree = "<group>";
 		};
@@ -2087,6 +2104,7 @@
 				3D53CF3828BB959EBBE69F8AE0A4BA25 /* Frameworks */,
 				A2B5E4C2DE1DB71965BB9C5757FE8B64 /* Support Files */,
 			);
+			name = AmazonFling;
 			path = AmazonFling;
 			sourceTree = "<group>";
 		};
@@ -2097,6 +2115,7 @@
 				14C52C37422AFC900522A00645FB3D87 /* Models */,
 				6E520E50082A0BEE8DC5C1C7BB34C9AC /* Service */,
 			);
+			name = PlayerDiscovery;
 			path = PlayerDiscovery;
 			sourceTree = "<group>";
 		};
@@ -2129,6 +2148,7 @@
 				1BC185975D010558B47F900E0E03FFE2 /* ReachabilityService.swift */,
 				0A11A86BB03AE7DD73CA79954C1B99D5 /* ReachabilityServiceProtocol.swift */,
 			);
+			name = Reachability;
 			path = Reachability;
 			sourceTree = "<group>";
 		};
@@ -2196,6 +2216,7 @@
 			children = (
 				EDA14EF47839B9B77445BB1B9B13CBA6 /* FireTVSelectionViewViewModel.swift */,
 			);
+			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -2354,6 +2375,7 @@
 				C3AD173A0A44C118A0C1F088698AACD4 /* Zip+Collection.swift */,
 				A5C7CF49CE0C2B649F83A3C4A668E752 /* Support Files */,
 			);
+			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -2394,6 +2416,7 @@
 				EBB56BBBFB4A8B3CA6C0B55C62C18552 /* Player */,
 				B926AD8CADE5100C760971CDCD678578 /* Reachability */,
 			);
+			name = Services;
 			path = Services;
 			sourceTree = "<group>";
 		};
@@ -2418,6 +2441,7 @@
 			children = (
 				2CBDD304A3834A6EC901484352B4F345 /* FireTVMedia.swift */,
 			);
+			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -2426,6 +2450,7 @@
 			children = (
 				C88893B0799550ED1DA996AE956C6589 /* DummyPlayer.swift */,
 			);
+			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -2434,6 +2459,7 @@
 			children = (
 				277A887A3501C061B5CEB909431F5947 /* internal */,
 			);
+			name = FireTVSelection;
 			path = FireTVSelection;
 			sourceTree = "<group>";
 		};
@@ -2445,6 +2471,7 @@
 				4684F1774D17269F21E1E4BF4C3BB19E /* PlayerService.swift */,
 				BD206332F9E9E12710BB3017239FF914 /* PlayerServiceDependencies.swift */,
 			);
+			name = Player;
 			path = Player;
 			sourceTree = "<group>";
 		};
@@ -2483,6 +2510,7 @@
 				41DF23FDF9CBFCC4413E8D509A704551 /* XCTestSuite+QuickTestSuiteBuilder.m */,
 				CAB41FF00EC83E349DA016536E5F526A /* Support Files */,
 			);
+			name = Quick;
 			path = Quick;
 			sourceTree = "<group>";
 		};
@@ -2506,6 +2534,7 @@
 				08BF52252EE1179AD2B7C4A75C043F14 /* PlayerDiscoveryControllerDependencies.swift */,
 				1F54A6C6C84B7C5C02B3AE5AB6BF3BDF /* PlayerDiscoveryControllerProtocol.swift */,
 			);
+			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -2530,6 +2559,7 @@
 				E8DE2DA414BBC3C61542F9D27EA23872 /* FireTVSelectionLightTheme.swift */,
 				16536AD963CE9FF083BC018C6BEC93A4 /* FireTVSelectionThemeProtocol.swift */,
 			);
+			name = Theme;
 			path = Theme;
 			sourceTree = "<group>";
 		};
@@ -2805,30 +2835,12 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					538EE84939614022416AE4240A0A60CC = {
-						LastSwiftMigration = 1020;
-					};
-					6D9653F6D61A9242B7CCA0CE40C5FFCA = {
-						LastSwiftMigration = 1020;
-					};
-					C7EEEC471CF205A23EF25653F976E05A = {
-						LastSwiftMigration = 1020;
-					};
-					D4352C8CA6EDC802E8D85D2E61BC6173 = {
-						LastSwiftMigration = 1020;
-					};
-					D6C05EB3AD2DB7A8D2158B7AE95258A9 = {
-						LastSwiftMigration = 1020;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -3645,38 +3657,6 @@
 			};
 			name = Debug;
 		};
-		0F57704DEB8C83536D2A91B143C55C5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EABA92F56AE4094E302BB221CC08867 /* RxSwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RxSwift/RxSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RxSwift/RxSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RxSwift/RxSwift.modulemap";
-				PRODUCT_MODULE_NAME = RxSwift;
-				PRODUCT_NAME = RxSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1E75DCF607567F6192297E276442F619 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1AE640D3CD5085DE7F02F674191A011 /* FireTVKit.xcconfig */;
@@ -3727,7 +3707,52 @@
 			};
 			name = Release;
 		};
-		42C342507991A417081F654D077F6227 /* Debug */ = {
+		53F13065308364A840BA1F51E2B84C7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C50D766C40BD9F57AB0173DA412C35B6 /* AmazonFling.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6110714FDDC474477775DC2A9FBD7573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43D18726044BB08428CE4FB870243C9D /* RxCocoa.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RxCocoa/RxCocoa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RxCocoa/RxCocoa-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RxCocoa/RxCocoa.modulemap";
+				PRODUCT_MODULE_NAME = RxCocoa;
+				PRODUCT_NAME = RxCocoa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		631AE3CB37BC0D58EB42A6D247C71209 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF72D3AC4D0C424162A3AA812D135FF5 /* Quick.xcconfig */;
 			buildSettings = {
@@ -3751,88 +3776,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		4F321426C7ACE875618B4FDC7839375C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EABA92F56AE4094E302BB221CC08867 /* RxSwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RxSwift/RxSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RxSwift/RxSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RxSwift/RxSwift.modulemap";
-				PRODUCT_MODULE_NAME = RxSwift;
-				PRODUCT_NAME = RxSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		50F5B79DB2C4655783FA82B2876D4CC4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D18726044BB08428CE4FB870243C9D /* RxCocoa.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RxCocoa/RxCocoa-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RxCocoa/RxCocoa-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RxCocoa/RxCocoa.modulemap";
-				PRODUCT_MODULE_NAME = RxCocoa;
-				PRODUCT_NAME = RxCocoa;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		53F13065308364A840BA1F51E2B84C7A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C50D766C40BD9F57AB0173DA412C35B6 /* AmazonFling.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		63D695859C2F0A422F82D406A4375481 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3846,38 +3795,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		6E3C7F1E1CE3F88E8CFB38D14FCE2A4E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D18726044BB08428CE4FB870243C9D /* RxCocoa.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RxCocoa/RxCocoa-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RxCocoa/RxCocoa-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RxCocoa/RxCocoa.modulemap";
-				PRODUCT_MODULE_NAME = RxCocoa;
-				PRODUCT_NAME = RxCocoa;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		70735EB23C157804D03907D8551CE8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3903,44 +3820,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		7397D628453F2BA645DEEB4AB2669BB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F313681F078C97608623BD8C15BA102 /* Nimble.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Nimble/Nimble-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Nimble/Nimble-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
-				PRODUCT_MODULE_NAME = Nimble;
-				PRODUCT_NAME = Nimble;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		7EB1EDD7E473185D3CCAB20EBA66631B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3976,6 +3861,38 @@
 			};
 			name = Release;
 		};
+		859AD728C633B3A340DD6965CD4B8270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F313681F078C97608623BD8C15BA102 /* Nimble.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Nimble/Nimble-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nimble/Nimble-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
+				PRODUCT_MODULE_NAME = Nimble;
+				PRODUCT_NAME = Nimble;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		880C3C49365BDBE98BD48E080F308ADE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02615BB532D194A054D1FFF604A5B0EE /* ReachabilitySwift.xcconfig */;
@@ -4001,37 +3918,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A04B7812847D2B796B272CBFA8C6C6C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F313681F078C97608623BD8C15BA102 /* Nimble.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Nimble/Nimble-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Nimble/Nimble-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
-				PRODUCT_MODULE_NAME = Nimble;
-				PRODUCT_NAME = Nimble;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -4091,11 +3977,43 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		A3D72EA419B99BD5E3C10DE26F0D2F27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F313681F078C97608623BD8C15BA102 /* Nimble.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Nimble/Nimble-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nimble/Nimble-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
+				PRODUCT_MODULE_NAME = Nimble;
+				PRODUCT_NAME = Nimble;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		AD57FCF93B59F0F2A77170A3A9968F66 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -4154,13 +4072,44 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		D6456383FC85411249C4ED0CC7D772FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EABA92F56AE4094E302BB221CC08867 /* RxSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RxSwift/RxSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RxSwift/RxSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RxSwift/RxSwift.modulemap";
+				PRODUCT_MODULE_NAME = RxSwift;
+				PRODUCT_NAME = RxSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		F227360E0DDFF2DA22A9FF5234D6C6A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -4195,7 +4144,71 @@
 			};
 			name = Debug;
 		};
-		FF2C107579996492D7A8E8A588F445E5 /* Release */ = {
+		F39F0CAD97233D909B621E1E5771F87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43D18726044BB08428CE4FB870243C9D /* RxCocoa.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RxCocoa/RxCocoa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RxCocoa/RxCocoa-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RxCocoa/RxCocoa.modulemap";
+				PRODUCT_MODULE_NAME = RxCocoa;
+				PRODUCT_NAME = RxCocoa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FCE48168017F44F4DF2B26E5FE7776D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EABA92F56AE4094E302BB221CC08867 /* RxSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RxSwift/RxSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RxSwift/RxSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RxSwift/RxSwift.modulemap";
+				PRODUCT_MODULE_NAME = RxSwift;
+				PRODUCT_NAME = RxSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FD6FBA7D070B30BDA9E0BEF9C7B0ED55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF72D3AC4D0C424162A3AA812D135FF5 /* Quick.xcconfig */;
 			buildSettings = {
@@ -4219,7 +4232,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -4251,8 +4264,8 @@
 		3B5271BD12A811CA5C00B721D64944F5 /* Build configuration list for PBXNativeTarget "RxCocoa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				50F5B79DB2C4655783FA82B2876D4CC4 /* Debug */,
-				6E3C7F1E1CE3F88E8CFB38D14FCE2A4E /* Release */,
+				6110714FDDC474477775DC2A9FBD7573 /* Debug */,
+				F39F0CAD97233D909B621E1E5771F87E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4278,8 +4291,8 @@
 		4B42CCC97B811F7E5A32E3124AE978A7 /* Build configuration list for PBXNativeTarget "Quick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42C342507991A417081F654D077F6227 /* Debug */,
-				FF2C107579996492D7A8E8A588F445E5 /* Release */,
+				631AE3CB37BC0D58EB42A6D247C71209 /* Debug */,
+				FD6FBA7D070B30BDA9E0BEF9C7B0ED55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4296,8 +4309,8 @@
 		8DBC6CC9E3D40DA74928F9D8788DE444 /* Build configuration list for PBXNativeTarget "RxSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F321426C7ACE875618B4FDC7839375C /* Debug */,
-				0F57704DEB8C83536D2A91B143C55C5E /* Release */,
+				D6456383FC85411249C4ED0CC7D772FD /* Debug */,
+				FCE48168017F44F4DF2B26E5FE7776D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4323,8 +4336,8 @@
 		F7696C5CA73833843928D0745738A604 /* Build configuration list for PBXNativeTarget "Nimble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A04B7812847D2B796B272CBFA8C6C6C2 /* Debug */,
-				7397D628453F2BA645DEEB4AB2669BB6 /* Release */,
+				A3D72EA419B99BD5E3C10DE26F0D2F27 /* Debug */,
+				859AD728C633B3A340DD6965CD4B8270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
