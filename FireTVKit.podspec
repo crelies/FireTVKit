@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FireTVKit'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Discovering your FireTV and controlling the built-in media player is now easy and reactive.'
 
   s.description      = <<-DESC
