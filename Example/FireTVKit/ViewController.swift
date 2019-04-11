@@ -166,7 +166,7 @@ extension ViewController {
 		if presentPlayerModally {
 			present(viewController, animated: true)
 		} else {
-			addChildViewController(viewController)
+			addChild(viewController)
 			playerContainerView.addSubview(viewController.view)
 			
 			showPlayerContainerView()
@@ -178,7 +178,7 @@ extension ViewController {
 			viewController.dismiss(animated: true, completion: nil)
 			presentPlayerModally = false
 		} else {
-			viewController.removeFromParentViewController()
+			viewController.removeFromParent()
 			viewController.view.removeFromSuperview()
 			hidePlayerContainerView()
 			presentPlayerModally = true
